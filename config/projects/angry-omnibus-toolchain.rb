@@ -19,12 +19,12 @@
 # test machines. As such this project definition is just a thin wrapper around
 # `config/project/chef.rb`.
 #
-be_project_contents = IO.read(File.expand_path('../toolchain.rb', __FILE__))
-self.instance_eval be_project_contents
+toolchain_project_contents = IO.read(File.expand_path('../omnibus-toolchain.rb', __FILE__))
+self.instance_eval toolchain_project_contents
 
-name 'angry-toolchain'
-friendly_name 'Angry Toolchain'
+name 'angry-omnibus-toolchain'
+friendly_name 'Angry Omnibus Toolchain'
 maintainer 'Chef Software, Inc.'
 homepage   'http://www.chef.io'
 
-install_dir "/opt/angry-toolchain"
+install_dir "/opt/angry-omnibus-toolchain"
