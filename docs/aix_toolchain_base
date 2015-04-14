@@ -1,0 +1,360 @@
+Installing the Base AIX 6.1 Omnibus Toolchain
+==================
+
+In order to build the omnibus-build-essential project, one needs a base toolchain installed. Unfortunately, the only way to start from scratch is to build everything manually from source once, which then allows you to build the SAME toolchain in an automated way. This document describes the minimum manual steps required.
+
+Preconditions/Assumptions
+-------------------------
+This assumes that you have installed the following RPMs from IBM's freeware aix toolbox:
+ftp://public.dhe.ibm.com/aix/freeSoftware/aixtoolbox/RPMS/ppc/
+
+binutils
+wget
+
+Base Setup and 'Helper' Installation
+------------------------------------
+
+### Set up your user
+
+Building the Base Packages
+--------------------------
+The next step is to install all the things in the toolchain in the appropriate order. Make directory to build out of (I'm using ~/build); we'll assume the next commands are all run with that as the base directory.
+
+We will be building everything into __/opt/be__
+
+### Create /opt/be
+```
+sudo mkdir /opt/be
+sudo chown <username> /opt/be
+```
+
+### Set default environment variables
+I made a file that I could source that has these variables in it, for ease of use.
+Note the LD_OPTIONS path to the mapfile.
+```
+export CC="xlc_r -q64"
+export CXX="xlc_r -q64"
+export LDFLAGS="-q64 -L/opt/be/embedded/lib -Wl,-blibpath:/opt/be/embedded/lib:/usr/lib:/lib"
+export CFLAGS="-q64 -I/opt/be/embedded/include -D_LARGE_FILES -O"
+export LD="ld -b64"
+export OBJECT_MODE="64"
+export ARFLAGS="-X64 cru"
+export LD_RUN_PATH="/opt/be/embedded/lib"
+export PKG_CONFIG_PATH="/opt/be/embedded/lib/pkgconfig"
+export CXXFLAGS=$CFLAGS
+export CPPFLAGS=$CFLAGS
+```
+
+### gnu make
+```
+wget http://ftp.gnu.org/gnu/make/make-4.1.tar.gz
+gtar xzf make-4.1.tar.gz
+cd make-4.1
+make
+make install
+sudo ln -s /opt/be/embedded/bin/make /usr/bin/gmake
+cd ..
+```
+
+### gnu patch
+```
+wget http://ftp.gnu.org/gnu/patch/patch-2.7.tar.gz
+gtar xzf patch-2.7.tar.gz
+cd patch-2.7
+./configure --prefix=/opt/be/embedded
+gmake -j 3
+gmake -j 3 install
+cd ..
+```
+
+### gnu m4 - required for autoconf
+```
+wget http://ftp.gnu.org/gnu/m4/m4-1.4.17.tar.gz
+gtar zxf m4-1.4.17.tar.gz
+cd m4-1.4.17
+./configure --prefix=/opt/be/embedded
+gmake -j 3
+gmake install
+cd ..
+```
+
+### zlib
+```
+wget http://downloads.sourceforge.net/project/libpng/zlib/1.2.8/zlib-1.2.8.tar.gz
+gtar zxf zlib-1.2.8.tar.gz
+cd zlib-1.2.8
+./configure --prefix=/opt/be/embedded
+gmake -j 3
+gmake -j 3 install
+cd ..
+```
+
+### libtool - (2.4.2 is not compatible with m4 1.4.17, use 2.4)
+```
+wget http://ftp.gnu.org/gnu/libtool/libtool-2.4.tar.gz
+gtar zxf libtool-2.4.tar.gz
+cd libtool-2.4
+./configure --prefix=/opt/be/embedded
+gmake -j 3
+gmake install
+cd ..
+```
+
+### ncurses (with patches)
+```
+unset $CPPFLAGS
+wget http://ftp.gnu.org/gnu/ncurses/ncurses-5.9.tar.gz
+gtar zxf ncurses-5.9.tar.gz
+cd ncurses-5.9
+wget  https://raw.githubusercontent.com/opscode/omnibus-software/master/config/patches/ncurses/patch-aix-configure
+/opt/be/embedded/bin/patch -p0 -i patch-aix-configure
+./configure --prefix=/opt/be/embedded --with-shared --with-termlib --without-debug --without-normal --enable-overwrite --enable-widec --without-cxx-binding
+gmake -j 3
+gmake -j 3 install
+gmake distclean
+./configure --prefix=/opt/be/embedded --with-shared --with-termlib --without-debug --without-normal --enable-overwrite --without-cxx-binding
+gmake -j 3
+gmake -j 3 install
+cd ..
+export CPPFLAGS=$CFLAGS
+```
+
+### libedit
+```
+wget http://www.thrysoee.dk/editline/libedit-20120601-3.0.tar.gz
+gtar zxf libedit-20120601-3.0.tar.gz
+cd libedit-20120601-3.0
+./configure --prefix=/opt/be/embedded
+gmake -j 3
+gmake -j 3 install
+cd ..
+```
+
+### cacerts
+```
+mkdir /opt/be/embedded/ssl
+mkdir /opt/be/embedded/ssl/certs
+wget http://curl.haxx.se/ca/cacert.pem
+mv cacert.pem /opt/be/embedded/ssl/certs
+ln -s /opt/be/embedded/ssl/certs/cacert.pem /opt/be/embedded/ssl/cert.pem
+```
+
+### openssl (omg longest ./configure evar!)
+```
+wget http://www.openssl.org/source/openssl-1.0.1k.tar.gz
+gtar zxf openssl-1.0.1k.tar.gz
+cd openssl-1.0.1k
+wget  https://raw.githubusercontent.com/opscode/omnibus-software/master/config/patches/openssl/openssl-1.0.1f-do-not-build-docs.patch
+/opt/be/embedded/bin/patch -p1 -i openssl-1.0.1f-do-not-build-docs.patch
+CC="xlc -q64" CXX="xlC -q64" LD="ld -b64" CFLAGS="-q64 -I/opt/be/embedded/include -O" CXXFLAGS="-q64 -I/opt/be/embedded/include -O" LDFLAGS="-q64 -L/opt/be/embedded/lib -Wl,-blibpath:/opt/be/embedded/lib:/usr/lib:/lib" OBJECT_MODE="64" AR="/usr/bin/ar" ARFLAGS="-X64 cru" M4="/opt/be/embedded/bin/m4" /bin/sh ./Configure aix64-cc --prefix=/opt/be/embedded --with-zlib-lib=/opt/be/embedded/lib --with-zlib-include=/opt/be/embedded/include no-idea no-mdc2 no-rc5 zlib shared -L/opt/be/embedded/lib -I/opt/be/embedded/include -Wl,-blibpath:/opt/be/embedded/lib:/usr/lib:/lib
+gmake depend
+gmake
+sudo /usr/sbin/slibclean
+gmake install
+cd ..
+```
+
+### libyaml
+```
+wget http://pyyaml.org/download/libyaml/yaml-0.1.6.tar.gz
+gtar zxf yaml-0.1.6.tar.gz
+cd yaml-0.1.6
+./configure --prefix=/opt/be/embedded --enable-shared
+gmake -j 3
+gmake -j 3 install
+cd ..
+```
+
+### libiconv (including patch)
+```
+wget http://ftp.gnu.org/pub/gnu/libiconv/libiconv-1.14.tar.gz
+gtar xzf libiconv-1.14.tar.gz
+cd libiconv-1.14
+wget  https://raw.githubusercontent.com/opscode/omnibus-software/master/config/patches/libiconv/libiconv-1.14_srclib_stdio.in.h-remove-gets-declarations.patch
+/opt/be/embedded/bin/patch -p1 -i libiconv-1.14_srclib_stdio.in.h-remove-gets-declarations.patch
+./configure --prefix=/opt/be/embedded
+gmake -j 3
+gmake -j 3 install-lib libdir=/opt/be/embedded/lib includedir=/opt/be/embedded/include
+cd ..
+```
+
+### libffi - use old make, bleh.
+```
+wget ftp://sourceware.org/pub/libffi/libffi-3.0.13.tar.gz
+gtar zxf libffi-3.0.13.tar.gz
+cd libffi-3.0.13
+INSTALL="/opt/freeware/bin/install" ./configure --prefix=/opt/be/embedded
+gmake -j 3
+gmake install
+cp /opt/be/embedded/lib/libffi-3.0.13/include/* /opt/be/embedded/include/
+cd ..
+```
+
+### gdbm
+```
+wget http://ftp.gnu.org/gnu/gdbm/gdbm-1.9.1.tar.gz
+gtar zxf gdbm-1.9.1.tar.gz
+cd gdbm-1.9.1
+./configure --prefix=/opt/be/embedded --enable-libgdbm-compat
+gmake -j 3
+gmake install
+cd ..
+```
+
+### ruby
+```
+wget http://cache.ruby-lang.org/pub/ruby/2.1/ruby-2.1.5.tar.gz
+gtar zxf ruby-2.1.5.tar.gz
+cd ruby-2.1.5
+wget  https://raw.githubusercontent.com/opscode/omnibus-software/shain/omni-b-e/config/patches/ruby/ruby-solaris-no-stack-protector.patch
+/opt/be/embedded/bin/patch -p1 -i ruby-solaris-no-stack-protector.patch
+wget https://raw.githubusercontent.com/opscode/omnibus-software/shain/omni-b-e/config/patches/ruby/ruby_aix_2_1_3_mkmf.patch
+/opt/be/embedded/bin/patch -p1 -i ruby_aix_2_1_3_mkmf.patch
+wget https://raw.githubusercontent.com/opscode/omnibus-software/shain/omni-b-e/config/patches/ruby/ruby-aix-configure.patch
+/opt/be/embedded/bin/patch -p1 -i ruby-aix-configure.patch
+wget https://raw.githubusercontent.com/opscode/omnibus-software/shain/omni-b-e/config/patches/ruby/ruby_aix_openssl.patch
+/opt/be/embedded/bin/patch -p1 -i ruby_aix_openssl.patch
+wget https://raw.githubusercontent.com/opscode/omnibus-software/shain/omni-b-e/config/patches/ruby/ruby_aix_2_1_3_ssl_EAGAIN.patch
+/opt/be/embedded/bin/patch -p1 -i ruby_aix_2_1_3_ssl_EAGAIN.patch
+wget https://raw.githubusercontent.com/opscode/omnibus-software/shain/omni-b-e/config/patches/ruby/ruby-aix-atomic.patch
+/opt/be/embedded/bin/patch -p1 -i ruby-aix-atomic.patch
+wget https://raw.githubusercontent.com/opscode/omnibus-software/shain/omni-b-e/config/patches/ruby/ruby-aix-vm-core.patch
+/opt/be/embedded/bin/patch -p1 -i ruby-aix-vm-core.patch
+LDSHARED="xlc -G" CFLAGS="-I/opt/be/embedded/include/ncurses -I/opt/be/embedded/include" XCFLAGS="-DRUBY_EXPORT" CPPFLAGS="-I/opt/be/embedded/include/ncurses -I/opt/be/embedded/include" SOLIBS="-lm -lc" M4="/opt/be/embedded/bin/m4" PKG_CONFIG="/bin/true" MAKE="gmake" ./configure --prefix=/opt/be/embedded --with-out-ext=dbm --enable-shared --enable-libedit --with-ext=psych --disable-install-doc --without-gmp --disable-dtrace --host=powerpc-ibm-aix6.1.0.0 --target=powerpc-ibm-aix6.1.0.0 --build=powerpc-ibm-aix6.1.0.0 --enable-pthread
+gmake -j 3
+gmake -j 3 install
+cd ..
+```
+
+
+
+
+--------------------------------------------------------------
+
+the rest i don't know if we need
+
+
+
+
+
+
+
+### xproto
+```
+wget http://xorg.freedesktop.org/releases/individual/proto/xproto-7.0.25.tar.gz
+gtar zxf xproto-7.0.25.tar.gz
+cd xproto-7.0.25
+./configure --prefix=/opt/be/embedded
+gmake -j 3
+gmake -j 3 install
+cd ..
+```
+### util-macros
+```
+wget http://xorg.freedesktop.org/releases/individual/util/util-macros-1.18.0.tar.gz
+gtar zxf util-macros-1.18.0.tar.gz
+cd util-macros-1.18.0
+./configure --prefix=/opt/be/embedded
+gmake -j 3
+gmake -j 3 install
+cd ..
+```
+### pkg-config
+```
+wget http://pkgconfig.freedesktop.org/releases/pkg-config-0.28.tar.gz
+gtar zxf pkg-config-0.28.tar.gz
+cd pkg-config-0.28
+./configure --prefix=/opt/be/embedded --disable-debug --disable-host-tool --with-internal-glib --with-pc-path=/opt/be/embedded/bin/pkgconfig
+cd glib
+./configure --prefix=/opt/be/embedded --with-libiconv=gnu
+cd ..
+gmake -j 3
+gmake -j 3 install
+cd ..
+```
+### makedepend
+```
+export PKG_CONFIG=/opt/be/embedded/bin/pkg-config
+wget http://xorg.freedesktop.org/releases/individual/util/makedepend-1.0.5.tar.gz
+gtar zxf makedepend-1.0.5.tar.gz
+cd makedepend-1.0.5
+./configure --prefix=/opt/be/embedded
+gmake -j 3
+gmake -j 3 install
+cd ..
+```
+
+### pcre
+```
+wget http://iweb.dl.sourceforge.net/project/pcre/pcre/8.31/pcre-8.31.tar.gz
+gtar zxf pcre-8.31.tar.gz
+cd pcre-8.31
+./configure --prefix=/opt/be/embedded --enable-pcretest-libedit
+gmake -j 3
+gmake install
+cd ..
+```
+### expat
+```
+wget http://iweb.dl.sourceforge.net/project/expat/expat/2.1.0/expat-2.1.0.tar.gz
+gtar zxf expat-2.1.0.tar.gz
+cd expat-2.1.0
+./configure --prefix=/opt/be/embedded
+gmake -j 3
+gmake install
+cd ..
+```
+### perl
+```
+wget http://www.cpan.org/src/5.0/perl-5.18.1.tar.gz
+gtar zxf perl-5.18.1.tar.gz
+cd perl-5.18.1
+sh Configure -de -Dprefix=/opt/be/embedded -Duseshrplib -Dusethreads -Dcc='gcc -static-libgcc -Wl,-M /export/home/shain/dev/solaris_mapfile' -Dnoextensions='DB_File GDBM_File NDBM_File ODBM_File'
+gmake -j 3
+gmake install
+cd ..
+```
+
+### gnu autoconf - we need to update the git defs in omnibus-software I think...
+```
+wget http://ftp.gnu.org/gnu/autoconf/autoconf-2.68.tar.gz
+gtar zxf autoconf-2.68.tar.gz
+cd autoconf-2.68
+M4=/opt/be/embedded/bin/m4 ./configure --prefix=/opt/be/embedded
+gmake -j 3
+gmake install
+```
+### git
+```
+wget --no-check-certificate https://www.kernel.org/pub/software/scm/git/git-2.2.1.tar.gz
+gtar zxf git-2.2.1.tar.gz
+cd git-2.2.1
+./configure --prefix=/opt/be/embedded --without-python --without-tcltk
+gmake -j 3
+gmake install
+cd ..
+```
+
+
+
+
+
+
+## rubygems
+```
+wget http://production.cf.rubygems.org/rubygems/rubygems-2.4.4.tgz
+gtar zxf rubygems-2.4.4.tgz
+cd rubygems-2.4.4
+/opt/be/embedded/bin/ruby setup.rb --no-ri --no-rdoc
+cd ..
+```
+### bundler (you may need to do this later)
+```
+/opt/be/embedded/bin/gem install bundler --version 1.5.3 --no-ri --no-rdoc
+```
+
+Phase 2 - The first build
+==================
+Once this is done, you should be able to reset your environment (remove the variables),
+add /opt/be/embedded/bin to the front of your path, check out the omnibus-build-essential
+project from github and run bundle install / bundle exec omnibus build build-essential.
