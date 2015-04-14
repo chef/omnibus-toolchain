@@ -33,6 +33,8 @@ GEM
   specs:
     addressable (2.3.8)
     ast (2.0.0)
+    astrolabe (1.3.0)
+      parser (>= 2.2.0.pre.3, < 3.0)
     berkshelf (3.2.3)
       addressable (~> 2.3.4)
       berkshelf-api-client (~> 1.2)
@@ -112,10 +114,9 @@ GEM
       mixlib-shellout (~> 1.2)
       systemu (~> 2.6.4)
       wmi-lite (~> 1.0)
-    parser (2.1.9)
+    parser (2.2.0.3)
       ast (>= 1.1, < 3.0)
-      slop (~> 3.4, >= 3.4.5)
-    powerpack (0.0.9)
+    powerpack (0.1.0)
     rainbow (2.0.0)
     rake (10.4.2)
     retryable (2.0.1)
@@ -136,19 +137,18 @@ GEM
       retryable (>= 2.0.0)
       semverse (~> 1.1)
       varia_model (~> 0.4)
-    rubocop (0.23.0)
-      json (>= 1.7.7, < 2)
-      parser (~> 2.1.9)
-      powerpack (~> 0.0.6)
+    rubocop (0.30.0)
+      astrolabe (~> 1.3)
+      parser (>= 2.2.0.1, < 3.0)
+      powerpack (~> 0.1)
       rainbow (>= 1.99.1, < 3.0)
       ruby-progressbar (~> 1.4)
-    ruby-progressbar (1.7.1)
+    ruby-progressbar (1.7.5)
     safe_yaml (1.0.4)
     sawyer (0.6.0)
       addressable (~> 2.3.5)
       faraday (~> 0.8, < 0.10)
     semverse (1.2.1)
-    slop (3.6.0)
     solve (1.2.1)
       dep_selector (~> 1.0)
       semverse (~> 1.1)
@@ -172,5 +172,5 @@ DEPENDENCIES
   omnibus!
   omnibus-software!
   rake
-  rubocop (= 0.23.0)
+  rubocop
   test-kitchen!

@@ -20,18 +20,18 @@ maintainer 'Chef Software, Inc. <maintainers@chef.io>'
 homepage   'http://www.chef.io'
 
 install_dir    '/opt/omnibus-toolchain'
-build_version "0.0.1"
+build_version '0.0.1'
 
-override :ruby, version: "2.1.5"
-override :zlib, version: "1.2.8"
-override :git,  version: "1.9.0"
+override :ruby, version: '2.1.5'
+override :zlib, version: '1.2.8'
+override :git,  version: '1.9.0'
 
 # creates required build directories
 dependency 'preparation'
 
 # Split the toolchain defs into their own software def so we can have
 # a custom whitelist
-dependency "omnibus-toolchain"
+dependency 'omnibus-toolchain'
 
 exclude '\.git*'
 exclude 'bundler\/git'

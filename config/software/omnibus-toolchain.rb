@@ -14,24 +14,22 @@
 # limitations under the License.
 #
 
-name "omnibus-toolchain"
-default_version "0.0.1"
+name 'omnibus-toolchain'
+default_version '0.0.1'
 
 # gnu utilities
-dependency "patch"
+dependency 'patch'
 dependency 'bash'
 dependency 'make'
 
 # git!
-dependency "git"
+dependency 'git'
 
 # ruby core tools
-dependency "ruby"
-dependency "rubygems"
-dependency "bundler"
+dependency 'ruby'
+dependency 'rubygems'
+dependency 'bundler'
 
 # For Solaris 10 we assume that you have installed the system gcc package
 # this means that pcre is going to link against it, and it's ok in this case
-if solaris2?
-  whitelist_file 'libpcrecpp.so.0.0.0'
-end
+whitelist_file 'libpcrecpp.so.0.0.0' if solaris2?
