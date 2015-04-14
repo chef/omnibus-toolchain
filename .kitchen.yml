@@ -1,0 +1,39 @@
+driver:
+  name: vagrant
+  forward_agent: yes
+  customize:
+    cpus: 4
+    memory: 4096
+  synced_folders:
+    - ['.', '/home/vagrant/omnibus-toolchain']
+    - ['../omnibus', '/home/vagrant/omnibus']
+    - ['../omnibus-software', '/home/vagrant/omnibus-software']
+
+provisioner:
+  name: chef_zero
+  require_chef_omnibus: 11.16.4
+
+platforms:
+  - name: centos-6.6
+    run_list: yum-epel::default
+
+attribute_defaults: &attribute_defaults
+  build_user:          vagrant
+  build_user_group:    vagrant
+  build_user_password: vagrant
+
+suites:
+  - name: angry-toolchain
+    attributes:
+      omnibus:
+        <<: *attribute_defaults
+        install_dir: /opt/angry-omnibus-toolchain
+    run_list:
+      - omnibus::default
+  - name: toolchain
+    attributes:
+      omnibus:
+        <<: *attribute_defaults
+        install_dir: /opt/omnibus-toolchain
+    run_list:
+      - omnibus::default
