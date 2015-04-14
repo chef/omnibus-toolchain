@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-name "toolchain"
+name "omnibus-toolchain"
 default_version "0.0.1"
 
 # gnu utilities

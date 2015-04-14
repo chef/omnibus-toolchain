@@ -15,7 +15,7 @@
 # limitations under the License.
 #
 
-name 'toolchain'
+name 'omnibus-toolchain'
 maintainer 'Chef Software, Inc. <maintainers@chef.io>'
 homepage   'http://www.chef.io'
 
@@ -31,7 +31,7 @@ dependency 'preparation'
 
 # Split the toolchain defs into their own software def so we can have
 # a custom whitelist
-dependency "toolchain"
+dependency "omnibus-toolchain"
 
 exclude '\.git*'
 exclude 'bundler\/git'
