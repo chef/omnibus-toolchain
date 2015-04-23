@@ -16,21 +16,32 @@ provisioner:
 platforms:
   - name: centos-6.6
     run_list: yum-epel::default
-
+  - name: ubuntu-10.04
+    run_list: apt::default
+  - name: ubuntu-12.04
+    run_list: apt::default
+  - name: ubuntu-12.10
+    run_list: apt::default
+  - name: ubuntu-13.04
+    run_list: apt::default
+  - name: ubuntu-13.10
+    run_list: apt::default
+  - name: ubuntu-14.04
+    run_list: apt::default
 attribute_defaults: &attribute_defaults
   build_user:          vagrant
   build_user_group:    vagrant
   build_user_password: vagrant
 
 suites:
-  - name: angry-toolchain
+  - name: angry-omnibus-toolchain
     attributes:
       omnibus:
         <<: *attribute_defaults
         install_dir: /opt/angry-omnibus-toolchain
     run_list:
       - omnibus::default
-  - name: toolchain
+  - name: omnibus-toolchain
     attributes:
       omnibus:
         <<: *attribute_defaults

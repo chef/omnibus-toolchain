@@ -1,19 +1,23 @@
 The Omnibus Toolchain project
 ============================
-This project creates a package that contains the entire required development toolchain used for building omnibus projects.
+This project creates a package that contains the entire required toolchain used for building omnibus projects.
 
 Currently it supports the following operating systems:
 * Solaris 10 (SPARC and x86)
 
 Why?
 ----
-![yodawg](http://bit.ly/1EyLstY)
+Converge time when creating omnibus builders using the [omnibus cookbook](https://github.com/opscode-cookbooks/omnibus) is relatively long and not conducive to speedy development cycles.
 
-Some operating systems don't have a package distribution mechanism such as 'yum' or 'apt' to make installation of development tools delightful. To work around this issue, we built this so we can build any omnibus project on Solaris 10 in a consistent manner.
+Prerequisites
+----
+This assumes that you have a sane build toolchain (gcc, make, etc) already installed on the machine, via some mechanism. The recommended solution is using the [build-essential cookbook]() on platforms that support it.
 
 Installation
 ------------
-To build this from scratch please see the [Solaris 10 Toolchain Instructions](https://github.com/chef/omnibus-build-essential/blob/master/docs/solaris_toolchain_base.md) document.
+**NEEDS UPDATING**
+To build this from scratch please see the [Solaris 10 Toolchain Instructions](https://github.com/chef/omnibus-toolchain/blob/master/docs/solaris_toolchain_base.md) document.
+
 
 Usage
 -----
@@ -22,11 +26,10 @@ Usage
 Once the inital toolchain is installed (see Installation) you can build this project using the following commands:
 
 ```shell
-$ export PATH=/opt/be/embedded/bin:$PATH
-$ bundle exec omnibus build build-essential
+$ export PATH=/opt/omnibus-toolchain/embedded/bin:$PATH
+$ bundle install
+$ bundle exec omnibus build omnibus-toolchain
 ```
-
-**Note - you may need to pass ```--with-cflags="-mcpu=v9"``` to the some of the gems to get ```bundle install``` to work on certain SPARC machines**
 
 After the build completes packages will be available in the `pkg/` folder.
 
@@ -36,15 +39,15 @@ You can clean up all temporary files generated during the build process with
 the `clean` command:
 
 ```shell
-$ bundle exec omnibus clean build-essential
+$ bundle exec omnibus clean omnibus-toolchain
 ```
 
 Adding the `--purge` purge option removes __ALL__ files generated during the
-build including the project install directory (`/opt/build-essential`) and
+build including the project install directory (`/opt/omnibus-toolchain`) and
 the package cache directory (`/var/cache/omnibus/pkg`):
 
 ```shell
-$ bundle exec omnibus clean build-essential --purge
+$ bundle exec omnibus clean omnibus-toolchain --purge
 ```
 
 ### Help
@@ -60,6 +63,11 @@ Build Environment
 -------------------------------
 
 This has been tested with Virtualbox using a manual installation of Solaris 10u11-x86, then following the instructions in the Installation section. There currently is no support for building in a test-kitchen based environment.
+
+Why so angry?
+-----
+
+Astute observers will notice there is an 'angry-omnibus-toolchain' definition. This is a software def that allows you to build the omnibus-toolchain in place using the omnibus-toolchain. Since the namespace is the same, a separate package is used for the purpose of CI.
 
 License
 -------
