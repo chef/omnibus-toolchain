@@ -15,12 +15,13 @@
 #
 
 name "omnibus-toolchain"
-default_version "0.0.1"
+default_version "master"
 
 # gnu utilities
 dependency "patch"
 dependency 'bash'
 dependency 'make'
+dependency "cacerts"
 
 # git!
 dependency "git"
