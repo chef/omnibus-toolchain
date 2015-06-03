@@ -176,3 +176,6 @@ DEPENDENCIES
   rake
   rubocop (= 0.23.0)
   test-kitchen!
+
+BUNDLED WITH
+   1.10.2

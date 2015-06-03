@@ -20,11 +20,16 @@ maintainer 'Chef Software, Inc. <maintainers@chef.io>'
 homepage   'http://www.chef.io'
 
 install_dir    '/opt/omnibus-toolchain'
-build_version "0.0.1"
+
+build_version do
+  source :git, from_dependency: 'omnibus-toolchain'
+  output_format :semver
+end
 
 override :ruby, version: "2.1.5"
 override :zlib, version: "1.2.8"
 override :git,  version: "1.9.0"
+override :cacerts, version: '2014.08.20'
 
 # creates required build directories
 dependency 'preparation'
