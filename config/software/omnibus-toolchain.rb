@@ -35,5 +35,5 @@ dependency "bundler"
 # package this means that pcre is going to link against it, and it's ok in this
 # case
 if solaris2? || (freebsd? && ohai['os_version'].to_i < 1000024)
-  whitelist_file 'libpcrecpp.so.0.0.0'		+  whitelist_file /libpcrecpp\.so\..+/
+  whitelist_file /libpcrecpp\.so\..+/
 end
