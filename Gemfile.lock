@@ -1,7 +1,6 @@
 GIT
   remote: git://github.com/opscode/omnibus-software.git
-  revision: affebe20132366eb4100dec79fb8611940f2b363
-  branch: shain/perl_fixes
+  revision: b695d3d4a22ed6934d80fa5eb08cbb1f75cc8a55
   specs:
     omnibus-software (4.0.0)
 
