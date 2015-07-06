@@ -1,6 +1,7 @@
 GIT
   remote: git://github.com/opscode/omnibus-software.git
-  revision: 0fb66f82eef7b52d866a9fbc153fc4b1d686e8c9
+  revision: affebe20132366eb4100dec79fb8611940f2b363
+  branch: shain/perl_fixes
   specs:
     omnibus-software (4.0.0)
 
@@ -176,6 +177,3 @@ DEPENDENCIES
   rake
   rubocop (= 0.23.0)
   test-kitchen!
-
-BUNDLED WITH
-   1.10.2

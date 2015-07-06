@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'omnibus',          github: 'opscode/omnibus'
-gem 'omnibus-software', github: 'opscode/omnibus-software'
+gem 'omnibus-software', github: 'opscode/omnibus-software', branch: 'shain/perl_fixes'
 gem 'chef-sugar', '~> 3.1.0'
 gem 'rubocop',    '=  0.23.0'
 gem 'rake'
