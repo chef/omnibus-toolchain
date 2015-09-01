@@ -15,7 +15,7 @@
 #
 
 name "omnibus-toolchain"
-default_version "master"
+default_version "1.0.0"
 
 # gnu utilities
 dependency "patch"

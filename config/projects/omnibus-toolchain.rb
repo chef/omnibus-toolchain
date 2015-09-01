@@ -21,10 +21,8 @@ homepage   'http://www.chef.io'
 
 install_dir    '/opt/omnibus-toolchain'
 
-build_version do
-  source :git, from_dependency: 'omnibus-toolchain'
-  output_format :semver
-end
+build_version   '1.0.0'
+build_iteration 1
 
 override :ruby, version: "2.1.5"
 override :zlib, version: "1.2.8"
