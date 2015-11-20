@@ -45,3 +45,7 @@ workers 10
 # ------------------------------
 # software_gems ['omnibus-software', 'my-company-software']
 # local_software_dirs ['/path/to/local/software']
+
+# Some platforms do not have a UTF-8 locale, so we need to enforce one
+# or else the cacert chain will break among other things
+Encoding.default_external = Encoding::UTF_8

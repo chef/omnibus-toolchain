@@ -23,6 +23,12 @@ dependency 'bash'
 dependency 'make'
 dependency "cacerts"
 
+# fakeroot is required for packaging and installing as a non-root user,
+#  but only on Linux platforms
+if ohai["os"] == "linux"
+  dependency "fakeroot"
+end
+
 # git!
 dependency "git"
 
