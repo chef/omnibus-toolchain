@@ -39,7 +39,15 @@ s3_bucket      'opscode-omnibus-cache'
 # ------------------------------
 build_retries 0
 fetcher_read_timeout 120
-workers 10
+
+# Work around for solaris zones, provide a less-bad number of workers
+if solaris? && Ohai['cpu']['total'] == 0
+  workers 10
+end
+
+# Some platforms do not have a UTF-8 locale, so we need to enforce one
+# or else the cacert chain will break among other things
+Encoding.default_external = Encoding::UTF_8
 
 # Load additional software
 # ------------------------------
