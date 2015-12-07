@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/opscode/omnibus-software.git
-  revision: 689dcb6f34403a08efbdd6908b222c75bdb76f4a
+  revision: 9eaca4fa6928dbc720842c17a1e7672812afa621
   specs:
     omnibus-software (4.0.0)
 
@@ -70,7 +70,7 @@ GEM
       timers (~> 4.0.0)
     celluloid-io (0.16.2)
       celluloid (>= 0.16.0)
-      nio4r (>= 1.1.0)
+      nio4r (>= 1.1.1)
     chef-config (12.5.1)
       mixlib-config (~> 2.0)
       mixlib-shellout (~> 2.0)
@@ -108,7 +108,7 @@ GEM
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
     net-ssh (2.9.2)
-    nio4r (1.1.0)
+    nio4r (1.1.1)
     octokit (3.8.0)
       sawyer (~> 0.6.0, >= 0.5.3)
     ohai (8.7.0)
