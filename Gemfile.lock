@@ -6,7 +6,7 @@ GIT
 
 GIT
   remote: git://github.com/opscode/omnibus.git
-  revision: 9b2fe7d672dac705db92c9edb54e0b13647de206
+  revision: 2375dbb5b9f03b68fb742d789ae885f17d111eb4
   specs:
     omnibus (5.0.0)
       aws-sdk (~> 2)
@@ -34,12 +34,12 @@ GEM
   specs:
     addressable (2.3.8)
     ast (2.0.0)
-    aws-sdk (2.2.1)
-      aws-sdk-resources (= 2.2.1)
-    aws-sdk-core (2.2.1)
+    aws-sdk (2.2.4)
+      aws-sdk-resources (= 2.2.4)
+    aws-sdk-core (2.2.4)
       jmespath (~> 1.0)
-    aws-sdk-resources (2.2.1)
-      aws-sdk-core (= 2.2.1)
+    aws-sdk-resources (2.2.4)
+      aws-sdk-core (= 2.2.4)
     berkshelf (3.2.3)
       addressable (~> 2.3.4)
       berkshelf-api-client (~> 1.2)
@@ -94,14 +94,16 @@ GEM
     kitchen-vagrant (0.16.0)
       test-kitchen (~> 1.0)
     libyajl2 (1.2.0)
-    mime-types (2.6.2)
+    mime-types (3.0)
+      mime-types-data (~> 3.2015)
+    mime-types-data (3.2015.1120)
     minitar (0.5.4)
     mixlib-authentication (1.3.0)
       mixlib-log
     mixlib-cli (1.5.0)
     mixlib-config (2.2.1)
     mixlib-log (1.6.0)
-    mixlib-shellout (2.2.3)
+    mixlib-shellout (2.2.5)
     mixlib-versioning (1.1.0)
     multipart-post (2.0.0)
     net-http-persistent (2.9.4)
@@ -111,12 +113,12 @@ GEM
     nio4r (1.1.1)
     octokit (3.8.0)
       sawyer (~> 0.6.0, >= 0.5.3)
-    ohai (8.7.0)
+    ohai (8.8.0)
       chef-config (>= 12.5.0.alpha.1, < 13)
       ffi (~> 1.9)
       ffi-yajl (~> 2.2)
       ipaddress
-      mime-types (~> 2.0)
+      mime-types (~> 3.0)
       mixlib-cli
       mixlib-config (~> 2.0)
       mixlib-log
