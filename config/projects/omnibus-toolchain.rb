@@ -26,7 +26,7 @@ build_iteration 1
 
 override :ruby, version: "2.1.5"
 override :zlib, version: "1.2.8"
-override :git,  version: "2.6.2"
+override :git,  version: "1.9.5"
 override :cacerts, version: '2014.08.20'
 
 # creates required build directories
