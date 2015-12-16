@@ -1,12 +1,12 @@
 GIT
   remote: git://github.com/opscode/omnibus-software.git
-  revision: f71279049f48ba6e1e50ec746f04d6ea8cdad361
+  revision: edb0116a38e8b3d8234a4f38a582fcdd9650aefc
   specs:
     omnibus-software (4.0.0)
 
 GIT
   remote: git://github.com/opscode/omnibus.git
-  revision: 4d58226ec7f7be641934348005eea5fe3b575947
+  revision: b1d2ba8190c076007a7d470b7bf1a2ee89bafa41
   specs:
     omnibus (5.0.0)
       aws-sdk (~> 2)
@@ -34,12 +34,12 @@ GEM
   specs:
     addressable (2.3.8)
     ast (2.0.0)
-    aws-sdk (2.2.5)
-      aws-sdk-resources (= 2.2.5)
-    aws-sdk-core (2.2.5)
+    aws-sdk (2.2.6)
+      aws-sdk-resources (= 2.2.6)
+    aws-sdk-core (2.2.6)
       jmespath (~> 1.0)
-    aws-sdk-resources (2.2.5)
-      aws-sdk-core (= 2.2.5)
+    aws-sdk-resources (2.2.6)
+      aws-sdk-core (= 2.2.6)
     berkshelf (3.2.3)
       addressable (~> 2.3.4)
       berkshelf-api-client (~> 1.2)
