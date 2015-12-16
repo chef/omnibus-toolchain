@@ -1,7 +1,7 @@
 Installing the Base Omnibus Toolchain on Red Hat Enterprise Linux/CentOS/Fedora
 ==================
 
-Since RHEL/CentOS/Fedora is a GNU based toolchain, installing the pre-requistes is somewhat easy. This procedure has been tested on the following platforms: x86/i686, x86_64, ppc64, ppc64le. Other platforms may work, if they do a PR would be greatly appreciated to include the known platform in the docs and any other changes that may be necessary.
+Since RHEL/CentOS/Fedora is a GNU based toolchain, installing the pre-requistes is somewhat easy. This procedure has been tested on the following platforms: i686, x86_64, ppc64, ppc64le. Other platforms may work, if they do a PR would be greatly appreciated to include the known platform in the docs and any other changes that may be necessary.
 
 Preconditions/Assumptions
 -------------------------
@@ -13,21 +13,23 @@ We also assume you have Internet access via at least http and https. We'll be co
 You'll need the following packages:
 
 ```shell
-sudo yum install autoconf bison flex gcc gcc-c++ kernel-devel make m4 patch gettext-devel ncurses-devel openssl-devel readline-devel zlib-devel git rpmdevtools libffi libffi-devel
+sudo yum install autoconf bison flex gcc gcc-c++ kernel-devel \
+make m4 patch gettext-devel ncurses-devel openssl-devel \
+readline-devel zlib-devel git rpmdevtools libffi libffi-devel
 ```
 
 You also need the "fakeroot" package to build the RPMs. This is available as part of the OS in some, but not all, releases (notable exceptions: RHEL/CentOS 7). The package is made of two parts: fakeroot and fakeroot-libs. I suggest checking with rpmfind.net for packages if you need them. Building from a SRPM is also possible, but all fakeroot SRPMs seem to have a build time dependency on sharutils which is not available by default in anything but Fedora. Fedora 23 binary RPMS for fakeroot and fakeroot-libs seem to work fine on RHEL/CentOS 7 based systems. Here are some pointers:
-  * x86/i686:
+  * i686:
     * ftp://rpmfind.net/linux/fedora/linux/releases/23/Everything/i386/os/Packages/f/fakeroot-1.20.2-1.fc23.i686.rpm
     * ftp://rpmfind.net/linux/fedora/linux/releases/23/Everything/i386/os/Packages/f/fakeroot-libs-1.20.2-1.fc23.i686.rpm
-  * x86_64/amd64:
+  * x86_64:
     * ftp://rpmfind.net/linux/fedora/linux/releases/23/Everything/x86_64/os/Packages/f/fakeroot-1.20.2-1.fc23.x86_64.rpm
     * ftp://rpmfind.net/linux/fedora/linux/releases/23/Everything/x86_64/os/Packages/f/fakeroot-libs-1.20.2-1.fc23.x86_64.rpm
   * ppc64:
     *   ftp://rpmfind.net/linux/fedora-secondary/releases/23/Everything/ppc64/os/Packages/f/fakeroot-1.20.2-1.fc23.ppc64.rpm
     *  ftp://rpmfind.net/linux/fedora-secondary/releases/23/Everything/ppc64/os/Packages/f/fakeroot-libs-1.20.2-1.fc23.ppc64.rpm
   * ppc64le
-    * ftp://rpmfind.net/linux/fedora-secondary/development/rawhide/ppc64le/os/Packages/f/fakeroot-libs-1.20.2-2.fc24.ppc64le.rpm
+    * ftp://rpmfind.net/linux/fedora-secondary/releases/23/Everything/ppc64le/os/Packages/f/fakeroot-1.20.2-1.fc23.ppc64le.rpm
     * ftp://rpmfind.net/linux/fedora-secondary/releases/23/Everything/ppc64le/os/Packages/f/fakeroot-libs-1.20.2-1.fc23.ppc64le.rpm
 
 Ruby environment
@@ -67,4 +69,4 @@ All changes made to your environment for the rbenv installation were temporary a
 Common Problems
 ---------------
 
-On some platforms, the ffi rubygem will fail to compile it's native extensions. Most distributions include a version of libffi which has support for your platform, which we install as part of the precondistion above. However, it may be too old for the ffi rubygem. If this is the case, the best course of action is to install the latest version of [libffi](https://sourceware.org/libffi/) attempt to compile it and install it as root. If it's installed and visible via pkg-config then the ffi rubygem will use that instead of the older native code included within it's codebase.
+On some platforms, the ffi rubygem will fail to compile it's native extensions. Most distributions include a version of libffi which has support for your platform, which we install as part of the preconditions above. However, it may be too old for the ffi rubygem. If this is the case, the best course of action is to install the latest version of [libffi](https://sourceware.org/libffi/) attempt to compile it and install it as root. If it's installed and visible via pkg-config then the ffi rubygem will use that instead of the older native code included within it's codebase.

@@ -1,7 +1,7 @@
 Installing the Base Omnibus Toolchain on Debian Linux or Ubuntu Linux
 ==================
 
-Since Debian/Ubuntu/Mint is a GNU based toolchain, installing the pre-requistes is somewhat easy. This procedure has been tested on the following platforms: x86/i686, x86_64, ppc, armhf, arm64. Other platforms may work, if they do a PR would be greatly appreciated to include the known platform in the docs and any other changes that may be necessary.
+Since Debian/Ubuntu/Mint is a GNU based toolchain, installing the pre-requistes is somewhat easy. This procedure has been tested on the following platforms: i386, x86_64, ppc, armhf, arm64. Other platforms may work, if they do a PR would be greatly appreciated to include the known platform in the docs and any other changes that may be necessary.
 
 Preconditions/Assumptions
 -------------------------
@@ -13,7 +13,9 @@ We also assume you have Internet access via at least http and https. We'll be co
 You'll need the following packages:
 
 ```shell
-sudo apt-get install autoconf bison build-essential flex gettext ncurses-dev libssl-dev libreadline-dev zlib1g-dev git libffi6 libffi-dev
+sudo apt-get install autoconf bison build-essential \
+flex gettext ncurses-dev libssl-dev libreadline-dev \
+zlib1g-dev git libffi6 libffi-dev
 ```
 
 Ruby environment
@@ -43,14 +45,14 @@ bundle install --without development
 sudo ~/.rbenv/shims/bundle exec omnibus build omnibus-toolchain
 ```
 
+That's it. At this point, the toolchain is installed in /opt/omnibus-toolchain and an DEB package for it is available in /var/cache/omnibus/pkg
+
 Epilogue
 --------
-
-That's it. At this point, the toolchain is installed in /opt/omnibus-toolchain and an DEB package for it is available in /var/cache/omnibus/pkg
 
 All changes made to your environment for the rbenv installation were temporary and can now be removed manually, or simply by logging out and then logging back into your shell account (or open a new terminal) at which point you can `rm -rf ~/.rbenv` to remove the temporary environment. The omnibus-toolchain includes a complete ruby.
 
 Common Problems
 ---------------
 
-On some platforms, the ffi rubygem will fail to compile it's native extensions. Most distributions include a version of libffi which has support for your platform, which we install as part of the precondistion above. However, it may be too old for the ffi rubygem. If this is the case, the best course of action is to install the latest version of [libffi](https://sourceware.org/libffi/) attempt to compile it and install it as root. If it's installed and visible via pkg-config then the ffi rubygem will use that instead of the older native code included within it's codebase.
+On some platforms, the ffi rubygem will fail to compile it's native extensions. Most distributions include a version of libffi which has support for your platform, which we install as part of the preconditions above. However, it may be too old for the ffi rubygem. If this is the case, the best course of action is to install the latest version of [libffi](https://sourceware.org/libffi/) attempt to compile it and install it as root. If it's installed and visible via pkg-config then the ffi rubygem will use that instead of the older native code included within it's codebase.

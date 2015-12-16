@@ -5,7 +5,7 @@ This project creates a package that contains the entire required toolchain used 
 Currently it supports the following operating systems:
 * Solaris 10 (SPARC and x86)
 * AIX (POWER7)
-* Debian Linux (and derivatives like Ubuntu and Mint) on a variety of platforms (arm64 armel arhhf ppc ppc64le x86 amd64)
+* Debian Linux (and derivatives like Ubuntu and Mint) on a variety of platforms (arm64 armhf ppc ppc64le x86 amd64)
 * RHEL/CentOS/Fedora Linux on a variety of platforms (ppc64 ppc64le i686 x86_64)
 
 Why?
