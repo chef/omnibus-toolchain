@@ -18,7 +18,19 @@ make m4 patch gettext-devel ncurses-devel openssl-devel \
 readline-devel zlib-devel git rpmdevtools libffi libffi-devel
 ```
 
-You also need the "fakeroot" package to build the RPMs. This is available as part of the OS in some, but not all, releases (notable exceptions: RHEL/CentOS 7). The package is made of two parts: fakeroot and fakeroot-libs. I suggest checking with rpmfind.net for packages if you need them. Building from a SRPM is also possible, but all fakeroot SRPMs seem to have a build time dependency on sharutils which is not available by default in anything but Fedora. Fedora 23 binary RPMS for fakeroot and fakeroot-libs seem to work fine on RHEL/CentOS 7 based systems. Here are some pointers:
+You also need the `fakeroot` package to build the RPMs. This may be available as part of the OS and can be installed using `sudo yum install fakeroot` (notable exceptions: RHEL/CentOS 7). If the package is not part of your OS, then you will need to install it by some other means. The preferred way is to install the build dependency packages and build from source:
+
+```shell
+sudo yum install libacl-devel libattr-devel libcap-devel wget
+wget http://ftp.debian.org/debian/pool/main/f/fakeroot/fakeroot_1.20.2.orig.tar.bz2
+tar jxvf fakeroot_1.20.2.orig.tar.bz2
+cd fakeroot-1.20.2
+./configure
+make
+sudo make install
+```
+
+Otherwise, you can build from a SRPM or install pre-built binary packages from another OS. The package is made of two parts: fakeroot and fakeroot-libs. I suggest checking with rpmfind.net for packages if you need them. Building from a SRPM is also possible, but all fakeroot SRPMs seem to have a build time dependency on `sharutils` which is not available by default in anything but Fedora. Fedora 23 binary RPMS for fakeroot and fakeroot-libs seem to work fine on RHEL/CentOS 7 based systems. Here are some pointers:
   * i686:
     * ftp://rpmfind.net/linux/fedora/linux/releases/23/Everything/i386/os/Packages/f/fakeroot-1.20.2-1.fc23.i686.rpm
     * ftp://rpmfind.net/linux/fedora/linux/releases/23/Everything/i386/os/Packages/f/fakeroot-libs-1.20.2-1.fc23.i686.rpm
