@@ -1,22 +1,29 @@
 The Omnibus Toolchain project
 ============================
-This project creates a package that contains the entire required toolchain used for building omnibus projects.
+This project creates a package that contains the entire required toolchain used for building omnibus projects created by Chef software. It may work with other projects, but that is not guaranteed.
 
 Currently it supports the following operating systems:
 * Solaris 10 (SPARC and x86)
+* AIX (POWER7)
+* Debian Linux (and derivatives like Ubuntu and Mint) on a variety of platforms (arm64 armel arhhf ppc ppc64le x86 amd64)
+* RHEL/CentOS/Fedora Linux on a variety of platforms (ppc64 ppc64le i686 x86_64)
 
 Why?
 ----
-Converge time when creating omnibus builders using the [omnibus cookbook](https://github.com/opscode-cookbooks/omnibus) is relatively long and not conducive to speedy development cycles.
+Converge time when creating omnibus builders using the [omnibus cookbook](https://github.com/chef-cookbooks/omnibus) is relatively long and not conducive to speedy development cycles.
 
-Prerequisites
+Prerequisites & Installation
 ----
-This assumes that you have a sane build toolchain (gcc, make, etc) already installed on the machine, via some mechanism. The recommended solution is using the [build-essential cookbook]() on platforms that support it.
+This assumes that you have a sane build toolchain (gcc, make, etc) already installed on the machine, via the native operating system's package manager, or built from source on non-GNU based platforms (Solairs, AIX). If your platform is already supported by chef, you can use the [build-essential cookbook](https://github.com/chef-cookbooks/build-essential). Otherwise, the required tools are spelled out in the docs folder on a per OS basis and can be used as guidance for porting to a new OS/Platform.
+
+For best results: multiple cores and at least 10GB of RAM (at least two of which are physical, the rest can be swap) are recommended. This process takes a lot of compiling and will be very wall clock and system time consuming.
 
 Installation
 ------------
-**NEEDS UPDATING**
-To build this from scratch please see the [Solaris 10 Toolchain Instructions](https://github.com/chef/omnibus-toolchain/blob/master/docs/solaris_toolchain_base.md) document.
+
+Check out the [docs folder](https://github.com/chef/omnibus-toolchain/tree/master/docs) for the specific steps to build and install on your operating system distribution. Platform specific notes are included in the operating system distribution documentation if they are required.
+
+*NOTICE:* Cross-compiling is not supported. Omnibus toolchain requires your environment to "appear" native to what you want packages produced for. This means that running in an emulated (VirtualBox, QEMU, etc) environment works, but a cross-compile environment does not.
 
 
 Usage
@@ -27,7 +34,7 @@ Once the inital toolchain is installed (see Installation) you can build this pro
 
 ```shell
 $ export PATH=/opt/omnibus-toolchain/embedded/bin:$PATH
-$ bundle install
+$ bundle install --without development
 $ bundle exec omnibus build omnibus-toolchain
 ```
 
