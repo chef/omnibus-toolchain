@@ -18,12 +18,12 @@ This assumes that you have a sane build toolchain (gcc, make, etc) already insta
 
 For best results: multiple cores and at least 10GB of RAM (at least two of which are physical, the rest can be swap) are recommended. This process takes a lot of compiling and will be very wall clock and system time consuming.
 
+*NOTICE:* Cross-compiling is not supported. Omnibus toolchain requires your environment to "appear" native to what you want packages produced for. This means that running in an emulated (VirtualBox, QEMU, etc) environment works, but a cross-compile environment does not.
+
 Installation
 ------------
 
 Check out the [docs folder](https://github.com/chef/omnibus-toolchain/tree/master/docs) for the specific steps to build and install on your operating system distribution. Platform specific notes are included in the operating system distribution documentation if they are required.
-
-*NOTICE:* Cross-compiling is not supported. Omnibus toolchain requires your environment to "appear" native to what you want packages produced for. This means that running in an emulated (VirtualBox, QEMU, etc) environment works, but a cross-compile environment does not.
 
 
 Usage
@@ -65,11 +65,6 @@ Full help for the Omnibus command line interface can be accessed with the
 ```shell
 $ bundle exec omnibus help
 ```
-
-Build Environment
--------------------------------
-
-This has been tested with Virtualbox using a manual installation of Solaris 10u11-x86, then following the instructions in the Installation section. There currently is no support for building in a test-kitchen based environment.
 
 Why so angry?
 -----
