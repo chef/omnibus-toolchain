@@ -1,10 +1,10 @@
 The Omnibus Toolchain project
 ============================
-This project creates a package that contains the entire required toolchain used for building omnibus projects created by Chef Software, Inc. It may work with other projects, but that is not guaranteed.
+This project creates a native platform package that contains the entire required toolchain used for building omnibus projects created by Chef Software, Inc. It may work with other projects, but that is not guaranteed.
 
 Currently it supports the following operating systems:
 * Solaris 10 (SPARC and x86)
-* AIX (POWER6 and later)
+* AIX 6 (POWER6 and later)
 * Debian Linux (and derivatives like Ubuntu and Mint) on a variety of platforms (arm64 armhf ppc ppc64le x86 amd64)
 * RHEL/CentOS/Fedora Linux on a variety of platforms (ppc64 ppc64le i686 x86_64)
 
