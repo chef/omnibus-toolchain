@@ -1,6 +1,6 @@
 The Omnibus Toolchain project
 ============================
-This project creates a package that contains the entire required toolchain used for building omnibus projects created by Chef software. It may work with other projects, but that is not guaranteed.
+This project creates a package that contains the entire required toolchain used for building omnibus projects created by Chef Software, Inc. It may work with other projects, but that is not guaranteed.
 
 Currently it supports the following operating systems:
 * Solaris 10 (SPARC and x86)
@@ -16,7 +16,7 @@ Prerequisites & Installation
 ----
 This assumes that you have a sane build toolchain (gcc, make, etc) already installed on the machine, via the native operating system's package manager, or built from source on non-GNU based platforms (Solaris, AIX). If your platform is already supported by chef, you can use the [build-essential cookbook](https://github.com/chef-cookbooks/build-essential). Otherwise, the required tools are spelled out in the docs folder on a per OS basis and can be used as guidance for porting to a new OS/Platform.
 
-For best results: multiple cores and at least 10GB of RAM (at least two of which are physical, the rest can be swap) are recommended. This process takes a lot of compiling and will be very wall clock and system time consuming.
+For best results: multiple cores and at least 10GB of RAM (at least two of which are physical, the rest can be swap) are recommended. This process does a lot of compiling and will be very wall clock and system time consuming.
 
 *NOTICE:* Cross-compiling is not supported. Omnibus toolchain requires your environment to "appear" native to what you want packages produced for. This means that running in an emulated (VirtualBox, QEMU, etc) environment works, but a cross-compile environment does not.
 
