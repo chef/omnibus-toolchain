@@ -39,7 +39,7 @@ s3_bucket      'opscode-omnibus-cache'
 # ------------------------------
 build_retries 0
 fetcher_read_timeout 120
-workers 10
+#workers 10
 
 # Load additional software
 # ------------------------------
