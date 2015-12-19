@@ -45,3 +45,5 @@ fetcher_read_timeout 120
 # ------------------------------
 # software_gems ['omnibus-software', 'my-company-software']
 # local_software_dirs ['/path/to/local/software']
+
+append_timestamp false
