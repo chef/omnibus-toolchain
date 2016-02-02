@@ -21,13 +21,11 @@ homepage   'http://www.chef.io'
 
 install_dir    '/opt/omnibus-toolchain'
 
-build_version   '1.1.2'
+build_version   '1.1.3'
 build_iteration 1
 
-override :ruby, version: "2.1.5"
-override :zlib, version: "1.2.8"
-override :git,  version: "1.9.5"
-override :cacerts, version: '2014.08.20'
+override :ruby, version: "2.1.6"
+override :git,  version: "2.2.1"
 
 # creates required build directories
 dependency 'preparation'

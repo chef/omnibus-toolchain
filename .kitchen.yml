@@ -28,6 +28,7 @@ platforms:
     run_list: apt::default
   - name: ubuntu-14.04
     run_list: apt::default
+
 attribute_defaults: &attribute_defaults
   build_user:          vagrant
   build_user_group:    vagrant
