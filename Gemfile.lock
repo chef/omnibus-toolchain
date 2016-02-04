@@ -1,12 +1,12 @@
 GIT
   remote: git://github.com/opscode/omnibus-software.git
-  revision: 67bfc16d6573456381d307af772a287e7b1ca9c0
+  revision: cb999c50878b58d8303fbf4d54d198744a0c4af4
   specs:
     omnibus-software (4.0.0)
 
 GIT
   remote: git://github.com/opscode/omnibus.git
-  revision: 87fa277d69da0847dd21f4fb0e24b4d45c1acb5e
+  revision: dcea0b1db44df2aebcf8fdc1a1869e6d93790a53
   specs:
     omnibus (5.0.0)
       aws-sdk (~> 2)
@@ -124,7 +124,7 @@ GEM
     mixlib-config (2.2.1)
     mixlib-install (0.7.1)
     mixlib-log (1.6.0)
-    mixlib-shellout (2.2.5)
+    mixlib-shellout (2.2.6)
     mixlib-versioning (1.1.0)
     multipart-post (2.0.0)
     net-scp (1.2.1)
@@ -133,7 +133,7 @@ GEM
     nio4r (1.2.1)
     octokit (3.8.0)
       sawyer (~> 0.6.0, >= 0.5.3)
-    ohai (8.9.0)
+    ohai (8.10.0)
       chef-config (>= 12.5.0.alpha.1, < 13)
       ffi (~> 1.9)
       ffi-yajl (~> 2.2)
