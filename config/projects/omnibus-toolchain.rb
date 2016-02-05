@@ -21,7 +21,7 @@ homepage   'http://www.chef.io'
 
 install_dir    '/opt/omnibus-toolchain'
 
-build_version   '1.1.3'
+build_version   '1.1.4'
 build_iteration 1
 
 override :ruby, version: "2.1.6"
