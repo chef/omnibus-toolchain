@@ -6,7 +6,7 @@ GIT
 
 GIT
   remote: git://github.com/opscode/omnibus.git
-  revision: dcea0b1db44df2aebcf8fdc1a1869e6d93790a53
+  revision: 4bd86220b9aa0d3a99bbf17c5ba4d047ba14232c
   specs:
     omnibus (5.0.0)
       aws-sdk (~> 2)
