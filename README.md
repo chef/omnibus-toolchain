@@ -7,6 +7,8 @@ Currently it supports the following operating systems:
 * AIX 6 (POWER6 and later)
 * Debian Linux (and derivatives like Ubuntu and Mint) on a variety of platforms (arm64 armhf ppc ppc64le x86 amd64)
 * RHEL/CentOS/Fedora Linux on a variety of platforms (ppc64 ppc64le i686 x86_64)
+* Mac OS X 10.9+
+* FreeBSD 9, 10
 
 Why?
 ----
@@ -74,7 +76,7 @@ Astute observers will notice there is an 'angry-omnibus-toolchain' definition. T
 License
 -------
 ```text
-Copyright 2015 Chef Software, Inc.
+Copyright 2015-2016 Chef Software, Inc.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
