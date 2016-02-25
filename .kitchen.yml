@@ -14,7 +14,7 @@ provisioner:
   require_chef_omnibus: latest
 
 platforms:
-  - name: centos-6.6
+  - name: centos-6.7
     run_list: yum-epel::default
   - name: ubuntu-10.04
     run_list: apt::default
