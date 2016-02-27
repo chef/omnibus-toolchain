@@ -1,3 +1,7 @@
+require 'rspec/core/rake_task'
+
+require_relative 'tasks/maintainers'
+
 namespace :style do
   require 'rubocop/rake_task'
   desc 'Run Ruby style checks'

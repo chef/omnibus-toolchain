@@ -7,7 +7,7 @@ source 'https://supermarket.chef.io'
 cookbook 'omnibus'
 
 group :integration do
-  cookbook 'apt',      '~> 2.3'
-  cookbook 'freebsd',  '~> 0.1'
-  cookbook 'yum-epel', '~> 0.3'
+  cookbook 'apt'
+  cookbook 'freebsd'
+  cookbook 'yum-epel'
 end
