@@ -13,3 +13,5 @@ vendor/cookbooks
 build_timestamp
 ldd.out
 jenkins/chef-solo
+Berksfile.lock
+Gemfile.lock

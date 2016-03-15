@@ -14,8 +14,16 @@ provisioner:
   require_chef_omnibus: latest
 
 platforms:
+  - name: centos-5.11
+    run_list: yum-epel::default
   - name: centos-6.7
     run_list: yum-epel::default
+  - name: centos-7.1
+    run_list: yum-epel::default
+  - name: freebsd-9.3
+    run_list:
+      - freebsd::portsnap
+      - freebsd::pkgng
   - name: ubuntu-10.04
     run_list: apt::default
   - name: ubuntu-12.04
