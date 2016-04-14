@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
 
-gem 'omnibus',          github: 'opscode/omnibus'
-gem 'omnibus-software', github: 'opscode/omnibus-software'
-gem 'chef-sugar', '~> 3.3'
+gem 'omnibus',          github: 'chef/omnibus'
+gem 'omnibus-software', github: 'chef/omnibus-software'
+
 gem 'rubocop',    '=  0.23.0'
 
 group :rake do

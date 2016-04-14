@@ -24,7 +24,7 @@ build_version   '1.1.5'
 build_iteration 1
 
 override :ruby, version: "2.1.6"
-override :git,  version: "2.2.1"
+override :git,  version: "2.7.3"
 
 # creates required build directories
 dependency 'preparation'
