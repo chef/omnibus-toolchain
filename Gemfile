@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'omnibus',          github: 'chef/omnibus'
-gem 'omnibus-software', github: 'chef/omnibus-software'
+gem 'omnibus-software', github: 'chef/omnibus-software', branch: 'shain/remove_tcltk_from_git'
 
 gem 'rubocop',    '=  0.23.0'
 
