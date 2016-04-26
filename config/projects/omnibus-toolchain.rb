@@ -14,27 +14,27 @@
 # limitations under the License.
 #
 
-name 'omnibus-toolchain'
-maintainer 'Chef Software, Inc. <maintainers@chef.io>'
-homepage   'http://www.chef.io'
+name "omnibus-toolchain"
+maintainer "Chef Software, Inc. <maintainers@chef.io>"
+homepage   "http://www.chef.io"
 
-install_dir    '/opt/omnibus-toolchain'
+install_dir "/opt/omnibus-toolchain"
 
-build_version   '1.1.6'
+build_version   "1.1.6"
 build_iteration 1
 
 override :ruby, version: "2.1.6"
 override :git,  version: "2.7.3"
 
 # creates required build directories
-dependency 'preparation'
+dependency "preparation"
 
 # Split the toolchain defs into their own software def so we can have
 # a custom whitelist
 dependency "omnibus-toolchain"
 
-exclude '\.git*'
-exclude 'bundler\/git'
+exclude "\.git*"
+exclude "bundler\/git"
 
 package :rpm do
   signing_passphrase ENV["OMNIBUS_RPM_SIGNING_PASSPHRASE"]
