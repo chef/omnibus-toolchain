@@ -17,6 +17,8 @@
 name "omnibus-toolchain"
 default_version "1.0.0"
 
+license :project_license
+
 # gnu utilities
 dependency "patch"
 dependency 'bash'

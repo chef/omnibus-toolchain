@@ -26,5 +26,7 @@ name 'angry-omnibus-toolchain'
 friendly_name 'Angry Omnibus Toolchain'
 maintainer 'Chef Software, Inc.'
 homepage   'http://www.chef.io'
+license "Apache-2.0"
+license_file "LICENSE"
 
 install_dir "/opt/angry-omnibus-toolchain"
