@@ -28,6 +28,9 @@ dependency "cacerts"
 # git!
 dependency "git"
 
+# fakeroot for EL based things
+dependency "fakeroot" if el?
+
 # ruby core tools
 dependency "ruby"
 dependency "rubygems"
