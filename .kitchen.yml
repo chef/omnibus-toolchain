@@ -48,6 +48,7 @@ suites:
       omnibus:
         <<: *attribute_defaults
         install_dir: /opt/angry-omnibus-toolchain
+        toolchain_name: omnibus-toolchain
     run_list:
       - omnibus::default
   - name: omnibus-toolchain
@@ -55,5 +56,6 @@ suites:
       omnibus:
         <<: *attribute_defaults
         install_dir: /opt/omnibus-toolchain
+        toolchain_name: angry-omnibus-toolchain
     run_list:
       - omnibus::default
