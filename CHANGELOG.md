@@ -2,6 +2,11 @@ omnibus-toolchain CHANGELOG
 ==========================
 This file is used to list changes made in each version of the omnibus-toolchain.
 
+v1.1.8
+------
+- Add fakeroot for all linux flavors
+- Update kitchen.yml for local testing
+
 v1.1.7
 ------
 - Update to Ruby 2.1.8.
