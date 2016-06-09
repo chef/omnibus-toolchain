@@ -28,8 +28,8 @@ dependency "cacerts"
 # git!
 dependency "git"
 
-# fakeroot for EL based things
-dependency "fakeroot" if el?
+# fakeroot for Linux based things
+dependency "fakeroot" if linux?
 
 # ruby core tools
 dependency "ruby"
