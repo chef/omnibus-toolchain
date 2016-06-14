@@ -27,6 +27,7 @@ build_iteration 1
 
 override :ruby, version: "2.1.8"
 override :git,  version: "2.7.3"
+override :gtar,  version: "1.28"
 
 # creates required build directories
 dependency 'preparation'
