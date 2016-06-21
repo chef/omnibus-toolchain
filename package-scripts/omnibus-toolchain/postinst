@@ -15,22 +15,15 @@ error_exit()
   exit 1
 }
 
-ln -sf /opt/omnibus-toolchain/embedded/bin/git /opt/omnibus-toolchain/bin || error_exit "Cannot link git to /opt/omnibus-toolchain/bin"
-ln -sf /opt/omnibus-toolchain/embedded/bin/ruby /opt/omnibus-toolchain/bin || error_exit "Cannot link ruby to /opt/omnibus-toolchain/bin"
-ln -sf /opt/omnibus-toolchain/embedded/bin/gtar /opt/omnibus-toolchain/bin || error_exit "Cannot link gtar to /opt/omnibus-toolchain/bin"
+for name in git ruby gtar bash bundle curl fakeroot gem make makedepend patch pkg-config rake
+do
+	ln -sf /opt/omnibus-toolchain/embedded/bin/$name /opt/omnibus-toolchain/bin || error_exit "Cannot link $name to /opt/omnibus-toolchain/bin"
+done
+
+# Create alias gtar -> tar
 ln -sf /opt/omnibus-toolchain/embedded/bin/gtar /opt/omnibus-toolchain/bin/tar || error_exit "Cannot link tar to /opt/omnibus-toolchain/bin"
-ln -sf /opt/omnibus-toolchain/embedded/bin/bash /opt/omnibus-toolchain/bin || error_exit "Cannot link bash to /opt/omnibus-toolchain/bin"
-ln -sf /opt/omnibus-toolchain/embedded/bin/bundle /opt/omnibus-toolchain/bin || error_exit "Cannot link bundle to /opt/omnibus-toolchain/bin"
-ln -sf /opt/omnibus-toolchain/embedded/bin/curl /opt/omnibus-toolchain/bin || error_exit "Cannot link curl to /opt/omnibus-toolchain/bin"
-ln -sf /opt/omnibus-toolchain/embedded/bin/fakeroot /opt/omnibus-toolchain/bin || error_exit "Cannot link fakeroot to /opt/omnibus-toolchain/bin"
-ln -sf /opt/omnibus-toolchain/embedded/bin/gem /opt/omnibus-toolchain/bin || error_exit "Cannot link gem to /opt/omnibus-toolchain/bin"
+# Create alias make -> gmake
 ln -sf /opt/omnibus-toolchain/embedded/bin/make /opt/omnibus-toolchain/bin/gmake || error_exit "Cannot link gmake to /opt/omnibus-toolchain/bin"
-ln -sf /opt/omnibus-toolchain/embedded/bin/make /opt/omnibus-toolchain/bin/make || error_exit "Cannot link make to /opt/omnibus-toolchain/bin"
-ln -sf /opt/omnibus-toolchain/embedded/bin/makedepend /opt/omnibus-toolchain/bin || error_exit "Cannot link makedepend to /opt/omnibus-toolchain/bin"
-ln -sf /opt/omnibus-toolchain/embedded/bin/patch /opt/omnibus-toolchain/bin || error_exit "Cannot link patch to /opt/omnibus-toolchain/bin"
-ln -sf /opt/omnibus-toolchain/embedded/bin/pkg-config /opt/omnibus-toolchain/bin || error_exit "Cannot link pkg-config to /opt/omnibus-toolchain/bin"
-ln -sf /opt/omnibus-toolchain/embedded/bin/rake /opt/omnibus-toolchain/bin || error_exit "Cannot link rake to /opt/omnibus-toolchain/bin"
-ln -sf /opt/omnibus-toolchain/embedded/bin/ruby /opt/omnibus-toolchain/bin || error_exit "Cannot link ruby to /opt/omnibus-toolchain/bin"
 
 echo "Thank you for installing the Omnibus Toolchain!"
 

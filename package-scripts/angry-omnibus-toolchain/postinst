@@ -15,22 +15,15 @@ error_exit()
   exit 1
 }
 
-ln -sf /opt/angry-omnibus-toolchain/embedded/bin/git /opt/angry-omnibus-toolchain/bin || error_exit "Cannot link git to /opt/angry-omnibus-toolchain/bin"
-ln -sf /opt/angry-omnibus-toolchain/embedded/bin/ruby /opt/angry-omnibus-toolchain/bin || error_exit "Cannot link ruby to /opt/angry-omnibus-toolchain/bin"
-ln -sf /opt/angry-omnibus-toolchain/embedded/bin/gtar /opt/angry-omnibus-toolchain/bin || error_exit "Cannot link gtar to /opt/angry-omnibus-toolchain/bin"
+for name in git ruby gtar bash bundle curl fakeroot gem make makedepend patch pkg-config rake
+do
+	ln -sf /opt/angry-omnibus-toolchain/embedded/bin/$name /opt/angry-omnibus-toolchain/bin || error_exit "Cannot link $name to /opt/angry-omnibus-toolchain/bin"
+done
+
+# Create alias gtar -> tar
 ln -sf /opt/angry-omnibus-toolchain/embedded/bin/gtar /opt/angry-omnibus-toolchain/bin/tar || error_exit "Cannot link tar to /opt/angry-omnibus-toolchain/bin"
-ln -sf /opt/angry-omnibus-toolchain/embedded/bin/bash /opt/angry-omnibus-toolchain/bin || error_exit "Cannot link bash to /opt/angry-omnibus-toolchain/bin"
-ln -sf /opt/angry-omnibus-toolchain/embedded/bin/bundle /opt/angry-omnibus-toolchain/bin || error_exit "Cannot link bundle to /opt/angry-omnibus-toolchain/bin"
-ln -sf /opt/angry-omnibus-toolchain/embedded/bin/curl /opt/angry-omnibus-toolchain/bin || error_exit "Cannot link curl to /opt/angry-omnibus-toolchain/bin"
-ln -sf /opt/angry-omnibus-toolchain/embedded/bin/fakeroot /opt/angry-omnibus-toolchain/bin || error_exit "Cannot link fakeroot to /opt/angry-omnibus-toolchain/bin"
-ln -sf /opt/angry-omnibus-toolchain/embedded/bin/gem /opt/angry-omnibus-toolchain/bin || error_exit "Cannot link gem to /opt/angry-omnibus-toolchain/bin"
+# Create alias make -> gmake
 ln -sf /opt/angry-omnibus-toolchain/embedded/bin/make /opt/angry-omnibus-toolchain/bin/gmake || error_exit "Cannot link gmake to /opt/angry-omnibus-toolchain/bin"
-ln -sf /opt/angry-omnibus-toolchain/embedded/bin/make /opt/angry-omnibus-toolchain/bin/make || error_exit "Cannot link make to /opt/angry-omnibus-toolchain/bin"
-ln -sf /opt/angry-omnibus-toolchain/embedded/bin/makedepend /opt/angry-omnibus-toolchain/bin || error_exit "Cannot link makedepend to /opt/angry-omnibus-toolchain/bin"
-ln -sf /opt/angry-omnibus-toolchain/embedded/bin/patch /opt/angry-omnibus-toolchain/bin || error_exit "Cannot link patch to /opt/angry-omnibus-toolchain/bin"
-ln -sf /opt/angry-omnibus-toolchain/embedded/bin/pkg-config /opt/angry-omnibus-toolchain/bin || error_exit "Cannot link pkg-config to /opt/angry-omnibus-toolchain/bin"
-ln -sf /opt/angry-omnibus-toolchain/embedded/bin/rake /opt/angry-omnibus-toolchain/bin || error_exit "Cannot link rake to /opt/angry-omnibus-toolchain/bin"
-ln -sf /opt/angry-omnibus-toolchain/embedded/bin/ruby /opt/angry-omnibus-toolchain/bin || error_exit "Cannot link ruby to /opt/angry-omnibus-toolchain/bin"
 
 echo "Thank you for installing the Omnibus Toolchain!"
 
