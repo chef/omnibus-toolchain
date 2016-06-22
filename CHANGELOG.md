@@ -2,6 +2,11 @@ omnibus-toolchain CHANGELOG
 ==========================
 This file is used to list changes made in each version of the omnibus-toolchain.
 
+v1.1.9
+------
+- Add gtar for all *nix flavors
+- Update postinstall symlinks to point to /opt/omnibus-toolchain/bin
+
 v1.1.8
 ------
 - Add fakeroot for all linux flavors
