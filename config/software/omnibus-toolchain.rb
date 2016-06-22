@@ -24,6 +24,7 @@ dependency "patch"
 dependency 'bash'
 dependency 'make'
 dependency "cacerts"
+dependency "gtar"
 
 # git!
 dependency "git"

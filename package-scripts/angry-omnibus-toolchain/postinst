@@ -7,7 +7,24 @@
 #   this programming language.  do not touch.
 # - if you are under 40, get peer review from your elders.
 #
+PROGNAME=`basename $0`
 
-echo "youtube.com/watch?v=Xs-tl6GBOBo"
+error_exit()
+{
+  echo "${PROGNAME}: ${1:-"Unknown Error"}" 1>&2
+  exit 1
+}
+
+for name in git ruby gtar bash bundle curl fakeroot gem make makedepend patch pkg-config rake
+do
+	ln -sf /opt/angry-omnibus-toolchain/embedded/bin/$name /opt/angry-omnibus-toolchain/bin || error_exit "Cannot link $name to /opt/angry-omnibus-toolchain/bin"
+done
+
+# Create alias gtar -> tar
+ln -sf /opt/angry-omnibus-toolchain/embedded/bin/gtar /opt/angry-omnibus-toolchain/bin/tar || error_exit "Cannot link tar to /opt/angry-omnibus-toolchain/bin"
+# Create alias make -> gmake
+ln -sf /opt/angry-omnibus-toolchain/embedded/bin/make /opt/angry-omnibus-toolchain/bin/gmake || error_exit "Cannot link gmake to /opt/angry-omnibus-toolchain/bin"
+
+echo "Thank you for installing the Omnibus Toolchain!"
 
 exit 0
