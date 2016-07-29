@@ -25,8 +25,8 @@ install_dir    '/opt/omnibus-toolchain'
 build_version   '1.1.9'
 build_iteration 1
 
-override :ruby, version: "2.1.8"
-override :git,  version: "2.7.3"
+override :ruby, version: "2.2.5"
+override :git,  version: "2.8.2"
 override :gtar,  version: "1.28"
 
 # creates required build directories
