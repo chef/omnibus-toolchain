@@ -22,7 +22,7 @@ license_file "LICENSE"
 
 install_dir    '/opt/omnibus-toolchain'
 
-build_version   '1.1.9'
+build_version   '1.1.10'
 build_iteration 1
 
 override :ruby, version: "2.2.5"
