@@ -20,7 +20,7 @@ homepage   "https://www.chef.io"
 license "Apache-2.0"
 license_file "LICENSE"
 
-install_dir    '/opt/omnibus-toolchain'
+install_dir "#{default_root}/#{name}"
 
 build_version   '1.1.10'
 build_iteration 1

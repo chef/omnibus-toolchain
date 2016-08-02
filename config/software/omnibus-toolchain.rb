@@ -21,13 +21,17 @@ license :project_license
 
 # gnu utilities
 dependency "patch"
-dependency 'bash'
+dependency 'bash' unless windows?
 dependency 'make'
 dependency "cacerts"
 dependency "gtar"
 
 # git!
-dependency "git"
+if windows?
+  dependency "git-windows"
+else
+  dependency "git"
+end
 
 # ruby core tools
 dependency "ruby"
