@@ -15,13 +15,13 @@ error_exit()
   exit 1
 }
 
-for name in git ruby gtar bash bundle curl fakeroot gem make makedepend patch pkg-config rake
+for name in git ruby tar bash bundle curl fakeroot gem make makedepend patch pkg-config rake
 do
 	ln -sf /opt/angry-omnibus-toolchain/embedded/bin/$name /opt/angry-omnibus-toolchain/bin || error_exit "Cannot link $name to /opt/angry-omnibus-toolchain/bin"
 done
 
 # Create alias gtar -> tar
-ln -sf /opt/angry-omnibus-toolchain/embedded/bin/gtar /opt/angry-omnibus-toolchain/bin/tar || error_exit "Cannot link tar to /opt/angry-omnibus-toolchain/bin"
+ln -sf /opt/angry-omnibus-toolchain/embedded/bin/tar /opt/angry-omnibus-toolchain/bin/gtar || error_exit "Cannot link tar to /opt/angry-omnibus-toolchain/bin"
 # Create alias make -> gmake
 ln -sf /opt/angry-omnibus-toolchain/embedded/bin/make /opt/angry-omnibus-toolchain/bin/gmake || error_exit "Cannot link gmake to /opt/angry-omnibus-toolchain/bin"
 
