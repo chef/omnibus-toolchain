@@ -5,6 +5,15 @@
 # Copyright (c) 2016 The Authors, All Rights Reserved.
 
 #########################################################################
+# TODO: set these things in `delivery-bus`
+#########################################################################
+delivery_bus_secrets = DeliverySugar::ChefServer.new.encrypted_data_bag_item('delivery-bus', 'secrets')
+
+node.set['jenkins']['master']['endpoint']  = 'http://manhattan.ci.chef.co'
+node.set['jenkins']['executor']['timeout'] = 7200 # wait up to 2 hours for jobs to complete
+node.run_state[:jenkins_private_key]       = delivery_bus_secrets['jenkins_private_key']
+
+#########################################################################
 # BUMP AND PUBLISH TAGS
 #
 # TODO: We need to create a resource/primitive that handles all the tag
@@ -44,14 +53,15 @@ execute 'Push Tags' do
   environment({ 'GIT_SSH' => git_ssh })
 end
 
-#########################################################################
-# TODO: set these things in `delivery-bus`
-#########################################################################
-delivery_bus_secrets = DeliverySugar::ChefServer.new.encrypted_data_bag_item('delivery-bus', 'secrets')
-
-node.set['jenkins']['master']['endpoint']  = 'http://manhattan.ci.chef.co'
-node.set['jenkins']['executor']['timeout'] = 7200 # wait up to 2 hours for jobs to complete
-node.run_state[:jenkins_private_key]       = delivery_bus_secrets['jenkins_private_key']
+# Push changes up to the GitHub repo
+delivery_github 'chef/omnibus-toolchain' do
+  deploy_key delivery_bus_secrets['github_private_key']
+  branch node['delivery']['change']['pipeline']
+  remote_url "git@github.com:chef/omnibus-toolchain.git"
+  repo_path node['delivery']['workspace']['repo']
+  cache_path node['delivery']['workspace']['cache']
+  action :push
+end
 
 node['build_cookbook']['toolchain_projects'].each do |toolchain_project|
 
