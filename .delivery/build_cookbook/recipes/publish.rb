@@ -5,6 +5,46 @@
 # Copyright (c) 2016 The Authors, All Rights Reserved.
 
 #########################################################################
+# BUMP AND PUBLISH TAGS
+#
+# TODO: We need to create a resource/primitive that handles all the tag
+#       bumping and pushing as we have exceeded the Rule of Three. That
+#       is to say this is the fourth project we have done this logic in
+#       (first three were Delivery, Compliance and Chef Backend).
+#
+#########################################################################
+
+git_ssh = File.join(delivery_workspace, 'bin', 'git_ssh')
+
+execute "Fetch Tags" do
+  command "git fetch --tags"
+  cwd delivery_workspace_repo
+  environment({"GIT_SSH" => git_ssh})
+  returns [0]
+end
+
+execute "Tag Release" do
+  command 'git tag $NEW_TAG -a -m "Omnibus Toolchain $NEW_TAG"'
+  cwd delivery_workspace_repo
+  # Use lazy evaluation to make sure we do the version lookup
+  # after the fetch above
+  environment(lazy {{
+    "GIT_SSH" => git_ssh,
+    "GIT_AUTHOR_NAME" => "Delivery Builder",
+    "GIT_AUTHOR_EMAIL" => "builder@delivery.chef.co",
+    "GIT_COMMITTER_NAME" => "Delivery Builder",
+    "GIT_COMMITTER_EMAIL" => "builder@delivery.chef.co",
+    "NEW_TAG" => VersionBumper.next_version(delivery_workspace_repo)
+  }})
+end
+
+execute 'Push Tags' do
+  command 'git push origin --tags'
+  cwd delivery_workspace_repo
+  environment({ 'GIT_SSH' => git_ssh })
+end
+
+#########################################################################
 # TODO: set these things in `delivery-bus`
 #########################################################################
 delivery_bus_secrets = DeliverySugar::ChefServer.new.encrypted_data_bag_item('delivery-bus', 'secrets')
