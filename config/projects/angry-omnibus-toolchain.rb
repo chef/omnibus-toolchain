@@ -19,13 +19,13 @@
 # test machines. As such this project definition is just a thin wrapper around
 # `config/project/chef.rb`.
 #
-toolchain_project_contents = IO.read(File.expand_path('../omnibus-toolchain.rb', __FILE__))
+toolchain_project_contents = IO.read(File.expand_path("../omnibus-toolchain.rb", __FILE__))
 self.instance_eval toolchain_project_contents
 
-name 'angry-omnibus-toolchain'
-friendly_name 'Angry Omnibus Toolchain'
-maintainer 'Chef Software, Inc.'
-homepage   'http://www.chef.io'
+name "angry-omnibus-toolchain"
+friendly_name "Angry Omnibus Toolchain"
+maintainer "Chef Software, Inc."
+homepage   "http://www.chef.io"
 license "Apache-2.0"
 license_file "LICENSE"
 
