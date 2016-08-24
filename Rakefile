@@ -1,15 +1,9 @@
-require 'rspec/core/rake_task'
-
 require_relative 'tasks/maintainers'
 
-namespace :style do
-  require 'rubocop/rake_task'
-  desc 'Run Ruby style checks'
-  RuboCop::RakeTask.new(:ruby)
+require "chefstyle"
+require "rubocop/rake_task"
+desc " Run ChefStyle"
+RuboCop::RakeTask.new(:chefstyle) do |task|
+  task.options << "--display-cop-names"
+  task.options << "config"
 end
-
-desc 'Run all style checks'
-task style: ['style:ruby']
-
-# The default rake task should just run it all
-task default: ['style:ruby']

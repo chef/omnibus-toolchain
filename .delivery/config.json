@@ -5,7 +5,6 @@
     "path": ".delivery/build_cookbook"
   },
   "skip_phases": [
-    "lint",
     "syntax",
     "unit",
     "security",
