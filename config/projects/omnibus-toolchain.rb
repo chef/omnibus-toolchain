@@ -14,23 +14,23 @@
 # limitations under the License.
 #
 
-name 'omnibus-toolchain'
+name "omnibus-toolchain"
 maintainer "Chef Software Inc"
 homepage   "https://www.chef.io"
 license "Apache-2.0"
 license_file "LICENSE"
 
-install_dir    '/opt/omnibus-toolchain'
+install_dir "/opt/omnibus-toolchain"
 
 build_version Omnibus::BuildVersion.semver
 build_iteration 1
 
 override :ruby, version: "2.2.5"
 override :git,  version: "2.8.2"
-override :gtar,  version: "1.28"
+override :gtar, version: "1.28"
 
 # creates required build directories
-dependency 'preparation'
+dependency "preparation"
 
 # Split the toolchain defs into their own software def so we can have
 # a custom whitelist

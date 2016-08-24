@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 gem 'omnibus',          github: 'chef/omnibus'
 gem 'omnibus-software', github: 'chef/omnibus-software'
 
-gem 'rubocop',    '=  0.23.0'
+gem 'chefstyle', '~> 0.3'
 
 group :rake do
   gem 'rake'
