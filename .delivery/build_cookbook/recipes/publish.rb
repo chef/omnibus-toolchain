@@ -10,7 +10,7 @@
 delivery_bus_secrets = DeliverySugar::ChefServer.new.encrypted_data_bag_item('delivery-bus', 'secrets')
 
 node.set['jenkins']['master']['endpoint']  = 'http://manhattan.ci.chef.co'
-node.set['jenkins']['executor']['timeout'] = 7200 # wait up to 2 hours for jobs to complete
+node.set['jenkins']['executor']['timeout'] = 14400 # wait up to 4 hours for jobs to complete
 node.run_state[:jenkins_private_key]       = delivery_bus_secrets['jenkins_private_key']
 
 #########################################################################
