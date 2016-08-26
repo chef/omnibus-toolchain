@@ -35,7 +35,7 @@ dependency "rubygems"
 dependency "bundler"
 
 if linux? || mac_os_x?
-  dependency "berkshelf"
+  dependency "berkshelf" unless ios_xr? || nexus?
 end
 
 # For Solaris 10 and Freebsd 9 we assume that you have installed the system gcc
