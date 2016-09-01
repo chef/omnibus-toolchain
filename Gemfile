@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'omnibus',          github: 'chef/omnibus'
 gem 'omnibus-software', github: 'chef/omnibus-software'
+gem 'license_scout', github: 'chef/license_scout', branch: 'sersut/opt-berks'
 
 gem 'chefstyle', '~> 0.3'
 
