@@ -6,6 +6,7 @@ pkg/*
 .kitchen
 .kitchen.local.yml
 bin/*
+binstubs/
 files/chef-server-cookbooks/cache/
 files/msi/ChefClient-Config.wxi
 cookbooks
