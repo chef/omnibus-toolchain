@@ -57,20 +57,18 @@ execute 'Push the new tag to Workflow server' do
   environment({ 'GIT_SSH' => git_ssh })
 end
 
-node['build_cookbook']['toolchain_projects'].each do |toolchain_project|
-
-  #########################################################################
-  # Execute the build in Jenkins. The `jenkins_job` resource will block
-  # until completion AND stream back log output into the current CCR.
-  #########################################################################
-  jenkins_job "#{toolchain_project}-build" do
-    parameters(
-      'GIT_REF' => node['delivery']['change']['sha'], # TODO: expose the change SHA in delivery-sugar,
-      'APPEND_TIMESTAMP' => 'false', # ensure we don't append a timestamp to our build version
-      'DELIVERY_CHANGE' => delivery_change_id,
-      'DELIVERY_SHA' => node['delivery']['change']['sha'],
-    )
-    action :build
-  end
-
+#########################################################################
+# Execute the build in Jenkins. The `jenkins_job` resource will block
+# until completion AND stream back log output into the current CCR.
+#########################################################################
+# Until we have a good way to parallelize these, only do omnibus-toolchain,
+# and manually release the angry-toolchain after this passes.
+jenkins_job "omnibus-toolchain-build" do
+  parameters(
+    'GIT_REF' => node['delivery']['change']['sha'], # TODO: expose the change SHA in delivery-sugar,
+    'APPEND_TIMESTAMP' => 'false', # ensure we don't append a timestamp to our build version
+    'DELIVERY_CHANGE' => delivery_change_id,
+    'DELIVERY_SHA' => node['delivery']['change']['sha'],
+  )
+  action :build
 end

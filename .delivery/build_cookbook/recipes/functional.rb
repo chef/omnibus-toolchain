@@ -24,32 +24,30 @@ if node['delivery']['change']['stage'] == 'acceptance'
   node.run_state[:artifactory_client_username] = delivery_bus_secrets['artifactory_username']
   node.run_state[:artifactory_client_password] = delivery_bus_secrets['artifactory_password']
 
-  node['build_cookbook']['toolchain_projects'].each do |toolchain_project|
+  #######################################################################
+  # Until we have some first class `chef-acceptance` suites in place
+  # we'll just execute the existing `*-test` Jenkins job. This will at
+  # least install the built packages on each supported platform.
+  #######################################################################
+  # Until we have a good way to parallelize these, only do omnibus-toolchain,
+  # and manually release the angry-toolchain after this passes.
+  jenkins_job "omnibus-toolchain-test" do
+    parameters(
+      'DELIVERY_CHANGE' => delivery_change_id,
+      'DELIVERY_SHA' => node['delivery']['change']['sha'],
+    )
+    action :build
+  end
 
-    #######################################################################
-    # Until we have some first class `chef-acceptance` suites in place
-    # we'll just execute the existing `*-test` Jenkins job. This will at
-    # least install the built packages on each supported platform.
-    #######################################################################
-    jenkins_job "#{toolchain_project}-test" do
-      parameters(
-        'DELIVERY_CHANGE' => delivery_change_id,
-        'DELIVERY_SHA' => node['delivery']['change']['sha'],
-      )
-      action :build
-    end
-
-    #######################################################################
-    # Once tests have passed we can safely promote the build from the
-    # `unstable` to the `current` channel.
-    #######################################################################
-    chef_artifactory_promotion "promote #{toolchain_project} delivery change #{delivery_change_id} to current" do
-      omnibus_project toolchain_project
-      delivery_change delivery_change_id
-      channel :current
-      comment "Promoted by #{delivery_change_id} during acceptance/functional"
-      user 'dbuild'
-    end
-
+  #######################################################################
+  # Once tests have passed we can safely promote the build from the
+  # `unstable` to the `current` channel.
+  #######################################################################
+  chef_artifactory_promotion "promote omnibus-toolchain delivery change #{delivery_change_id} to current" do
+    omnibus_project "omnibus-toolchain"
+    delivery_change delivery_change_id
+    channel :current
+    comment "Promoted by #{delivery_change_id} during acceptance/functional"
+    user 'dbuild'
   end
 end
