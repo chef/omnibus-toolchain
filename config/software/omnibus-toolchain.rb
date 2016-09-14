@@ -33,6 +33,7 @@ dependency "git"
 dependency "ruby"
 dependency "rubygems"
 dependency "bundler"
+dependency "ffi-yajl"
 
 if linux? || mac_os_x?
   dependency "berkshelf" unless i386? || ios_xr? || nexus?
