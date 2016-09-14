@@ -28,6 +28,7 @@ build_iteration 1
 override :ruby, version: "2.3.1"
 override :git,  version: "2.8.2"
 override :gtar, version: "1.28"
+override :"ffi-yajl", version: "2.3.0"
 
 # creates required build directories
 dependency "preparation"
