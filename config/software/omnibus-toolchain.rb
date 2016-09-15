@@ -33,9 +33,6 @@ dependency "git"
 dependency "ruby"
 dependency "rubygems"
 dependency "bundler"
-# ffi-yajl is required by the omnibus framework. In order to build the native
-# extensions correctly, we install it to the toolchain.
-dependency "ffi-yajl"
 
 if linux? || mac_os_x?
   dependency "berkshelf" unless i386? || ios_xr? || nexus?
