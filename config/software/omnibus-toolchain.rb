@@ -19,28 +19,32 @@ default_version "1.0.0"
 
 license :project_license
 
-# gnu utilities
-dependency "patch"
-dependency "bash"
-dependency "make"
-dependency "cacerts"
-dependency "gtar"
+if windows?
+  dependency "msys2core"
+else
+  # gnu utilities
+  dependency "patch"
+  dependency "bash"
+  dependency "make"
+  dependency "cacerts"
+  dependency "gtar"
 
-# git!
-dependency "git"
+  # git!
+  dependency "git"
 
-# ruby core tools
-dependency "ruby"
-dependency "rubygems"
-dependency "bundler"
+  # ruby core tools
+  dependency "ruby"
+  dependency "rubygems"
+  dependency "bundler"
 
-if linux? || mac_os_x?
-  dependency "berkshelf" unless i386? || ios_xr? || nexus?
-end
+  if linux? || mac_os_x?
+    dependency "berkshelf" unless i386? || ios_xr? || nexus?
+  end
 
-# For Solaris 10 and Freebsd 9 we assume that you have installed the system gcc
-# package this means that pcre is going to link against it, and it's ok in this
-# case
-if solaris2? || (freebsd? && ohai["os_version"].to_i < 1000024)
-  whitelist_file /libpcrecpp\.so\..+/
+  # For Solaris 10 and Freebsd 9 we assume that you have installed the system gcc
+  # package this means that pcre is going to link against it, and it's ok in this
+  # case
+  if solaris2? || (freebsd? && ohai["os_version"].to_i < 1000024)
+    whitelist_file /libpcrecpp\.so\..+/
+  end
 end

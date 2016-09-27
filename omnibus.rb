@@ -28,9 +28,16 @@
 # ------------------------------
 # use_git_caching false
 
+# Windows architecture defaults - set to x86 unless otherwise specified.
+# ------------------------------
+env_omnibus_windows_arch = (ENV["OMNIBUS_WINDOWS_ARCH"] || "").downcase
+env_omnibus_windows_arch = :x86 unless %w{x86 x64}.include?(env_omnibus_windows_arch)
+
+windows_arch   env_omnibus_windows_arch
+
 # Enable S3 asset caching
 # ------------------------------
-use_s3_caching true
+use_s3_caching false
 s3_access_key  ENV['AWS_ACCESS_KEY_ID']
 s3_secret_key  ENV['AWS_SECRET_ACCESS_KEY']
 s3_bucket      'opscode-omnibus-cache'
