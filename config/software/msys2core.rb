@@ -38,15 +38,21 @@ build do
   command "msys2_shell.cmd -c \"pacman -Syuu --noconfirm\"", env: env
   # run msys2_shell to update the rest of the packages
   command "msys2_shell.cmd -c \"pacman -Su --noconfirm\"", env: env
+
+  # ################
+  # these should be put into a different definition
+  # ################
+  # gcc
+  command "msys2_shell.cmd -c \"pacman -S --needed --noconfirm mingw64/mingw-w64-x86_64-gcc\"", env: env
+  # binutils
+  command "msys2_shell.cmd -c \"pacman -S --needed --noconfirm mingw64/mingw-w64-x86_64-binutils\"", env: env
+  # ################
+  # these should be put into a different definition
+  # ################
+
   # deploy to the final install directory
   copy "#{project_dir}/*", "#{install_dir}/embedded/bin"
 
-  # these should be put into a different definition
-
-  # gcc
-  command "msys2_shell.cmd -c \"pacman -Syu mingw64/mingw-w64-x86_64-gcc --noconfirm\"", env: env
-  # binutils
-  command "msys2_shell.cmd -c \"pacman -Syu mingw64/mingw-w64-x86_64-binutils --noconfirm\"", env: env
 
 
 
