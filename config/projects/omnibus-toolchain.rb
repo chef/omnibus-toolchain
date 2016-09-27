@@ -20,7 +20,12 @@ homepage   "https://www.chef.io"
 license "Apache-2.0"
 license_file "LICENSE"
 
-install_dir "/opt/omnibus-toolchain"
+if windows?
+  install_dir  "#{default_root}/chef/#{name}"
+  package_name "omnibus-toolchain"
+else
+  install_dir "/opt/omnibus-toolchain"
+end
 
 build_version Omnibus::BuildVersion.semver
 build_iteration 1
@@ -50,3 +55,18 @@ package :pkg do
   signing_identity "Developer ID Installer: Chef Software, Inc. (EU3VF8YLX2)"
 end
 compress :dmg
+
+msi_upgrade_code = "D607A85C-BDFA-4F08-83ED-2ECB4DCD6BC5"
+project_location_dir = name
+package :msi do
+  fast_msi true
+  upgrade_code msi_upgrade_code
+  wix_candle_extension "WixUtilExtension"
+  wix_light_extension "WixUtilExtension"
+  signing_identity "F74E1A68005E8A9C465C3D2FF7B41F3988F0EA09", machine_store: true
+  parameters ProjectLocationDir: project_location_dir
+end
+
+package :appx do
+  signing_identity "F74E1A68005E8A9C465C3D2FF7B41F3988F0EA09", machine_store: true
+end

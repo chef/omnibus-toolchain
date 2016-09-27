@@ -20,19 +20,24 @@ default_version "1.0.0"
 license :project_license
 
 # gnu utilities
-dependency "patch"
-dependency "bash"
-dependency "make"
-dependency "cacerts"
-dependency "gtar"
+if windows?
+  dependency "msys2core_x64"
+  dependency "git-windows"
+else
+  dependency "bash"
+  dependency "git"
+  dependency "gtar"
+  dependency "make"
+  dependency "patch"
+end
 
-# git!
-dependency "git"
+dependency "cacerts"
 
 # ruby core tools
 dependency "ruby"
 dependency "rubygems"
 dependency "bundler"
+
 
 if linux? || mac_os_x?
   dependency "berkshelf" unless i386? || ios_xr? || nexus? || armhf?
