@@ -22,7 +22,7 @@ license :project_license
 # gnu utilities
 if windows?
   dependency "msys2core_x64"
-  dependency "git-windows"
+  dependency "git-for-windows"
 else
   dependency "bash"
   dependency "git"
@@ -37,7 +37,6 @@ dependency "cacerts"
 dependency "ruby"
 dependency "rubygems"
 dependency "bundler"
-
 
 if linux? || mac_os_x?
   dependency "berkshelf" unless i386? || ios_xr? || nexus? || armhf?

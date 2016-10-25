@@ -26,7 +26,7 @@
     <PropertyRef Id="WIX_ACCOUNT_ADMINISTRATORS" />
     <PropertyRef Id="WIX_ACCOUNT_USERS" />
 
-    <Media Id="1" Cabinet="OmnibusToolchain.cab" EmbedCab="yes" CompressionLevel="high" />
+    <Media Id="1" Cabinet="AngryOmnibusToolchain.cab" EmbedCab="yes" CompressionLevel="high" />
 
     <!--
       Uncomment launch condition below to check for minimum OS
@@ -46,7 +46,7 @@
     -->
     <% if fastmsi %>
     <SetProperty Id="FastUnzip"
-                 Value="FASTZIPDIR=[INSTALLLOCATION];FASTZIPAPPNAME=$(var.ProjectLocationDir)"
+                 Value="FASTZIPDIR=[INSTALLLOCATION];FASTZIPAPPNAME=angry-omnibus-toolchain"
                  Sequence="execute"
                  Before="FastUnzip" />
 
@@ -62,7 +62,7 @@
 
     <CustomAction Id="Cleanup"
                   Directory="INSTALLLOCATION"
-                  ExeCommand="cmd /C &quot;rd /S /Q $(var.ProjectLocationDir)&quot;"
+                  ExeCommand="cmd /C &quot;rd /S /Q angry-omnibus-toolchain&quot;"
                   Execute="deferred"
                   Impersonate="no"
                   Return="ignore" />
@@ -80,13 +80,13 @@
     <Directory Id="TARGETDIR" Name="SourceDir">
       <Directory Id="WindowsVolume">
         <!-- Service needs chef directory to be present. -->
-        <Directory Id="CONFIGLOCATION" Name="omnibus-toolchain">
+        <Directory Id="CONFIGLOCATION" Name="angry-omnibus-toolchain">
           <Component Id="CONFIGLOCATIONDIR" Guid="{F66F6394-51A4-4C5D-908B-E55584473436}" >
             <CreateFolder Directory="CONFIGLOCATION" />
           </Component>
         </Directory>
-        <Directory Id="INSTALLLOCATION" Name="omnibus-toolchain">
-          <Directory Id="PROJECTLOCATION" Name="$(var.ProjectLocationDir)" >
+        <Directory Id="INSTALLLOCATION" Name="angry-omnibus-toolchain">
+          <Directory Id="PROJECTLOCATION" Name="angry-omnibus-toolchain" >
             <Component Id="ProjectLocationPermissions" Guid="{75f50556-efae-4ede-beb2-a2c9b1a4d43f}" >
               <!--
                 Windows client SKUs give the Authenticated Users group modify rights
@@ -99,7 +99,7 @@
               </CreateFolder>
             </Component>
             <Directory Id="PROJECTLOCATIONBIN" Name="bin" >
-              <Component Id="OmnibusToolchainPath" Guid="{7F663F88-55A2-4E20-82BF-8BD2E60BB83A}" >
+              <Component Id="AngryOmnibusToolchainPath" Guid="{7F663F88-55A2-4E20-82BF-8BD2E60BB83A}" >
                 <Environment Id="ToolchainPathEnvironment"
                              Name="PATH" Action="set" Part="last" System="yes" Value="[PROJECTLOCATIONBIN]" />
               </Component>
@@ -110,10 +110,10 @@
     </Directory>
 
     <!-- Set the components defined in our fragment files that will be used for our feature  -->
-    <Feature Id="OmnibusToolchainFeature" Title="!(loc.FeatureMainName)" Absent="disallow" AllowAdvertise="no" Level="1" ConfigurableDirectory="INSTALLLOCATION">
+    <Feature Id="AngryOmnibusToolchainFeature" Title="!(loc.FeatureMainName)" Absent="disallow" AllowAdvertise="no" Level="1" ConfigurableDirectory="INSTALLLOCATION">
       <ComponentGroupRef Id="ProjectDir" />
       <ComponentRef Id="ProjectLocationPermissions" />
-      <ComponentRef Id="OmnibusToolchainPath" />
+      <ComponentRef Id="AngryOmnibusToolchainPath" />
       <ComponentRef Id="CONFIGLOCATIONDIR" />
     </Feature>
 

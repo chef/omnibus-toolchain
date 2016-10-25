@@ -65,6 +65,7 @@ suites:
       omnibus:
         install_dir: /opt/angry-omnibus-toolchain
         toolchain_name: omnibus-toolchain
+        ruby_version: 2.3.1
     run_list:
       - omnibus::default
   - name: omnibus-toolchain
@@ -72,5 +73,6 @@ suites:
       omnibus:
         install_dir: /opt/omnibus-toolchain
         toolchain_name: angry-omnibus-toolchain
+        ruby_version: 2.3.1
     run_list:
       - omnibus::default

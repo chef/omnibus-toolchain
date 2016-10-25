@@ -1,6 +1,6 @@
-The Omnibus Toolchain project
+![Omnibus Toolchain Logo](resources/README-logo.png)   Omnibus Toolchain
 ============================
-This project creates a native platform package that contains the entire required toolchain used for building omnibus projects created by Chef Software, Inc. It may work with other projects, but that is not guaranteed.
+Omnibus Toolchain creates a native platform package that contains the entire required toolchain used for building [Omnibus](https://github.com/chef/omnibus) projects created by Chef Software, Inc. It may work with other projects, but that is not guaranteed.
 
 Currently it supports the following operating systems:
 * Solaris 10 (SPARC and x86)
