@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'omnibus',          github: 'chef/omnibus'
-gem 'omnibus-software', github: 'chef/omnibus-software'
+gem 'omnibus-software', github: 'chef/omnibus-software', branch: 'shain/update_git_version'
 
 gem 'chefstyle', '~> 0.3'
 
