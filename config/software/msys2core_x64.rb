@@ -46,14 +46,15 @@ build do
   command "msys2_shell.cmd -c \"pacman -S --needed --noconfirm mingw64/mingw-w64-x86_64-gcc\"", env: env
   # binutils
   command "msys2_shell.cmd -c \"pacman -S --needed --noconfirm mingw64/mingw-w64-x86_64-binutils\"", env: env
+  # gnumake
+  command "msys2_shell.cmd -c \"pacman -S --needed --noconfirm mingw64/mingw-w64-x86_64-make\"", env: env
+  # patch
+  command "msys2_shell.cmd -c \"pacman -S --needed --noconfirm msys/patch\"", env: env
   # ################
   # these should be put into a different definition
   # ################
 
   # deploy to the final install directory
   copy "#{project_dir}/*", "#{install_dir}/embedded/bin"
-
-
-
 
 end

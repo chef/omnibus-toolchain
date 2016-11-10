@@ -30,9 +30,10 @@ end
 build_version Omnibus::BuildVersion.semver
 build_iteration 1
 
-override :ruby, version: "2.3.1"
-override :git,  version: "2.10.2"
-override :gtar, version: "1.28"
+override :ruby,     version: "2.3.1"
+override :git,      version: "2.8.2"
+override :gtar,     version: "1.28"
+override :rubygems, version: "2.4.8"
 
 # creates required build directories
 dependency "preparation"

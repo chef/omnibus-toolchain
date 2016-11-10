@@ -15,34 +15,33 @@
 #
 
 name "git-for-windows"
-default_version "2.10.1.windows.2"
+default_version "2.10.1"
 
-version "2.10.1.windows.2" do
-  source sha256: "e41bf5c4f9490586f9a08e780806a44731c793682a03b4340c465a177136c7db"
+arch = _64_bit? ? '64-bit' : '32-bit'
+
+if windows_arch_i386?
+  version("2.10.1") { source sha256: "bcdeb7c00771f0e8e96689f704d158e8dcf67fdb4178f1ea3f388e877398a2c7" }
+else
+  version("2.10.1") { source sha256: "a7268f4ab447e62940347d52fe01321403cfa3e9e94b8e5cac4d6ded28962d64" }
 end
 
-source url: "https://github.com/git-for-windows/git/archive/v#{version}.tar.gz"
+# git-for-windows has a build version extension which is specific to their
+# binaries. This hash allows us to map the value appropriately.
+BUILD_VERSIONS = {
+  '2.10.1': 'windows.1',
+}.freeze
 
-dependency "zlib"
-dependency "openssl"
+source url: "http://github.com/git-for-windows/git/releases/download/v#{version}.#{BUILD_VERSIONS[version.to_sym]}/MinGit-#{version}-#{arch}.zip"
 
 relative_path "git-#{version}"
 
 license "GPL-2.0"
 license_file "https://raw.githubusercontent.com/git-for-windows/git/master/COPYING"
 
-configure_command = [
-  '--with-libpcre=no',
-  '--with-tcltk=no',
-  '--with-expat=no',
-]
-
 build do
-  env = with_standard_compiler_flags(with_embedded_path)
+#  source_archive = "#{project_dir}/MinGit-#{version}-#{arch}.zip"
+  destination = "#{install_dir}/embedded/git"
 
-  command('autoconf', in_msys_bash: true, env: env)
-
-  configure(configure_command.join(" "), env: env)
-
-  command('make install', in_msys_bash: true, env: env)
+  mkdir windows_safe_path(destination)
+  copy "#{project_dir}/", "#{to_msys2_path(destination)}"
 end
