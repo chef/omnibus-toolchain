@@ -21,15 +21,15 @@ zlib1g-dev git libffi6 libffi-dev
 Ruby environment
 ----------------
 
-Next, we need a temporary ruby environment. The omnibus software needs at least Ruby 2.1 in order to build correctly, but instead of depending on the OS version (since Ruby 2.1 is not available on all operating systems) we'll just build a temporary rbenv instead.
+Next, we need a temporary ruby environment. The omnibus software needs at least Ruby 2.3 in order to build correctly, but instead of depending on the OS version (since Ruby 2.3 is not available on all operating systems) we'll just build a temporary rbenv instead.
 
 ```shell
 git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
 git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
-rbenv install 2.1.2
-rbenv global 2.1.2
+rbenv install 2.3.1
+rbenv global 2.3.1
 gem install bundler
 ```
 
