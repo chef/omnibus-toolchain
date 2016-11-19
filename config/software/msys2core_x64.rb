@@ -30,26 +30,38 @@ license_file "https://github.com/chef/chef/blob/master/LICENSE"
 
 build do
   env = with_standard_compiler_flags(with_embedded_path)
+
+  # Invoke the commands within the msys we unpack, rather than any other msys
+  # which may be in the system path.
+  base_shell_cmd = "#{project_dir}/msys2_shell.cmd -c"
+
   # run msys2_shell once so it can set up its internals and quit
-  command "msys2_shell.cmd -c \"exit\""
+  command "#{base_shell_cmd} \"exit\""
   # run msys2_shell to update pacman
-  command "msys2_shell.cmd -c \"pacman -Sy pacman --noconfirm\"", env: env
+  command "#{base_shell_cmd} \"pacman -Sy pacman --noconfirm\"", env: env
   # run msys2_shell to update system packages
-  command "msys2_shell.cmd -c \"pacman -Syuu --noconfirm\"", env: env
+  command "#{base_shell_cmd} \"pacman -Syuu --noconfirm\"", env: env
   # run msys2_shell to update the rest of the packages
-  command "msys2_shell.cmd -c \"pacman -Su --noconfirm\"", env: env
+  command "#{base_shell_cmd} \"pacman -Su --noconfirm\"", env: env
 
   # ################
   # these should be put into a different definition
   # ################
   # gcc
-  command "msys2_shell.cmd -c \"pacman -S --needed --noconfirm mingw64/mingw-w64-x86_64-gcc\"", env: env
+  command "#{base_shell_cmd} \"pacman -S --needed --noconfirm mingw64/mingw-w64-x86_64-gcc\"", env: env
   # binutils
-  command "msys2_shell.cmd -c \"pacman -S --needed --noconfirm mingw64/mingw-w64-x86_64-binutils\"", env: env
+  command "#{base_shell_cmd} \"pacman -S --needed --noconfirm mingw64/mingw-w64-x86_64-binutils\"", env: env
   # gnumake
-  command "msys2_shell.cmd -c \"pacman -S --needed --noconfirm mingw64/mingw-w64-x86_64-make\"", env: env
+  command "#{base_shell_cmd} \"pacman -S --needed --noconfirm mingw64/mingw-w64-x86_64-make\"", env: env
+  # msys gnumake
+  command "#{base_shell_cmd} \"pacman -S --needed --noconfirm msys/make\"", env: env
   # patch
-  command "msys2_shell.cmd -c \"pacman -S --needed --noconfirm msys/patch\"", env: env
+  command "#{base_shell_cmd} \"pacman -S --needed --noconfirm msys/patch\"", env: env
+  # Install bsdtar because tar interprets : as a tape selector or something weird.
+  # bsdtar interprets it as a path and translates it correctly
+  # https://chefio.slack.com/archives/_msys2_omnibus_effort/p1479491465000316
+  command "#{base_shell_cmd} \"pacman -S --needed --noconfirm msys/bsdtar\"", env: env
+  copy "#{project_dir}/usr/bin/bsdtar.exe", "#{project_dir}/usr/bin/tar.exe"
   # ################
   # these should be put into a different definition
   # ################
