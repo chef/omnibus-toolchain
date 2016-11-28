@@ -23,7 +23,6 @@ license :project_license
 if windows?
   dependency "msys2core_x64"
   dependency "git-windows"
-  dependency "gmp"
 else
   dependency "bash"
   dependency "git"
