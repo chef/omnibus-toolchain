@@ -62,6 +62,9 @@ build do
   # https://chefio.slack.com/archives/_msys2_omnibus_effort/p1479491465000316
   command "#{base_shell_cmd} \"pacman -S --needed --noconfirm msys/bsdtar\"", env: env
   copy "#{project_dir}/usr/bin/bsdtar.exe", "#{project_dir}/usr/bin/tar.exe"
+  # Perl is required to build openssl, however perl doesn't seem to be able to build
+  # out of the box. We install the msys version for now.
+  command "#{base_shell_cmd} \"pacman -S --needed --noconfirm msys/perl\"", env: env
   # ################
   # these should be put into a different definition
   # ################
