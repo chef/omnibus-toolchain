@@ -30,13 +30,8 @@
 
 # Windows architecture defaults - set to x86 unless otherwise specified.
 # ------------------------------
-#env_omnibus_windows_arch = (ENV["OMNIBUS_WINDOWS_ARCH"] || "").downcase
-#env_omnibus_windows_arch = :x86 unless %w{x86 x64}.include?(env_omnibus_windows_arch)
-
-#
-# TODO: Hard-coded the arch to x64 to build on 64 bit during dev. Fix/remove this later.
-#
-env_omnibus_windows_arch = %w{x86 x64}.include?((ENV['OMNIBUS_WINDOWS_ARCH'] || '').downcase) ? ENV['OMNIBUS_WINDOWS_ARCH'].downcase.to_sym : :x64
+env_omnibus_windows_arch = (ENV["OMNIBUS_WINDOWS_ARCH"] || "").downcase
+env_omnibus_windows_arch = :x86 unless %w{x86 x64}.include?(env_omnibus_windows_arch)
 
 windows_arch   env_omnibus_windows_arch
 
