@@ -12,6 +12,13 @@ driver:
 provisioner:
   name: chef_zero
   require_chef_omnibus: latest
+  attributes:
+    vagrant:
+      this_key_exists_so_we_have_a_vagrant_key: true
+    omnibus:
+        build_user:          vagrant
+        build_user_group:    vagrant
+        build_user_password: vagrant
 
 platforms:
   - name: centos-5.11
@@ -36,26 +43,43 @@ platforms:
     run_list: apt::default
   - name: ubuntu-14.04
     run_list: apt::default
-
-attribute_defaults: &attribute_defaults
-  build_user:          vagrant
-  build_user_group:    vagrant
-  build_user_password: vagrant
+  - name: windows-2012r2
+    driver:
+      box: chef/windows-server-2012r2-standard
+      synced_folders:
+        - ['../..', '/vagrant/code']
+    provisioner:
+      attributes:
+        omnibus:
+          build_user:          vagrant
+          build_user_group:    Administrators
+          build_user_password: vagrant
+  - name: windows-2012r2-i386
+    driver:
+      box: chef/windows-server-2012r2-standard
+      synced_folders:
+        - ['../..', '/vagrant/code']
+    provisioner:
+      attributes:
+        omnibus:
+          build_user:          vagrant
+          build_user_group:    Administrators
+          build_user_password: vagrant
 
 suites:
   - name: angry-omnibus-toolchain
     attributes:
       omnibus:
-        <<: *attribute_defaults
         install_dir: /opt/angry-omnibus-toolchain
         toolchain_name: omnibus-toolchain
+        ruby_version: 2.3.1
     run_list:
       - omnibus::default
   - name: omnibus-toolchain
     attributes:
       omnibus:
-        <<: *attribute_defaults
         install_dir: /opt/omnibus-toolchain
         toolchain_name: angry-omnibus-toolchain
+        ruby_version: 2.3.1
     run_list:
       - omnibus::default

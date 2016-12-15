@@ -15,19 +15,26 @@
 #
 
 name "omnibus-toolchain"
+friendly_name "Omnibus Toolchain"
 maintainer "Chef Software Inc"
 homepage   "https://www.chef.io"
 license "Apache-2.0"
 license_file "LICENSE"
 
-install_dir "/opt/omnibus-toolchain"
+if windows?
+  install_dir  "#{default_root}/opscode/#{name}"
+  package_name "omnibus-toolchain"
+else
+  install_dir "#{default_root}/#{name}"
+end
 
 build_version Omnibus::BuildVersion.semver
 build_iteration 1
 
-override :ruby, version: "2.3.1"
-override :git,  version: "2.10.2"
-override :gtar, version: "1.28"
+override :ruby,     version: "2.3.1"
+override :git,      version: "2.10.2"
+override :gtar,     version: "1.28"
+override :rubygems, version: "2.4.8"
 
 # creates required build directories
 dependency "preparation"
@@ -50,3 +57,18 @@ package :pkg do
   signing_identity "Developer ID Installer: Chef Software, Inc. (EU3VF8YLX2)"
 end
 compress :dmg
+
+msi_upgrade_code = "3A542C80-3784-4C03-A2CE-94FED4EB7002"
+project_location_dir = name
+package :msi do
+  fast_msi true
+  upgrade_code msi_upgrade_code
+  wix_candle_extension "WixUtilExtension"
+  wix_light_extension "WixUtilExtension"
+  signing_identity "F74E1A68005E8A9C465C3D2FF7B41F3988F0EA09", machine_store: true
+  parameters ProjectLocationDir: project_location_dir
+end
+
+package :appx do
+  signing_identity "F74E1A68005E8A9C465C3D2FF7B41F3988F0EA09", machine_store: true
+end

@@ -5,14 +5,18 @@ gem 'omnibus-software', github: 'chef/omnibus-software'
 
 gem 'chefstyle', '~> 0.3'
 
+# Fork to allow for a recent version of multipart-post.
+gem "pedump", git: "https://github.com/ksubrama/pedump", branch: "patch-1"
+
 group :rake do
   gem 'rake'
   gem 'tomlrb'
 end
 
 group :development do
-  gem 'test-kitchen',      github: 'test-kitchen/test-kitchen'
-  gem 'kitchen-zone',      git: 'https://github.com/scotthain/kitchen-zone.git'
+  gem 'test-kitchen'
+  gem 'winrm-fs'
+  gem 'kitchen-zone'
   gem 'kitchen-vagrant',   '~> 0.19'
   gem 'berkshelf',  '~> 4.0'
 end
