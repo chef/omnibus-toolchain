@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
-gem 'omnibus',          github: 'chef/omnibus'
-gem 'omnibus-software', github: 'chef/omnibus-software'
+gem 'omnibus',          git: 'https://github.com/chef/omnibus', branch: 'rhass/COOL-502_with_gcc_investigate'
+gem 'omnibus-software', git: 'https://github.com/chef/omnibus-software', branch: 'shain/ruby_windows_monster+rhass'
 
 gem 'chefstyle', '~> 0.3'
 
