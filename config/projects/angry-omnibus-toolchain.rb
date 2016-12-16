@@ -29,4 +29,14 @@ homepage   "http://www.chef.io"
 license "Apache-2.0"
 license_file "LICENSE"
 
-install_dir "/opt/angry-omnibus-toolchain"
+if windows?
+  install_dir "#{default_root}/opscode/#{name}"
+  package_name "angry-omnibus-toolchain"
+else
+  install_dir "#{default_root}/#{name}"
+end
+
+resources_path "#{resources_path}/../omnibus-toolchain"
+
+msi_upgrade_code = "6662C48D-761B-4E1D-91B8-9F17B9B36428"
+project_location_dir = "angry-omnibus-toolchain"
