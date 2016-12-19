@@ -65,25 +65,41 @@ build do
   # these should be put into a different definition
   # ################
   # gcc
-  command "#{base_shell_cmd} \"pacman -S --needed --noconfirm mingw-w64-#{CARCH}-gcc\"", env: env
+  cmd = command "#{base_shell_cmd} \"pacman -S --needed --noconfirm mingw-w64-#{CARCH}-gcc && pacman -Q mingw-w64-#{CARCH}-gcc\"", env: env
+  cmd.run_command
+  log.info(cmd.stdout)
   # binutils
-  command "#{base_shell_cmd} \"pacman -S --needed --noconfirm mingw-w64-#{CARCH}-binutils\"", env: env
+  cmd = command "#{base_shell_cmd} \"pacman -S --needed --noconfirm mingw-w64-#{CARCH}-binutils && pacman -Q mingw-w64-#{CARCH}-binutils\"", env: env
+  cmd.run_command
+  log.info(cmd.stdout)
   # gnumake
-  command "#{base_shell_cmd} \"pacman -S --needed --noconfirm mingw-w64-#{CARCH}-make\"", env: env
+  cmd = command "#{base_shell_cmd} \"pacman -S --needed --noconfirm mingw-w64-#{CARCH}-make && pacman -Q mingw-w64-#{CARCH}-make\"", env: env
+  cmd.run_command
+  log.info(cmd.stdout)
   # diffutils (required for building OpenSSL)
-  command "#{base_shell_cmd} \"pacman -S --needed --noconfirm msys/diffutils\"", env: env
+  cmd = command "#{base_shell_cmd} \"pacman -S --needed --noconfirm msys/diffutils && pacman -Q msys/diffutils\"", env: env
+  cmd.run_command
+  log.info(cmd.stdout)
   # msys gnumake
-  command "#{base_shell_cmd} \"pacman -S --needed --noconfirm msys/make\"", env: env
+  cmd = command "#{base_shell_cmd} \"pacman -S --needed --noconfirm msys/make && pacman -Q msys/make\"", env: env
+  cmd.run_command
+  log.info(cmd.stdout)
   # patch
-  command "#{base_shell_cmd} \"pacman -S --needed --noconfirm msys/patch\"", env: env
+  cmd = command "#{base_shell_cmd} \"pacman -S --needed --noconfirm msys/patch && pacman -Q msys/patch\"", env: env
+  cmd.run_command
+  log.info(cmd.stdout)
   # Install bsdtar because tar interprets : as a tape selector or something weird.
   # bsdtar interprets it as a path and translates it correctly
   # https://chefio.slack.com/archives/_msys2_omnibus_effort/p1479491465000316
-  command "#{base_shell_cmd} \"pacman -S --needed --noconfirm msys/bsdtar\"", env: env
+  cmd = command "#{base_shell_cmd} \"pacman -S --needed --noconfirm msys/bsdtar && pacman -Q msys/bsdtar\"", env: env
+  cmd.run_command
+  log.info(cmd.stdout)
   copy "#{project_dir}/usr/bin/bsdtar.exe", "#{project_dir}/usr/bin/tar.exe"
   # Perl is required to build openssl, however perl doesn't seem to be able to build
   # out of the box. We install the msys version for now.
-  command "#{base_shell_cmd} \"pacman -S --needed --noconfirm msys/perl\"", env: env
+  cmd = command "#{base_shell_cmd} \"pacman -S --needed --noconfirm msys/perl && pacman -Q msys/perl\"", env: env
+  cmd.run_command
+  log.info(cmd.stdout)
   # ################
   # these should be put into a different definition
   # ################
