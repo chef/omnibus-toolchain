@@ -35,6 +35,9 @@ override :ruby,     version: "2.3.1"
 override :git,      version: "2.10.2"
 override :gtar,     version: "1.28"
 override :rubygems, version: "2.6.10"
+# TODO: Fix this asap - for some reason curl and openssl > 1.0.1u fail
+# on aix with a SSL23_GET_SERVER_HELLO issue.
+override :openssl,  version: "1.0.1u" if aix?
 
 # creates required build directories
 dependency "preparation"
