@@ -37,11 +37,8 @@ override :gtar,     version: "1.28"
 override :rubygems, version: "2.6.10"
 # TODO: Fix this asap - for some reason curl and openssl > 1.0.1u fail
 # on aix with a SSL23_GET_SERVER_HELLO issue.
-if aix?
+if aix? || solaris_10?
   override :openssl,  version: "1.0.1u"
-elsif solaris?
-  # Solaris is breaking on 1.0.1k - this needs to be fixed as well :(
-  override :openssl,  version: "1.0.2j"
 end
 
 # creates required build directories
