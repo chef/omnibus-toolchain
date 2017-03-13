@@ -8,20 +8,9 @@
 # - if you are under 40, get peer review from your elders.
 #
 
-cleanup_symlinks() {
-  binaries="git ruby tar gtar bash berks bundle curl fakeroot gem make gmake makedepend patch pkg-config rake"
-  for binary in $binaries; do
-    rm -f $PREFIX/bin/$binary
-  done
-}
-
-# Clean up binary symlinks if they exist
-if [ ! -f /etc/redhat-release -a ! -f /etc/fedora-release -a ! -f /etc/system-release -a ! -f /etc/SuSE-release ]; then
-  # not a redhat-ish RPM-based system
-  cleanup_symlinks
-elif [ "x$1" = "x0" ]; then
-  # RPM-based system and we're deinstalling rather than upgrading
-  cleanup_symlinks
+# Clean up the install directory if they exists
+if [ -d /opt/angry-omnibus-toolchain ]; then
+  rm -rf /opt/angry-omnibus-toolchain
 fi
 
 echo "The Angry Omnibus Toolchain has been removed"
