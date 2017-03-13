@@ -38,7 +38,7 @@ override :rubygems, version: "2.6.10"
 # TODO: Fix this asap - for some reason curl and openssl > 1.0.1u fail
 # on aix with a SSL23_GET_SERVER_HELLO issue.
 if aix? || solaris_10?
-  override :openssl,  version: "1.0.1u"
+  override :openssl, version: "1.0.1u"
 end
 
 # creates required build directories
