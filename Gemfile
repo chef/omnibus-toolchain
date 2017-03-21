@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'omnibus',          git: 'https://github.com/chef/omnibus'
+gem 'omnibus',          git: 'https://github.com/chef/omnibus', branch: 'shain/fix_windows_quotes'
 gem 'omnibus-software', git: 'https://github.com/chef/omnibus-software'
 
 gem 'chefstyle', '~> 0.3'
