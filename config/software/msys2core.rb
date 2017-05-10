@@ -70,6 +70,14 @@ build do
   command "#{base_shell_cmd} \"pacman -S --needed --noconfirm mingw-w64-#{CARCH}-binutils\"", env: env
   # gnumake
   command "#{base_shell_cmd} \"pacman -S --needed --noconfirm mingw-w64-#{CARCH}-make\"", env: env
+  # libtool
+  command "#{base_shell_cmd} \"pacman -S --needed --noconfirm mingw-w64-#{CARCH}-libtool\"", env: env
+  # autoconf
+  command "#{base_shell_cmd} \"pacman -S --needed --noconfirm msys/autoconf\"", env: env
+  # automake
+  command "#{base_shell_cmd} \"pacman -S --needed --noconfirm msys/automake\"", env: env
+  # autogen (required for building ZMQ)
+  command "#{base_shell_cmd} \"pacman -S --needed --noconfirm msys/autogen\"", env: env
   # diffutils (required for building OpenSSL)
   command "#{base_shell_cmd} \"pacman -S --needed --noconfirm msys/diffutils\"", env: env
   # msys gnumake
