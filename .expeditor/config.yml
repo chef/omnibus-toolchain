@@ -1,0 +1,9 @@
+product_key: omnibus-toolchain
+
+slack:
+  notify_channel: eng-services-alerts
+
+github:
+  bump_version_on_merge: true
+  trigger_build_on_bump: true
+  maintainer_group:  chef/engineering-services
