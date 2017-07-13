@@ -15,10 +15,11 @@
 #
 
 #
-# This is a clone of the Chef project that we can install on the Chef build and
-# test machines. As such this project definition is just a thin wrapper around
-# `config/project/chef.rb`.
+# This is a clone of the omnibus-toolchain project that we can install on
+# the omnibus-toolchain build and test machines. As such this project
+# definition is just a thin wrapper around `config/project/omnibus-toolchain.rb`.
 #
+current_file = __FILE__
 toolchain_project_contents = IO.read(File.expand_path("../omnibus-toolchain.rb", __FILE__))
 self.instance_eval toolchain_project_contents
 
