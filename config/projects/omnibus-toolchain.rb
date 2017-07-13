@@ -28,7 +28,7 @@ else
   install_dir "#{default_root}/#{name}"
 end
 
-build_version Omnibus::BuildVersion.semver
+build_version IO.read(File.expand_path("../../../VERSION", __FILE__)).strip
 build_iteration 1
 
 override :ruby,     version: "2.3.1"
