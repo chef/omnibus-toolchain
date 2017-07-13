@@ -4,6 +4,13 @@ slack:
   notify_channel: eng-services-alerts
 
 github:
-  bump_version_on_merge: true
-  trigger_build_on_bump: true
   maintainer_group:  chef/engineering-services
+
+merge_actions:
+  built_in:bump_version:
+    ignore_labels: "Version: Skip Bump"
+  built_in:update_changelog:
+    ignore_labels: "Changelog: Skip Update"
+  built_in:trigger_omnibus_release_build:
+    ignore_labels: "Omnibus: Skip Build"
+    only_if: built_in:bump_version
