@@ -8,9 +8,12 @@
 # - if you are under 40, get peer review from your elders.
 #
 
-# Clean up the install directory if they exists
-if [ -d /opt/omnibus-toolchain ]; then
-  rm -rf /opt/omnibus-toolchain
+if [ ! -f /etc/redhat-release -a ! -f /etc/fedora-release -a ! -f /etc/system-release -a ! -f /etc/SuSE-release ]; then
+  # no op, will clean itself up
+elif [ "x$1" = "x0" ]; then
+  if [ -d /opt/angry-omnibus-toolchain ]; then
+    rm -rf /opt/angry-omnibus-toolchain
+  fi
 fi
 
 echo "The Omnibus Toolchain has been removed"
