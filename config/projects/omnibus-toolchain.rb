@@ -36,18 +36,11 @@ else
   install_dir "#{default_root}/#{name}"
 end
 
-override :ruby,     version: "2.3.1"
-override :git,      version: "2.10.2"
+override :ruby,     version: "2.4.1"
+override :git,      version: "2.14.1"
 override :gtar,     version: "1.28"
 override :rubygems, version: "2.6.10"
-# Do not use 1.14.6 - this has the the issue that bundler#5515 will fix once
-# they release. This breaks on Windows with a 'Illformed requirement' error
-override :bundler,  version: "1.13.6"
-# TODO: Fix this asap - for some reason curl and openssl > 1.0.1u fail
-# on aix with a SSL23_GET_SERVER_HELLO issue.
-if aix? || solaris_10?
-  override :openssl, version: "1.0.1u"
-end
+override :bundler,  version: "1.15.3"
 
 # creates required build directories
 dependency "preparation"
