@@ -2,17 +2,18 @@ omnibus-toolchain CHANGELOG
 ==========================
 This file is used to list changes made in each version of the omnibus-toolchain.
 
-<!-- latest_release -->
-## [](https://github.com/chef/omnibus-toolchain/tree/) (2017-07-20)
+<!-- latest_release 1.1.76 -->
+## [1.1.76](https://github.com/chef/omnibus-toolchain/tree/1.1.76) (2017-08-11)
 
 #### Merged Pull Requests
-- Update Expeditor Config + Remove Build Cookbook [#71](https://github.com/chef/omnibus-toolchain/pull/71) ([tduffield](https://github.com/tduffield))
+- Update versions to be more current and deal with git CVE [#72](https://github.com/chef/omnibus-toolchain/pull/72) ([scotthain](https://github.com/scotthain))
 <!-- latest_release -->
 
 <!-- release_rollup since=1.1.73 -->
 ### Changes since 1.1.73 release
 
 #### Merged Pull Requests
+- Update versions to be more current and deal with git CVE [#72](https://github.com/chef/omnibus-toolchain/pull/72) ([scotthain](https://github.com/scotthain)) <!-- 1.1.76 -->
 - Update Expeditor Config + Remove Build Cookbook [#71](https://github.com/chef/omnibus-toolchain/pull/71) ([tduffield](https://github.com/tduffield)) <!-- 1.1.75 -->
 <!-- release_rollup -->
 
