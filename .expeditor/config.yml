@@ -3,19 +3,23 @@ product_key:
   - angry-omnibus-toolchain
 
 slack:
-  notify_channel: eng-services-alerts
+  notify_channel: eng-services-notify
 
 github:
   maintainer_group:  chef/engineering-services
 
 merge_actions:
-  built_in:bump_version:
-    ignore_labels: "Version: Skip Bump"
-  built_in:update_changelog:
-    ignore_labels: "Changelog: Skip Update"
-  built_in:trigger_omnibus_release_build:
-    ignore_labels: "Omnibus: Skip Build"
-    only_if: built_in:bump_version
+  - built_in:bump_version:
+      ignore_labels:
+        - "Version: Skip Bump"
+        - "Expeditor: Skip All"
+  - built_in:update_changelog:
+      ignore_labels: "Changelog: Skip Update"
+  - built_in:trigger_omnibus_release_build:
+      ignore_labels:
+        - "Omnibus: Skip Build"
+        - "Expeditor: Skip All"
+      only_if: built_in:bump_version
 
 artifact_actions:
   promoted_to_stable:
