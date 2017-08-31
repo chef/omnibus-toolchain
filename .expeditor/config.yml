@@ -14,7 +14,9 @@ merge_actions:
         - "Version: Skip Bump"
         - "Expeditor: Skip All"
   - built_in:update_changelog:
-      ignore_labels: "Changelog: Skip Update"
+      ignore_labels:
+        - "Changelog: Skip Update"
+        - "Expeditor: Skip All"
   - built_in:trigger_omnibus_release_build:
       ignore_labels:
         - "Omnibus: Skip Build"
