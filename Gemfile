@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'omnibus',          git: 'https://github.com/chef/omnibus'
-gem 'omnibus-software', git: 'https://github.com/chef/omnibus-software'
+gem 'omnibus-software', git: 'https://github.com/chef/omnibus-software', branch: 'shain/update_gtar_patch'
 
 gem 'chefstyle', '~> 0.3'
 
