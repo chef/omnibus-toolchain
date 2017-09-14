@@ -25,4 +25,5 @@ merge_actions:
 
 artifact_actions:
   promoted_to_stable:
-    built_in:rollover_changelog:
+    - built_in:rollover_changelog
+    - built_in:notify_chefio_slack_channels
