@@ -36,10 +36,9 @@ else
   install_dir "#{default_root}/#{name}"
 end
 
-override :ruby,     version: "2.4.1"
+override :ruby,     version: "2.4.2"
 override :git,      version: "2.14.1"
 override :gtar,     version: "1.28"
-override :rubygems, version: "2.6.10"
 override :bundler,  version: "1.15.3"
 
 # creates required build directories
