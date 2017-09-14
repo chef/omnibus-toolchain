@@ -31,10 +31,9 @@ end
 build_version Omnibus::BuildVersion.semver
 build_iteration 1
 
-override :ruby,     version: "2.3.1"
+override :ruby,     version: "2.4.2"
 override :git,      version: "2.10.2"
 override :gtar,     version: "1.28"
-override :rubygems, version: "2.6.10"
 # Do not use 1.14.6 - this has the the issue that bundler#5515 will fix once
 # they release. This breaks on Windows with a 'Illformed requirement' error
 override :bundler,  version: "1.13.6"
