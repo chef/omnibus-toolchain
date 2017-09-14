@@ -2,10 +2,11 @@ omnibus-toolchain CHANGELOG
 ==========================
 This file is used to list changes made in each version of the omnibus-toolchain.
 
-<!-- latest_release unreleased -->
-## Unreleased
+<!-- latest_release 1.1.77 -->
+## [1.1.77](https://github.com/chef/omnibus-toolchain/tree/1.1.77) (2017-09-14)
 
 #### Merged Pull Requests
+- Upgrade ruby 2.4.2 and remove rubygems version pin [#78](https://github.com/chef/omnibus-toolchain/pull/78) ([jaymalasinha](https://github.com/jaymalasinha))
 - Update notification channels to #eng-services-notify [#74](https://github.com/chef/omnibus-toolchain/pull/74) ([schisamo](https://github.com/schisamo))
 <!-- latest_release -->
 
@@ -13,6 +14,7 @@ This file is used to list changes made in each version of the omnibus-toolchain.
 ### Changes since 1.1.76 release
 
 #### Merged Pull Requests
+- Upgrade ruby 2.4.2 and remove rubygems version pin [#78](https://github.com/chef/omnibus-toolchain/pull/78) ([jaymalasinha](https://github.com/jaymalasinha)) <!-- 1.1.77 -->
 - Update notification channels to #eng-services-notify [#74](https://github.com/chef/omnibus-toolchain/pull/74) ([schisamo](https://github.com/schisamo)) <!-- 1.1.76 -->
 <!-- release_rollup -->
 
