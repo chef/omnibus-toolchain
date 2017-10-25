@@ -3,7 +3,9 @@ product_key:
   - angry-omnibus-toolchain
 
 slack:
-  notify_channel: eng-services-notify
+  notify_channel:
+    - eng-services-notify
+    - omnibus-rfr
 
 github:
   maintainer_group:  chef/engineering-services
@@ -22,6 +24,19 @@ merge_actions:
         - "Omnibus: Skip Build"
         - "Expeditor: Skip All"
       only_if: built_in:bump_version
+
+# Subscription to workload action of pull request merge to master branch on
+# omnibus-software project will allow us to trigger an uncached omnibus build
+# for omnibus-toolchain and angry-omnibus-toolchain when the omnibus-software
+# has modified software config files.
+subscriptions:
+  # chef/omnibus-software
+  - workload: pull_request_merged:chef/omnibus-software:master:*
+    actions:
+      - built_in:trigger_omnibus_expcache_build:
+          only_if_modified:
+            - config/software/*
+            - config/patches/*
 
 artifact_actions:
   promoted_to_stable:
