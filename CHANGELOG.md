@@ -2,17 +2,18 @@ omnibus-toolchain CHANGELOG
 ==========================
 This file is used to list changes made in each version of the omnibus-toolchain.
 
-<!-- latest_release 1.1.78 -->
-## [1.1.78](https://github.com/chef/omnibus-toolchain/tree/1.1.78) (2017-10-25)
+<!-- latest_release 1.1.79 -->
+## [1.1.79](https://github.com/chef/omnibus-toolchain/tree/1.1.79) (2017-11-28)
 
 #### Merged Pull Requests
-- Add expeditor subscription for omnibus-software merges [#79](https://github.com/chef/omnibus-toolchain/pull/79) ([jaymalasinha](https://github.com/jaymalasinha))
+- Pin curl and rubygems [#81](https://github.com/chef/omnibus-toolchain/pull/81) ([scotthain](https://github.com/scotthain))
 <!-- latest_release -->
 
 <!-- release_rollup since=1.1.77 -->
 ### Changes since 1.1.77 release
 
 #### Merged Pull Requests
+- Pin curl and rubygems [#81](https://github.com/chef/omnibus-toolchain/pull/81) ([scotthain](https://github.com/scotthain)) <!-- 1.1.79 -->
 - Add expeditor subscription for omnibus-software merges [#79](https://github.com/chef/omnibus-toolchain/pull/79) ([jaymalasinha](https://github.com/jaymalasinha)) <!-- 1.1.78 -->
 <!-- release_rollup -->
 
