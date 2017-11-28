@@ -2,28 +2,25 @@ omnibus-toolchain CHANGELOG
 ==========================
 This file is used to list changes made in each version of the omnibus-toolchain.
 
-<!-- latest_release 1.1.79 -->
-## [1.1.79](https://github.com/chef/omnibus-toolchain/tree/1.1.79) (2017-11-28)
-
-#### Merged Pull Requests
-- Pin curl and rubygems [#81](https://github.com/chef/omnibus-toolchain/pull/81) ([scotthain](https://github.com/scotthain))
+<!-- latest_release -->
 <!-- latest_release -->
 
-<!-- release_rollup since=1.1.77 -->
-### Changes since 1.1.77 release
-
-#### Merged Pull Requests
-- Pin curl and rubygems [#81](https://github.com/chef/omnibus-toolchain/pull/81) ([scotthain](https://github.com/scotthain)) <!-- 1.1.79 -->
-- Add expeditor subscription for omnibus-software merges [#79](https://github.com/chef/omnibus-toolchain/pull/79) ([jaymalasinha](https://github.com/jaymalasinha)) <!-- 1.1.78 -->
+<!-- release_rollup -->
 <!-- release_rollup -->
 
 <!-- latest_stable_release -->
+## [1.1.79](https://github.com/chef/omnibus-toolchain/tree/1.1.79) (2017-11-28)
+
+#### Merged Pull Requests
+- Add expeditor subscription for omnibus-software merges [#79](https://github.com/chef/omnibus-toolchain/pull/79) ([jaymalasinha](https://github.com/jaymalasinha))
+- Pin curl and rubygems [#81](https://github.com/chef/omnibus-toolchain/pull/81) ([scotthain](https://github.com/scotthain))
+<!-- latest_stable_release -->
+
 ## [1.1.77](https://github.com/chef/omnibus-toolchain/tree/1.1.77) (2017-09-18)
 
 #### Merged Pull Requests
 - Update notification channels to #eng-services-notify [#74](https://github.com/chef/omnibus-toolchain/pull/74) ([schisamo](https://github.com/schisamo))
 - Upgrade ruby 2.4.2 and remove rubygems version pin [#78](https://github.com/chef/omnibus-toolchain/pull/78) ([jaymalasinha](https://github.com/jaymalasinha))
-<!-- latest_stable_release -->
 
 ## [1.1.76](https://github.com/chef/omnibus-toolchain/tree/1.1.76) (2017-08-15)
 
