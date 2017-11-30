@@ -54,8 +54,10 @@ build do
 
   # run msys2_shell once so it can set up its internals and quit
   command "#{base_shell_cmd} \"exit\""
-  # run msys2_shell to update pacman
-  command "#{base_shell_cmd} \"pacman -Sy pacman --noconfirm\"", env: env
+  # TODO: DON'T UPDATE PACMAN as of 11/30/16 this causes all following pacman
+  # commands to return 127
+  # # run msys2_shell to update pacman
+  # command "#{base_shell_cmd} \"pacman -Sy pacman --noconfirm\"", env: env
   # run msys2_shell to update system packages
   command "#{base_shell_cmd} \"pacman -Syuu --noconfirm\"", env: env
   # run msys2_shell to update the rest of the packages
