@@ -37,6 +37,7 @@ else
 end
 
 override :ruby,     version: "2.4.2"
+override :git,      version: "2.15.1"
 override :gtar,     version: "1.28"
 # appears to be an issue with bundler in 2.7.x
 override :rubygems, version: '2.6.14'
