@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'omnibus',          git: 'https://github.com/chef/omnibus'
-gem 'omnibus-software', git: 'https://github.com/chef/omnibus-software'
+gem 'omnibus-software', git: 'https://github.com/chef/omnibus-software', branch: 'shain/patch_git_for_aix'
 
 group :rake do
   gem 'rake'
