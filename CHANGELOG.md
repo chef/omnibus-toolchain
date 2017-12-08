@@ -2,27 +2,24 @@ omnibus-toolchain CHANGELOG
 ==========================
 This file is used to list changes made in each version of the omnibus-toolchain.
 
-<!-- latest_release 1.1.82 -->
-## [1.1.82](https://github.com/chef/omnibus-toolchain/tree/1.1.82) (2017-12-06)
-
-#### Merged Pull Requests
-- Create symlinks for angry-omnibus-toolchain IPS package [#85](https://github.com/chef/omnibus-toolchain/pull/85) ([jaymalasinha](https://github.com/jaymalasinha))
+<!-- latest_release -->
 <!-- latest_release -->
 
-<!-- release_rollup since=1.1.80 -->
-### Changes since 1.1.80 release
-
-#### Merged Pull Requests
-- Create symlinks for angry-omnibus-toolchain IPS package [#85](https://github.com/chef/omnibus-toolchain/pull/85) ([jaymalasinha](https://github.com/jaymalasinha)) <!-- 1.1.82 -->
-- Unpin git version, add verification script, update gems [#83](https://github.com/chef/omnibus-toolchain/pull/83) ([scotthain](https://github.com/scotthain)) <!-- 1.1.81 -->
+<!-- release_rollup -->
 <!-- release_rollup -->
 
 <!-- latest_stable_release -->
+## [1.1.82](https://github.com/chef/omnibus-toolchain/tree/1.1.82) (2017-12-08)
+
+#### Merged Pull Requests
+- Unpin git version, add verification script, update gems [#83](https://github.com/chef/omnibus-toolchain/pull/83) ([scotthain](https://github.com/scotthain))
+- Create symlinks for angry-omnibus-toolchain IPS package [#85](https://github.com/chef/omnibus-toolchain/pull/85) ([jaymalasinha](https://github.com/jaymalasinha))
+<!-- latest_stable_release -->
+
 ## [1.1.80](https://github.com/chef/omnibus-toolchain/tree/1.1.80) (2017-12-01)
 
 #### Merged Pull Requests
 - Don&#39;t update pacman [#82](https://github.com/chef/omnibus-toolchain/pull/82) ([scotthain](https://github.com/scotthain))
-<!-- latest_stable_release -->
 
 ## [1.1.79](https://github.com/chef/omnibus-toolchain/tree/1.1.79) (2017-11-28)
 
