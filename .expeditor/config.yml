@@ -4,11 +4,11 @@ product_key:
 
 slack:
   notify_channel:
-    - eng-services-notify
+    - eng-infra-releng
     - omnibus-rfr
 
 github:
-  maintainer_group:  chef/engineering-services
+  maintainer_group:  chef/ben-team
 
 merge_actions:
   - built_in:bump_version:
