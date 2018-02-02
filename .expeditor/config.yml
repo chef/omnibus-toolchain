@@ -4,11 +4,8 @@ product_key:
 
 slack:
   notify_channel:
-    - benthos-notify
+    - releng-notify
     - omnibus-rfr
-
-github:
-  maintainer_group:  chef/ben-team
 
 merge_actions:
   - built_in:bump_version:
