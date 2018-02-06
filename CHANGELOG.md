@@ -2,17 +2,18 @@ omnibus-toolchain CHANGELOG
 ==========================
 This file is used to list changes made in each version of the omnibus-toolchain.
 
-<!-- latest_release 1.1.83 -->
-## [1.1.83](https://github.com/chef/omnibus-toolchain/tree/1.1.83) (2017-12-19)
+<!-- latest_release 1.1.84 -->
+## [1.1.84](https://github.com/chef/omnibus-toolchain/tree/1.1.84) (2018-02-06)
 
 #### Merged Pull Requests
-- Update notification room [#87](https://github.com/chef/omnibus-toolchain/pull/87) ([scotthain](https://github.com/scotthain))
+- A few documentation fixes to bring this up-to-date. [#89](https://github.com/chef/omnibus-toolchain/pull/89) ([juliandunn](https://github.com/juliandunn))
 <!-- latest_release -->
 
 <!-- release_rollup since=1.1.82 -->
 ### Changes since 1.1.82 release
 
 #### Merged Pull Requests
+- A few documentation fixes to bring this up-to-date. [#89](https://github.com/chef/omnibus-toolchain/pull/89) ([juliandunn](https://github.com/juliandunn)) <!-- 1.1.84 -->
 - Update notification room [#87](https://github.com/chef/omnibus-toolchain/pull/87) ([scotthain](https://github.com/scotthain)) <!-- 1.1.83 -->
 <!-- release_rollup -->
 
