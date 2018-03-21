@@ -36,12 +36,12 @@ else
   install_dir "#{default_root}/#{name}"
 end
 
-override :ruby,     version: "2.4.2"
+override :ruby,     version: "2.5.0"
 override :gtar,     version: "1.28"
-# appears to be an issue with bundler in 2.7.x
-override :rubygems, version: '2.6.14'
 # there's an issue with curl later versions (ntlm + smb) on AIX
 override :curl, version: '7.47.1'
+# riding berkshelf master is hard when you're at the edge of versions
+override :berkshelf, version: "v6.3.1"
 
 # creates required build directories
 dependency "preparation"
