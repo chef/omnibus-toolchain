@@ -36,7 +36,7 @@ else
   install_dir "#{default_root}/#{name}"
 end
 
-override :ruby,     version: "2.5.0"
+override :ruby,     version: "2.4.2"
 override :gtar,     version: "1.28"
 # there's an issue with curl later versions (ntlm + smb) on AIX
 override :curl, version: '7.47.1'
