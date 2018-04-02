@@ -29,8 +29,9 @@ ruby --version
 tar --version
 
 cd $TMPDIR
-curl https://raw.githubusercontent.com/chef/omnibus-toolchain/master/Gemfile > Gemfile
-bundle install --without development --path ./vendor/bundle
 git clone git@github.com:chef/omnibus-toolchain.git
 cd omnibus-toolchain
-rake -T
+bundle install --without development --path ./vendor/bundle
+bundle exec rake -T
+cd $TMPDIR
+rm -rf ot_test
