@@ -2,17 +2,18 @@ omnibus-toolchain CHANGELOG
 ==========================
 This file is used to list changes made in each version of the omnibus-toolchain.
 
-<!-- latest_release 1.1.87 -->
-## [1.1.87](https://github.com/chef/omnibus-toolchain/tree/1.1.87) (2018-04-02)
+<!-- latest_release 1.1.88 -->
+## [1.1.88](https://github.com/chef/omnibus-toolchain/tree/1.1.88) (2018-04-02)
 
 #### Merged Pull Requests
-- Fix tests up [#92](https://github.com/chef/omnibus-toolchain/pull/92) ([scotthain](https://github.com/scotthain))
+- Fix tests some more [#93](https://github.com/chef/omnibus-toolchain/pull/93) ([scotthain](https://github.com/scotthain))
 <!-- latest_release -->
 
 <!-- release_rollup since=1.1.82 -->
 ### Changes since 1.1.82 release
 
 #### Merged Pull Requests
+- Fix tests some more [#93](https://github.com/chef/omnibus-toolchain/pull/93) ([scotthain](https://github.com/scotthain)) <!-- 1.1.88 -->
 - Fix tests up [#92](https://github.com/chef/omnibus-toolchain/pull/92) ([scotthain](https://github.com/scotthain)) <!-- 1.1.87 -->
 - update berkshelf, ruby, and other versions [#91](https://github.com/chef/omnibus-toolchain/pull/91) ([scotthain](https://github.com/scotthain)) <!-- 1.1.86 -->
 - Add a verification script so we don&#39;t have install-time failures [#90](https://github.com/chef/omnibus-toolchain/pull/90) ([scotthain](https://github.com/scotthain)) <!-- 1.1.85 -->
