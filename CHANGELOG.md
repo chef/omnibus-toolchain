@@ -2,32 +2,29 @@ omnibus-toolchain CHANGELOG
 ==========================
 This file is used to list changes made in each version of the omnibus-toolchain.
 
-<!-- latest_release 1.1.88 -->
-## [1.1.88](https://github.com/chef/omnibus-toolchain/tree/1.1.88) (2018-04-02)
-
-#### Merged Pull Requests
-- Fix tests some more [#93](https://github.com/chef/omnibus-toolchain/pull/93) ([scotthain](https://github.com/scotthain))
+<!-- latest_release -->
 <!-- latest_release -->
 
-<!-- release_rollup since=1.1.82 -->
-### Changes since 1.1.82 release
-
-#### Merged Pull Requests
-- Fix tests some more [#93](https://github.com/chef/omnibus-toolchain/pull/93) ([scotthain](https://github.com/scotthain)) <!-- 1.1.88 -->
-- Fix tests up [#92](https://github.com/chef/omnibus-toolchain/pull/92) ([scotthain](https://github.com/scotthain)) <!-- 1.1.87 -->
-- update berkshelf, ruby, and other versions [#91](https://github.com/chef/omnibus-toolchain/pull/91) ([scotthain](https://github.com/scotthain)) <!-- 1.1.86 -->
-- Add a verification script so we don&#39;t have install-time failures [#90](https://github.com/chef/omnibus-toolchain/pull/90) ([scotthain](https://github.com/scotthain)) <!-- 1.1.85 -->
-- A few documentation fixes to bring this up-to-date. [#89](https://github.com/chef/omnibus-toolchain/pull/89) ([juliandunn](https://github.com/juliandunn)) <!-- 1.1.84 -->
-- Update notification room [#87](https://github.com/chef/omnibus-toolchain/pull/87) ([scotthain](https://github.com/scotthain)) <!-- 1.1.83 -->
+<!-- release_rollup -->
 <!-- release_rollup -->
 
 <!-- latest_stable_release -->
+## [1.1.88](https://github.com/chef/omnibus-toolchain/tree/1.1.88) (2018-04-03)
+
+#### Merged Pull Requests
+- Update notification room [#87](https://github.com/chef/omnibus-toolchain/pull/87) ([scotthain](https://github.com/scotthain))
+- A few documentation fixes to bring this up-to-date. [#89](https://github.com/chef/omnibus-toolchain/pull/89) ([juliandunn](https://github.com/juliandunn))
+- Add a verification script so we don&#39;t have install-time failures [#90](https://github.com/chef/omnibus-toolchain/pull/90) ([scotthain](https://github.com/scotthain))
+- update berkshelf, ruby, and other versions [#91](https://github.com/chef/omnibus-toolchain/pull/91) ([scotthain](https://github.com/scotthain))
+- Fix tests up [#92](https://github.com/chef/omnibus-toolchain/pull/92) ([scotthain](https://github.com/scotthain))
+- Fix tests some more [#93](https://github.com/chef/omnibus-toolchain/pull/93) ([scotthain](https://github.com/scotthain))
+<!-- latest_stable_release -->
+
 ## [1.1.82](https://github.com/chef/omnibus-toolchain/tree/1.1.82) (2017-12-08)
 
 #### Merged Pull Requests
 - Unpin git version, add verification script, update gems [#83](https://github.com/chef/omnibus-toolchain/pull/83) ([scotthain](https://github.com/scotthain))
 - Create symlinks for angry-omnibus-toolchain IPS package [#85](https://github.com/chef/omnibus-toolchain/pull/85) ([jaymalasinha](https://github.com/jaymalasinha))
-<!-- latest_stable_release -->
 
 ## [1.1.80](https://github.com/chef/omnibus-toolchain/tree/1.1.80) (2017-12-01)
 
