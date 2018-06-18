@@ -15,10 +15,10 @@
 #
 
 name "msys2core"
-default_version "20161025"
+default_version "20180531"
 
-version "20160921" do
-  source sha256: "4527d71caf97b42e7f2c0c3d7fd80bacd36c2efc60ab81142ae9943ce3470e31"
+version "20180531" do
+  source sha256: "4e799b5c3efcf9efcb84923656b7bcff16f75a666911abd6620ea8e5e1e9870c"
 end
 
 version "20161025" do
@@ -54,10 +54,8 @@ build do
 
   # run msys2_shell once so it can set up its internals and quit
   command "#{base_shell_cmd} \"exit\""
-  # TODO: DON'T UPDATE PACMAN as of 11/30/16 this causes all following pacman
-  # commands to return 127
-  # # run msys2_shell to update pacman
-  # command "#{base_shell_cmd} \"pacman -Sy pacman --noconfirm\"", env: env
+  # run msys2_shell to update pacman
+  command "#{base_shell_cmd} \"pacman -Sy pacman --noconfirm\"", env: env
   # run msys2_shell to update system packages
   command "#{base_shell_cmd} \"pacman -Syuu --noconfirm\"", env: env
   # run msys2_shell to update the rest of the packages
