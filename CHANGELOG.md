@@ -2,10 +2,18 @@ omnibus-toolchain CHANGELOG
 ==========================
 This file is used to list changes made in each version of the omnibus-toolchain.
 
-<!-- latest_release -->
+<!-- latest_release 1.1.89 -->
+## [1.1.89](https://github.com/chef/omnibus-toolchain/tree/1.1.89) (2018-06-18)
+
+#### Merged Pull Requests
+- Updating MSYS2 version, the exit 127 issue appears to be resolved now [#95](https://github.com/chef/omnibus-toolchain/pull/95) ([scotthain](https://github.com/scotthain))
 <!-- latest_release -->
 
-<!-- release_rollup -->
+<!-- release_rollup since=1.1.88 -->
+### Changes since 1.1.88 release
+
+#### Merged Pull Requests
+- Updating MSYS2 version, the exit 127 issue appears to be resolved now [#95](https://github.com/chef/omnibus-toolchain/pull/95) ([scotthain](https://github.com/scotthain)) <!-- 1.1.89 -->
 <!-- release_rollup -->
 
 <!-- latest_stable_release -->
