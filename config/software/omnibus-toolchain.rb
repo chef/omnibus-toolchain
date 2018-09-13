@@ -21,6 +21,7 @@ license :project_license
 
 # gnu utilities
 if windows?
+  dependency "cmake"
   dependency "msys2core"
   dependency "git-windows"
 else
