@@ -35,7 +35,7 @@ subscriptions:
             - config/software/*
             - config/patches/*
 
-artifact_actions:
-  promoted_to_stable:
-    - built_in:rollover_changelog
-    - built_in:notify_chefio_slack_channels
+  - workload: artifact_published:stable:omnibus-toolchain:*
+    actions:
+      - built_in:rollover_changelog
+      - built_in:notify_chefio_slack_channels
