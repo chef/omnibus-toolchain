@@ -54,12 +54,9 @@ build do
 
   # run msys2_shell once so it can set up its internals and quit
   command "#{base_shell_cmd} \"exit\""
-  # run msys2_shell to update pacman
-  command "#{base_shell_cmd} \"pacman -Sy pacman --noconfirm\"", env: env
-  # run msys2_shell to update system packages
+  # As per https://github.com/msys2/msys2/wiki/MSYS2-installation
+  # run msys2_shell to update all packages
   command "#{base_shell_cmd} \"pacman -Syuu --noconfirm\"", env: env
-  # run msys2_shell to update the rest of the packages
-  command "#{base_shell_cmd} \"pacman -Su --noconfirm\"", env: env
 
   # ################
   # these should be put into a different definition
