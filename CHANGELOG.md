@@ -2,10 +2,18 @@ omnibus-toolchain CHANGELOG
 ==========================
 This file is used to list changes made in each version of the omnibus-toolchain.
 
-<!-- latest_release -->
+<!-- latest_release 1.1.91 -->
+## [1.1.91](https://github.com/chef/omnibus-toolchain/tree/1.1.91) (2018-09-21)
+
+#### Merged Pull Requests
+- Fix msys installation getting hung issue [#97](https://github.com/chef/omnibus-toolchain/pull/97) ([jaymalasinha](https://github.com/jaymalasinha))
 <!-- latest_release -->
 
-<!-- release_rollup -->
+<!-- release_rollup since=1.1.90 -->
+### Changes since 1.1.90 release
+
+#### Merged Pull Requests
+- Fix msys installation getting hung issue [#97](https://github.com/chef/omnibus-toolchain/pull/97) ([jaymalasinha](https://github.com/jaymalasinha)) <!-- 1.1.91 -->
 <!-- release_rollup -->
 
 <!-- latest_stable_release -->
