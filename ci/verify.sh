@@ -26,7 +26,7 @@ $BINDIR/ruby --version
 $BINDIR/tar --version
 
 cd $TMPDIR
-$BINDIR/git clone git@github.com:chef/omnibus-toolchain.git
+$BINDIR/git clone https://github.com/chef/omnibus-toolchain.git
 cd omnibus-toolchain
 $BINDIR/bundle install --without development --path ./vendor/bundle
 $BINDIR/bundle exec rake -T
