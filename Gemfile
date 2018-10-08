@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'omnibus',          git: 'https://github.com/chef/omnibus'
+gem 'omnibus',          git: 'https://github.com/chef/omnibus', branch: 'jsinha/fix-which'
 gem 'omnibus-software', git: 'https://github.com/chef/omnibus-software'
 
 gem 'chefstyle'
