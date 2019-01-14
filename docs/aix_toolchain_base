@@ -345,12 +345,12 @@ cd ..
 wget http://production.cf.rubygems.org/rubygems/rubygems-2.4.4.tgz
 gtar zxf rubygems-2.4.4.tgz
 cd rubygems-2.4.4
-/opt/be/embedded/bin/ruby setup.rb --no-ri --no-rdoc
+/opt/be/embedded/bin/ruby setup.rb --no-document
 cd ..
 ```
 ### bundler (you may need to do this later)
 ```
-/opt/be/embedded/bin/gem install bundler --version 1.5.3 --no-ri --no-rdoc
+/opt/be/embedded/bin/gem install bundler --version 1.5.3 --no-document
 ```
 
 Phase 2 - The first build
