@@ -2,28 +2,25 @@ omnibus-toolchain CHANGELOG
 ==========================
 This file is used to list changes made in each version of the omnibus-toolchain.
 
-<!-- latest_release 1.1.94 -->
-## [1.1.94](https://github.com/chef/omnibus-toolchain/tree/1.1.94) (2019-01-14)
-
-#### Merged Pull Requests
-- Update toolchain version to include latest bundler gem [#101](https://github.com/chef/omnibus-toolchain/pull/101) ([jaymalasinha](https://github.com/jaymalasinha))
+<!-- latest_release -->
 <!-- latest_release -->
 
-<!-- release_rollup since=1.1.93 -->
-### Changes since 1.1.93 release
-
-#### Merged Pull Requests
-- Update toolchain version to include latest bundler gem [#101](https://github.com/chef/omnibus-toolchain/pull/101) ([jaymalasinha](https://github.com/jaymalasinha)) <!-- 1.1.94 -->
+<!-- release_rollup -->
 <!-- release_rollup -->
 
 <!-- latest_stable_release -->
+## [1.1.94](https://github.com/chef/omnibus-toolchain/tree/1.1.94) (2019-01-15)
+
+#### Merged Pull Requests
+- Update toolchain version to include latest bundler gem [#101](https://github.com/chef/omnibus-toolchain/pull/101) ([jaymalasinha](https://github.com/jaymalasinha))
+<!-- latest_stable_release -->
+
 ## [1.1.93](https://github.com/chef/omnibus-toolchain/tree/1.1.93) (2018-10-24)
 
 #### Merged Pull Requests
 - Fix msys installation getting hung issue [#97](https://github.com/chef/omnibus-toolchain/pull/97) ([jaymalasinha](https://github.com/jaymalasinha))
 - Add windows cmake to toolchain [#98](https://github.com/chef/omnibus-toolchain/pull/98) ([jaymalasinha](https://github.com/jaymalasinha))
 - Swap git:// clone to https:// for verify [#99](https://github.com/chef/omnibus-toolchain/pull/99) ([jaymalasinha](https://github.com/jaymalasinha))
-<!-- latest_stable_release -->
 
 ## [1.1.90](https://github.com/chef/omnibus-toolchain/tree/1.1.90) (2018-06-20)
 
