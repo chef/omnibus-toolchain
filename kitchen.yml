@@ -21,15 +21,17 @@ provisioner:
         build_user_password: vagrant
 
 platforms:
-  - name: centos-6.7
+  - name: centos-6
     run_list: yum-epel::default
-  - name: centos-7.1
+  - name: centos-7
     run_list: yum-epel::default
-  - name: freebsd-9.3
+  - name: freebsd-11
     run_list:
       - freebsd::portsnap
       - freebsd::pkgng
-  - name: ubuntu-14.04
+  - name: ubuntu-16.04
+    run_list: apt::default
+  - name: ubuntu-18.04
     run_list: apt::default
   - name: windows-2012r2
     driver:
