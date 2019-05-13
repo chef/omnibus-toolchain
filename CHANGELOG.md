@@ -2,10 +2,18 @@ omnibus-toolchain CHANGELOG
 ==========================
 This file is used to list changes made in each version of the omnibus-toolchain.
 
-<!-- latest_release -->
+<!-- latest_release 1.1.99 -->
+## [1.1.99](https://github.com/chef/omnibus-toolchain/tree/1.1.99) (2019-05-13)
+
+#### Merged Pull Requests
+- Update ruby and berkshelf versions [#107](https://github.com/chef/omnibus-toolchain/pull/107) ([jaymalasinha](https://github.com/jaymalasinha))
 <!-- latest_release -->
 
-<!-- release_rollup -->
+<!-- release_rollup since=1.1.98 -->
+### Changes since 1.1.98 release
+
+#### Merged Pull Requests
+- Update ruby and berkshelf versions [#107](https://github.com/chef/omnibus-toolchain/pull/107) ([jaymalasinha](https://github.com/jaymalasinha)) <!-- 1.1.99 -->
 <!-- release_rollup -->
 
 <!-- latest_stable_release -->
