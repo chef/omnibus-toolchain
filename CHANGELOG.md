@@ -2,21 +2,19 @@ omnibus-toolchain CHANGELOG
 ==========================
 This file is used to list changes made in each version of the omnibus-toolchain.
 
-<!-- latest_release 1.1.99 -->
-## [1.1.99](https://github.com/chef/omnibus-toolchain/tree/1.1.99) (2019-05-13)
-
-#### Merged Pull Requests
-- Update ruby and berkshelf versions [#107](https://github.com/chef/omnibus-toolchain/pull/107) ([jaymalasinha](https://github.com/jaymalasinha))
+<!-- latest_release -->
 <!-- latest_release -->
 
-<!-- release_rollup since=1.1.98 -->
-### Changes since 1.1.98 release
-
-#### Merged Pull Requests
-- Update ruby and berkshelf versions [#107](https://github.com/chef/omnibus-toolchain/pull/107) ([jaymalasinha](https://github.com/jaymalasinha)) <!-- 1.1.99 -->
+<!-- release_rollup -->
 <!-- release_rollup -->
 
 <!-- latest_stable_release -->
+## [1.1.99](https://github.com/chef/omnibus-toolchain/tree/1.1.99) (2019-05-14)
+
+#### Merged Pull Requests
+- Update ruby and berkshelf versions [#107](https://github.com/chef/omnibus-toolchain/pull/107) ([jaymalasinha](https://github.com/jaymalasinha))
+<!-- latest_stable_release -->
+
 ## [1.1.98](https://github.com/chef/omnibus-toolchain/tree/1.1.98) (2019-04-01)
 
 #### Merged Pull Requests
@@ -24,7 +22,6 @@ This file is used to list changes made in each version of the omnibus-toolchain.
 - Rename the kitchen files and update platforms [#103](https://github.com/chef/omnibus-toolchain/pull/103) ([tas50](https://github.com/tas50))
 - Build on Solaris 11.2 for SPARC [#104](https://github.com/chef/omnibus-toolchain/pull/104) ([jaymalasinha](https://github.com/jaymalasinha))
 - Update ruby to 2.5.5 [#106](https://github.com/chef/omnibus-toolchain/pull/106) ([tas50](https://github.com/tas50))
-<!-- latest_stable_release -->
 
 ## [1.1.94](https://github.com/chef/omnibus-toolchain/tree/1.1.94) (2019-01-15)
 
