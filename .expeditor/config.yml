@@ -1,24 +1,29 @@
+# Documentation available at https://expeditor.chef.io/docs/getting-started/
+---
+# The name of the product keys for this product (from mixlib-install)
 product_key:
   - omnibus-toolchain
   - angry-omnibus-toolchain
 
+# Slack channel in Chef Software slack to send notifications about build failures, etc
 slack:
   notify_channel:
-    - releng-notify
+    - chef-found-notify
     - omnibus-rfr
 
+# These actions are taken, in order they are specified, anytime a Pull Request is merged.
 merge_actions:
   - built_in:bump_version:
       ignore_labels:
-        - "Version: Skip Bump"
+        - "Expeditor: Skip Version Bump"
         - "Expeditor: Skip All"
   - built_in:update_changelog:
       ignore_labels:
-        - "Changelog: Skip Update"
+        - "Expeditor: Skip Changelog"
         - "Expeditor: Skip All"
   - built_in:trigger_omnibus_release_build:
       ignore_labels:
-        - "Omnibus: Skip Build"
+        - "Expeditor: Skip Omnibus"
         - "Expeditor: Skip All"
       only_if: built_in:bump_version
 
