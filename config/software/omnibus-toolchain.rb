@@ -43,6 +43,16 @@ if linux? || mac_os_x?
   dependency "berkshelf" unless i386? || ios_xr? || nexus? || armhf?
 end
 
+# Include helpers for build pipelines
+dependency "helper-gems"
+
+if windows?
+  # Uncomment when we get around to implementing
+  # dependency "helper-exe"
+else
+  dependency "helper-sh"
+end
+
 # For Solaris 10 and Freebsd 9 we assume that you have installed the system gcc
 # package this means that pcre is going to link against it, and it's ok in this
 # case
