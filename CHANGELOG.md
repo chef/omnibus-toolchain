@@ -2,17 +2,18 @@ omnibus-toolchain CHANGELOG
 ==========================
 This file is used to list changes made in each version of the omnibus-toolchain.
 
-<!-- latest_release 1.1.101 -->
-## [1.1.101](https://github.com/chef/omnibus-toolchain/tree/1.1.101) (2019-06-05)
+<!-- latest_release 1.1.102 -->
+## [1.1.102](https://github.com/chef/omnibus-toolchain/tree/1.1.102) (2019-06-18)
 
 #### Merged Pull Requests
-- Use gtar 1.32 [#108](https://github.com/chef/omnibus-toolchain/pull/108) ([tas50](https://github.com/tas50))
+- Add helper binaries used in our pipeline to the toolchain package [#110](https://github.com/chef/omnibus-toolchain/pull/110) ([tduffield](https://github.com/tduffield))
 <!-- latest_release -->
 
 <!-- release_rollup since=1.1.99 -->
 ### Changes since 1.1.99 release
 
 #### Merged Pull Requests
+- Add helper binaries used in our pipeline to the toolchain package [#110](https://github.com/chef/omnibus-toolchain/pull/110) ([tduffield](https://github.com/tduffield)) <!-- 1.1.102 -->
 - Use gtar 1.32 [#108](https://github.com/chef/omnibus-toolchain/pull/108) ([tas50](https://github.com/tas50)) <!-- 1.1.101 -->
 - Update this repo to comply with our OSS guidelines [#109](https://github.com/chef/omnibus-toolchain/pull/109) ([tas50](https://github.com/tas50)) <!-- 1.1.100 -->
 <!-- release_rollup -->
