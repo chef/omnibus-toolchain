@@ -1,4 +1,4 @@
-#!<%= @bin_dir %>/bash
+#!<%= install_dir %>/bin/bash
 #
 # Copyright:: Copyright 2017 Chef Software, Inc.
 # License:: Apache License, Version 2.0
@@ -73,7 +73,7 @@ product_name=${product_name:?A product name must be specified}
 echo "--- Installing $channel $product_name $product_version"
 download_url="$(mixlib-install download --url --channel "$channel" "$product_name" --version "$product_version")"
 
-<%= @embedded_bin_dir %>/mixlib-install install-script | sudo bash -s -- -d "$download_dir" -l "$download_url" 2>&1
+<%= install_dir %>/embedded/bin/mixlib-install install-script | sudo bash -s -- -d "$download_dir" -l "$download_url" 2>&1
 
 package_file="${download_url##*/}"
 echo "${download_dir%/}/$package_file"

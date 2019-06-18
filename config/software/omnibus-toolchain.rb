@@ -47,8 +47,7 @@ end
 dependency "helper-gems"
 
 if windows?
-  # Uncomment when we get around to implementing
-  # dependency "helper-exe"
+  dependency "helper-exe"
 else
   dependency "helper-sh"
 end

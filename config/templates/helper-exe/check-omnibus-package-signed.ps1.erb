@@ -1,5 +1,6 @@
 #
-# Copyright 2019 Chef Software, Inc.
+# Copyright:: Copyright 2017 Chef Software, Inc.
+# License:: Apache License, Version 2.0
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,25 +15,16 @@
 # limitations under the License.
 #
 
-name "helper-sh"
+param ([parameter(Mandatory=$true)][string]$Path)
 
-source path: "#{project.files_path}/helper-sh"
+# Stop script execution when a non-terminating error occurs
+$ErrorActionPreference = "Stop"
 
-license :project_license
-skip_transitive_dependency_licensing true
-
-build do
-
-  %w(
-    check-omnibus-package-signed
-    install-omnibus-product
-    load-omnibus-toolchain
-  ).each do |helper|
-    erb source: "#{helper}.erb",
-        dest: "#{install_dir}/bin/#{helper}",
-        vars: {
-          install_dir: install_dir
-        },
-        mode: 0755
-  end
-end
+Write-Output "--- Checking that $Path has been signed."
+If ((Get-AuthenticodeSignature "$Path").Status -eq 'Valid') {
+  Write-Output "Verified $Path has been signed."
+}
+Else {
+  Write-Output "Exiting with an error because $Path has not been signed. Check your omnibus project config."
+  exit 1
+}
