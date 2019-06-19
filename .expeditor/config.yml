@@ -1,5 +1,9 @@
 # Documentation available at https://expeditor.chef.io/docs/getting-started/
 ---
+# Use a friendly alias which will make promotions easier
+project:
+  alias: omnibus-toolchain
+
 # The name of the product keys for this product (from mixlib-install)
 product_key:
   - omnibus-toolchain
@@ -9,7 +13,7 @@ product_key:
 slack:
   notify_channel:
     - chef-found-notify
-    - omnibus-rfr
+    - releng-notify
 
 # These actions are taken, in order they are specified, anytime a Pull Request is merged.
 merge_actions:
