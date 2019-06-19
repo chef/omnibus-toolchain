@@ -77,7 +77,7 @@ shift $((OPTIND -1))
 product_name=${product_name:?A product name must be specified}
 
 echo "--- Installing $channel $product_name $product_version"
-download_url="$(mixlib-install download --url --channel "$channel" "$product_name" --version "$product_version")"
+download_url="$(<%= install_dir %>/embedded/bin/mixlib-install download --url --channel "$channel" "$product_name" --version "$product_version")"
 
 FILE_TYPE="${download_url##*.}"
 case "$FILE_TYPE" in
