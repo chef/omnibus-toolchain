@@ -2,26 +2,23 @@ omnibus-toolchain CHANGELOG
 ==========================
 This file is used to list changes made in each version of the omnibus-toolchain.
 
-<!-- latest_release 1.1.105 -->
+<!-- latest_release -->
+<!-- latest_release -->
+
+<!-- release_rollup -->
+<!-- release_rollup -->
+
+<!-- latest_stable_release -->
 ## [1.1.105](https://github.com/chef/omnibus-toolchain/tree/1.1.105) (2019-06-19)
 
 #### Merged Pull Requests
 - Fix install-omnibus-product.ps1 [#114](https://github.com/chef/omnibus-toolchain/pull/114) ([jeremiahsnapp](https://github.com/jeremiahsnapp))
-<!-- latest_release -->
-
-<!-- release_rollup since=1.1.104 -->
-### Changes since 1.1.104 release
-
-#### Merged Pull Requests
-- Fix install-omnibus-product.ps1 [#114](https://github.com/chef/omnibus-toolchain/pull/114) ([jeremiahsnapp](https://github.com/jeremiahsnapp)) <!-- 1.1.105 -->
-<!-- release_rollup -->
-
 <!-- latest_stable_release -->
+
 ## [1.1.104](https://github.com/chef/omnibus-toolchain/tree/1.1.104) (2019-06-19)
 
 #### Merged Pull Requests
 - Use product_name variable instead of just product [#113](https://github.com/chef/omnibus-toolchain/pull/113) ([jeremiahsnapp](https://github.com/jeremiahsnapp))
-<!-- latest_stable_release -->
 
 ## [1.1.103](https://github.com/chef/omnibus-toolchain/tree/1.1.103) (2019-06-19)
 
