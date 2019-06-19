@@ -82,35 +82,35 @@ download_url="$(<%= install_dir %>/embedded/bin/mixlib-install download --url --
 FILE_TYPE="${download_url##*.}"
 case "$FILE_TYPE" in
   "bff")
-    sudo installp -u "$product" || true
+    sudo installp -u "$product_name" || true
     ;;
   "deb")
-    sudo dpkg -P "$product" || true
+    sudo dpkg -P "$product_name" || true
     ;;
   "dmg")
     sudo rm -rf "$install_dir"
-    sudo pkgutil --forget "com.getchef.pkg.$product" || true
+    sudo pkgutil --forget "com.getchef.pkg.$product_name" || true
     ;;
   "pkg")
     sudo rm -rf "$install_dir"
-    sudo pkgutil --forget "com.getchef.pkg.$product" || true
+    sudo pkgutil --forget "com.getchef.pkg.$product_name" || true
     ;;
   "p5p")
-    sudo pkg uninstall "$product" || true
+    sudo pkg uninstall "$product_name" || true
     ;;
   "rpm")
-    sudo rpm -ev "$product" || true
+    sudo rpm -ev "$product_name" || true
     ;;
   "sh")
     # intentionally left blank
     ;;
   "solaris")
-    if sudo pkgrm -a /var/sadm/install/admin/auto-install -n "$product"; then
+    if sudo pkgrm -a /var/sadm/install/admin/auto-install -n "$product_name"; then
       :
     else
       echo "WARNING: CLEANING UP BROKEN POSTRM FROM PRIOR INSTALLATION!!!!!!!!!!!!!!!!!!!!!!"
-      sudo rm -f "/var/sadm/pkg/$product/install/postremove" || true
-      sudo pkgrm -a /var/sadm/install/admin/auto-install -n "$product" || true
+      sudo rm -f "/var/sadm/pkg/$product_name/install/postremove" || true
+      sudo pkgrm -a /var/sadm/install/admin/auto-install -n "$product_name" || true
     fi
     ;;
 esac
