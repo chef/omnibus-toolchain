@@ -2,26 +2,23 @@ omnibus-toolchain CHANGELOG
 ==========================
 This file is used to list changes made in each version of the omnibus-toolchain.
 
-<!-- latest_release 1.1.104 -->
+<!-- latest_release -->
+<!-- latest_release -->
+
+<!-- release_rollup -->
+<!-- release_rollup -->
+
+<!-- latest_stable_release -->
 ## [1.1.104](https://github.com/chef/omnibus-toolchain/tree/1.1.104) (2019-06-19)
 
 #### Merged Pull Requests
 - Use product_name variable instead of just product [#113](https://github.com/chef/omnibus-toolchain/pull/113) ([jeremiahsnapp](https://github.com/jeremiahsnapp))
-<!-- latest_release -->
-
-<!-- release_rollup since=1.1.103 -->
-### Changes since 1.1.103 release
-
-#### Merged Pull Requests
-- Use product_name variable instead of just product [#113](https://github.com/chef/omnibus-toolchain/pull/113) ([jeremiahsnapp](https://github.com/jeremiahsnapp)) <!-- 1.1.104 -->
-<!-- release_rollup -->
-
 <!-- latest_stable_release -->
+
 ## [1.1.103](https://github.com/chef/omnibus-toolchain/tree/1.1.103) (2019-06-19)
 
 #### Merged Pull Requests
 - Use full path when calling mixlib-install [#111](https://github.com/chef/omnibus-toolchain/pull/111) ([jeremiahsnapp](https://github.com/jeremiahsnapp))
-<!-- latest_stable_release -->
 
 ## [1.1.102](https://github.com/chef/omnibus-toolchain/tree/1.1.102) (2019-06-18)
 
