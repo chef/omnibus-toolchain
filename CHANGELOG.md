@@ -2,28 +2,25 @@ omnibus-toolchain CHANGELOG
 ==========================
 This file is used to list changes made in each version of the omnibus-toolchain.
 
-<!-- latest_release 1.1.103 -->
+<!-- latest_release -->
+<!-- latest_release -->
+
+<!-- release_rollup -->
+<!-- release_rollup -->
+
+<!-- latest_stable_release -->
 ## [1.1.103](https://github.com/chef/omnibus-toolchain/tree/1.1.103) (2019-06-19)
 
 #### Merged Pull Requests
 - Use full path when calling mixlib-install [#111](https://github.com/chef/omnibus-toolchain/pull/111) ([jeremiahsnapp](https://github.com/jeremiahsnapp))
-<!-- latest_release -->
-
-<!-- release_rollup since=1.1.102 -->
-### Changes since 1.1.102 release
-
-#### Merged Pull Requests
-- Use full path when calling mixlib-install [#111](https://github.com/chef/omnibus-toolchain/pull/111) ([jeremiahsnapp](https://github.com/jeremiahsnapp)) <!-- 1.1.103 -->
-<!-- release_rollup -->
-
 <!-- latest_stable_release -->
+
 ## [1.1.102](https://github.com/chef/omnibus-toolchain/tree/1.1.102) (2019-06-18)
 
 #### Merged Pull Requests
 - Update this repo to comply with our OSS guidelines [#109](https://github.com/chef/omnibus-toolchain/pull/109) ([tas50](https://github.com/tas50))
 - Use gtar 1.32 [#108](https://github.com/chef/omnibus-toolchain/pull/108) ([tas50](https://github.com/tas50))
 - Add helper binaries used in our pipeline to the toolchain package [#110](https://github.com/chef/omnibus-toolchain/pull/110) ([tduffield](https://github.com/tduffield))
-<!-- latest_stable_release -->
 
 ## [1.1.99](https://github.com/chef/omnibus-toolchain/tree/1.1.99) (2019-05-14)
 
