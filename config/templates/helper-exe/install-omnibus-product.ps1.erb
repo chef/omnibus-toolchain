@@ -20,6 +20,17 @@ param ([parameter(Mandatory=$true)][string]$Product, [string]$Channel = "stable"
 # Stop script execution when a non-terminating error occurs
 $ErrorActionPreference = "Stop"
 
+function Get-Win32OS {
+  $class = "win32_operatingsystem"
+
+  if(Get-Command -Name Get-CimInstance -ErrorAction SilentlyContinue) {
+    return Get-CimInstance $class
+  }
+  else {
+    return Get-WmiObject $class
+  }
+}
+
 # this platform version detection code is taken from mixlib-install
 switch -regex ((Get-Win32OS).version) {
   '10\.0\.\d+' {$platform_version = '2016'}
