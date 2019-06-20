@@ -37,7 +37,14 @@ else
 end
 
 override :ruby, version: "2.6.3"
-override :gtar, version: "1.32"
+
+# tar 1.32 is not compatible with the Ubuntu 14.04's latest version of dpkg-deb so pin it to 1.29
+if ubuntu_trusty?
+  override :gtar, version: "1.29"
+else
+  override :gtar, version: "1.32"
+end
+
 # there's an issue with curl later versions (ntlm + smb) on AIX
 override :curl, version: '7.47.1'
 # riding berkshelf master is hard when you're at the edge of versions
