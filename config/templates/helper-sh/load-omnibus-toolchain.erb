@@ -21,8 +21,21 @@
 ###################################################################
 # Load the base Omnibus environment
 ###################################################################
+<% if aix -%>
+export PATH="/opt/IBM/xlC/13.1.3/bin:/opt/IBM/xlc/13.1.3/bin:/opt/IBM/xlC/13.1.0/bin:/opt/IBM/xlc/13.1.0/bin:<%= install_dir %>/bin:/usr/local/bin:$PATH"
+<% else -%>
 export PATH="<%= install_dir %>/bin:$PATH"
+<% end -%>
 export SSL_CERT_FILE="<%= install_dir %>/embedded/ssl/certs/cacert.pem"
+
+echo ""
+echo ""
+echo "========================================"
+echo "= Environment Variables"
+echo "========================================"
+echo ""
+echo "PATH=$PATH"
+echo "SSL_CERT_FILE=$SSL_CERT_FILE"
 
 ###################################################################
 # Query tool versions
@@ -35,7 +48,11 @@ echo "========================================"
 echo ""
 echo "Bash.........$(bash --version | head -1)"
 echo "Bundler......$(bundle --version | head -1)"
+<% if aix -%>
+echo "XLC..........$(xlc -qversion | head -1)"
+<% else -%>
 echo "GCC..........$(gcc --version | head -1)"
+<% end -%>
 echo "Git..........$(git --version | head -1)"
 echo "Make.........$(make --version | head -1)"
 echo "Ruby.........$(ruby --version | head -1)"
