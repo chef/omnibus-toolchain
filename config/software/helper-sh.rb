@@ -31,6 +31,7 @@ build do
     erb source: "#{helper}.erb",
         dest: "#{install_dir}/bin/#{helper}",
         vars: {
+          aix: aix?,
           install_dir: install_dir
         },
         mode: 0755
