@@ -2,10 +2,18 @@ omnibus-toolchain CHANGELOG
 ==========================
 This file is used to list changes made in each version of the omnibus-toolchain.
 
-<!-- latest_release -->
+<!-- latest_release 1.1.107 -->
+## [1.1.107](https://github.com/chef/omnibus-toolchain/tree/1.1.107) (2019-06-21)
+
+#### Merged Pull Requests
+- Add AIX specific paths to load-omnibus-toolchain [#116](https://github.com/chef/omnibus-toolchain/pull/116) ([jeremiahsnapp](https://github.com/jeremiahsnapp))
 <!-- latest_release -->
 
-<!-- release_rollup -->
+<!-- release_rollup since=1.1.106 -->
+### Changes since 1.1.106 release
+
+#### Merged Pull Requests
+- Add AIX specific paths to load-omnibus-toolchain [#116](https://github.com/chef/omnibus-toolchain/pull/116) ([jeremiahsnapp](https://github.com/jeremiahsnapp)) <!-- 1.1.107 -->
 <!-- release_rollup -->
 
 <!-- latest_stable_release -->
