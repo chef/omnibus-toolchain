@@ -2,26 +2,23 @@ omnibus-toolchain CHANGELOG
 ==========================
 This file is used to list changes made in each version of the omnibus-toolchain.
 
-<!-- latest_release 1.1.108 -->
+<!-- latest_release -->
+<!-- latest_release -->
+
+<!-- release_rollup -->
+<!-- release_rollup -->
+
+<!-- latest_stable_release -->
 ## [1.1.108](https://github.com/chef/omnibus-toolchain/tree/1.1.108) (2019-06-22)
 
 #### Merged Pull Requests
 - Make Ubuntu 14.04 use tar 1.28 [#117](https://github.com/chef/omnibus-toolchain/pull/117) ([jeremiahsnapp](https://github.com/jeremiahsnapp))
-<!-- latest_release -->
-
-<!-- release_rollup since=1.1.107 -->
-### Changes since 1.1.107 release
-
-#### Merged Pull Requests
-- Make Ubuntu 14.04 use tar 1.28 [#117](https://github.com/chef/omnibus-toolchain/pull/117) ([jeremiahsnapp](https://github.com/jeremiahsnapp)) <!-- 1.1.108 -->
-<!-- release_rollup -->
-
 <!-- latest_stable_release -->
+
 ## [1.1.107](https://github.com/chef/omnibus-toolchain/tree/1.1.107) (2019-06-21)
 
 #### Merged Pull Requests
 - Add AIX specific paths to load-omnibus-toolchain [#116](https://github.com/chef/omnibus-toolchain/pull/116) ([jeremiahsnapp](https://github.com/jeremiahsnapp))
-<!-- latest_stable_release -->
 
 ## [1.1.106](https://github.com/chef/omnibus-toolchain/tree/1.1.106) (2019-06-20)
 
