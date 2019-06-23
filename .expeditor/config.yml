@@ -15,6 +15,18 @@ slack:
     - chef-found-notify
     - releng-notify
 
+pipelines:
+  - omnibus/release
+  - omnibus/adhoc:
+      definition: .expeditor/release.omnibus.yml
+      env:
+        - ADHOC: true
+  - omnibus/angry-release
+  - omnibus/angry-adhoc:
+      definition: .expeditor/angry-release.omnibus.yml
+      env:
+        - ADHOC: true
+
 # These actions are taken, in order they are specified, anytime a Pull Request is merged.
 merge_actions:
   - built_in:bump_version:
