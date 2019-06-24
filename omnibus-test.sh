@@ -4,7 +4,7 @@ set -ueo pipefail
 channel="${CHANNEL:-unstable}"
 product="${PRODUCT:-omnibus-toolchain}"
 version="${VERSION:-latest}"
-toolchain="${TOOLCHAIN:-omnibus-toolchain}"
+toolchain="${TOOLCHAIN:-angry-omnibus-toolchain}"
 
 if [[ $TOOLCHAIN == "angry-omnibus-toolchain" && $INSTALL_TOOLCHAIN == "true" ]]; then
   echo "--- Installing angry-omnibus-toolchain to be used for installing and testing omnibus-toolchain"
@@ -13,7 +13,7 @@ if [[ $TOOLCHAIN == "angry-omnibus-toolchain" && $INSTALL_TOOLCHAIN == "true" ]]
 fi
 
 echo "--- Installing $channel $product $version"
-package_file="$("/opt/$toolchain/bin/install-omnibus-product" -c "$channel" -P "$product" -v "$version" | tail -n 1)"
+package_file="$("/opt/$toolchain/bin/install-omnibus-product" -c "$channel" -P "$product" -v "$version" | tail -1)"
 
 echo "--- Verifying omnibus package is signed"
 "/opt/$toolchain/bin/check-omnibus-package-signed" "$package_file"
@@ -57,6 +57,8 @@ BINDIR="$INSTALL_DIR/bin/"
 "$BINDIR/rake" --version
 "$BINDIR/ruby" --version
 "$BINDIR/tar" --version
+
+export PATH="$BINDIR:$PATH"
 
 cd "$TMPDIR"
 "$BINDIR/git" clone https://github.com/chef/omnibus-toolchain.git

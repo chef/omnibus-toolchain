@@ -119,7 +119,7 @@ esac
 
 sudo rm -rf "$install_dir"
 
-<%= install_dir %>/embedded/bin/mixlib-install install-script | sudo bash -s -- -d "$download_dir" -l "$download_url" 2>&1
+<%= install_dir %>/embedded/bin/mixlib-install install-script | sudo bash -s -- -P "$product_name" -d "$download_dir" -l "$download_url" 2>&1
 
 package_file="${download_url##*/}"
 echo "${download_dir%/}/$package_file"
