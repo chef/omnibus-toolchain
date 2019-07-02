@@ -56,7 +56,7 @@ subscriptions:
   # chef/omnibus-software
   - workload: pull_request_merged:chef/omnibus-software:master:*
     actions:
-      - built_in:trigger_omnibus_expcache_build:
+      - trigger_pipeline:omnibus/adhoc:
           only_if_modified:
             - config/software/*
             - config/patches/*
