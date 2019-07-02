@@ -53,14 +53,6 @@ merge_actions:
 # for omnibus-toolchain and angry-omnibus-toolchain when the omnibus-software
 # has modified software config files.
 subscriptions:
-  # chef/omnibus-software
-  - workload: pull_request_merged:chef/omnibus-software:master:*
-    actions:
-      - built_in:trigger_omnibus_expcache_build:
-          only_if_modified:
-            - config/software/*
-            - config/patches/*
-
   - workload: artifact_published:stable:omnibus-toolchain:*
     actions:
       - built_in:rollover_changelog
