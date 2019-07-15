@@ -45,8 +45,6 @@ else
   override :gtar, version: "1.32"
 end
 
-# there's an issue with curl later versions (ntlm + smb) on AIX
-override :curl, version: '7.47.1'
 # riding berkshelf master is hard when you're at the edge of versions
 override :berkshelf, version: "v7.0.8"
 
