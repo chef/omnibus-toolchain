@@ -2,17 +2,18 @@ omnibus-toolchain CHANGELOG
 ==========================
 This file is used to list changes made in each version of the omnibus-toolchain.
 
-<!-- latest_release 1.1.110 -->
-## [1.1.110](https://github.com/chef/omnibus-toolchain/tree/1.1.110) (2019-07-02)
+<!-- latest_release 1.1.111 -->
+## [1.1.111](https://github.com/chef/omnibus-toolchain/tree/1.1.111) (2019-07-19)
 
 #### Merged Pull Requests
-- Change subscription to omnibus-software to trigger correct pipeline [#121](https://github.com/chef/omnibus-toolchain/pull/121) ([scotthain](https://github.com/scotthain))
+- Jsinha/add rhel8 [#122](https://github.com/chef/omnibus-toolchain/pull/122) ([jaymalasinha](https://github.com/jaymalasinha))
 <!-- latest_release -->
 
 <!-- release_rollup since=1.1.109 -->
 ### Changes since 1.1.109 release
 
 #### Merged Pull Requests
+- Jsinha/add rhel8 [#122](https://github.com/chef/omnibus-toolchain/pull/122) ([jaymalasinha](https://github.com/jaymalasinha)) <!-- 1.1.111 -->
 - Change subscription to omnibus-software to trigger correct pipeline [#121](https://github.com/chef/omnibus-toolchain/pull/121) ([scotthain](https://github.com/scotthain)) <!-- 1.1.110 -->
 <!-- release_rollup -->
 
