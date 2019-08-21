@@ -34,6 +34,12 @@ fi
 
 echo "--- Running verification for $channel $product $version"
 
+# Fix permissions on .bundle if it exists
+export BUNDLE_DIR="/home/jenkins/.bundle"
+if [[ -d "$BUNDLE_DIR" ]]; then
+  sudo chown -R jenkins:jenkins "$BUNDLE_DIR"
+fi
+
 # Set up a custom tmpdir, and clean it up before and after the tests
 TMPDIR="${TMPDIR:-/tmp}/ot_test"
 export TMPDIR
