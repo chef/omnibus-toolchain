@@ -6,6 +6,7 @@ test-path-windows: omnibus-test.ps1
 builder-to-testers-map:
   aix-7.1-powerpc:
     - aix-7.1-powerpc
+    - aix-7.2-powerpc
   debian-8-x86_64:
     - debian-8-x86_64
     - debian-9-x86_64
@@ -29,10 +30,10 @@ builder-to-testers-map:
   freebsd-11-amd64:
     - freebsd-11-amd64
     - freebsd-12-amd64
-  mac_os_x-10.12-x86_64:
-    - mac_os_x-10.12-x86_64
+  mac_os_x-10.13-x86_64:
     - mac_os_x-10.13-x86_64
     - mac_os_x-10.14-x86_64
+    - mac_os_x-10.15-x86_64
   sles-12-s390x:
     - sles-12-s390x
   sles-12-x86_64:
