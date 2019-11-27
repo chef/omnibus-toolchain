@@ -13,7 +13,7 @@ for details on the process, how to become a maintainer, lieutenant, or the
 project lead.
 
 # Project Maintainer
-* [Scott Hain](https://github.com/scotthain)
+* [Jaymala Sinha](https://github.com/jaymalasinha)
 
 # Maintainers
 * [Seth Chisamore](https://github.com/schisamo)
