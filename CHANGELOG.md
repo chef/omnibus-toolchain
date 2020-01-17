@@ -2,17 +2,18 @@ omnibus-toolchain CHANGELOG
 ==========================
 This file is used to list changes made in each version of the omnibus-toolchain.
 
-<!-- latest_release 1.1.112 -->
-## [1.1.112](https://github.com/chef/omnibus-toolchain/tree/1.1.112) (2019-09-12)
+<!-- latest_release 1.1.113 -->
+## [1.1.113](https://github.com/chef/omnibus-toolchain/tree/1.1.113) (2020-01-17)
 
 #### Merged Pull Requests
-- Jsinha/update os [#126](https://github.com/chef/omnibus-toolchain/pull/126) ([jaymalasinha](https://github.com/jaymalasinha))
+- Remove support for RHEL 6 s390x (zLinux) [#128](https://github.com/chef/omnibus-toolchain/pull/128) ([jaymalasinha](https://github.com/jaymalasinha))
 <!-- latest_release -->
 
 <!-- release_rollup since=1.1.109 -->
 ### Changes since 1.1.109 release
 
 #### Merged Pull Requests
+- Remove support for RHEL 6 s390x (zLinux) [#128](https://github.com/chef/omnibus-toolchain/pull/128) ([jaymalasinha](https://github.com/jaymalasinha)) <!-- 1.1.113 -->
 - Jsinha/update os [#126](https://github.com/chef/omnibus-toolchain/pull/126) ([jaymalasinha](https://github.com/jaymalasinha)) <!-- 1.1.112 -->
 - Jsinha/add rhel8 [#122](https://github.com/chef/omnibus-toolchain/pull/122) ([jaymalasinha](https://github.com/jaymalasinha)) <!-- 1.1.111 -->
 - Change subscription to omnibus-software to trigger correct pipeline [#121](https://github.com/chef/omnibus-toolchain/pull/121) ([scotthain](https://github.com/scotthain)) <!-- 1.1.110 -->
