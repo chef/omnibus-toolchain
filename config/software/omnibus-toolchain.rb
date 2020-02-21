@@ -32,6 +32,10 @@ else
   dependency "patch"
 end
 
+if aix?
+  dependency "libtool"
+end
+
 dependency "cacerts"
 
 # ruby core tools
