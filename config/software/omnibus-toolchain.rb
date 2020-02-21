@@ -19,6 +19,8 @@ default_version "1.0.0"
 
 license :project_license
 
+dependency "libtool" if aix?
+
 # gnu utilities
 if windows?
   dependency "cmake"
