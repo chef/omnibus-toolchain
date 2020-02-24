@@ -19,6 +19,11 @@ default_version "1.0.0"
 
 license :project_license
 
+
+if aix?
+  dependency "libtool"
+end
+
 # gnu utilities
 if windows?
   dependency "cmake"
@@ -32,9 +37,6 @@ else
   dependency "patch"
 end
 
-if aix?
-  dependency "libtool"
-end
 
 dependency "cacerts"
 
