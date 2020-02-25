@@ -9,6 +9,8 @@ toolchain="${TOOLCHAIN:-angry-omnibus-toolchain}"
 if [[ $TOOLCHAIN == "angry-omnibus-toolchain" && $INSTALL_TOOLCHAIN == "true" ]]; then
   echo "--- Installing angry-omnibus-toolchain to be used for installing and testing omnibus-toolchain"
   /opt/omnibus-toolchain/bin/install-omnibus-product -P angry-omnibus-toolchain
+  # Linking fails on macOS 10.15 and later so exit true in either case
+  sudo ln -sf /opt/angry-omnibus-toolchain/embedded/bin/bash /bin/bash || true
 fi
 
 echo "--- Installing $channel $product $version"
