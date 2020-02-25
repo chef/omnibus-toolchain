@@ -9,7 +9,6 @@ toolchain="${TOOLCHAIN:-angry-omnibus-toolchain}"
 if [[ $TOOLCHAIN == "angry-omnibus-toolchain" && $INSTALL_TOOLCHAIN == "true" ]]; then
   echo "--- Installing angry-omnibus-toolchain to be used for installing and testing omnibus-toolchain"
   /opt/omnibus-toolchain/bin/install-omnibus-product -P angry-omnibus-toolchain
-  sudo ln -sf /opt/angry-omnibus-toolchain/embedded/bin/bash /bin/bash
 fi
 
 echo "--- Installing $channel $product $version"
