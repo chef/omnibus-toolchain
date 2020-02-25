@@ -18,9 +18,12 @@
 #
 # Common cleanup routines for ruby apps (InSpec, Workstation, Chef, etc)
 #
+# Heavily borrowed from ruby-cleanup script in omnibus-software
+# macOS signing fails on double bundler check in ruby-cleanup so forking it here
+#
 require "fileutils"
 
-name "ruby-cleanup"
+name "ruby-cache-cleanup"
 default_version "1.0.0"
 
 license :project_license
@@ -29,24 +32,6 @@ skip_transitive_dependency_licensing true
 build do
   env = with_standard_compiler_flags(with_embedded_path)
 
-  # patchelf was only installed to change the rpath for adoptopenjre binary
-  # delete
-  command "find #{install_dir} -name patchelf -exec rm -rf \\{\\} \\;" unless windows?
-
-  # Remove static object files for all platforms
-  # except AIX which uses them at runtime.
-  unless aix?
-    block "Remove static libraries" do
-      gemdir = shellout!("#{install_dir}/embedded/bin/gem environment gemdir", env: env).stdout.chomp
-
-      # find all the static *.a files and delete them
-      Dir.glob("#{gemdir}/**/*.a").each do |f|
-        puts "Deleting #{f}"
-        File.delete(f)
-      end
-    end
-  end
-
   # Clear the now-unnecessary git caches, docs, and build information
   block "Delete bundler git cache, docs, and build info" do
     gemdir = shellout!("#{install_dir}/embedded/bin/gem environment gemdir", env: env).stdout.chomp
@@ -54,15 +39,6 @@ build do
     remove_directory "#{gemdir}/cache"
     remove_directory "#{gemdir}/doc"
     remove_directory "#{gemdir}/build_info"
-  end
-
-  block "Remove bundler gem caches" do
-    gemdir = shellout!("#{install_dir}/embedded/bin/gem environment gemdir", env: env).stdout.chomp
-
-    Dir.glob("#{gemdir}/bundler/gems/**").each do |f|
-      puts "Deleting #{f}"
-      remove_directory f
-    end
   end
 
   block "Remove leftovers from compiling gems" do
