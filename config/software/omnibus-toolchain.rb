@@ -60,3 +60,15 @@ end
 if solaris2? || (freebsd? && ohai["os_version"].to_i < 1000024)
   whitelist_file /libpcrecpp\.so\..+/
 end
+
+build do
+  env = with_standard_compiler_flags(with_embedded_path)
+
+  # The mini-portile2 gem ships with some test fixture data compressed in a format Apple's notarization
+  # service cannot understand. We need to delete that archive from gem cache to pass notarization.
+  block "Delete test folder of mini-portile2 gem cache so downstream projects pass notarization" do
+    env["VISUAL"] = "echo"
+    gem_install_dir = shellout!("#{install_dir}/embedded/bin/gem environment gemdir", env: env).stdout.chomp
+    remove_directory "#{gem_install_dir}/cache/mini_portile2-2.4.0.gem"
+  end
+end
