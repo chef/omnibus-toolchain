@@ -2,31 +2,28 @@ omnibus-toolchain CHANGELOG
 ==========================
 This file is used to list changes made in each version of the omnibus-toolchain.
 
-<!-- latest_release 1.1.115 -->
-## [1.1.115](https://github.com/chef/omnibus-toolchain/tree/1.1.115) (2020-02-26)
-
-#### Merged Pull Requests
-- Jsinha/fix notarization [#130](https://github.com/chef/omnibus-toolchain/pull/130) ([jaymalasinha](https://github.com/jaymalasinha))
+<!-- latest_release -->
 <!-- latest_release -->
 
-<!-- release_rollup since=1.1.109 -->
-### Changes since 1.1.109 release
-
-#### Merged Pull Requests
-- Jsinha/fix notarization [#130](https://github.com/chef/omnibus-toolchain/pull/130) ([jaymalasinha](https://github.com/jaymalasinha)) <!-- 1.1.115 -->
-- Update Software Cert for macOS signing &amp; add Debian 10 testers [#129](https://github.com/chef/omnibus-toolchain/pull/129) ([jaymalasinha](https://github.com/jaymalasinha)) <!-- 1.1.114 -->
-- Remove support for RHEL 6 s390x (zLinux) [#128](https://github.com/chef/omnibus-toolchain/pull/128) ([jaymalasinha](https://github.com/jaymalasinha)) <!-- 1.1.113 -->
-- Jsinha/update os [#126](https://github.com/chef/omnibus-toolchain/pull/126) ([jaymalasinha](https://github.com/jaymalasinha)) <!-- 1.1.112 -->
-- Jsinha/add rhel8 [#122](https://github.com/chef/omnibus-toolchain/pull/122) ([jaymalasinha](https://github.com/jaymalasinha)) <!-- 1.1.111 -->
-- Change subscription to omnibus-software to trigger correct pipeline [#121](https://github.com/chef/omnibus-toolchain/pull/121) ([scotthain](https://github.com/scotthain)) <!-- 1.1.110 -->
+<!-- release_rollup -->
 <!-- release_rollup -->
 
 <!-- latest_stable_release -->
+## [1.1.115](https://github.com/chef/omnibus-toolchain/tree/1.1.115) (2020-02-26)
+
+#### Merged Pull Requests
+- Change subscription to omnibus-software to trigger correct pipeline [#121](https://github.com/chef/omnibus-toolchain/pull/121) ([scotthain](https://github.com/scotthain))
+- Jsinha/add rhel8 [#122](https://github.com/chef/omnibus-toolchain/pull/122) ([jaymalasinha](https://github.com/jaymalasinha))
+- Jsinha/update os [#126](https://github.com/chef/omnibus-toolchain/pull/126) ([jaymalasinha](https://github.com/jaymalasinha))
+- Remove support for RHEL 6 s390x (zLinux) [#128](https://github.com/chef/omnibus-toolchain/pull/128) ([jaymalasinha](https://github.com/jaymalasinha))
+- Update Software Cert for macOS signing &amp; add Debian 10 testers [#129](https://github.com/chef/omnibus-toolchain/pull/129) ([jaymalasinha](https://github.com/jaymalasinha))
+- Jsinha/fix notarization [#130](https://github.com/chef/omnibus-toolchain/pull/130) ([jaymalasinha](https://github.com/jaymalasinha))
+<!-- latest_stable_release -->
+
 ## [1.1.109](https://github.com/chef/omnibus-toolchain/tree/1.1.109) (2019-06-24)
 
 #### Merged Pull Requests
 - Fixes for omnibus buildkite pipeline [#119](https://github.com/chef/omnibus-toolchain/pull/119) ([jeremiahsnapp](https://github.com/jeremiahsnapp))
-<!-- latest_stable_release -->
 
 ## [1.1.108](https://github.com/chef/omnibus-toolchain/tree/1.1.108) (2019-06-22)
 
