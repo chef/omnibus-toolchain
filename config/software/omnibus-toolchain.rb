@@ -19,6 +19,20 @@ default_version "1.0.0"
 
 license :project_license
 
+build do
+  env = with_standard_compiler_flags(with_embedded_path)
+
+  # The currently installed bundler gem in angry-omnibus-toolchain 1.1.109 is version 2.0.2.
+  # We delete it here so ruby-cleanup gem does not fail with double bundler error
+  # This block can be removed after release of omnibus-toolchain 1.1.116 as the issue will
+  # be fixed going forward
+  block "Delete bundler installed with 1.1.109" do
+    execute 'delete_bundler_2.0.2' do
+      command 'sudo gem uninstall bundler -v 2.0.2 -x'
+    end
+  end
+end
+
 dependency "libtool" if aix?
 
 # gnu utilities
@@ -60,16 +74,4 @@ dependency "ruby-cleanup"
 # case
 if solaris2?
   whitelist_file /libpcrecpp\.so\..+/
-end
-
-build do
-  env = with_standard_compiler_flags(with_embedded_path)
-
-  # The mini-portile2 gem ships with some test fixture data compressed in a format Apple's notarization
-  # service cannot understand. We need to delete that archive from gem cache to pass notarization.
-  block "Delete test folder of mini-portile2 gem cache so downstream projects pass notarization" do
-    env["VISUAL"] = "echo"
-    gem_install_dir = shellout!("#{install_dir}/embedded/bin/gem environment gemdir", env: env).stdout.chomp
-    remove_directory "#{gem_install_dir}/cache/mini_portile2-2.4.0.gem"
-  end
 end

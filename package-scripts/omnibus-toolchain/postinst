@@ -15,10 +15,16 @@ error_exit()
   exit 1
 }
 
-for name in git ruby tar bash berks bundle curl fakeroot gem make makedepend patch pkg-config rake
+for name in git ruby tar bash berks curl gem make makedepend patch pkg-config rake
 do
 	ln -sf /opt/omnibus-toolchain/embedded/bin/$name /opt/omnibus-toolchain/bin || error_exit "Cannot link $name to /opt/omnibus-toolchain/bin"
 done
+
+# Now bundler ships with ruby 2.6 and it installing it as a separate gem creates a double bundler issue with two versions installed
+# So now we copy link the binary shipped with ruby 2.6 in out toolchain path
+# Update the bundler version here when you update ruby pinning
+  cp /opt/omnibus-toolchain/embedded/lib/ruby/gems/2.6.0/gems/bundler-1.17.3/exe/bundle /opt/omnibus-toolchain/embedded/bin/
+  ln -sf /opt/omnibus-toolchain/embedded/bin/bundle /opt/omnibus-toolchain/bin || error_exit "Cannot link bundler to /opt/omnibus-toolchain/bin"
 
 # Create alias gtar -> tar
 ln -sf /opt/omnibus-toolchain/embedded/bin/tar /opt/omnibus-toolchain/bin/gtar || error_exit "Cannot link tar to /opt/omnibus-toolchain/bin"
