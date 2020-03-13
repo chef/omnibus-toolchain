@@ -50,6 +50,7 @@ mkdir -p "$TMPDIR"
 BINDIR="$INSTALL_DIR/bin/"
 
 # Explicitly call the one we expect to be there.
+"$BINDIR/bin/load-omnibus-toolchain"
 "$BINDIR/bash" --version
 "$BINDIR/berks" --version || true # not on non-linux
 "$BINDIR/bundle" --version

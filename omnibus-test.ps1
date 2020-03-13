@@ -21,6 +21,9 @@ If ($toolchain -eq "angry-omnibus-toolchain") {
 Write-Output "--- Installing $channel $product $version"
 $package_file = $(& "C:\opscode\${toolchain}\bin\install-omnibus-product.ps1" -Product "$product" -Channel "$channel" -Version "$version" | Select-Object -Last 1)
 
+Write-Output "--- Verifying Setting Omnibus build environment variables"
+& "C:\opscode\${toolchain}\bin\load-omnibus-toolchain.ps1"
+
 Write-Output "--- Verifying omnibus package is signed"
 & "C:\opscode\${toolchain}\bin\check-omnibus-package-signed.ps1" "$package_file"
 

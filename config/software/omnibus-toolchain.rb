@@ -38,7 +38,6 @@ dependency "cacerts"
 
 # ruby core tools
 dependency "ruby"
-dependency "ruby-cleanup"
 
 if linux? || mac_os_x?
   dependency "berkshelf" unless i386? || ios_xr? || nexus? || armhf?
@@ -52,6 +51,9 @@ if windows?
 else
   dependency "helper-sh"
 end
+
+# Cleanup unused rubygems
+dependency "ruby-cleanup"
 
 # For Solaris 10 and Freebsd 9 we assume that you have installed the system gcc
 # package this means that pcre is going to link against it, and it's ok in this
