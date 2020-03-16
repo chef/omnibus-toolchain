@@ -38,8 +38,6 @@ dependency "cacerts"
 
 # ruby core tools
 dependency "ruby"
-dependency "rubygems"
-dependency "bundler"
 
 if linux? || mac_os_x?
   dependency "berkshelf" unless i386? || ios_xr? || nexus? || armhf?
@@ -57,7 +55,7 @@ end
 # For Solaris 10 and Freebsd 9 we assume that you have installed the system gcc
 # package this means that pcre is going to link against it, and it's ok in this
 # case
-if solaris2? || (freebsd? && ohai["os_version"].to_i < 1000024)
+if solaris2?
   whitelist_file /libpcrecpp\.so\..+/
 end
 

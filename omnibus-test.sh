@@ -65,6 +65,17 @@ BINDIR="$INSTALL_DIR/bin/"
 "$BINDIR/ruby" --version
 "$BINDIR/tar" --version
 
+# Verify that default bundle version is the same as the one installed with ruby
+bundle_version=$("$BINDIR/bundle" --version)
+rb_bundle_version=$("$BINDIR/gem" list bundler |awk -F"default:" '{print $2}'| tr -d '[:space:]'))
+default_bundle_version="${rb_bundle_version//)}"
+
+if [ "$bundle_version" != "$default_bundle_version" ]; then
+    echo "Default bundler version is not same as the one installed with ruby!!"
+    echo "Update bunlder pinning in omnibus-toolchain to resolve this error"
+    exit 1
+fi
+
 export PATH="$BINDIR:$PATH"
 
 cd "$TMPDIR"
