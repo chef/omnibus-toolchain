@@ -45,9 +45,6 @@ else
   override :gtar, version: "1.32"
 end
 
-# riding berkshelf master is hard when you're at the edge of versions
-override :berkshelf, version: "v7.0.8"
-
 # creates required build directories
 dependency "preparation"
 
