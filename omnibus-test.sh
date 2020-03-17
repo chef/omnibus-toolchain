@@ -66,9 +66,9 @@ BINDIR="$INSTALL_DIR/bin/"
 "$BINDIR/tar" --version
 
 # Verify that default bundle version is the same as the one installed with ruby
-bundle_version=$("$BINDIR/bundle" --version)
-rb_bundle_version=$("$BINDIR/gem" list bundler |awk -F"default:" '{print $2}'| tr -d '[:space:]'))
-default_bundle_version="${rb_bundle_version//)}"
+bundler_version=$("$BINDIR/bundle" --version |awk -F"version " '{print $2}'| tr -d '[:space:]')
+rb_bundler_version=$("$BINDIR/gem" list bundler |awk -F"default:" '{print $2}'| tr -d '[:space:]')
+default_bundler_version="${rb_bundler_version//)}"
 
 if [ "$bundle_version" != "$default_bundle_version" ]; then
     echo "Default bundler version is not same as the one installed with ruby!!"
