@@ -39,9 +39,6 @@ dependency "cacerts"
 # ruby core tools
 dependency "ruby"
 
-# pin bundler dependency to same version as the one shipped with ruby
-dependency "bundler", "= 1.17.3"
-
 if linux? || mac_os_x?
   dependency "berkshelf" unless i386? || ios_xr? || nexus? || armhf?
 end
