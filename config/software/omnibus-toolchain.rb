@@ -38,7 +38,6 @@ dependency "cacerts"
 
 # ruby core tools
 dependency "ruby"
-dependency "rubygems"
 dependency "bundler"
 
 if linux? || mac_os_x?
