@@ -36,7 +36,9 @@ else
   install_dir "#{default_root}/#{name}"
 end
 
-override :ruby, version: "2.6.3"
+override :ruby, version: "2.6.5"
+# pin bundler to the same version as shipped with ruby
+override :bundler, version: "1.17.2"
 
 # tar 1.32 is not compatible with the Ubuntu 14.04's latest version of dpkg-deb so pin it to 1.28
 if ubuntu_trusty?
@@ -44,9 +46,6 @@ if ubuntu_trusty?
 else
   override :gtar, version: "1.32"
 end
-
-# riding berkshelf master is hard when you're at the edge of versions
-override :berkshelf, version: "v7.0.8"
 
 # creates required build directories
 dependency "preparation"
