@@ -26,4 +26,11 @@ Write-Output "--- Verifying omnibus package is signed"
 
 Write-Output "--- Running verification for $channel $product $version"
 
-$Env:PATH = "C:\opscode\$product\bin;$Env:PATH"
+# We don't want to add the embedded bin dir to the main PATH as this
+# could mask issues in our binstub shebangs.
+$embedded_bin_dir = "C:\opscode\$product\embedded\bin"
+
+# Exercise various packaged tools to validate binstub shebangs
+& $embedded_bin_dir\ruby --version
+& $embedded_bin_dir\gem.bat --version
+& $embedded_bin_dir\bundle.bat --version
