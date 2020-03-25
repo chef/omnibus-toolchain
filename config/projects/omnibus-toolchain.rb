@@ -39,7 +39,7 @@ end
 override :ruby, version: "2.6.5"
 # pin bundler and rubygems to the same version as shipped with ruby
 override :bundler, version: "1.17.2"
-override :rubygems, version "3.0.3"
+override :rubygems, version: "3.0.3"
 
 # tar 1.32 is not compatible with the Ubuntu 14.04's latest version of dpkg-deb so pin it to 1.28
 if ubuntu_trusty?
