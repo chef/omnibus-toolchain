@@ -38,6 +38,13 @@ dependency "cacerts"
 
 # ruby core tools
 dependency "ruby"
+# We add the bundler dependency here with bundler software config file defined in this repo
+# which installs the latest version available of bundler as a gem
+# We do this because we need both bundler 1.x and latest (2.x) bundler installed in omnibus-toolchain
+# to work with Gemfile.lock installed with different bundler versions across our projects
+# `bundle version` determines the version that will be used by bundle install depending on the
+# version in Gemfile.lock.  The latest bundler enables this feature for us condition being
+# bundler 1.x is also installed
 dependency "bundler"
 
 # Include helpers for build pipelines
