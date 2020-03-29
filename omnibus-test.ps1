@@ -33,3 +33,6 @@ $embedded_bin_dir = "C:\opscode\$product\embedded\bin"
 # Exercise various packaged tools to validate binstub shebangs
 & $embedded_bin_dir\ruby --version
 & $embedded_bin_dir\bundle.bat --version
+& $embedded_bin_dir\gem.bat --version
+
+exit $LASTEXITCODE
