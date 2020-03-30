@@ -56,6 +56,11 @@ else
   dependency "helper-sh"
 end
 
+# This fixes the ruby dependencies warinings in macOS
+# eg.  "Ignoring ffi-1.10.0 because its extensions are not built. Try: gem pristine ffi --version 1.10.0"
+
+dependency "shebang-cleanup"
+
 # For Solaris 10 and Freebsd 9 we assume that you have installed the system gcc
 # package this means that pcre is going to link against it, and it's ok in this
 # case
