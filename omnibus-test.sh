@@ -54,10 +54,8 @@ BINDIR="$INSTALL_DIR/bin/"
 
 # Explicitly call the one we expect to be there.
 "$BINDIR/bash" --version
-"$BINDIR/berks" --version || true # not on non-linux
 "$BINDIR/bundle" --version
 "$BINDIR/curl" --version
-"$BINDIR/fakeroot" --version || true # not on all platforms
 "$BINDIR/gem" --version
 "$BINDIR/git" --version
 "$BINDIR/gmake" --version

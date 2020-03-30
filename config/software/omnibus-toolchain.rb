@@ -41,9 +41,10 @@ dependency "ruby"
 dependency "rubygems"
 dependency "bundler"
 
-if linux? || mac_os_x?
-  dependency "berkshelf" unless i386? || ios_xr? || nexus? || armhf?
-end
+# Following dependency installs bundler latest version
+# in addition to default with ruby to enable bundler version
+# to select the version depending on the Gemfile.lock
+dependency "latest-bundler"
 
 # Include helpers for build pipelines
 dependency "helper-gems"
