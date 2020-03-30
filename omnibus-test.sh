@@ -40,8 +40,11 @@ echo "--- Running verification for $channel $product $version"
 
 # Fix permissions on .bundle if it exists
 export BUNDLE_DIR="/home/jenkins/.bundle"
+export BUNDLE_SOL_DIR="/export/home/jenkins/.bundle"
 if [[ -d "$BUNDLE_DIR" ]]; then
   sudo chown -R jenkins:jenkins "$BUNDLE_DIR"
+elif [[ -d "$BUNDLE_SOL_DIR" ]]; then
+  sudo chown -R jenkins:jenkins "$BUNDLE_SOL_DIR"
 fi
 
 # Set up a custom tmpdir, and clean it up before and after the tests
