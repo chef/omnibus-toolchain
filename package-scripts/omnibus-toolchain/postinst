@@ -15,7 +15,7 @@ error_exit()
   exit 1
 }
 
-for name in git ruby tar bash berks bundle curl fakeroot gem make makedepend patch pkg-config rake
+for name in git ruby tar bash bundle curl gem make makedepend patch pkg-config rake
 do
 	ln -sf /opt/omnibus-toolchain/embedded/bin/$name /opt/omnibus-toolchain/bin || error_exit "Cannot link $name to /opt/omnibus-toolchain/bin"
 done
