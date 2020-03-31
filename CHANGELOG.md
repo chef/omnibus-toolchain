@@ -2,17 +2,18 @@ omnibus-toolchain CHANGELOG
 ==========================
 This file is used to list changes made in each version of the omnibus-toolchain.
 
-<!-- latest_release 1.1.116 -->
-## [1.1.116](https://github.com/chef/omnibus-toolchain/tree/1.1.116) (2020-03-24)
+<!-- latest_release 1.1.117 -->
+## [1.1.117](https://github.com/chef/omnibus-toolchain/tree/1.1.117) (2020-03-31)
 
 #### Merged Pull Requests
-- Remove myself as maintainer [#127](https://github.com/chef/omnibus-toolchain/pull/127) ([scotthain](https://github.com/scotthain))
+- Release toolchain with bundler 1.x and 2.x [#134](https://github.com/chef/omnibus-toolchain/pull/134) ([jaymalasinha](https://github.com/jaymalasinha))
 <!-- latest_release -->
 
 <!-- release_rollup since=1.1.115 -->
 ### Changes since 1.1.115 release
 
 #### Merged Pull Requests
+- Release toolchain with bundler 1.x and 2.x [#134](https://github.com/chef/omnibus-toolchain/pull/134) ([jaymalasinha](https://github.com/jaymalasinha)) <!-- 1.1.117 -->
 - Remove myself as maintainer [#127](https://github.com/chef/omnibus-toolchain/pull/127) ([scotthain](https://github.com/scotthain)) <!-- 1.1.116 -->
 <!-- release_rollup -->
 
