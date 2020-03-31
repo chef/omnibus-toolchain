@@ -26,4 +26,15 @@ Write-Output "--- Verifying omnibus package is signed"
 
 Write-Output "--- Running verification for $channel $product $version"
 
-$Env:PATH = "C:\opscode\$product\bin;$Env:PATH"
+$Env:PATH = "C:\opscode\$product\embedded\bin;$Env:PATH"
+
+$embedded_bin_dir = "C:\opscode\$product\embedded\bin"
+
+# Exercise various packaged tools to validate binstub shebangs
+& $embedded_bin_dir\ruby --version
+If ($lastexitcode -ne 0) { Exit $lastexitcode }
+
+& $embedded_bin_dir\bundle.bat --version
+If ($lastexitcode -ne 0) { Exit $lastexitcode }
+
+exit $LASTEXITCODE

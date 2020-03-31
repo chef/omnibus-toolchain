@@ -16,5 +16,4 @@ group :development do
   gem 'winrm-fs'
   gem 'kitchen-zone'
   gem 'kitchen-vagrant'
-  gem 'berkshelf'
 end

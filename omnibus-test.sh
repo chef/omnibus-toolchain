@@ -6,7 +6,10 @@ product="${PRODUCT:-omnibus-toolchain}"
 version="${VERSION:-latest}"
 toolchain="${TOOLCHAIN:-angry-omnibus-toolchain}"
 
-if [[ $TOOLCHAIN == "angry-omnibus-toolchain" && $INSTALL_TOOLCHAIN == "true" ]]; then
+# Following code to determine is_u_aarch64 is temporary fix to onboard ubuntu-18.04 aarch64
+# This an be safely removed after successful release of omnibus-toolchain with ubuntu-18.04 aarch64
+
+if [[ $TOOLCHAIN == "angry-omnibus-toolchain" && $INSTALL_TOOLCHAIN == "true"  && ${BUILDKITE_AGENT_META_DATA_QUEUE:-} != "omnibus-ubuntu-18.04-aarch64"  ]]; then
   echo "--- Installing angry-omnibus-toolchain to be used for installing and testing omnibus-toolchain"
   /opt/omnibus-toolchain/bin/install-omnibus-product -P angry-omnibus-toolchain
   # linking bash fails on macOS 10.15 and later so return true
@@ -37,8 +40,11 @@ echo "--- Running verification for $channel $product $version"
 
 # Fix permissions on .bundle if it exists
 export BUNDLE_DIR="/home/jenkins/.bundle"
+export BUNDLE_SOL_DIR="/export/home/jenkins/.bundle"
 if [[ -d "$BUNDLE_DIR" ]]; then
   sudo chown -R jenkins:jenkins "$BUNDLE_DIR"
+elif [[ -d "$BUNDLE_SOL_DIR" ]]; then
+  sudo chown -R jenkins:jenkins "$BUNDLE_SOL_DIR"
 fi
 
 # Set up a custom tmpdir, and clean it up before and after the tests
@@ -51,10 +57,8 @@ BINDIR="$INSTALL_DIR/bin/"
 
 # Explicitly call the one we expect to be there.
 "$BINDIR/bash" --version
-"$BINDIR/berks" --version || true # not on non-linux
 "$BINDIR/bundle" --version
 "$BINDIR/curl" --version
-"$BINDIR/fakeroot" --version || true # not on all platforms
 "$BINDIR/gem" --version
 "$BINDIR/git" --version
 "$BINDIR/gmake" --version

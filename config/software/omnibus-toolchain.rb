@@ -41,10 +41,6 @@ dependency "ruby"
 dependency "rubygems"
 dependency "bundler"
 
-if linux? || mac_os_x?
-  dependency "berkshelf" unless i386? || ios_xr? || nexus? || armhf?
-end
-
 # Include helpers for build pipelines
 dependency "helper-gems"
 
