@@ -32,7 +32,9 @@ $embedded_bin_dir = "C:\opscode\$product\embedded\bin"
 
 # Exercise various packaged tools to validate binstub shebangs
 & $embedded_bin_dir\ruby --version
+If ($lastexitcode -ne 0) { Exit $lastexitcode }
+
 & $embedded_bin_dir\bundle.bat --version
-& $embedded_bin_dir\gem.bat --version
+If ($lastexitcode -ne 0) { Exit $lastexitcode }
 
 exit $LASTEXITCODE
