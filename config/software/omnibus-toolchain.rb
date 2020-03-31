@@ -41,11 +41,6 @@ dependency "ruby"
 dependency "rubygems"
 dependency "bundler"
 
-# Following dependency installs bundler latest version
-# in addition to default with ruby to enable bundler version
-# to select the version depending on the Gemfile.lock
-dependency "latest-bundler"
-
 # Include helpers for build pipelines
 dependency "helper-gems"
 
