@@ -2,22 +2,20 @@ omnibus-toolchain CHANGELOG
 ==========================
 This file is used to list changes made in each version of the omnibus-toolchain.
 
-<!-- latest_release 1.1.117 -->
-## [1.1.117](https://github.com/chef/omnibus-toolchain/tree/1.1.117) (2020-03-31)
-
-#### Merged Pull Requests
-- Release toolchain with bundler 1.x and 2.x [#134](https://github.com/chef/omnibus-toolchain/pull/134) ([jaymalasinha](https://github.com/jaymalasinha))
+<!-- latest_release -->
 <!-- latest_release -->
 
-<!-- release_rollup since=1.1.115 -->
-### Changes since 1.1.115 release
-
-#### Merged Pull Requests
-- Release toolchain with bundler 1.x and 2.x [#134](https://github.com/chef/omnibus-toolchain/pull/134) ([jaymalasinha](https://github.com/jaymalasinha)) <!-- 1.1.117 -->
-- Remove myself as maintainer [#127](https://github.com/chef/omnibus-toolchain/pull/127) ([scotthain](https://github.com/scotthain)) <!-- 1.1.116 -->
+<!-- release_rollup -->
 <!-- release_rollup -->
 
 <!-- latest_stable_release -->
+## [1.1.117](https://github.com/chef/omnibus-toolchain/tree/1.1.117) (2020-04-01)
+
+#### Merged Pull Requests
+- Remove myself as maintainer [#127](https://github.com/chef/omnibus-toolchain/pull/127) ([scotthain](https://github.com/scotthain))
+- Release toolchain with bundler 1.x and 2.x [#134](https://github.com/chef/omnibus-toolchain/pull/134) ([jaymalasinha](https://github.com/jaymalasinha))
+<!-- latest_stable_release -->
+
 ## [1.1.115](https://github.com/chef/omnibus-toolchain/tree/1.1.115) (2020-02-26)
 
 #### Merged Pull Requests
@@ -27,7 +25,6 @@ This file is used to list changes made in each version of the omnibus-toolchain.
 - Remove support for RHEL 6 s390x (zLinux) [#128](https://github.com/chef/omnibus-toolchain/pull/128) ([jaymalasinha](https://github.com/jaymalasinha))
 - Update Software Cert for macOS signing &amp; add Debian 10 testers [#129](https://github.com/chef/omnibus-toolchain/pull/129) ([jaymalasinha](https://github.com/jaymalasinha))
 - Jsinha/fix notarization [#130](https://github.com/chef/omnibus-toolchain/pull/130) ([jaymalasinha](https://github.com/jaymalasinha))
-<!-- latest_stable_release -->
 
 ## [1.1.109](https://github.com/chef/omnibus-toolchain/tree/1.1.109) (2019-06-24)
 
