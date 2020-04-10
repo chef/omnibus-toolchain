@@ -94,5 +94,5 @@ build do
   # ################
 
   # deploy to the final install directory
-  copy "#{project_dir}/*", "#{install_dir}/embedded/bin"
+  copy "*", "#{install_dir}/embedded/bin"
 end
