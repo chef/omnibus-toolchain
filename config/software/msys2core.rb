@@ -15,7 +15,11 @@
 #
 
 name "msys2core"
-default_version "20180531"
+default_version "20190524"
+
+version "20190524" do
+  source sha256: "168e156fa9f00d90a8445676c023c63be6e82f71487f4e2688ab5cb13b345383"
+end
 
 version "20180531" do
   source sha256: "4e799b5c3efcf9efcb84923656b7bcff16f75a666911abd6620ea8e5e1e9870c"
@@ -45,7 +49,7 @@ build do
 
   # Invoke the commands within the msys we unpack, rather than any other msys
   # which may be in the system path.
-  base_shell_cmd = "#{project_dir}/msys2_shell.cmd -c"
+  base_shell_cmd = "#{project_dir}/usr/bin/bash.exe -lc"
 
   # Setup the bashrc that will be used for bash -c commands via BASH_ENV
   erb source: "bashrc.erb",
@@ -53,7 +57,7 @@ build do
       mode: 0755
 
   # run msys2_shell once so it can set up its internals and quit
-  command "#{base_shell_cmd} \"exit\""
+  command "#{base_shell_cmd} \"true\"", env: env
   # As per https://github.com/msys2/msys2/wiki/MSYS2-installation
   # run msys2_shell to update all packages
   command "#{base_shell_cmd} \"pacman -Syuu --noconfirm\"", env: env
@@ -94,5 +98,5 @@ build do
   # ################
 
   # deploy to the final install directory
-  copy "*", "#{install_dir}/embedded/bin"
+  copy "#{project_dir}/*", "#{install_dir}/embedded/bin"
 end
