@@ -46,6 +46,10 @@ else
   override :gtar, version: "1.32"
 end
 
+if solaris?
+  override :libtool, version: "2.4"
+end
+
 # creates required build directories
 dependency "preparation"
 

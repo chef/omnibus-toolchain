@@ -19,7 +19,6 @@ default_version "1.0.0"
 
 license :project_license
 
-dependency "libtool"
 dependency "nokogiri"
 
 # gnu utilities
@@ -28,6 +27,7 @@ if windows?
   dependency "msys2core"
   dependency "git-windows"
 else
+  dependency "libtool"
   dependency "bash"
   dependency "git"
   dependency "gtar"
