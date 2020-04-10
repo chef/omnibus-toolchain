@@ -9,9 +9,13 @@ toolchain="${TOOLCHAIN:-angry-omnibus-toolchain}"
 # Following code to determine is_u_aarch64 is temporary fix to onboard ubuntu-18.04 aarch64
 # This an be safely removed after successful release of omnibus-toolchain with ubuntu-18.04 aarch64
 
-if [[ $TOOLCHAIN == "angry-omnibus-toolchain" && $INSTALL_TOOLCHAIN == "true"  && ${BUILDKITE_AGENT_META_DATA_QUEUE:-} != "omnibus-ubuntu-18.04-aarch64"  ]]; then
+if [[ $TOOLCHAIN == "angry-omnibus-toolchain" && $INSTALL_TOOLCHAIN == "true"  ]]; then
   echo "--- Installing angry-omnibus-toolchain to be used for installing and testing omnibus-toolchain"
-  /opt/omnibus-toolchain/bin/install-omnibus-product -P angry-omnibus-toolchain
+  if [[ ${BUILDKITE_AGENT_META_DATA_QUEUE:-} == "omnibus-ubuntu-18.04-aarch64" ]]; then
+    /opt/omnibus-toolchain/bin/install-omnibus-product -P angry-omnibus-toolchain -c unstable
+  else
+    /opt/omnibus-toolchain/bin/install-omnibus-product -P angry-omnibus-toolchain
+  fi
   # linking bash fails on macOS 10.15 and later so return true
   sudo ln -sf /opt/angry-omnibus-toolchain/embedded/bin/bash /bin/bash || true
 fi

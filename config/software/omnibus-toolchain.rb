@@ -19,7 +19,8 @@ default_version "1.0.0"
 
 license :project_license
 
-dependency "libtool" if aix?
+dependency "libtool"
+dependency "nokogiri"
 
 # gnu utilities
 if windows?
