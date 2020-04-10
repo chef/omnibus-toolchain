@@ -37,4 +37,13 @@ If ($lastexitcode -ne 0) { Exit $lastexitcode }
 & $embedded_bin_dir\bundle.bat --version
 If ($lastexitcode -ne 0) { Exit $lastexitcode }
 
+& $embedded_bin_dir\git --version
+If ($lastexitcode -ne 0) { Exit $lastexitcode }
+
+& $embedded_bin_dir\gcc --version
+If ($lastexitcode -ne 0) { Exit $lastexitcode }
+
+& $embedded_bin_dir\make --version
+If ($lastexitcode -ne 0) { Exit $lastexitcode }
+
 exit $LASTEXITCODE
