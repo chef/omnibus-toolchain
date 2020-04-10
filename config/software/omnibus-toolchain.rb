@@ -28,10 +28,12 @@ if windows?
   dependency "git-windows"
 else
   dependency "libtool"
+  dependency "libarchive"
   dependency "bash"
   dependency "git"
   dependency "gtar"
   dependency "make"
+  dependency "makedepend"
   dependency "patch"
 end
 
