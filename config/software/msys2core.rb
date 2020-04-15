@@ -15,14 +15,14 @@
 #
 
 name "msys2core"
-default_version "20180531"
+default_version "20190524"
+
+version "20190524" do
+  source sha256: "168e156fa9f00d90a8445676c023c63be6e82f71487f4e2688ab5cb13b345383"
+end
 
 version "20180531" do
   source sha256: "4e799b5c3efcf9efcb84923656b7bcff16f75a666911abd6620ea8e5e1e9870c"
-end
-
-version "20161025" do
-  source sha256: "bb1f1a0b35b3d96bf9c15092da8ce969a84a134f7b08811292fbc9d84d48c65d"
 end
 
 # HTTPS currently not available.
