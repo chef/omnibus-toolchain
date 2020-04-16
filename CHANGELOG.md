@@ -2,27 +2,24 @@ omnibus-toolchain CHANGELOG
 ==========================
 This file is used to list changes made in each version of the omnibus-toolchain.
 
-<!-- latest_release 1.1.118 -->
+<!-- latest_release -->
+<!-- latest_release -->
+
+<!-- release_rollup -->
+<!-- release_rollup -->
+
+<!-- latest_stable_release -->
 ## [1.1.118](https://github.com/chef/omnibus-toolchain/tree/1.1.118) (2020-04-16)
 
 #### Merged Pull Requests
 - Install unix/linux tools required to build chef-workstation [#135](https://github.com/chef/omnibus-toolchain/pull/135) ([jaymalasinha](https://github.com/jaymalasinha))
-<!-- latest_release -->
-
-<!-- release_rollup since=1.1.117 -->
-### Changes since 1.1.117 release
-
-#### Merged Pull Requests
-- Install unix/linux tools required to build chef-workstation [#135](https://github.com/chef/omnibus-toolchain/pull/135) ([jaymalasinha](https://github.com/jaymalasinha)) <!-- 1.1.118 -->
-<!-- release_rollup -->
-
 <!-- latest_stable_release -->
+
 ## [1.1.117](https://github.com/chef/omnibus-toolchain/tree/1.1.117) (2020-04-01)
 
 #### Merged Pull Requests
 - Remove myself as maintainer [#127](https://github.com/chef/omnibus-toolchain/pull/127) ([scotthain](https://github.com/scotthain))
 - Release toolchain with bundler 1.x and 2.x [#134](https://github.com/chef/omnibus-toolchain/pull/134) ([jaymalasinha](https://github.com/jaymalasinha))
-<!-- latest_stable_release -->
 
 ## [1.1.115](https://github.com/chef/omnibus-toolchain/tree/1.1.115) (2020-02-26)
 
