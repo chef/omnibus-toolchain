@@ -1,4 +1,4 @@
-#!/bin/bash
+#! /bin/bash
 set -ueo pipefail
 
 channel="${CHANNEL:-unstable}"
@@ -11,6 +11,8 @@ toolchain="${TOOLCHAIN:-angry-omnibus-toolchain}"
 
 if [[ $TOOLCHAIN == "angry-omnibus-toolchain" && $INSTALL_TOOLCHAIN == "true"  ]]; then
   echo "--- Installing angry-omnibus-toolchain to be used for installing and testing omnibus-toolchain"
+  # Temporarily install angry-omnibus-toolchain for ubuntu-18-aarch64 from unstable, as current it is
+  # unavailable in stable. Can be removed after 1.1.118 release
   if [[ ${BUILDKITE_AGENT_META_DATA_QUEUE:-} == "omnibus-ubuntu-18.04-aarch64" ]]; then
     /opt/omnibus-toolchain/bin/install-omnibus-product -P angry-omnibus-toolchain -c unstable
   else
