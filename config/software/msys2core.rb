@@ -52,6 +52,10 @@ build do
       dest: "#{project_dir}/etc/msys2.bashrc",
       mode: 0755
 
+  erb source: "perlbin-sh.erb",
+      dest: "#{project_dir}/etc/profile.d/perlbin.sh",
+      mode: 0755
+
   # run msys2_shell once so it can set up its internals and quit
   command "#{base_shell_cmd} \"exit\""
   # As per https://github.com/msys2/msys2/wiki/MSYS2-installation
