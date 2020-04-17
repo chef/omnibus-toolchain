@@ -42,6 +42,7 @@ end
 
 build do
   env = with_standard_compiler_flags(with_embedded_path)
+  env["PATH"] = "#{project_dir}/usr/bin:#{env["PATH"]}"
 
   # Invoke the commands within the msys we unpack, rather than any other msys
   # which may be in the system path.
