@@ -51,18 +51,21 @@ build do
 
   # Setup the bashrc that will be used for bash -c commands via BASH_ENV
   erb source: "bashrc.erb",
-      dest: "#{project_dir}/etc/msys2.bashrc",
-      mode: 0755
+    dest: "#{project_dir}/etc/msys2.bashrc",
+    mode: 0755
 
+  erb source: "perlbin-sh.erb",
+    dest: "#{project_dir}/etc/profile.d/perlbin.sh",
+    mode: 0755
   # run msys2_shell once so it can set up its internals and quit
-  copy "#{project_dir}/*", "#{install_dir}/embedded/bin"
   command "#{base_shell_cmd} \"exit\""
   # As per https://github.com/msys2/msys2/wiki/MSYS2-installation
   # run msys2_shell to update all packages twice as it might not complete first time
+  command "#{msys2_shell_cmd} \"true\""
   command "#{msys2_shell_cmd} \"pacman -Syuu --noconfirm\"", env: env
   command "#{msys2_shell_cmd} \"pacman -Syuu --noconfirm\"", env: env
   # run msys2_shell second time so it can set up its internals and quit
-  command "#{msys2_shell_cmd} \"exit\""
+  # command "#{msys2_shell_cmd} \"true\""
 
   # ################
   # these should be put into a different definition
