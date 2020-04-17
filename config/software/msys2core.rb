@@ -42,6 +42,7 @@ end
 
 build do
   env = with_standard_compiler_flags(with_embedded_path)
+  env["PATH"] = "#{project_dir}/usr/bin:#{env['PATH']}"
 
   # Invoke the commands within the msys we unpack, rather than any other msys
   # which may be in the system path.
@@ -54,11 +55,14 @@ build do
       mode: 0755
 
   # run msys2_shell once so it can set up its internals and quit
+  copy "#{project_dir}/*", "#{install_dir}/embedded/bin"
   command "#{base_shell_cmd} \"exit\""
   # As per https://github.com/msys2/msys2/wiki/MSYS2-installation
-  # run msys2_shell to update all packages
+  # run msys2_shell to update all packages twice as it might not complete first time
   command "#{msys2_shell_cmd} \"pacman -Syuu --noconfirm\"", env: env
-
+  command "#{msys2_shell_cmd} \"pacman -Syuu --noconfirm\"", env: env
+  # run msys2_shell second time so it can set up its internals and quit
+  command "#{msys2_shell_cmd} \"exit\""
 
   # ################
   # these should be put into a different definition
