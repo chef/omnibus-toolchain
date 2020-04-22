@@ -24,7 +24,6 @@ dependency "nokogiri"
 # gnu utilities
 if windows?
   dependency "cmake"
-  dependency "msys2core"
   dependency "git-windows"
 else
   dependency "libtool"

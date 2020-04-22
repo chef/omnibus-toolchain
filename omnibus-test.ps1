@@ -40,9 +40,7 @@ If ($lastexitcode -ne 0) { Exit $lastexitcode }
 & $embedded_bin_dir\git --version
 If ($lastexitcode -ne 0) { Exit $lastexitcode }
 
-# msys2 build currently does not install gcc on windows
-# can be uncommented after gcc install is fixed
-# & $project_bin_dir\load-omnibus-toolchain.ps1
-# If ($lastexitcode -ne 0) { Exit $lastexitcode }
+& $project_bin_dir\load-omnibus-toolchain.ps1
+If ($lastexitcode -ne 0) { Exit $lastexitcode }
 
 exit $LASTEXITCODE
