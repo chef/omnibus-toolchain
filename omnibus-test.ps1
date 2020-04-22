@@ -10,12 +10,11 @@ If ([string]::IsNullOrEmpty($product)) { $product = "omnibus-toolchain" }
 $version = "$Env:VERSION"
 If ([string]::IsNullOrEmpty($version)) { $version = "latest" }
 
-$toolchain = "$Env:TOOLCHAIN"
-If ([string]::IsNullOrEmpty($toolchain)) { $toolchain = "angry-omnibus-toolchain" }
-
-If ($toolchain -eq "angry-omnibus-toolchain") {
-  Write-Output "--- Installing angry-omnibus-toolchain to be used for installing and testing omnibus-toolchain"
-  C:\opscode\omnibus-toolchain\bin\install-omnibus-product.ps1 -Product angry-omnibus-toolchain
+If ($product -eq "omnibus-toolchain") {
+  $toolchain = "angry-omnibus-toolchain"
+}
+Else {
+  $toolchain = "omnibus-toolchain"
 }
 
 Write-Output "--- Installing $channel $product $version"

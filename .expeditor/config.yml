@@ -26,6 +26,17 @@ pipelines:
       definition: .expeditor/angry-release.omnibus.yml
       env:
         - ADHOC: true
+  # the canary pipelines are used for testing by our *-buildkite-pipelines repos
+  - omnibus/adhoc-canary:
+      canary: true
+      definition: .expeditor/release-canary.omnibus.yml
+      env:
+        - ADHOC: true
+  - omnibus/angry-adhoc-canary:
+      canary: true
+      definition: .expeditor/angry-release-canary.omnibus.yml
+      env:
+        - ADHOC: true
 
 # These actions are taken, in order they are specified, anytime a Pull Request is merged.
 merge_actions:
