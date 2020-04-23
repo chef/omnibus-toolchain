@@ -20,20 +20,21 @@
 ###############################################################
 
 <% if architecture == "x86" -%>
-$env:PATH="C:\wix;C:\Program Files\7-zip;C:\Program Files (x86)\Windows Kits\8.1\bin\x64;<%= install_dir %>\embedded\bin;<%= install_dir %>\embedded\bin\mingw32\bin;<%= install_dir %>\embedded\bin\usr\bin;<%= install_dir %>\embedded\git\cmd;<%= install_dir %>\embedded\git\mingw32\libexec\git-core;C:\tools\msys64\mingw64\bin;C:\tools\msys64\usr\bin;$env:PATH"
+$env:PATH="C:\chef-releng\msys2\mingw64\bin;C:\chef-releng\msys2\usr\bin;C:\wix;C:\Program Files\7-zip;C:\Program Files (x86)\Windows Kits\8.1\bin\x64;<%= install_dir %>\embedded\bin;<%= install_dir %>\embedded\bin\mingw32\bin;<%= install_dir %>\embedded\bin\usr\bin;<%= install_dir %>\embedded\git\cmd;<%= install_dir %>\embedded\git\mingw32\libexec\git-core;$env:PATH"
 $env:MSYSTEM='MINGW32'
 $env:OMNIBUS_WINDOWS_ARCH='x86'
 <% else -%>
-$env:PATH="C:\wix;C:\Program Files\7-zip;C:\Program Files (x86)\Windows Kits\8.1\bin\x64;<%= install_dir %>\embedded\bin;<%= install_dir %>\embedded\bin\mingw64\bin;<%= install_dir %>\embedded\bin\usr\bin;<%= install_dir %>\embedded\git\cmd;<%= install_dir %>\embedded\git\mingw64\libexec\git-core;C:\tools\msys64\mingw32\bin;C:\tools\msys64\usr\bin;$env:PATH"
+$env:PATH="C:\chef-releng\msys2\mingw32\bin;C:\chef-releng\msys2\usr\bin;C:\wix;C:\Program Files\7-zip;C:\Program Files (x86)\Windows Kits\8.1\bin\x64;<%= install_dir %>\embedded\bin;<%= install_dir %>\embedded\bin\mingw64\bin;<%= install_dir %>\embedded\bin\usr\bin;<%= install_dir %>\embedded\git\cmd;<%= install_dir %>\embedded\git\mingw64\libexec\git-core;$env:PATH"
 $env:MSYSTEM='MINGW64'
 $env:OMNIBUS_WINDOWS_ARCH='x64'
 <% end -%>
 
 $env:HOMEDRIVE="C:"
+$env:MSYS2_INSTALL_DIR="C:\chef-releng\msys2"
 $env:HOMEPATH="\buildkite-agent"
 $env:OMNIBUS_TOOLCHAIN_INSTALL_DIR='<%= install_dir %>'
 $env:SSL_CERT_FILE='<%= install_dir %>\embedded\ssl\certs\cacert.pem'
-$env:BASH_ENV='<%= install_dir %>\embedded\bin\etc\msys2.bashrc'
+$env:BASH_ENV='C:\chef-releng\msys2\etc\bash.bashrc'
 
 ###############################################################
 # Query tool versions
