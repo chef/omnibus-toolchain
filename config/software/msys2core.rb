@@ -61,6 +61,8 @@ build do
   # ################
   # these should be put into a different definition
   # ################
+  # toolchain
+  command "#{base_shell_cmd} \"pacman -S --needed --noconfirm mingw-w64-#{CARCH}-toolchain\"", env: env
   # gcc
   command "#{base_shell_cmd} \"pacman -S --needed --noconfirm mingw-w64-#{CARCH}-gcc\"", env: env
   # binutils
