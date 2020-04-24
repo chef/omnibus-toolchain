@@ -17,7 +17,6 @@
 name "msys2core"
 
 # We use a 64-bit msys environment to build both 32 and 64 bit binaries.
-relative_path "msys64"
 
 license "Apache-2.0"
 license_file "https://github.com/chef/chef/blob/master/LICENSE"
@@ -34,9 +33,6 @@ build do
   choco_msys2dir = "c:/tools/msys64"
 
   # Setup the bashrc that will be used for bash -c commands via BASH_ENV
-  erb source: "bashrc.erb",
-      dest: "#{project_dir}/etc/msys2.bashrc",
-      mode: 0755
   
   erb source: "check-priv.ps1.erb",
       dest: "#{project_dir}/check-priv.ps1",
