@@ -1,0 +1,61 @@
+Write-Output "Installing msys2..."
+choco install -y msys2
+If ($lastexitcode -ne 0) { Exit $lastexitcode }
+
+Write-Output "Refreshing the current PowerShell session's environment"
+refreshenv
+
+If ($Env:PACKER_BUILD_NAME -Like "*-i386") {
+    $architecture = "i686"
+}
+Else {
+    $architecture = "x86_64"
+}
+
+function msys2_cmd($command) {
+    Write-Host $command -NoNewline
+    cmd /c start /wait C:\tools\msys64\usr\bin\sh.exe --login -c $command
+    Write-Host " - OK" -ForegroundColor Green
+}
+
+[Environment]::SetEnvironmentVariable("MSYS2_PATH_TYPE", "inherit", "Machine")
+
+# update core packages
+Write-Output "Running pacman to update all packages"
+msys2_cmd "pacman -Syuu --needed --noconfirm --ask=20"
+msys2_cmd "pacman -Syu --noconfirm"
+msys2_cmd "pacman -Syu --noconfirm"
+If ($lastexitcode -ne 0) { Exit $lastexitcode }
+
+# install gcc, bsdtar, perl and other toolchain packages
+Write-Output "Installing msys2 toolchain..."
+msys2_cmd "pacman --sync --noconfirm mingw-w64-$architecture-toolchain"
+If ($lastexitcode -ne 0) { Exit $lastexitcode }
+
+Write-Output "Installing libtool..."
+msys2_cmd "pacman --sync --noconfirm mingw-w64-$architecture-libtool"
+If ($lastexitcode -ne 0) { Exit $lastexitcode }
+
+Write-Output "Installing autoconf..."
+msys2_cmd "pacman --sync --noconfirm msys/autoconf"
+If ($lastexitcode -ne 0) { Exit $lastexitcode }
+
+Write-Output "Installing automake..."
+msys2_cmd "pacman --sync --noconfirm msys/automake"
+If ($lastexitcode -ne 0) { Exit $lastexitcode }
+
+Write-Output "Installing autogen..."
+msys2_cmd "pacman --sync --noconfirm msys/autogen"
+If ($lastexitcode -ne 0) { Exit $lastexitcode }
+
+Write-Output "Installing make..."
+msys2_cmd "pacman --sync --noconfirm msys/make"
+If ($lastexitcode -ne 0) { Exit $lastexitcode }
+
+Write-Output "Installing patch..."
+msys2_cmd "pacman --sync --noconfirm msys/patch"
+If ($lastexitcode -ne 0) { Exit $lastexitcode }
+
+# bsdtar.exe is already installed as a part of toolchain so copy it as tar.exe
+Write-Output "Copying bsdtar.exe to tar.exe ..."
+Copy-Item -Path C:\tools\msys64\usr\bin\bsdtar.exe -Destination C:\tools\msys64\usr\bin\tar.exe

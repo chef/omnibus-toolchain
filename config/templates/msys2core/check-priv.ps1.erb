@@ -1,0 +1,3 @@
+$identity  = [System.Security.Principal.WindowsIdentity]::GetCurrent()
+$principal = New-Object System.Security.Principal.WindowsPrincipal( $identity )
+$principal.IsInRole( [System.Security.Principal.WindowsBuiltInRole]::Administrator )

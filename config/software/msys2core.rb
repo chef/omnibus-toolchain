@@ -15,18 +15,6 @@
 #
 
 name "msys2core"
-default_version "20190524"
-
-version "20190524" do
-  source sha256: "168e156fa9f00d90a8445676c023c63be6e82f71487f4e2688ab5cb13b345383"
-end
-
-version "20180531" do
-  source sha256: "4e799b5c3efcf9efcb84923656b7bcff16f75a666911abd6620ea8e5e1e9870c"
-end
-
-# HTTPS currently not available.
-source url: "http://repo.msys2.org/distrib/x86_64/msys2-base-x86_64-#{version}.tar.xz"
 
 # We use a 64-bit msys environment to build both 32 and 64 bit binaries.
 relative_path "msys64"
@@ -43,56 +31,40 @@ end
 build do
   env = with_standard_compiler_flags(with_embedded_path)
 
-  # Invoke the commands within the msys we unpack, rather than any other msys
-  # which may be in the system path.
-  base_shell_cmd = "#{project_dir}/msys2_shell.cmd -c"
+  choco_msys2dir = "c:/tools/msys64"
 
   # Setup the bashrc that will be used for bash -c commands via BASH_ENV
   erb source: "bashrc.erb",
       dest: "#{project_dir}/etc/msys2.bashrc",
       mode: 0755
-
-  # run msys2_shell once so it can set up its internals and quit
-  command "#{base_shell_cmd} \"exit\""
-  # As per https://github.com/msys2/msys2/wiki/MSYS2-installation
-  # run msys2_shell to update all packages
-  command "#{base_shell_cmd} \"pacman -Syuu --noconfirm\"", env: env
+  
+  erb source: "check-priv.ps1.erb",
+      dest: "#{project_dir}/check-priv.ps1",
+      mode: 0755
+  
+  erb source: "msys2-install.ps1.erb",
+      dest: "#{project_dir}/msys2-install.ps1",
+      mode: 0755
 
   # ################
   # these should be put into a different definition
   # ################
-  # gcc
-  command "#{base_shell_cmd} \"pacman -S --needed --noconfirm mingw-w64-#{CARCH}-gcc\"", env: env
-  # binutils
-  command "#{base_shell_cmd} \"pacman -S --needed --noconfirm mingw-w64-#{CARCH}-binutils\"", env: env
-  # gnumake
-  command "#{base_shell_cmd} \"pacman -S --needed --noconfirm mingw-w64-#{CARCH}-make\"", env: env
-  # libtool
-  command "#{base_shell_cmd} \"pacman -S --needed --noconfirm mingw-w64-#{CARCH}-libtool\"", env: env
-  # autoconf
-  command "#{base_shell_cmd} \"pacman -S --needed --noconfirm msys/autoconf\"", env: env
-  # automake
-  command "#{base_shell_cmd} \"pacman -S --needed --noconfirm msys/automake\"", env: env
-  # autogen (required for building ZMQ)
-  command "#{base_shell_cmd} \"pacman -S --needed --noconfirm msys/autogen\"", env: env
-  # diffutils (required for building OpenSSL)
-  command "#{base_shell_cmd} \"pacman -S --needed --noconfirm msys/diffutils\"", env: env
-  # msys gnumake
-  command "#{base_shell_cmd} \"pacman -S --needed --noconfirm msys/make\"", env: env
-  # patch
-  command "#{base_shell_cmd} \"pacman -S --needed --noconfirm msys/patch\"", env: env
-  # Install bsdtar because tar interprets : as a tape selector or something weird.
-  # bsdtar interprets it as a path and translates it correctly
-  # https://chefio.slack.com/archives/_msys2_omnibus_effort/p1479491465000316
-  command "#{base_shell_cmd} \"pacman -S --needed --noconfirm msys/bsdtar\"", env: env
-  copy "#{project_dir}/usr/bin/bsdtar.exe", "#{project_dir}/usr/bin/tar.exe"
-  # Perl is required to build openssl, however perl doesn't seem to be able to build
-  # out of the box. We install the msys version for now.
-  command "#{base_shell_cmd} \"pacman -S --needed --noconfirm msys/perl\"", env: env
-  # ################
-  # these should be put into a different definition
-  # ################
+  # Check user run priviledges
+  command "powershell.exe #{project_dir}/check-priv.ps1"
+
+  block "Delete the file after reporting user priviledge mode" do
+    env["VISUAL"] = "echo"
+    remove_file "#{project_dir}/check-priv.ps1"
+  end
+  
+  # Install msys2 using  powershell script
+  command "powershell.exe #{project_dir}/msys2-install.ps1"
+
+  block "Delete the msys2 installation powershell script post install" do
+    env["VISUAL"] = "echo"
+    remove_file "#{project_dir}/msys2-install.ps1"
+  end
 
   # deploy to the final install directory
-  copy "#{project_dir}/*", "#{install_dir}/embedded/bin"
+  copy "#{choco_msys2dir}/*", "#{install_dir}/embedded/bin"
 end
