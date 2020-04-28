@@ -33,6 +33,14 @@ build do
   choco_msys2dir = "c:/tools/msys64"
 
   # Setup the bashrc that will be used for bash -c commands via BASH_ENV
+  erb source: "bashrc.erb",
+      dest: "#{project_dir}/etc/msys2.bashrc",
+      mode: 0755
+
+  # Setup the perlbinsh that is expected by BASH_ENV in previous versions
+  erb source: "perlbin.sh.erb",
+      dest: "#{project_dir}/etc/profile.d/perlbin.sh",
+      mode: 0755
   
   erb source: "check-priv.ps1.erb",
       dest: "#{project_dir}/check-priv.ps1",
@@ -46,7 +54,7 @@ build do
   # these should be put into a different definition
   # ################
   # Check user run priviledges
-  command "powershell.exe #{project_dir}/check-priv.ps1"
+  command "powershell.exe #{project_dir}/check-priv.ps1", env: env
 
   block "Delete the file after reporting user priviledge mode" do
     env["VISUAL"] = "echo"
@@ -54,7 +62,7 @@ build do
   end
   
   # Install msys2 using  powershell script
-  command "powershell.exe #{project_dir}/msys2-install.ps1"
+  command "powershell.exe #{project_dir}/msys2-install.ps1", env: env
 
   block "Delete the msys2 installation powershell script post install" do
     env["VISUAL"] = "echo"
