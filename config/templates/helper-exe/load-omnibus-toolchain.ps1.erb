@@ -20,15 +20,14 @@
 ###############################################################
 
 <% if architecture == "x86" -%>
-$env:PATH="C:\chef-releng\msys2\mingw64\bin;C:\chef-releng\msys2\usr\bin;C:\wix;C:\Program Files\7-zip;C:\Program Files (x86)\Windows Kits\8.1\bin\x64;<%= install_dir %>\embedded\bin;<%= install_dir %>\embedded\bin\mingw32\bin;<%= install_dir %>\embedded\bin\usr\bin;<%= install_dir %>\embedded\git\cmd;<%= install_dir %>\embedded\git\mingw32\libexec\git-core;$env:PATH"
-$env:MSYSTEM='MINGW32'
-$env:OMNIBUS_WINDOWS_ARCH='x86'
+  $env:MSYSTEM='MINGW32'
+  $env:OMNIBUS_WINDOWS_ARCH='x86'
 <% else -%>
-$env:PATH="C:\chef-releng\msys2\mingw32\bin;C:\chef-releng\msys2\usr\bin;C:\wix;C:\Program Files\7-zip;C:\Program Files (x86)\Windows Kits\8.1\bin\x64;<%= install_dir %>\embedded\bin;<%= install_dir %>\embedded\bin\mingw64\bin;<%= install_dir %>\embedded\bin\usr\bin;<%= install_dir %>\embedded\git\cmd;<%= install_dir %>\embedded\git\mingw64\libexec\git-core;$env:PATH"
-$env:MSYSTEM='MINGW64'
-$env:OMNIBUS_WINDOWS_ARCH='x64'
+  $env:MSYSTEM='MINGW64'
+  $env:OMNIBUS_WINDOWS_ARCH='x64'
 <% end -%>
 
+$env:PATH="C:\chef-releng\msys2\$env:MSYSTEM\bin;C:\chef-releng\msys2\usr\bin;C:\wix;C:\Program Files\7-zip;C:\Program Files (x86)\Windows Kits\8.1\bin\x64;<%= install_dir %>\embedded\bin;<%= install_dir %>\embedded\bin\mingw32\bin;<%= install_dir %>\embedded\bin\usr\bin;<%= install_dir %>\embedded\git\cmd;<%= install_dir %>\embedded\git\mingw32\libexec\git-core;$env:PATH"
 $env:HOMEDRIVE="C:"
 $env:MSYS2_INSTALL_DIR="C:\chef-releng\msys2"
 $env:HOMEPATH="\buildkite-agent"
