@@ -2,10 +2,18 @@ omnibus-toolchain CHANGELOG
 ==========================
 This file is used to list changes made in each version of the omnibus-toolchain.
 
-<!-- latest_release -->
+<!-- latest_release 1.1.120 -->
+## [1.1.120](https://github.com/chef/omnibus-toolchain/tree/1.1.120) (2020-05-04)
+
+#### Merged Pull Requests
+- Remove msys2core as we now install msys2 in Windows image [#138](https://github.com/chef/omnibus-toolchain/pull/138) ([jaymalasinha](https://github.com/jaymalasinha))
 <!-- latest_release -->
 
-<!-- release_rollup -->
+<!-- release_rollup since=1.1.119 -->
+### Changes since 1.1.119 release
+
+#### Merged Pull Requests
+- Remove msys2core as we now install msys2 in Windows image [#138](https://github.com/chef/omnibus-toolchain/pull/138) ([jaymalasinha](https://github.com/jaymalasinha)) <!-- 1.1.120 -->
 <!-- release_rollup -->
 
 <!-- latest_stable_release -->
