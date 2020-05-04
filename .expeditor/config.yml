@@ -38,32 +38,42 @@ pipelines:
       env:
         - ADHOC: true
 
-# These actions are taken, in order they are specified, anytime a Pull Request is merged.
-merge_actions:
-  - built_in:bump_version:
-      ignore_labels:
-        - "Expeditor: Skip Version Bump"
-        - "Expeditor: Skip All"
-  - built_in:update_changelog:
-      ignore_labels:
-        - "Expeditor: Skip Changelog"
-        - "Expeditor: Skip All"
-  - trigger_pipeline:omnibus/release:
-      ignore_labels:
-        - "Expeditor: Skip Omnibus"
-        - "Expeditor: Skip All"
-      only_if: built_in:bump_version
-  - trigger_pipeline:omnibus/angry-release:
-      ignore_labels:
-        - "Expeditor: Skip Omnibus"
-        - "Expeditor: Skip All"
-      only_if: built_in:bump_version
+github:
+  # This deletes the GitHub PR branch after successfully merged into the release branch
+  delete_branch_on_merge: true
+  # The tag format to use (e.g. v1.0.0)
+  minor_bump_labels:
+    - "Expeditor: Bump Version Minor"
+  # allow bumping the major release via label
+  major_bump_labels:
+    - "Expeditor: Bump Version Major"
 
-# Subscription to workload action of pull request merge to master branch on
-# omnibus-software project will allow us to trigger an uncached omnibus build
-# for omnibus-toolchain and angry-omnibus-toolchain when the omnibus-software
-# has modified software config files.
 subscriptions:
+  # These actions are taken, in order they are specified, anytime a Pull Request is merged.
+  - workload: pull_request_merged:{{agent_id}}:*
+    actions:
+      - built_in:bump_version:
+          not_if_labels:
+            - "Expeditor: Skip Version Bump"
+            - "Expeditor: Skip All"
+      - built_in:update_changelog:
+          not_if_labels:
+            - "Expeditor: Skip Changelog"
+            - "Expeditor: Skip All"
+      - trigger_pipeline:omnibus/release:
+          not_if_labels:
+            - "Expeditor: Skip Omnibus"
+            - "Expeditor: Skip All"
+          only_if: built_in:bump_version
+      - trigger_pipeline:omnibus/angry-release:
+          not_if_labels:
+            - "Expeditor: Skip Omnibus"
+            - "Expeditor: Skip All"
+          only_if: built_in:bump_version
+  # Subscription to workload action of pull request merge to master branch on
+  # omnibus-software project will allow us to trigger an uncached omnibus build
+  # for omnibus-toolchain and angry-omnibus-toolchain when the omnibus-software
+  # has modified software config files.
   # chef/omnibus-software
   - workload: pull_request_merged:chef/omnibus-software:master:*
     actions:
