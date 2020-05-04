@@ -53,20 +53,20 @@ subscriptions:
   - workload: pull_request_merged:{{agent_id}}:*
     actions:
       - built_in:bump_version:
-          not_if_labels:
+          ignore_labels:
             - "Expeditor: Skip Version Bump"
             - "Expeditor: Skip All"
       - built_in:update_changelog:
-          not_if_labels:
+          ignore_labels:
             - "Expeditor: Skip Changelog"
             - "Expeditor: Skip All"
       - trigger_pipeline:omnibus/release:
-          not_if_labels:
+          ignore_labels:
             - "Expeditor: Skip Omnibus"
             - "Expeditor: Skip All"
           only_if: built_in:bump_version
       - trigger_pipeline:omnibus/angry-release:
-          not_if_labels:
+          ignore_labels:
             - "Expeditor: Skip Omnibus"
             - "Expeditor: Skip All"
           only_if: built_in:bump_version
