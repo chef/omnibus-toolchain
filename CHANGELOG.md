@@ -2,28 +2,25 @@ omnibus-toolchain CHANGELOG
 ==========================
 This file is used to list changes made in each version of the omnibus-toolchain.
 
-<!-- latest_release 2.0.2 -->
+<!-- latest_release -->
+<!-- latest_release -->
+
+<!-- release_rollup -->
+<!-- release_rollup -->
+
+<!-- latest_stable_release -->
 ## [2.0.2](https://github.com/chef/omnibus-toolchain/tree/2.0.2) (2020-05-11)
 
 #### Merged Pull Requests
 - Add Debian 10 aarch64 to build/test map [#142](https://github.com/chef/omnibus-toolchain/pull/142) ([christopher-snapp](https://github.com/christopher-snapp))
-<!-- latest_release -->
-
-<!-- release_rollup since=2.0.1 -->
-### Changes since 2.0.1 release
-
-#### Merged Pull Requests
-- Add Debian 10 aarch64 to build/test map [#142](https://github.com/chef/omnibus-toolchain/pull/142) ([christopher-snapp](https://github.com/christopher-snapp)) <!-- 2.0.2 -->
-<!-- release_rollup -->
-
 <!-- latest_stable_release -->
+
 ## [2.0.1](https://github.com/chef/omnibus-toolchain/tree/2.0.1) (2020-05-05)
 
 #### Merged Pull Requests
 - Remove msys2core as we now install msys2 in Windows image [#138](https://github.com/chef/omnibus-toolchain/pull/138) ([jaymalasinha](https://github.com/jaymalasinha))
 - Fix expeditor config [#140](https://github.com/chef/omnibus-toolchain/pull/140) ([jaymalasinha](https://github.com/jaymalasinha))
 - Remove stale symlinks [#141](https://github.com/chef/omnibus-toolchain/pull/141) ([jaymalasinha](https://github.com/jaymalasinha))
-<!-- latest_stable_release -->
 
 ## [1.1.119](https://github.com/chef/omnibus-toolchain/tree/1.1.119) (2020-04-22)
 
