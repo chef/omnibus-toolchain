@@ -48,7 +48,7 @@ export TMPDIR
 sudo rm -rf "$TMPDIR"
 mkdir -p "$TMPDIR"
 
-BINDIR="$INSTALL_DIR/bin/"
+BINDIR="$INSTALL_DIR/bin"
 
 # Explicitly call the one we expect to be there.
 "$BINDIR/bash" --version
