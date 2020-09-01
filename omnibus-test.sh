@@ -57,7 +57,7 @@ BINDIR="$INSTALL_DIR/bin"
 "$BINDIR/gem" --version
 "$BINDIR/git" --version
 "$BINDIR/gmake" --version
-# "$BINDIR/gtar" --version
+"$BINDIR/gtar" --version
 "$BINDIR/make" --version
 "$BINDIR/patch" --version
 "$BINDIR/rake" --version

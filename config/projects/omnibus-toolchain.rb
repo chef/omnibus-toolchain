@@ -39,9 +39,9 @@ end
 override :ruby, version: "2.6.5"
 override :bundler, version: "1.17.2"
 
-# tar 1.32 is not compatible with the Ubuntu 14.04's latest version of dpkg-deb so pin it to 1.28
-if ubuntu_trusty?
-  override :gtar, version: "1.28"
+# tar 1.32 is not compatible with freebsd 12 so pin it to 1.29
+if freebsd?
+  override :gtar, version: "1.29"
 else
   override :gtar, version: "1.32"
 end
