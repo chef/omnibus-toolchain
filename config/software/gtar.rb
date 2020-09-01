@@ -43,16 +43,9 @@ build do
     configure_command << " --without-selinux"
   end
 
-  if nexus? || ios_xr? || s390x?
-    # ios_xr and nexus don't support posix acls
+  if s390x?
+    # s390x don't support posix acls
     configure_command << " --without-posix-acls"
-  elsif aix?
-    if version.satisfies?("> 1.28") && version.satisfies?("< 1.32")
-      # xlc doesn't allow duplicate entries in case statements
-      patch_env = env.dup
-      patch_env["PATH"] = "/opt/freeware/bin:#{env['PATH']}"
-      patch source: "aix_extra_case.patch", plevel: 0, env: patch_env
-    end
   end
 
   command configure_command.join(" "), env: env
