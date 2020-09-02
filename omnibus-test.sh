@@ -15,6 +15,7 @@ echo "--- Installing $channel $product $version"
 package_file="$("/opt/$toolchain/bin/install-omnibus-product" -c "$channel" -P "$product" -v "$version" | tail -1)"
 
 echo "--- Verifying omnibus package is signed"
+ls  -l $package_file
 "/opt/$toolchain/bin/check-omnibus-package-signed" "$package_file"
 
 sudo rm -f "$package_file"
