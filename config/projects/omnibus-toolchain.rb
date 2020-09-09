@@ -52,7 +52,7 @@ if solaris?
 end
 
 if freebsd?
-  override :libyaml, version: "0.1.7"
+  override :libyaml, version: "0.1.6"
 end
 
 # creates required build directories
