@@ -15,7 +15,7 @@
 #
 
 name "gtar"
-default_version "1.30"
+default_version "1.32"
 
 version("1.32") { source sha256: "b59549594d91d84ee00c99cf2541a3330fed3a42c440503326dab767f2fbb96c" }
 version("1.30") { source sha256: "4725cc2c2f5a274b12b39d1f78b3545ec9ebb06a6e48e8845e1995ac8513b088" }

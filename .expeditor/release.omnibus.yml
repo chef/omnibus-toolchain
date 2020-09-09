@@ -2,6 +2,8 @@
 project-name: omnibus-toolchain
 config: omnibus.rb
 test-path: omnibus-test.sh
+# test-channel: unstable
+# test-version: 2.0.4+20200909190518
 test-path-windows: omnibus-test.ps1
 builder-to-testers-map:
   # aix-7.1-powerpc:

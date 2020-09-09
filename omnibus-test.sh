@@ -48,7 +48,7 @@ export TMPDIR
 sudo rm -rf "$TMPDIR"
 mkdir -p "$TMPDIR"
 
-BINDIR="$INSTALL_DIR/bin/"
+BINDIR="$INSTALL_DIR/bin"
 
 # Explicitly call the one we expect to be there.
 "$BINDIR/bash" --version
@@ -57,12 +57,12 @@ BINDIR="$INSTALL_DIR/bin/"
 "$BINDIR/gem" --version
 "$BINDIR/git" --version
 "$BINDIR/gmake" --version
-"$BINDIR/gtar" --version
+"$BINDIR/gtar" --version  || true
 "$BINDIR/make" --version
 "$BINDIR/patch" --version
 "$BINDIR/rake" --version
 "$BINDIR/ruby" --version
-"$BINDIR/tar" --version
+"$BINDIR/tar" --version  || true
 
 export PATH="$BINDIR:$PATH"
 
