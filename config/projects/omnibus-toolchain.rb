@@ -51,10 +51,10 @@ if solaris?
   override :libtool, version: "2.4"
 end
 
-# Freebsd 12 fails tests with libyaml > 0.1.6
-if freebsd?
-  override :libyaml, version: "0.1.6"
-end
+# # Freebsd 12 fails tests with libyaml > 0.1.6
+# if freebsd?
+#   override :libyaml, version: "0.1.6"
+# end
 
 # creates required build directories
 dependency "preparation"

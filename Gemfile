@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'omnibus',          git: 'https://github.com/chef/omnibus'
-gem 'omnibus-software', git: 'https://github.com/chef/omnibus-software', branch: 'jsinha/add_libyaml_0.1.6'
+gem 'omnibus-software', git: 'https://github.com/chef/omnibus-software', branch: 'jsinha/test_86a1c7e'
 gem 'artifactory'
 
 gem 'chefstyle'
