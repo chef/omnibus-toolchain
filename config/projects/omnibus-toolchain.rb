@@ -36,7 +36,7 @@ else
   install_dir "#{default_root}/#{name}"
 end
 
-override :ruby, version: "2.6.5"
+override :ruby, version: "2.6.6"
 override :bundler, version: "1.17.2"
 
 # tar 1.32 is not compatible with the Ubuntu 14.04's latest version of dpkg-deb so pin it to 1.28
@@ -49,6 +49,11 @@ end
 # Solaris fails compile on libtool version 2.4.2 and 2.4.6
 if solaris?
   override :libtool, version: "2.4"
+end
+
+# Freebsd 12 fails tests with libyaml > 0.1.6
+if freebsd?
+  override :libyaml, version: "0.1.6"
 end
 
 # creates required build directories
