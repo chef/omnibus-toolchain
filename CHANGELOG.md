@@ -2,28 +2,25 @@ omnibus-toolchain CHANGELOG
 ==========================
 This file is used to list changes made in each version of the omnibus-toolchain.
 
-<!-- latest_release 2.0.5 -->
-## [2.0.5](https://github.com/chef/omnibus-toolchain/tree/2.0.5) (2020-09-10)
-
-#### Merged Pull Requests
-- Disable freebsd-12 until gtar and tar commands are fixed [#146](https://github.com/chef/omnibus-toolchain/pull/146) ([jaymalasinha](https://github.com/jaymalasinha))
+<!-- latest_release -->
 <!-- latest_release -->
 
-<!-- release_rollup since=2.0.2 -->
-### Changes since 2.0.2 release
-
-#### Merged Pull Requests
-- Disable freebsd-12 until gtar and tar commands are fixed [#146](https://github.com/chef/omnibus-toolchain/pull/146) ([jaymalasinha](https://github.com/jaymalasinha)) <!-- 2.0.5 -->
-- Enable support for Zlinux(s390x) RHEL8 and SLES15 [#145](https://github.com/chef/omnibus-toolchain/pull/145) ([jaymalasinha](https://github.com/jaymalasinha)) <!-- 2.0.4 -->
-- Enable macos-11.0 tester for omnibus-toolchain [#144](https://github.com/chef/omnibus-toolchain/pull/144) ([jaymalasinha](https://github.com/jaymalasinha)) <!-- 2.0.3 -->
+<!-- release_rollup -->
 <!-- release_rollup -->
 
 <!-- latest_stable_release -->
+## [2.0.5](https://github.com/chef/omnibus-toolchain/tree/2.0.5) (2020-10-16)
+
+#### Merged Pull Requests
+- Enable macos-11.0 tester for omnibus-toolchain [#144](https://github.com/chef/omnibus-toolchain/pull/144) ([jaymalasinha](https://github.com/jaymalasinha))
+- Enable support for Zlinux(s390x) RHEL8 and SLES15 [#145](https://github.com/chef/omnibus-toolchain/pull/145) ([jaymalasinha](https://github.com/jaymalasinha))
+- Disable freebsd-12 until gtar and tar commands are fixed [#146](https://github.com/chef/omnibus-toolchain/pull/146) ([jaymalasinha](https://github.com/jaymalasinha))
+<!-- latest_stable_release -->
+
 ## [2.0.2](https://github.com/chef/omnibus-toolchain/tree/2.0.2) (2020-05-11)
 
 #### Merged Pull Requests
 - Add Debian 10 aarch64 to build/test map [#142](https://github.com/chef/omnibus-toolchain/pull/142) ([christopher-snapp](https://github.com/christopher-snapp))
-<!-- latest_stable_release -->
 
 ## [2.0.1](https://github.com/chef/omnibus-toolchain/tree/2.0.1) (2020-05-05)
 
