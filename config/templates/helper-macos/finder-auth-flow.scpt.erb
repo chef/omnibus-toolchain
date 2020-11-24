@@ -1,0 +1,7 @@
+-- This code will force the MacOS authentication flow that will allow Omnibus to control
+-- the Finder window. Run this as the process which executes your Omnibus builds.
+tell application "Finder"
+	reopen
+	activate
+	set selection to {}
+end tell
