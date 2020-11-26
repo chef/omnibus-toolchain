@@ -15,12 +15,9 @@
 #
 
 name "gtar"
-default_version "1.30"
+default_version "1.32"
 
 version("1.32") { source sha256: "b59549594d91d84ee00c99cf2541a3330fed3a42c440503326dab767f2fbb96c" }
-version("1.30") { source sha256: "4725cc2c2f5a274b12b39d1f78b3545ec9ebb06a6e48e8845e1995ac8513b088" }
-version("1.29") { source sha256: "cae466e6e58c7292355e7080248f244db3a4cf755f33f4fa25ca7f9a7ed09af0" }
-version("1.28") { source md5: "6ea3dbea1f2b0409b234048e021a9fd7" }
 
 license "GPL-3.0"
 license_file "COPYING"
@@ -43,8 +40,7 @@ build do
     configure_command << " --without-selinux"
   end
 
-  if nexus? || ios_xr? || s390x?
-    # ios_xr and nexus don't support posix acls
+  if s390x?
     configure_command << " --without-posix-acls"
   elsif aix?
     if version.satisfies?("> 1.28") && version.satisfies?("< 1.32")
