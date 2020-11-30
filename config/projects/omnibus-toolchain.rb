@@ -36,6 +36,8 @@ else
   install_dir "#{default_root}/#{name}"
 end
 
+override :ncurses, version: "6.2"
+override :libedit, version: "20150325-3.1"
 override :ruby, version: "2.6.5"
 override :bundler, version: "1.17.2"
 override :gtar, version: "1.32"
