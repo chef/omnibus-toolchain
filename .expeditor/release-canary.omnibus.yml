@@ -22,10 +22,10 @@ builder-to-testers-map:
     - el-8-aarch64
   # el-7-ppc64:
   #   - el-7-ppc64
-  # el-7-ppc64le:
-  #   - el-7-ppc64le
-  # el-7-s390x:
-  #   - el-7-s390x
+  el-7-ppc64le:
+    - el-7-ppc64le
+  el-7-s390x:
+    - el-7-s390x
   el-7-x86_64:
     - el-7-x86_64
     - el-8-x86_64
