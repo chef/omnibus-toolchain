@@ -27,8 +27,15 @@ if windows?
   dependency "git-windows"
 else
   dependency "libtool"
-  dependency "libarchive"
+
+  # When we leave this in, git pulls it in and fails to build
+  # because it accesses a function that is not correctly (C99) declared
+  # in libarchive. Building without libarchive support bypasses it, but if
+  # we have a requirement to include libarchive then we'll have to look closer/submit
+  # an upstream fix.
+  # dependency "libarchive"
   dependency "bash"
+
   dependency "git"
   dependency "gtar"
   dependency "make"
