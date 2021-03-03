@@ -36,9 +36,12 @@ else
   install_dir "#{default_root}/#{name}"
 end
 
-override :ruby, version: "2.6.5"
+override :ruby, version: "2.7.2"
 override :bundler, version: "1.17.2"
 override :gtar, version: "1.32"
+
+# 1.1.1i+ builds on m1 mac
+override :openssl, version: "1.1.1j"
 
 # Solaris fails compile on libtool version 2.4.2 and 2.4.6
 if solaris?
