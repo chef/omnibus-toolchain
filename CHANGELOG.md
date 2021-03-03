@@ -2,17 +2,18 @@ omnibus-toolchain CHANGELOG
 ==========================
 This file is used to list changes made in each version of the omnibus-toolchain.
 
-<!-- latest_release 2.0.8 -->
-## [2.0.8](https://github.com/chef/omnibus-toolchain/tree/2.0.8) (2020-11-26)
+<!-- latest_release 2.0.9 -->
+## [2.0.9](https://github.com/chef/omnibus-toolchain/tree/2.0.9) (2021-03-03)
 
 #### Merged Pull Requests
-- Remove the old versions from the gtar def [#149](https://github.com/chef/omnibus-toolchain/pull/149) ([tas50](https://github.com/tas50))
+- Update openssl to 1.1.1j and ruby to 2.7.2 to enable m1 mac builds [#153](https://github.com/chef/omnibus-toolchain/pull/153) ([jeremiahsnapp](https://github.com/jeremiahsnapp))
 <!-- latest_release -->
 
 <!-- release_rollup since=2.0.5 -->
 ### Changes since 2.0.5 release
 
 #### Merged Pull Requests
+- Update openssl to 1.1.1j and ruby to 2.7.2 to enable m1 mac builds [#153](https://github.com/chef/omnibus-toolchain/pull/153) ([jeremiahsnapp](https://github.com/jeremiahsnapp)) <!-- 2.0.9 -->
 - Remove the old versions from the gtar def [#149](https://github.com/chef/omnibus-toolchain/pull/149) ([tas50](https://github.com/tas50)) <!-- 2.0.8 -->
 - Enable FreeBSD12 [#151](https://github.com/chef/omnibus-toolchain/pull/151) ([jaymalasinha](https://github.com/jaymalasinha)) <!-- 2.0.7 -->
 - Remove support for Ubuntu 14.04 [#147](https://github.com/chef/omnibus-toolchain/pull/147) ([tas50](https://github.com/tas50)) <!-- 2.0.6 -->
