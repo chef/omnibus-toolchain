@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'omnibus',          git: 'https://github.com/chef/omnibus'
-gem 'omnibus-software', git: 'https://github.com/chef/omnibus-software', branch: 'Skeshari/update git from 2.29.2 to.2.9.5'
+gem 'omnibus-software', git: 'https://github.com/chef/omnibus-software', branch: 'Skeshari/update-git-from-2.29.2-to.2.9.5'
 gem 'artifactory'
 
 gem 'chefstyle'
