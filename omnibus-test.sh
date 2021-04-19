@@ -4,6 +4,7 @@ set -ueo pipefail
 channel="${CHANNEL:-unstable}"
 product="${PRODUCT:-omnibus-toolchain}"
 version="${VERSION:-latest}"
+package_file=${PACKAGE_FILE:-""}
 
 if [[ "$product" == omnibus-toolchain ]]; then
   toolchain="angry-omnibus-toolchain"
@@ -12,7 +13,11 @@ else
 fi
 
 echo "--- Installing $channel $product $version"
-package_file="$("/opt/$toolchain/bin/install-omnibus-product" -c "$channel" -P "$product" -v "$version" | tail -1)"
+if [[ -z $package_file ]]; then
+  package_file="$(.omnibus-buildkite-plugin/install-omnibus-product.sh -c "$channel" -P "$product" -v "$version" | tail -1)"
+else
+  .omnibus-buildkite-plugin/install-omnibus-product.sh -f "$package_file" -P "$product" -v "$version" &> /dev/null
+fi
 
 echo "--- Verifying omnibus package is signed"
 "/opt/$toolchain/bin/check-omnibus-package-signed" "$package_file"
