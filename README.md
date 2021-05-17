@@ -12,13 +12,14 @@
 Omnibus Toolchain creates a native platform package that contains the entire required toolchain used for building [Omnibus](https://github.com/chef/omnibus) projects created by Chef Software, Inc. It may work with other projects, but that is not guaranteed.
 
 Currently it supports the following operating systems:
-* Solaris 11 (SPARC and x86, builds  on 11.2 for SPARC)
+
+* Solaris 11 (SPARC and x86, builds on 11.4)
 * AIX 7 (POWER6 and later)
 * Debian Linux (and derivatives like Ubuntu and Mint) on a variety of platforms (arm64 armhf ppc ppc64le x86 amd64)
 * RHEL/CentOS/Fedora Linux on a variety of platforms (ppc64 ppc64le i686 x86_64)
-* Mac OS X 10.9+
-* FreeBSD 9, 10
-* Windows 2012R2
+* macOS 10.14+
+* FreeBSD 11,12
+* Windows 2012R2-2019
 
 Why?
 ----
