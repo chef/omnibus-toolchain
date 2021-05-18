@@ -37,7 +37,7 @@ export PATH="$BINDIR:$PATH"
 cd "$TMPDIR"
 "$BINDIR/git" clone https://github.com/chef/omnibus-toolchain.git
 cd omnibus-toolchain
-"$BINDIR/bundle" install --without development --path ./vendor/bundle
+"$BINDIR/bundle" config set without development set path ./vendor/bundle
 "$BINDIR/bundle" exec rake -T
 cd "$TMPDIR"
 rm -rf ot_test
