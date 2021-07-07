@@ -43,6 +43,10 @@ override :gtar, version: "1.32"
 # 1.1.1i+ builds on m1 mac
 override :openssl, version: "1.1.1j"
 
+if solaris?
+  override :git, version: "2.24.1"
+end
+
 # Solaris fails compile on libtool version 2.4.2 and 2.4.6
 if solaris?
   override :libtool, version: "2.4"
