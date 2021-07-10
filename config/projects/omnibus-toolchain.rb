@@ -40,7 +40,7 @@ override :ruby, version: "2.7.2"
 override :gtar, version: "1.32"
 
 # 1.1.1i+ builds on m1 mac
-override :openssl, version: "1.1.1j"
+override :openssl, version: "1.1.1k"
 
 if aix?
   override :expat, version: "2.1.0"
