@@ -63,6 +63,8 @@ dependency "preparation"
 # a custom whitelist
 dependency "omnibus-toolchain"
 
+dependency "ruby-cleanup"
+
 exclude '\.git*'
 exclude 'bundler\/git'
 
