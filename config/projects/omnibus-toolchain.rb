@@ -43,6 +43,10 @@ override :gtar, version: "1.32"
 # 1.1.1i+ builds on m1 mac
 override :openssl, version: "1.1.1j"
 
+if aix?
+  override :expat, version: "2.1.0"
+end
+
 if solaris?
   override :git, version: "2.24.1"
 end
