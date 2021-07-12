@@ -37,7 +37,6 @@ else
 end
 
 override :ruby, version: "2.7.2"
-override :bundler, version: "1.17.2"
 override :gtar, version: "1.32"
 
 # 1.1.1i+ builds on m1 mac
