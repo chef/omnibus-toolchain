@@ -37,11 +37,14 @@ else
 end
 
 override :ruby, version: "2.7.2"
-override :bundler, version: "1.17.2"
 override :gtar, version: "1.32"
 
 # 1.1.1i+ builds on m1 mac
-override :openssl, version: "1.1.1j"
+override :openssl, version: "1.1.1k"
+
+if aix?
+  override :expat, version: "2.1.0"
+end
 
 if solaris?
   override :git, version: "2.24.1"
@@ -58,6 +61,8 @@ dependency "preparation"
 # Split the toolchain defs into their own software def so we can have
 # a custom whitelist
 dependency "omnibus-toolchain"
+
+dependency "ruby-cleanup"
 
 exclude '\.git*'
 exclude 'bundler\/git'

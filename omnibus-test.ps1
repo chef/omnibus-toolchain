@@ -1,10 +1,10 @@
 # Stop script execution when a non-terminating error occurs
 $ErrorActionPreference = "Stop"
 
-$Env:PATH = "C:\opscode\$product\embedded\bin;$Env:PATH"
+$Env:PATH = "C:\opscode\$Env:PRODUCT\embedded\bin;$Env:PATH"
 
-$embedded_bin_dir = "C:\opscode\$product\embedded\bin"
-$project_bin_dir = "C:\opscode\$product\bin"
+$embedded_bin_dir = "C:\opscode\$Env:PRODUCT\embedded\bin"
+$project_bin_dir = "C:\opscode\$Env:PRODUCT\bin"
 
 # Exercise various packaged tools to validate binstub shebangs
 & $embedded_bin_dir\ruby --version
