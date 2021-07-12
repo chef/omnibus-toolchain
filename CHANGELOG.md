@@ -2,17 +2,18 @@ omnibus-toolchain CHANGELOG
 ==========================
 This file is used to list changes made in each version of the omnibus-toolchain.
 
-<!-- latest_release 2.0.10 -->
-## [2.0.10](https://github.com/chef/omnibus-toolchain/tree/2.0.10) (2021-07-08)
+<!-- latest_release 2.0.11 -->
+## [2.0.11](https://github.com/chef/omnibus-toolchain/tree/2.0.11) (2021-07-12)
 
 #### Merged Pull Requests
-- Pin git for solaris [#168](https://github.com/chef/omnibus-toolchain/pull/168) ([jeremiahsnapp](https://github.com/jeremiahsnapp))
+- Fix aix builds [#169](https://github.com/chef/omnibus-toolchain/pull/169) ([jeremiahsnapp](https://github.com/jeremiahsnapp))
 <!-- latest_release -->
 
 <!-- release_rollup since=2.0.5 -->
 ### Changes since 2.0.5 release
 
 #### Merged Pull Requests
+- Fix aix builds [#169](https://github.com/chef/omnibus-toolchain/pull/169) ([jeremiahsnapp](https://github.com/jeremiahsnapp)) <!-- 2.0.11 -->
 - Pin git for solaris [#168](https://github.com/chef/omnibus-toolchain/pull/168) ([jeremiahsnapp](https://github.com/jeremiahsnapp)) <!-- 2.0.10 -->
 - Update openssl to 1.1.1j and ruby to 2.7.2 to enable m1 mac builds [#153](https://github.com/chef/omnibus-toolchain/pull/153) ([jeremiahsnapp](https://github.com/jeremiahsnapp)) <!-- 2.0.9 -->
 - Remove the old versions from the gtar def [#149](https://github.com/chef/omnibus-toolchain/pull/149) ([tas50](https://github.com/tas50)) <!-- 2.0.8 -->
