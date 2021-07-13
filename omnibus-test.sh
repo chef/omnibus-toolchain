@@ -20,6 +20,7 @@ BINDIR="$INSTALL_DIR/bin/"
 
 # Explicitly call the one we expect to be there.
 "$BINDIR/bash" --version
+"$BINDIR/berks" --version
 "$BINDIR/bundle" --version
 "$BINDIR/curl" --version
 "$BINDIR/gem" --version
