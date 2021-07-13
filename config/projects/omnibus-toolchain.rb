@@ -39,6 +39,9 @@ end
 override :ruby, version: "2.7.4"
 override :gtar, version: "1.32"
 
+# riding berkshelf master is hard when you're at the edge of versions
+override :berkshelf, version: "v7.2.2"
+
 # 1.1.1i+ builds on m1 mac
 override :openssl, version: "1.1.1k"
 
