@@ -17,10 +17,11 @@ sudo rm -rf "$TMPDIR"
 mkdir -p "$TMPDIR"
 
 BINDIR="$INSTALL_DIR/bin/"
+EMBEDDED_BINDIR="$INSTALL_DIR/embedded/bin/"
 
 # Explicitly call the one we expect to be there.
 "$BINDIR/bash" --version
-"$BINDIR/berks" --version
+"$EMBEDDED_BINDIR/berks" --version
 "$BINDIR/bundle" --version
 "$BINDIR/curl" --version
 "$BINDIR/gem" --version
