@@ -2,17 +2,18 @@ omnibus-toolchain CHANGELOG
 ==========================
 This file is used to list changes made in each version of the omnibus-toolchain.
 
-<!-- latest_release 2.0.11 -->
-## [2.0.11](https://github.com/chef/omnibus-toolchain/tree/2.0.11) (2021-07-12)
+<!-- latest_release 2.0.12 -->
+## [2.0.12](https://github.com/chef/omnibus-toolchain/tree/2.0.12) (2021-07-13)
 
 #### Merged Pull Requests
-- Fix aix builds [#169](https://github.com/chef/omnibus-toolchain/pull/169) ([jeremiahsnapp](https://github.com/jeremiahsnapp))
+- Add berkshelf to omnibus toolchain [#165](https://github.com/chef/omnibus-toolchain/pull/165) ([tas50](https://github.com/tas50))
 <!-- latest_release -->
 
 <!-- release_rollup since=2.0.5 -->
 ### Changes since 2.0.5 release
 
 #### Merged Pull Requests
+- Add berkshelf to omnibus toolchain [#165](https://github.com/chef/omnibus-toolchain/pull/165) ([tas50](https://github.com/tas50)) <!-- 2.0.12 -->
 - Fix aix builds [#169](https://github.com/chef/omnibus-toolchain/pull/169) ([jeremiahsnapp](https://github.com/jeremiahsnapp)) <!-- 2.0.11 -->
 - Pin git for solaris [#168](https://github.com/chef/omnibus-toolchain/pull/168) ([jeremiahsnapp](https://github.com/jeremiahsnapp)) <!-- 2.0.10 -->
 - Update openssl to 1.1.1j and ruby to 2.7.2 to enable m1 mac builds [#153](https://github.com/chef/omnibus-toolchain/pull/153) ([jeremiahsnapp](https://github.com/jeremiahsnapp)) <!-- 2.0.9 -->
