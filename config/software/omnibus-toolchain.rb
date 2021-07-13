@@ -40,9 +40,13 @@ dependency "cacerts"
 # ruby core tools
 dependency "ruby"
 
-dependency "nokogiri"
+# Projects such as Chef Server, Supermarket, Chef Manage and Chef Backend use berkshelf for the build time installation of gems.
+# Moving it to toolchain avoids installing a ton of deps into our packages.
+if linux? || macos?
+  dependency "berkshelf" unless i386? || arm?
+end
 
-dependency "berkshelf"
+dependency "nokogiri"
 
 # Include helpers for build pipelines
 dependency "helper-gems"
