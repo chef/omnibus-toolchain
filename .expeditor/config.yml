@@ -16,27 +16,35 @@ slack:
     - releng-notify
 
 pipelines:
-  - omnibus/release
+  - omnibus/release:
+      env:
+        - IGNORE_CACHE: true
   - omnibus/adhoc:
       definition: .expeditor/release.omnibus.yml
       env:
         - ADHOC: true
-  - omnibus/angry-release
+        - IGNORE_CACHE: true
+  - omnibus/angry-release:
+      env:
+        - IGNORE_CACHE: true
   - omnibus/angry-adhoc:
       definition: .expeditor/angry-release.omnibus.yml
       env:
         - ADHOC: true
+        - IGNORE_CACHE: true
   # the canary pipelines are used for testing by our *-buildkite-pipelines repos
   - omnibus/adhoc-canary:
       canary: true
       definition: .expeditor/release-canary.omnibus.yml
       env:
         - ADHOC: true
+        - IGNORE_CACHE: true
   - omnibus/angry-adhoc-canary:
       canary: true
       definition: .expeditor/angry-release-canary.omnibus.yml
       env:
         - ADHOC: true
+        - IGNORE_CACHE: true
 
 github:
   # This deletes the GitHub PR branch after successfully merged into the release branch
