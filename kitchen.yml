@@ -29,8 +29,6 @@ platforms:
     run_list:
       - freebsd::portsnap
       - freebsd::pkgng
-  - name: ubuntu-16.04
-    run_list: apt::default
   - name: ubuntu-18.04
     run_list: apt::default
   - name: windows-2012r2
