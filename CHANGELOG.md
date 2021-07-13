@@ -2,17 +2,18 @@ omnibus-toolchain CHANGELOG
 ==========================
 This file is used to list changes made in each version of the omnibus-toolchain.
 
-<!-- latest_release 2.1.0 -->
-## [2.1.0](https://github.com/chef/omnibus-toolchain/tree/2.1.0) (2021-07-13)
+<!-- latest_release 2.1.1 -->
+## [2.1.1](https://github.com/chef/omnibus-toolchain/tree/2.1.1) (2021-07-13)
 
 #### Merged Pull Requests
-- Stop building on EOL Ubuntu 16.04 [#173](https://github.com/chef/omnibus-toolchain/pull/173) ([tas50](https://github.com/tas50))
+- Remove workaround for Solaris 10 / FreeBSD 9 [#172](https://github.com/chef/omnibus-toolchain/pull/172) ([tas50](https://github.com/tas50))
 <!-- latest_release -->
 
 <!-- release_rollup since=2.0.5 -->
 ### Changes since 2.0.5 release
 
 #### Merged Pull Requests
+- Remove workaround for Solaris 10 / FreeBSD 9 [#172](https://github.com/chef/omnibus-toolchain/pull/172) ([tas50](https://github.com/tas50)) <!-- 2.1.1 -->
 - Stop building on EOL Ubuntu 16.04 [#173](https://github.com/chef/omnibus-toolchain/pull/173) ([tas50](https://github.com/tas50)) <!-- 2.1.0 -->
 - Remove rubygems and bundler dependencies [#176](https://github.com/chef/omnibus-toolchain/pull/176) ([jeremiahsnapp](https://github.com/jeremiahsnapp)) <!-- 2.0.15 -->
 - Fix path to berks in omnibus-test.sh [#175](https://github.com/chef/omnibus-toolchain/pull/175) ([jeremiahsnapp](https://github.com/jeremiahsnapp)) <!-- 2.0.14 -->
