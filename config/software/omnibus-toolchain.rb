@@ -19,7 +19,6 @@ default_version "1.0.0"
 
 license :project_license
 
-dependency "nokogiri"
 
 # gnu utilities
 if windows?
@@ -40,6 +39,8 @@ dependency "cacerts"
 
 # ruby core tools
 dependency "ruby"
+
+dependency "nokogiri"
 
 dependency "berkshelf"
 
