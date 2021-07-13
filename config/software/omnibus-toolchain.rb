@@ -40,8 +40,6 @@ dependency "cacerts"
 
 # ruby core tools
 dependency "ruby"
-dependency "rubygems"
-dependency "bundler"
 
 # Include helpers for build pipelines
 dependency "helper-gems"
