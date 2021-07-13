@@ -43,6 +43,8 @@ dependency "ruby"
 dependency "rubygems"
 dependency "bundler"
 
+dependency "berkshelf"
+
 # Include helpers for build pipelines
 dependency "helper-gems"
 
