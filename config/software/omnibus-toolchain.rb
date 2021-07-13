@@ -41,6 +41,8 @@ dependency "cacerts"
 # ruby core tools
 dependency "ruby"
 
+dependency "berkshelf"
+
 # Include helpers for build pipelines
 dependency "helper-gems"
 

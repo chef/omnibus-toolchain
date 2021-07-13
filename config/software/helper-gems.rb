@@ -26,5 +26,4 @@ build do
   gem "install --no-document artifactory", env: env
   gem "install --no-document mixlib-install", env: env
   gem "install --no-document omnibus", env: env
-  gem "install --no-document berkshelf", env: env
 end
