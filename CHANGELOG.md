@@ -2,17 +2,18 @@ omnibus-toolchain CHANGELOG
 ==========================
 This file is used to list changes made in each version of the omnibus-toolchain.
 
-<!-- latest_release 2.1.6 -->
-## [2.1.6](https://github.com/chef/omnibus-toolchain/tree/2.1.6) (2021-07-13)
+<!-- latest_release 2.1.7 -->
+## [2.1.7](https://github.com/chef/omnibus-toolchain/tree/2.1.7) (2021-07-13)
 
 #### Merged Pull Requests
-- Remove the legacy maintainers file / task [#171](https://github.com/chef/omnibus-toolchain/pull/171) ([tas50](https://github.com/tas50))
+- Build nokogiri later to optimize omnibus cache [#177](https://github.com/chef/omnibus-toolchain/pull/177) ([jeremiahsnapp](https://github.com/jeremiahsnapp))
 <!-- latest_release -->
 
 <!-- release_rollup since=2.0.5 -->
 ### Changes since 2.0.5 release
 
 #### Merged Pull Requests
+- Build nokogiri later to optimize omnibus cache [#177](https://github.com/chef/omnibus-toolchain/pull/177) ([jeremiahsnapp](https://github.com/jeremiahsnapp)) <!-- 2.1.7 -->
 - Remove the legacy maintainers file / task [#171](https://github.com/chef/omnibus-toolchain/pull/171) ([tas50](https://github.com/tas50)) <!-- 2.1.6 -->
 - Update Ruby from 2.7.2 to 2.7.4 [#164](https://github.com/chef/omnibus-toolchain/pull/164) ([tas50](https://github.com/tas50)) <!-- 2.1.5 -->
 - Remove gtar check for &lt; 1.32 [#174](https://github.com/chef/omnibus-toolchain/pull/174) ([tas50](https://github.com/tas50)) <!-- 2.1.4 -->
