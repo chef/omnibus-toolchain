@@ -36,7 +36,7 @@ else
   install_dir "#{default_root}/#{name}"
 end
 
-override :ruby, version: "2.7.2"
+override :ruby, version: "2.7.4"
 override :gtar, version: "1.32"
 
 # 1.1.1i+ builds on m1 mac
