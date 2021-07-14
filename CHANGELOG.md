@@ -2,47 +2,44 @@ omnibus-toolchain CHANGELOG
 ==========================
 This file is used to list changes made in each version of the omnibus-toolchain.
 
-<!-- latest_release 2.1.9 -->
-## [2.1.9](https://github.com/chef/omnibus-toolchain/tree/2.1.9) (2021-07-14)
-
-#### Merged Pull Requests
-- Fix bundler test on Windows [#179](https://github.com/chef/omnibus-toolchain/pull/179) ([jeremiahsnapp](https://github.com/jeremiahsnapp))
+<!-- latest_release -->
 <!-- latest_release -->
 
-<!-- release_rollup since=2.0.5 -->
-### Changes since 2.0.5 release
-
-#### Merged Pull Requests
-- Fix bundler test on Windows [#179](https://github.com/chef/omnibus-toolchain/pull/179) ([jeremiahsnapp](https://github.com/jeremiahsnapp)) <!-- 2.1.9 -->
-- Only build berkshelf on specific platforms [#178](https://github.com/chef/omnibus-toolchain/pull/178) ([jeremiahsnapp](https://github.com/jeremiahsnapp)) <!-- 2.1.8 -->
-- Build nokogiri later to optimize omnibus cache [#177](https://github.com/chef/omnibus-toolchain/pull/177) ([jeremiahsnapp](https://github.com/jeremiahsnapp)) <!-- 2.1.7 -->
-- Remove the legacy maintainers file / task [#171](https://github.com/chef/omnibus-toolchain/pull/171) ([tas50](https://github.com/tas50)) <!-- 2.1.6 -->
-- Update Ruby from 2.7.2 to 2.7.4 [#164](https://github.com/chef/omnibus-toolchain/pull/164) ([tas50](https://github.com/tas50)) <!-- 2.1.5 -->
-- Remove gtar check for &lt; 1.32 [#174](https://github.com/chef/omnibus-toolchain/pull/174) ([tas50](https://github.com/tas50)) <!-- 2.1.4 -->
-- Remove duplicate commented out apt in the berksfile [#161](https://github.com/chef/omnibus-toolchain/pull/161) ([tas50](https://github.com/tas50)) <!-- 2.1.3 -->
-- Stop producing builds for Debian 8 [#160](https://github.com/chef/omnibus-toolchain/pull/160) ([tas50](https://github.com/tas50)) <!-- 2.1.2 -->
-- Remove workaround for Solaris 10 / FreeBSD 9 [#172](https://github.com/chef/omnibus-toolchain/pull/172) ([tas50](https://github.com/tas50)) <!-- 2.1.1 -->
-- Stop building on EOL Ubuntu 16.04 [#173](https://github.com/chef/omnibus-toolchain/pull/173) ([tas50](https://github.com/tas50)) <!-- 2.1.0 -->
-- Remove rubygems and bundler dependencies [#176](https://github.com/chef/omnibus-toolchain/pull/176) ([jeremiahsnapp](https://github.com/jeremiahsnapp)) <!-- 2.0.15 -->
-- Fix path to berks in omnibus-test.sh [#175](https://github.com/chef/omnibus-toolchain/pull/175) ([jeremiahsnapp](https://github.com/jeremiahsnapp)) <!-- 2.0.14 -->
-- Add &quot;berks --version&quot; to omnibus-test.sh [#170](https://github.com/chef/omnibus-toolchain/pull/170) ([jeremiahsnapp](https://github.com/jeremiahsnapp)) <!-- 2.0.13 -->
-- Add berkshelf to omnibus toolchain [#165](https://github.com/chef/omnibus-toolchain/pull/165) ([tas50](https://github.com/tas50)) <!-- 2.0.12 -->
-- Fix aix builds [#169](https://github.com/chef/omnibus-toolchain/pull/169) ([jeremiahsnapp](https://github.com/jeremiahsnapp)) <!-- 2.0.11 -->
-- Pin git for solaris [#168](https://github.com/chef/omnibus-toolchain/pull/168) ([jeremiahsnapp](https://github.com/jeremiahsnapp)) <!-- 2.0.10 -->
-- Update openssl to 1.1.1j and ruby to 2.7.2 to enable m1 mac builds [#153](https://github.com/chef/omnibus-toolchain/pull/153) ([jeremiahsnapp](https://github.com/jeremiahsnapp)) <!-- 2.0.9 -->
-- Remove the old versions from the gtar def [#149](https://github.com/chef/omnibus-toolchain/pull/149) ([tas50](https://github.com/tas50)) <!-- 2.0.8 -->
-- Enable FreeBSD12 [#151](https://github.com/chef/omnibus-toolchain/pull/151) ([jaymalasinha](https://github.com/jaymalasinha)) <!-- 2.0.7 -->
-- Remove support for Ubuntu 14.04 [#147](https://github.com/chef/omnibus-toolchain/pull/147) ([tas50](https://github.com/tas50)) <!-- 2.0.6 -->
+<!-- release_rollup -->
 <!-- release_rollup -->
 
 <!-- latest_stable_release -->
+## [2.1.9](https://github.com/chef/omnibus-toolchain/tree/2.1.9) (2021-07-14)
+
+#### Merged Pull Requests
+- Remove support for Ubuntu 14.04 [#147](https://github.com/chef/omnibus-toolchain/pull/147) ([tas50](https://github.com/tas50))
+- Enable FreeBSD12 [#151](https://github.com/chef/omnibus-toolchain/pull/151) ([jaymalasinha](https://github.com/jaymalasinha))
+- Remove the old versions from the gtar def [#149](https://github.com/chef/omnibus-toolchain/pull/149) ([tas50](https://github.com/tas50))
+- Update openssl to 1.1.1j and ruby to 2.7.2 to enable m1 mac builds [#153](https://github.com/chef/omnibus-toolchain/pull/153) ([jeremiahsnapp](https://github.com/jeremiahsnapp))
+- Pin git for solaris [#168](https://github.com/chef/omnibus-toolchain/pull/168) ([jeremiahsnapp](https://github.com/jeremiahsnapp))
+- Fix aix builds [#169](https://github.com/chef/omnibus-toolchain/pull/169) ([jeremiahsnapp](https://github.com/jeremiahsnapp))
+- Add berkshelf to omnibus toolchain [#165](https://github.com/chef/omnibus-toolchain/pull/165) ([tas50](https://github.com/tas50))
+- Add &quot;berks --version&quot; to omnibus-test.sh [#170](https://github.com/chef/omnibus-toolchain/pull/170) ([jeremiahsnapp](https://github.com/jeremiahsnapp))
+- Fix path to berks in omnibus-test.sh [#175](https://github.com/chef/omnibus-toolchain/pull/175) ([jeremiahsnapp](https://github.com/jeremiahsnapp))
+- Remove rubygems and bundler dependencies [#176](https://github.com/chef/omnibus-toolchain/pull/176) ([jeremiahsnapp](https://github.com/jeremiahsnapp))
+- Stop building on EOL Ubuntu 16.04 [#173](https://github.com/chef/omnibus-toolchain/pull/173) ([tas50](https://github.com/tas50))
+- Remove workaround for Solaris 10 / FreeBSD 9 [#172](https://github.com/chef/omnibus-toolchain/pull/172) ([tas50](https://github.com/tas50))
+- Stop producing builds for Debian 8 [#160](https://github.com/chef/omnibus-toolchain/pull/160) ([tas50](https://github.com/tas50))
+- Remove duplicate commented out apt in the berksfile [#161](https://github.com/chef/omnibus-toolchain/pull/161) ([tas50](https://github.com/tas50))
+- Remove gtar check for &lt; 1.32 [#174](https://github.com/chef/omnibus-toolchain/pull/174) ([tas50](https://github.com/tas50))
+- Update Ruby from 2.7.2 to 2.7.4 [#164](https://github.com/chef/omnibus-toolchain/pull/164) ([tas50](https://github.com/tas50))
+- Remove the legacy maintainers file / task [#171](https://github.com/chef/omnibus-toolchain/pull/171) ([tas50](https://github.com/tas50))
+- Build nokogiri later to optimize omnibus cache [#177](https://github.com/chef/omnibus-toolchain/pull/177) ([jeremiahsnapp](https://github.com/jeremiahsnapp))
+- Only build berkshelf on specific platforms [#178](https://github.com/chef/omnibus-toolchain/pull/178) ([jeremiahsnapp](https://github.com/jeremiahsnapp))
+- Fix bundler test on Windows [#179](https://github.com/chef/omnibus-toolchain/pull/179) ([jeremiahsnapp](https://github.com/jeremiahsnapp))
+<!-- latest_stable_release -->
+
 ## [2.0.5](https://github.com/chef/omnibus-toolchain/tree/2.0.5) (2020-10-16)
 
 #### Merged Pull Requests
 - Enable macos-11.0 tester for omnibus-toolchain [#144](https://github.com/chef/omnibus-toolchain/pull/144) ([jaymalasinha](https://github.com/jaymalasinha))
 - Enable support for Zlinux(s390x) RHEL8 and SLES15 [#145](https://github.com/chef/omnibus-toolchain/pull/145) ([jaymalasinha](https://github.com/jaymalasinha))
 - Disable freebsd-12 until gtar and tar commands are fixed [#146](https://github.com/chef/omnibus-toolchain/pull/146) ([jaymalasinha](https://github.com/jaymalasinha))
-<!-- latest_stable_release -->
 
 ## [2.0.2](https://github.com/chef/omnibus-toolchain/tree/2.0.2) (2020-05-11)
 
