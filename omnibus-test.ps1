@@ -10,7 +10,7 @@ $project_bin_dir = "C:\opscode\$Env:PRODUCT\bin"
 & $embedded_bin_dir\ruby --version
 If ($lastexitcode -ne 0) { Exit $lastexitcode }
 
-& $embedded_bin_dir\bundle.bat --version
+& $embedded_bin_dir\bundle.cmd --version
 If ($lastexitcode -ne 0) { Exit $lastexitcode }
 
 & $embedded_bin_dir\git --version
