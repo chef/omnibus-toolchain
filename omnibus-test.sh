@@ -33,6 +33,10 @@ BINDIR="$INSTALL_DIR/bin/"
 "$BINDIR/ruby" --version
 "$BINDIR/tar" --version
 
+# Test that bash works
+# shellcheck disable=SC2016
+"$BINDIR/bash" -c 'echo $(uptime)'
+
 export PATH="$BINDIR:$PATH"
 
 cd "$TMPDIR"
