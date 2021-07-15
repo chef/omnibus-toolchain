@@ -45,10 +45,12 @@ override :berkshelf, version: "v7.2.2"
 # 1.1.1i+ builds on m1 mac
 override :openssl, version: "1.1.1k"
 
+# AIX fails to compile on expat version 2.3.0 and 2.4.1
 if aix?
   override :expat, version: "2.1.0"
 end
 
+# More recent versions of git build on Solaris but "git name-rev" doesn't work properly which fails Chef Infra tests
 if solaris?
   override :git, version: "2.24.1"
 end
