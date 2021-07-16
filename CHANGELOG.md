@@ -2,17 +2,18 @@ omnibus-toolchain CHANGELOG
 ==========================
 This file is used to list changes made in each version of the omnibus-toolchain.
 
-<!-- latest_release 2.1.10 -->
-## [2.1.10](https://github.com/chef/omnibus-toolchain/tree/2.1.10) (2021-07-15)
+<!-- latest_release 2.1.11 -->
+## [2.1.11](https://github.com/chef/omnibus-toolchain/tree/2.1.11) (2021-07-16)
 
 #### Merged Pull Requests
-- Test bash command substitution [#181](https://github.com/chef/omnibus-toolchain/pull/181) ([jeremiahsnapp](https://github.com/jeremiahsnapp))
+- Pin ncurses to 5.9 on Solaris [#182](https://github.com/chef/omnibus-toolchain/pull/182) ([jeremiahsnapp](https://github.com/jeremiahsnapp))
 <!-- latest_release -->
 
 <!-- release_rollup since=2.1.9 -->
 ### Changes since 2.1.9 release
 
 #### Merged Pull Requests
+- Pin ncurses to 5.9 on Solaris [#182](https://github.com/chef/omnibus-toolchain/pull/182) ([jeremiahsnapp](https://github.com/jeremiahsnapp)) <!-- 2.1.11 -->
 - Test bash command substitution [#181](https://github.com/chef/omnibus-toolchain/pull/181) ([jeremiahsnapp](https://github.com/jeremiahsnapp)) <!-- 2.1.10 -->
 <!-- release_rollup -->
 
