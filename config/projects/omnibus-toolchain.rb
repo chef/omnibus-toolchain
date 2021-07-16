@@ -50,15 +50,17 @@ if aix?
   override :expat, version: "2.1.0"
 end
 
-# More recent versions of git build on Solaris but "git name-rev" doesn't work properly which fails Chef Infra tests
 if solaris?
+  # More recent versions of git build on Solaris but "git name-rev" doesn't work properly which fails Chef Infra tests
   override :git, version: "2.24.1"
+
+  # Solaris fails compile on libtool version 2.4.2 and 2.4.6
+  override :libtool, version: "2.4"
+
+  # Newer versions of ncurses cause libedit build failures on Solaris
+  override :ncurses, version: "5.9"
 end
 
-# Solaris fails compile on libtool version 2.4.2 and 2.4.6
-if solaris?
-  override :libtool, version: "2.4"
-end
 
 # creates required build directories
 dependency "preparation"
