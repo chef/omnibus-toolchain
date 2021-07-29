@@ -35,13 +35,13 @@ pipelines:
   # the canary pipelines are used for testing by our *-buildkite-pipelines repos
   - omnibus/adhoc-canary:
       canary: true
-      definition: .expeditor/release-canary.omnibus.yml
+      definition: .expeditor/adhoc-canary.omnibus.yml
       env:
         - ADHOC: true
         - IGNORE_CACHE: true
   - omnibus/angry-adhoc-canary:
       canary: true
-      definition: .expeditor/angry-release-canary.omnibus.yml
+      definition: .expeditor/angry-adhoc-canary.omnibus.yml
       env:
         - ADHOC: true
         - IGNORE_CACHE: true
