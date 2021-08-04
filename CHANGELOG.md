@@ -2,10 +2,18 @@ omnibus-toolchain CHANGELOG
 ==========================
 This file is used to list changes made in each version of the omnibus-toolchain.
 
-<!-- latest_release -->
+<!-- latest_release 2.1.12 -->
+## [2.1.12](https://github.com/chef/omnibus-toolchain/tree/2.1.12) (2021-08-04)
+
+#### Merged Pull Requests
+- Remove expat pin [#185](https://github.com/chef/omnibus-toolchain/pull/185) ([mimaslanka](https://github.com/mimaslanka))
 <!-- latest_release -->
 
-<!-- release_rollup -->
+<!-- release_rollup since=2.1.11 -->
+### Changes since 2.1.11 release
+
+#### Merged Pull Requests
+- Remove expat pin [#185](https://github.com/chef/omnibus-toolchain/pull/185) ([mimaslanka](https://github.com/mimaslanka)) <!-- 2.1.12 -->
 <!-- release_rollup -->
 
 <!-- latest_stable_release -->
