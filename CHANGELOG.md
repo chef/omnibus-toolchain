@@ -2,17 +2,18 @@ omnibus-toolchain CHANGELOG
 ==========================
 This file is used to list changes made in each version of the omnibus-toolchain.
 
-<!-- latest_release 2.1.12 -->
-## [2.1.12](https://github.com/chef/omnibus-toolchain/tree/2.1.12) (2021-08-04)
+<!-- latest_release 2.1.13 -->
+## [2.1.13](https://github.com/chef/omnibus-toolchain/tree/2.1.13) (2021-09-27)
 
 #### Merged Pull Requests
-- Remove expat pin [#185](https://github.com/chef/omnibus-toolchain/pull/185) ([mimaslanka](https://github.com/mimaslanka))
+- Add ubuntu 1604 to build matrix [#188](https://github.com/chef/omnibus-toolchain/pull/188) ([jeremiahsnapp](https://github.com/jeremiahsnapp))
 <!-- latest_release -->
 
 <!-- release_rollup since=2.1.11 -->
 ### Changes since 2.1.11 release
 
 #### Merged Pull Requests
+- Add ubuntu 1604 to build matrix [#188](https://github.com/chef/omnibus-toolchain/pull/188) ([jeremiahsnapp](https://github.com/jeremiahsnapp)) <!-- 2.1.13 -->
 - Remove expat pin [#185](https://github.com/chef/omnibus-toolchain/pull/185) ([mimaslanka](https://github.com/mimaslanka)) <!-- 2.1.12 -->
 <!-- release_rollup -->
 
