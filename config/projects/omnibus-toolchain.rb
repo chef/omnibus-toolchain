@@ -43,7 +43,7 @@ override :gtar, version: "1.32"
 override :berkshelf, version: "v7.2.2"
 
 # 1.1.1i+ builds on m1 mac
-override :openssl, version: "1.1.1k"
+override :openssl, version: "1.1.1l"
 
 if solaris?
   # More recent versions of git build on Solaris but "git name-rev" doesn't work properly which fails Chef Infra tests
