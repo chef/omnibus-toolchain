@@ -2,17 +2,18 @@ omnibus-toolchain CHANGELOG
 ==========================
 This file is used to list changes made in each version of the omnibus-toolchain.
 
-<!-- latest_release 2.1.14 -->
-## [2.1.14](https://github.com/chef/omnibus-toolchain/tree/2.1.14) (2021-09-27)
+<!-- latest_release 2.1.15 -->
+## [2.1.15](https://github.com/chef/omnibus-toolchain/tree/2.1.15) (2021-10-07)
 
 #### Merged Pull Requests
-- Replace ubuntu 1604 aarch64 with x86_64 [#189](https://github.com/chef/omnibus-toolchain/pull/189) ([jeremiahsnapp](https://github.com/jeremiahsnapp))
+- Bump openssl to version 1.1.1l [#191](https://github.com/chef/omnibus-toolchain/pull/191) ([jeremiahsnapp](https://github.com/jeremiahsnapp))
 <!-- latest_release -->
 
 <!-- release_rollup since=2.1.11 -->
 ### Changes since 2.1.11 release
 
 #### Merged Pull Requests
+- Bump openssl to version 1.1.1l [#191](https://github.com/chef/omnibus-toolchain/pull/191) ([jeremiahsnapp](https://github.com/jeremiahsnapp)) <!-- 2.1.15 -->
 - Replace ubuntu 1604 aarch64 with x86_64 [#189](https://github.com/chef/omnibus-toolchain/pull/189) ([jeremiahsnapp](https://github.com/jeremiahsnapp)) <!-- 2.1.14 -->
 - Add ubuntu 1604 to build matrix [#188](https://github.com/chef/omnibus-toolchain/pull/188) ([jeremiahsnapp](https://github.com/jeremiahsnapp)) <!-- 2.1.13 -->
 - Remove expat pin [#185](https://github.com/chef/omnibus-toolchain/pull/185) ([mimaslanka](https://github.com/mimaslanka)) <!-- 2.1.12 -->
