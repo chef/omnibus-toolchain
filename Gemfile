@@ -16,4 +16,5 @@ group :development do
   gem 'winrm-fs'
   gem 'kitchen-zone'
   gem 'kitchen-vagrant'
+  gem 'ohai', '~> 16.17'  #pin ohai to 16.17.0
 end
