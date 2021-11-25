@@ -53,7 +53,7 @@ if solaris?
   override :libtool, version: "2.4"
 
   # Newer versions of ncurses cause libedit build failures on Solaris
-  override :ncurses, version: "6.3"
+ # override :ncurses, version: "6.3"
 end
 
 
