@@ -1,5 +1,5 @@
 #
-# Copyright 2015-2016, Chef Software, Inc.
+# Copyright:: Chef Software, Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -36,7 +36,7 @@ else
   install_dir "#{default_root}/#{name}"
 end
 
-override :ruby, version: "2.7.4"
+override :ruby, version: "2.7.5"
 override :gtar, version: "1.32"
 
 # riding berkshelf master is hard when you're at the edge of versions
