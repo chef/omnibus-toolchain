@@ -2,17 +2,18 @@ omnibus-toolchain CHANGELOG
 ==========================
 This file is used to list changes made in each version of the omnibus-toolchain.
 
-<!-- latest_release 2.1.16 -->
-## [2.1.16](https://github.com/chef/omnibus-toolchain/tree/2.1.16) (2021-12-08)
+<!-- latest_release 2.1.17 -->
+## [2.1.17](https://github.com/chef/omnibus-toolchain/tree/2.1.17) (2021-12-08)
 
 #### Merged Pull Requests
-- Produce macOS 12 x86_64 packages [#194](https://github.com/chef/omnibus-toolchain/pull/194) ([tas50](https://github.com/tas50))
+- Produce Windows 11 and 2022 packages [#195](https://github.com/chef/omnibus-toolchain/pull/195) ([tas50](https://github.com/tas50))
 <!-- latest_release -->
 
 <!-- release_rollup since=2.1.11 -->
 ### Changes since 2.1.11 release
 
 #### Merged Pull Requests
+- Produce Windows 11 and 2022 packages [#195](https://github.com/chef/omnibus-toolchain/pull/195) ([tas50](https://github.com/tas50)) <!-- 2.1.17 -->
 - Produce macOS 12 x86_64 packages [#194](https://github.com/chef/omnibus-toolchain/pull/194) ([tas50](https://github.com/tas50)) <!-- 2.1.16 -->
 - Bump openssl to version 1.1.1l [#191](https://github.com/chef/omnibus-toolchain/pull/191) ([jeremiahsnapp](https://github.com/jeremiahsnapp)) <!-- 2.1.15 -->
 - Replace ubuntu 1604 aarch64 with x86_64 [#189](https://github.com/chef/omnibus-toolchain/pull/189) ([jeremiahsnapp](https://github.com/jeremiahsnapp)) <!-- 2.1.14 -->
