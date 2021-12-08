@@ -37,10 +37,10 @@ builder-to-testers-map:
     - freebsd-11-amd64
     - freebsd-12-amd64
     - freebsd-13-amd64
-  mac_os_x-10.14-x86_64:
-    - mac_os_x-10.14-x86_64
+  mac_os_x-10.15-x86_64:
     - mac_os_x-10.15-x86_64
     - mac_os_x-11-x86_64
+    - mac_os_x-12-x86_64
   mac_os_x-11-arm64:
     - mac_os_x-11-arm64
   #   - mac_os_x-12-arm64     # canary org doesn't yet have a macos 12 arm64 omnibus worker
