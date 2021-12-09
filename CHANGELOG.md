@@ -2,17 +2,18 @@ omnibus-toolchain CHANGELOG
 ==========================
 This file is used to list changes made in each version of the omnibus-toolchain.
 
-<!-- latest_release 2.1.19 -->
-## [2.1.19](https://github.com/chef/omnibus-toolchain/tree/2.1.19) (2021-12-08)
+<!-- latest_release 2.1.20 -->
+## [2.1.20](https://github.com/chef/omnibus-toolchain/tree/2.1.20) (2021-12-09)
 
 #### Merged Pull Requests
-- Pin ohai to 16.17.0 [#192](https://github.com/chef/omnibus-toolchain/pull/192) ([jayashrig158](https://github.com/jayashrig158))
+- Limit workers on AIX [#200](https://github.com/chef/omnibus-toolchain/pull/200) ([jeremiahsnapp](https://github.com/jeremiahsnapp))
 <!-- latest_release -->
 
 <!-- release_rollup since=2.1.11 -->
 ### Changes since 2.1.11 release
 
 #### Merged Pull Requests
+- Limit workers on AIX [#200](https://github.com/chef/omnibus-toolchain/pull/200) ([jeremiahsnapp](https://github.com/jeremiahsnapp)) <!-- 2.1.20 -->
 - Pin ohai to 16.17.0 [#192](https://github.com/chef/omnibus-toolchain/pull/192) ([jayashrig158](https://github.com/jayashrig158)) <!-- 2.1.19 -->
 - Update Ruby from 2.7.4 to 2.7.5 [#193](https://github.com/chef/omnibus-toolchain/pull/193) ([tas50](https://github.com/tas50)) <!-- 2.1.18 -->
 - Produce Windows 11 and 2022 packages [#195](https://github.com/chef/omnibus-toolchain/pull/195) ([tas50](https://github.com/tas50)) <!-- 2.1.17 -->
