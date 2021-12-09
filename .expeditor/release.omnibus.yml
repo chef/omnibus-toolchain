@@ -4,9 +4,9 @@ config: omnibus.rb
 test-path: omnibus-test.sh
 test-path-windows: omnibus-test.ps1
 builder-to-testers-map:
-  aix-7.1-powerpc:
-    - aix-7.1-powerpc
-    - aix-7.2-powerpc
+  # aix-7.1-powerpc:
+  #   - aix-7.1-powerpc
+  #   - aix-7.2-powerpc
   debian-9-x86_64:
     - debian-9-x86_64
     - debian-10-x86_64
@@ -21,10 +21,10 @@ builder-to-testers-map:
     - amazon-2-aarch64
   el-8-aarch64:
     - el-8-aarch64
-  el-7-ppc64:
-    - el-7-ppc64
-  el-7-ppc64le:
-    - el-7-ppc64le
+  # el-7-ppc64:
+  #   - el-7-ppc64
+  # el-7-ppc64le:
+  #   - el-7-ppc64le
   el-7-s390x:
     - el-7-s390x
     - el-8-s390x
