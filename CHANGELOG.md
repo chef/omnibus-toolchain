@@ -2,35 +2,32 @@ omnibus-toolchain CHANGELOG
 ==========================
 This file is used to list changes made in each version of the omnibus-toolchain.
 
-<!-- latest_release 2.1.20 -->
-## [2.1.20](https://github.com/chef/omnibus-toolchain/tree/2.1.20) (2021-12-09)
-
-#### Merged Pull Requests
-- Limit workers on AIX [#200](https://github.com/chef/omnibus-toolchain/pull/200) ([jeremiahsnapp](https://github.com/jeremiahsnapp))
+<!-- latest_release -->
 <!-- latest_release -->
 
-<!-- release_rollup since=2.1.11 -->
-### Changes since 2.1.11 release
-
-#### Merged Pull Requests
-- Limit workers on AIX [#200](https://github.com/chef/omnibus-toolchain/pull/200) ([jeremiahsnapp](https://github.com/jeremiahsnapp)) <!-- 2.1.20 -->
-- Pin ohai to 16.17.0 [#192](https://github.com/chef/omnibus-toolchain/pull/192) ([jayashrig158](https://github.com/jayashrig158)) <!-- 2.1.19 -->
-- Update Ruby from 2.7.4 to 2.7.5 [#193](https://github.com/chef/omnibus-toolchain/pull/193) ([tas50](https://github.com/tas50)) <!-- 2.1.18 -->
-- Produce Windows 11 and 2022 packages [#195](https://github.com/chef/omnibus-toolchain/pull/195) ([tas50](https://github.com/tas50)) <!-- 2.1.17 -->
-- Produce macOS 12 x86_64 packages [#194](https://github.com/chef/omnibus-toolchain/pull/194) ([tas50](https://github.com/tas50)) <!-- 2.1.16 -->
-- Bump openssl to version 1.1.1l [#191](https://github.com/chef/omnibus-toolchain/pull/191) ([jeremiahsnapp](https://github.com/jeremiahsnapp)) <!-- 2.1.15 -->
-- Replace ubuntu 1604 aarch64 with x86_64 [#189](https://github.com/chef/omnibus-toolchain/pull/189) ([jeremiahsnapp](https://github.com/jeremiahsnapp)) <!-- 2.1.14 -->
-- Add ubuntu 1604 to build matrix [#188](https://github.com/chef/omnibus-toolchain/pull/188) ([jeremiahsnapp](https://github.com/jeremiahsnapp)) <!-- 2.1.13 -->
-- Remove expat pin [#185](https://github.com/chef/omnibus-toolchain/pull/185) ([mimaslanka](https://github.com/mimaslanka)) <!-- 2.1.12 -->
+<!-- release_rollup -->
 <!-- release_rollup -->
 
 <!-- latest_stable_release -->
+## [2.1.20](https://github.com/chef/omnibus-toolchain/tree/2.1.20) (2021-12-10)
+
+#### Merged Pull Requests
+- Remove expat pin [#185](https://github.com/chef/omnibus-toolchain/pull/185) ([mimaslanka](https://github.com/mimaslanka))
+- Add ubuntu 1604 to build matrix [#188](https://github.com/chef/omnibus-toolchain/pull/188) ([jeremiahsnapp](https://github.com/jeremiahsnapp))
+- Replace ubuntu 1604 aarch64 with x86_64 [#189](https://github.com/chef/omnibus-toolchain/pull/189) ([jeremiahsnapp](https://github.com/jeremiahsnapp))
+- Bump openssl to version 1.1.1l [#191](https://github.com/chef/omnibus-toolchain/pull/191) ([jeremiahsnapp](https://github.com/jeremiahsnapp))
+- Produce macOS 12 x86_64 packages [#194](https://github.com/chef/omnibus-toolchain/pull/194) ([tas50](https://github.com/tas50))
+- Produce Windows 11 and 2022 packages [#195](https://github.com/chef/omnibus-toolchain/pull/195) ([tas50](https://github.com/tas50))
+- Update Ruby from 2.7.4 to 2.7.5 [#193](https://github.com/chef/omnibus-toolchain/pull/193) ([tas50](https://github.com/tas50))
+- Pin ohai to 16.17.0 [#192](https://github.com/chef/omnibus-toolchain/pull/192) ([jayashrig158](https://github.com/jayashrig158))
+- Limit workers on AIX [#200](https://github.com/chef/omnibus-toolchain/pull/200) ([jeremiahsnapp](https://github.com/jeremiahsnapp))
+<!-- latest_stable_release -->
+
 ## [2.1.11](https://github.com/chef/omnibus-toolchain/tree/2.1.11) (2021-07-16)
 
 #### Merged Pull Requests
 - Test bash command substitution [#181](https://github.com/chef/omnibus-toolchain/pull/181) ([jeremiahsnapp](https://github.com/jeremiahsnapp))
 - Pin ncurses to 5.9 on Solaris [#182](https://github.com/chef/omnibus-toolchain/pull/182) ([jeremiahsnapp](https://github.com/jeremiahsnapp))
-<!-- latest_stable_release -->
 
 ## [2.1.9](https://github.com/chef/omnibus-toolchain/tree/2.1.9) (2021-07-14)
 
