@@ -89,7 +89,10 @@ subscriptions:
           only_if_modified:
             - config/software/*
             - config/patches/*
-
+  # Subscribe to the promotion from the current channel to stable
+  - workload: project_promoted:{{agent_id}}:*
+    actions:
+      - built_in:promote_artifactory_artifact
   - workload: artifact_published:stable:omnibus-toolchain:*
     actions:
       - built_in:rollover_changelog
