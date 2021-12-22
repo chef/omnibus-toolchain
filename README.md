@@ -13,13 +13,13 @@ Omnibus Toolchain creates a native platform package that contains the entire req
 
 Currently it supports the following operating systems:
 
-* Solaris 11 (SPARC and x86, builds on 11.4)
-* AIX 7 (POWER6 and later)
+* Solaris 11.3 / 11.4 (SPARC and x86)
+* AIX 7.1 / 7.2 (POWER6 and later)
 * Debian Linux (and derivatives like Ubuntu and Mint) on a variety of platforms (arm64 armhf ppc ppc64le x86 amd64)
 * RHEL/CentOS/Fedora Linux on a variety of platforms (ppc64 ppc64le i686 x86_64)
-* macOS 10.14+
+* macOS 10.15+
 * FreeBSD 11,12
-* Windows 2012R2-2019
+* Windows 2012R2-2022 as well as 8-11
 
 Why?
 ----
