@@ -2,17 +2,18 @@ omnibus-toolchain CHANGELOG
 ==========================
 This file is used to list changes made in each version of the omnibus-toolchain.
 
-<!-- latest_release 2.1.22 -->
-## [2.1.22](https://github.com/chef/omnibus-toolchain/tree/2.1.22) (2022-01-11)
+<!-- latest_release 2.1.23 -->
+## [2.1.23](https://github.com/chef/omnibus-toolchain/tree/2.1.23) (2022-02-14)
 
 #### Merged Pull Requests
-- Update README.md [#203](https://github.com/chef/omnibus-toolchain/pull/203) ([tas50](https://github.com/tas50))
+- Fix regressions [#204](https://github.com/chef/omnibus-toolchain/pull/204) ([jeremiahsnapp](https://github.com/jeremiahsnapp))
 <!-- latest_release -->
 
 <!-- release_rollup since=2.1.20 -->
 ### Changes since 2.1.20 release
 
 #### Merged Pull Requests
+- Fix regressions [#204](https://github.com/chef/omnibus-toolchain/pull/204) ([jeremiahsnapp](https://github.com/jeremiahsnapp)) <!-- 2.1.23 -->
 - Update README.md [#203](https://github.com/chef/omnibus-toolchain/pull/203) ([tas50](https://github.com/tas50)) <!-- 2.1.22 -->
 - Unpin ohai in omnibus Gemfile [#202](https://github.com/chef/omnibus-toolchain/pull/202) ([jeremiahsnapp](https://github.com/jeremiahsnapp)) <!-- 2.1.21 -->
 <!-- release_rollup -->
