@@ -14,7 +14,6 @@
 # limitations under the License.
 #
 
-# These are gems that support functions in helper-(sh|exe)
 name "helper-gems"
 
 license :project_license

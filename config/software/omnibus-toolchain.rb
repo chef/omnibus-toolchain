@@ -51,12 +51,6 @@ dependency "nokogiri"
 # Include helpers for build pipelines
 dependency "helper-gems"
 
-if windows?
-  dependency "helper-exe"
-else
-  dependency "helper-sh"
-end
-
 build do
   env = with_standard_compiler_flags(with_embedded_path)
 
