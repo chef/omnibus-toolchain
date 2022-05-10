@@ -42,13 +42,14 @@ else
   install_dir "#{default_root}/#{name}"
 end
 
-override :ruby, version: "2.7.5"
-
 # riding berkshelf master is hard when you're at the edge of versions
 override :berkshelf, version: "v8.0.1"
 
-# 1.1.1i+ builds on m1 mac
-override :openssl, version: "1.1.1m"
+override :openssl, version: (aix? || windows?) ? "1.1.1m" : "3.0.1"
+
+# it is important to set the default ruby version here. some software definitions such as
+# nokogiri determine whether to compile or not on windows
+override :ruby, version: aix? ? "3.0.3" : "3.1.2"
 
 # xproto 7.0.31 became the default version in omnibus-software but it failed to build on
 # multiple non-x86_64 systems. (e.g. arm64, ppc64)
