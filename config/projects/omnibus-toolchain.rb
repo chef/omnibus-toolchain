@@ -45,7 +45,7 @@ end
 override :ruby, version: "2.7.5"
 
 # riding berkshelf master is hard when you're at the edge of versions
-override :berkshelf, version: "v7.2.2"
+override :berkshelf, version: "v8.0.1"
 
 # 1.1.1i+ builds on m1 mac
 override :openssl, version: "1.1.1m"
