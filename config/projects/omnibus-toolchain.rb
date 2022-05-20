@@ -43,7 +43,6 @@ else
 end
 
 override :ruby, version: "2.7.5"
-override :gtar, version: "1.32"
 
 # riding berkshelf master is hard when you're at the edge of versions
 override :berkshelf, version: "v7.2.2"
