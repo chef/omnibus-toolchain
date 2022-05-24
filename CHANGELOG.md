@@ -2,17 +2,18 @@ omnibus-toolchain CHANGELOG
 ==========================
 This file is used to list changes made in each version of the omnibus-toolchain.
 
-<!-- latest_release 2.2.0 -->
-## [2.2.0](https://github.com/chef/omnibus-toolchain/tree/2.2.0) (2022-05-24)
+<!-- latest_release 3.0.0 -->
+## [3.0.0](https://github.com/chef/omnibus-toolchain/tree/3.0.0) (2022-05-24)
 
 #### Merged Pull Requests
-- IPACK-204 Prepare for new omnibus-toolchain build [#209](https://github.com/chef/omnibus-toolchain/pull/209) ([jeremiahsnapp](https://github.com/jeremiahsnapp))
+- IPACK-204 use ruby 3.1, openssl 3 and UCRT64 [#210](https://github.com/chef/omnibus-toolchain/pull/210) ([jeremiahsnapp](https://github.com/jeremiahsnapp))
 <!-- latest_release -->
 
 <!-- release_rollup since=2.1.20 -->
 ### Changes since 2.1.20 release
 
 #### Merged Pull Requests
+- IPACK-204 use ruby 3.1, openssl 3 and UCRT64 [#210](https://github.com/chef/omnibus-toolchain/pull/210) ([jeremiahsnapp](https://github.com/jeremiahsnapp)) <!-- 3.0.0 -->
 - IPACK-204 Prepare for new omnibus-toolchain build [#209](https://github.com/chef/omnibus-toolchain/pull/209) ([jeremiahsnapp](https://github.com/jeremiahsnapp)) <!-- 2.2.0 -->
 - IPACK-192 remove helper scripts [#208](https://github.com/chef/omnibus-toolchain/pull/208) ([jeremiahsnapp](https://github.com/jeremiahsnapp)) <!-- 2.1.26 -->
 - Pin libxml2 and libxslt for windows [#207](https://github.com/chef/omnibus-toolchain/pull/207) ([jeremiahsnapp](https://github.com/jeremiahsnapp)) <!-- 2.1.25 -->
