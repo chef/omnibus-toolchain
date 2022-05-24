@@ -43,10 +43,9 @@ else
 end
 
 override :ruby, version: "2.7.5"
-override :gtar, version: "1.32"
 
 # riding berkshelf master is hard when you're at the edge of versions
-override :berkshelf, version: "v7.2.2"
+override :berkshelf, version: "v8.0.1"
 
 # 1.1.1i+ builds on m1 mac
 override :openssl, version: "1.1.1m"
@@ -55,18 +54,12 @@ override :openssl, version: "1.1.1m"
 # multiple non-x86_64 systems. (e.g. arm64, ppc64)
 override :xproto, version: "7.0.25"
 
-# curl 7.81.0 became the default version in omnibus-software but it failed to build on macos x86_64
-override :curl, version: "7.80.0"
-
 if solaris?
   # More recent versions of git build on Solaris but "git name-rev" doesn't work properly which fails Chef Infra tests
   override :git, version: "2.24.1"
 
   # Solaris fails compile on libtool version 2.4.2 and 2.4.6
   override :libtool, version: "2.4"
-
-  # Newer versions of ncurses cause libedit build failures on Solaris
-  override :ncurses, version: "5.9"
 end
 
 

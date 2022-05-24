@@ -15,23 +15,23 @@
 #
 
 name "cmake"
-default_version "3.12.2"
+default_version "3.23.1"
 
 dependency "cacerts"
 
 license "BSD-3-Clause"
 skip_transitive_dependency_licensing true
-version("3.12.2") { source sha256: "7212130c7798c994fe22ed5cbf5fa454cdaea636b07d1571c015606929f92c9a" }
+version("3.23.1") { source sha256: "33fd10a8ec687a4d0d5b42473f10459bb92b3ae7def2b745dc10b192760869f3" }
 minor_version = version.split(".")[0..1].join(".")
 
 if windows?
   if windows_arch_i386?
-    source url: "https://cmake.org/files/v#{minor_version}/cmake-#{version}-win32-x86.zip", sha256: "fde814282b798a8064aab8c44ddf2f7a25e1139b5a2b3a255adedacfca5706cd"
-    relative_path "cmake-#{version}-win32-x86"
+    source url: "https://cmake.org/files/v#{minor_version}/cmake-#{version}-windows-i386.zip", sha256: "5bb01d27dc665aac5ddbdb24eebfb2146601e150884b2b1540d39ceb61875f3f"
+    relative_path "cmake-#{version}-windows-i386"
     license_file "doc/cmake/Copyright.txt"
   else
-    source url: "https://cmake.org/files/v#{minor_version}/cmake-#{version}-win64-x64.zip", sha256: "25c8dbe3e81095463b0d6ccefd836275791299502e3ed5eccf695e118a6d031b"
-    relative_path "cmake-#{version}-win64-x64"
+    source url: "https://cmake.org/files/v#{minor_version}/cmake-#{version}-windows-x86_64.zip", sha256: "9b509cc4eb7191dc128cfa3f2170036f9cbc7d9d5f93ff7fafc5b2d77b3b40dc"
+    relative_path "cmake-#{version}-windows-x86_64"
     license_file "doc/cmake/Copyright.txt"
   end
 else
