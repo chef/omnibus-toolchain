@@ -2,28 +2,26 @@ omnibus-toolchain CHANGELOG
 ==========================
 This file is used to list changes made in each version of the omnibus-toolchain.
 
-<!-- latest_release 3.0.0 -->
-## [3.0.0](https://github.com/chef/omnibus-toolchain/tree/3.0.0) (2022-05-24)
-
-#### Merged Pull Requests
-- IPACK-204 use ruby 3.1, openssl 3 and UCRT64 [#210](https://github.com/chef/omnibus-toolchain/pull/210) ([jeremiahsnapp](https://github.com/jeremiahsnapp))
+<!-- latest_release -->
 <!-- latest_release -->
 
-<!-- release_rollup since=2.1.20 -->
-### Changes since 2.1.20 release
-
-#### Merged Pull Requests
-- IPACK-204 use ruby 3.1, openssl 3 and UCRT64 [#210](https://github.com/chef/omnibus-toolchain/pull/210) ([jeremiahsnapp](https://github.com/jeremiahsnapp)) <!-- 3.0.0 -->
-- IPACK-204 Prepare for new omnibus-toolchain build [#209](https://github.com/chef/omnibus-toolchain/pull/209) ([jeremiahsnapp](https://github.com/jeremiahsnapp)) <!-- 2.2.0 -->
-- IPACK-192 remove helper scripts [#208](https://github.com/chef/omnibus-toolchain/pull/208) ([jeremiahsnapp](https://github.com/jeremiahsnapp)) <!-- 2.1.26 -->
-- Pin libxml2 and libxslt for windows [#207](https://github.com/chef/omnibus-toolchain/pull/207) ([jeremiahsnapp](https://github.com/jeremiahsnapp)) <!-- 2.1.25 -->
-- Pin openssl to 1.1.1m [#205](https://github.com/chef/omnibus-toolchain/pull/205) ([jayashrig158](https://github.com/jayashrig158)) <!-- 2.1.24 -->
-- Fix regressions [#204](https://github.com/chef/omnibus-toolchain/pull/204) ([jeremiahsnapp](https://github.com/jeremiahsnapp)) <!-- 2.1.23 -->
-- Update README.md [#203](https://github.com/chef/omnibus-toolchain/pull/203) ([tas50](https://github.com/tas50)) <!-- 2.1.22 -->
-- Unpin ohai in omnibus Gemfile [#202](https://github.com/chef/omnibus-toolchain/pull/202) ([jeremiahsnapp](https://github.com/jeremiahsnapp)) <!-- 2.1.21 -->
+<!-- release_rollup -->
 <!-- release_rollup -->
 
 <!-- latest_stable_release -->
+## [3.0.0](https://github.com/chef/omnibus-toolchain/tree/3.0.0) (2022-05-30)
+
+#### Merged Pull Requests
+- Unpin ohai in omnibus Gemfile [#202](https://github.com/chef/omnibus-toolchain/pull/202) ([jeremiahsnapp](https://github.com/jeremiahsnapp))
+- Update README.md [#203](https://github.com/chef/omnibus-toolchain/pull/203) ([tas50](https://github.com/tas50))
+- Fix regressions [#204](https://github.com/chef/omnibus-toolchain/pull/204) ([jeremiahsnapp](https://github.com/jeremiahsnapp))
+- Pin openssl to 1.1.1m [#205](https://github.com/chef/omnibus-toolchain/pull/205) ([jayashrig158](https://github.com/jayashrig158))
+- Pin libxml2 and libxslt for windows [#207](https://github.com/chef/omnibus-toolchain/pull/207) ([jeremiahsnapp](https://github.com/jeremiahsnapp))
+- IPACK-192 remove helper scripts [#208](https://github.com/chef/omnibus-toolchain/pull/208) ([jeremiahsnapp](https://github.com/jeremiahsnapp))
+- IPACK-204 Prepare for new omnibus-toolchain build [#209](https://github.com/chef/omnibus-toolchain/pull/209) ([jeremiahsnapp](https://github.com/jeremiahsnapp))
+- IPACK-204 use ruby 3.1, openssl 3 and UCRT64 [#210](https://github.com/chef/omnibus-toolchain/pull/210) ([jeremiahsnapp](https://github.com/jeremiahsnapp))
+<!-- latest_stable_release -->
+
 ## [2.1.20](https://github.com/chef/omnibus-toolchain/tree/2.1.20) (2021-12-10)
 
 #### Merged Pull Requests
@@ -36,7 +34,6 @@ This file is used to list changes made in each version of the omnibus-toolchain.
 - Update Ruby from 2.7.4 to 2.7.5 [#193](https://github.com/chef/omnibus-toolchain/pull/193) ([tas50](https://github.com/tas50))
 - Pin ohai to 16.17.0 [#192](https://github.com/chef/omnibus-toolchain/pull/192) ([jayashrig158](https://github.com/jayashrig158))
 - Limit workers on AIX [#200](https://github.com/chef/omnibus-toolchain/pull/200) ([jeremiahsnapp](https://github.com/jeremiahsnapp))
-<!-- latest_stable_release -->
 
 ## [2.1.11](https://github.com/chef/omnibus-toolchain/tree/2.1.11) (2021-07-16)
 
