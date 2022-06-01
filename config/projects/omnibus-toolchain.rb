@@ -42,6 +42,11 @@ else
   install_dir "#{default_root}/#{name}"
 end
 
+if aix?
+  # libtool 2.4.7 has a bug that needs to be fixed
+  override :libtool, version: "2.4.6"
+end
+
 # riding berkshelf master is hard when you're at the edge of versions
 override :berkshelf, version: "v8.0.1"
 
