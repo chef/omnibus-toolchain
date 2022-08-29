@@ -2,17 +2,18 @@ omnibus-toolchain CHANGELOG
 ==========================
 This file is used to list changes made in each version of the omnibus-toolchain.
 
-<!-- latest_release 3.0.1 -->
-## [3.0.1](https://github.com/chef/omnibus-toolchain/tree/3.0.1) (2022-06-01)
+<!-- latest_release 3.0.2 -->
+## [3.0.2](https://github.com/chef/omnibus-toolchain/tree/3.0.2) (2022-08-29)
 
 #### Merged Pull Requests
-- Pin libtool for aix [#212](https://github.com/chef/omnibus-toolchain/pull/212) ([jeremiahsnapp](https://github.com/jeremiahsnapp))
+- Update signing Identity  [#214](https://github.com/chef/omnibus-toolchain/pull/214) ([poorndm](https://github.com/poorndm))
 <!-- latest_release -->
 
 <!-- release_rollup since=3.0.0 -->
 ### Changes since 3.0.0 release
 
 #### Merged Pull Requests
+- Update signing Identity  [#214](https://github.com/chef/omnibus-toolchain/pull/214) ([poorndm](https://github.com/poorndm)) <!-- 3.0.2 -->
 - Pin libtool for aix [#212](https://github.com/chef/omnibus-toolchain/pull/212) ([jeremiahsnapp](https://github.com/jeremiahsnapp)) <!-- 3.0.1 -->
 <!-- release_rollup -->
 
