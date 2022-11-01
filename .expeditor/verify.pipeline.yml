@@ -1,0 +1,18 @@
+---
+expeditor:
+  defaults:
+    buildkite:
+      retry:
+        automatic:
+          limit: 1
+      timeout_in_minutes: 30
+
+steps:
+- label: run-lint-ruby-3.1
+  command:
+    - bundle install --jobs=3 --retry=3
+    - rake chefstyle
+  expeditor:
+    executor:
+      docker:
+        image: ruby:3.1-buster
