@@ -68,7 +68,6 @@ if solaris?
   override :libtool, version: "2.4"
 end
 
-
 # creates required build directories
 dependency "preparation"
 

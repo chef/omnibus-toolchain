@@ -19,7 +19,6 @@ default_version "1.0.0"
 
 license :project_license
 
-
 # gnu utilities
 if windows?
   dependency "cmake"
