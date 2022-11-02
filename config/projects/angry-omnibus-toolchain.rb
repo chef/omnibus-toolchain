@@ -19,9 +19,10 @@
 # the omnibus-toolchain build and test machines. As such this project
 # definition is just a thin wrapper around `config/project/omnibus-toolchain.rb`.
 #
+# rubocop:disable Lint/UselessAssignment
 current_file = __FILE__
-toolchain_project_contents = IO.read(File.expand_path("../omnibus-toolchain.rb", __FILE__))
-self.instance_eval toolchain_project_contents
+toolchain_project_contents = IO.read(File.expand_path("omnibus-toolchain.rb", __dir__))
+instance_eval toolchain_project_contents
 
 name "angry-omnibus-toolchain"
 friendly_name "Angry Omnibus Toolchain"
@@ -41,3 +42,4 @@ resources_path "#{resources_path}/../omnibus-toolchain"
 
 msi_upgrade_code = "6662C48D-761B-4E1D-91B8-9F17B9B36428"
 project_location_dir = "angry-omnibus-toolchain"
+# rubocop:enable Lint/UselessAssignment
