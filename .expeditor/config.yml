@@ -16,6 +16,9 @@ slack:
     - releng-notify
 
 pipelines:
+  - verify:
+      description: Pull Request validation tests
+      public: true
   - omnibus/release:
       env:
         - IGNORE_CACHE: true
@@ -100,7 +103,3 @@ subscriptions:
     actions:
       - built_in:rollover_changelog
       - built_in:notify_chefio_slack_channels
-pipelines:
-  - verify:
-      description: Pull Request validation tests
-      public: true
