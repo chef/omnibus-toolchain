@@ -22,12 +22,13 @@ pipelines:
   - omnibus/release:
       env:
         - IGNORE_CACHE: true
-        - OMNIBUS_BUILDKITE_PLUGIN_VERSION: c7512972948a79da243b37f5ea98aefbf4b3d83b
+        - OMNIBUS_USE_INTERNAL_SOURCES: true
   - omnibus/adhoc:
       definition: .expeditor/release.omnibus.yml
       env:
         - ADHOC: true
         - IGNORE_CACHE: true
+        - OMNIBUS_USE_INTERNAL_SOURCES: true
   - omnibus/angry-release:
       env:
         - IGNORE_CACHE: true
@@ -36,6 +37,7 @@ pipelines:
       env:
         - ADHOC: true
         - IGNORE_CACHE: true
+        - OMNIBUS_USE_INTERNAL_SOURCES: true
   # the canary pipelines are used for testing by our *-buildkite-pipelines repos
   - omnibus/adhoc-canary:
       canary: true
@@ -43,12 +45,14 @@ pipelines:
       env:
         - ADHOC: true
         - IGNORE_CACHE: true
+        - OMNIBUS_USE_INTERNAL_SOURCES: true
   - omnibus/angry-adhoc-canary:
       canary: true
       definition: .expeditor/angry-adhoc-canary.omnibus.yml
       env:
         - ADHOC: true
         - IGNORE_CACHE: true
+        - OMNIBUS_USE_INTERNAL_SOURCES: true
 
 github:
   # This deletes the GitHub PR branch after successfully merged into the release branch
