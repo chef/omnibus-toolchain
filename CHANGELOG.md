@@ -2,17 +2,18 @@ omnibus-toolchain CHANGELOG
 ==========================
 This file is used to list changes made in each version of the omnibus-toolchain.
 
-<!-- latest_release 3.0.4 -->
-## [3.0.4](https://github.com/chef/omnibus-toolchain/tree/3.0.4) (2022-11-10)
+<!-- latest_release 3.0.5 -->
+## [3.0.5](https://github.com/chef/omnibus-toolchain/tree/3.0.5) (2022-12-19)
 
 #### Merged Pull Requests
-- Move verify pipeline [#217](https://github.com/chef/omnibus-toolchain/pull/217) ([gscho](https://github.com/gscho))
+- update omnibus to use internal sources [#219](https://github.com/chef/omnibus-toolchain/pull/219) ([evanahlberg](https://github.com/evanahlberg))
 <!-- latest_release -->
 
 <!-- release_rollup since=3.0.0 -->
 ### Changes since 3.0.0 release
 
 #### Merged Pull Requests
+- update omnibus to use internal sources [#219](https://github.com/chef/omnibus-toolchain/pull/219) ([evanahlberg](https://github.com/evanahlberg)) <!-- 3.0.5 -->
 - Move verify pipeline [#217](https://github.com/chef/omnibus-toolchain/pull/217) ([gscho](https://github.com/gscho)) <!-- 3.0.4 -->
 - Lint ruby files using chefstyle on pull-requests [#216](https://github.com/chef/omnibus-toolchain/pull/216) ([gscho](https://github.com/gscho)) <!-- 3.0.3 -->
 - Update signing Identity  [#214](https://github.com/chef/omnibus-toolchain/pull/214) ([poorndm](https://github.com/poorndm)) <!-- 3.0.2 -->
