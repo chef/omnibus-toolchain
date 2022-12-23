@@ -42,9 +42,16 @@ else
   install_dir "#{default_root}/#{name}"
 end
 
+if freebsd?
+  # More recent versions bash build on freebsd is failing
+  override :bash, version: "5.1.16"
+end
+
 if aix?
   # libtool 2.4.7 has a bug that needs to be fixed
   override :libtool, version: "2.4.6"
+  # On Aix test is failing with core dump that needs to be fixed
+  override :bash, version: "5.1.16"
 end
 
 # riding berkshelf master is hard when you're at the edge of versions
