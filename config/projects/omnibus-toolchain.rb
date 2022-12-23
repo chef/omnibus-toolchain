@@ -73,7 +73,6 @@ if solaris?
 
   # Solaris fails compile on libtool version 2.4.2 and 2.4.6
   override :libtool, version: "2.4"
-
 end
 
 # creates required build directories
