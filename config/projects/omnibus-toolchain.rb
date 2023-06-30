@@ -52,6 +52,8 @@ if aix?
   override :libtool, version: "2.4.6"
   # On Aix test is failing with core dump that needs to be fixed
   override :bash, version: "5.1.16"
+  # on aix build is failing to compile  4.4
+  override :make, version "4.3"
 end
 
 # riding berkshelf master is hard when you're at the edge of versions
