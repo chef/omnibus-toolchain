@@ -2,17 +2,18 @@ omnibus-toolchain CHANGELOG
 ==========================
 This file is used to list changes made in each version of the omnibus-toolchain.
 
-<!-- latest_release 3.0.9 -->
-## [3.0.9](https://github.com/chef/omnibus-toolchain/tree/3.0.9) (2023-05-23)
+<!-- latest_release 3.0.10 -->
+## [3.0.10](https://github.com/chef/omnibus-toolchain/tree/3.0.10) (2023-07-13)
 
 #### Merged Pull Requests
-- renaming omnibus queue [#222](https://github.com/chef/omnibus-toolchain/pull/222) ([sean-simmons-progress](https://github.com/sean-simmons-progress))
+- Removed support for el-6-i686 due to compatibility issues [#225](https://github.com/chef/omnibus-toolchain/pull/225) ([poorndm](https://github.com/poorndm))
 <!-- latest_release -->
 
 <!-- release_rollup since=3.0.0 -->
 ### Changes since 3.0.0 release
 
 #### Merged Pull Requests
+- Removed support for el-6-i686 due to compatibility issues [#225](https://github.com/chef/omnibus-toolchain/pull/225) ([poorndm](https://github.com/poorndm)) <!-- 3.0.10 -->
 - renaming omnibus queue [#222](https://github.com/chef/omnibus-toolchain/pull/222) ([sean-simmons-progress](https://github.com/sean-simmons-progress)) <!-- 3.0.9 -->
 - Add rocky linux-8 [#221](https://github.com/chef/omnibus-toolchain/pull/221) ([poorndm](https://github.com/poorndm)) <!-- 3.0.8 -->
 - Fix build issue - Reverting the changes made PR - 219 [#220](https://github.com/chef/omnibus-toolchain/pull/220) ([poorndm](https://github.com/poorndm)) <!-- 3.0.7 -->
