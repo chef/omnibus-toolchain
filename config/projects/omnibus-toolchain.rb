@@ -75,7 +75,7 @@ if solaris?
   override :libtool, version: "2.4"
 
   # solaris failes to compile curl 7.84
-  override :curl, version: "7.80.0"
+  override :curl, version: "7.81.0"
 end
 
 # creates required build directories
