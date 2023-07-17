@@ -2,17 +2,18 @@ omnibus-toolchain CHANGELOG
 ==========================
 This file is used to list changes made in each version of the omnibus-toolchain.
 
-<!-- latest_release 3.0.11 -->
-## [3.0.11](https://github.com/chef/omnibus-toolchain/tree/3.0.11) (2023-07-17)
+<!-- latest_release 3.0.12 -->
+## [3.0.12](https://github.com/chef/omnibus-toolchain/tree/3.0.12) (2023-07-17)
 
 #### Merged Pull Requests
-- Enable auto trigger of omnibus/release pipeline - Revert PR 213 changes [#223](https://github.com/chef/omnibus-toolchain/pull/223) ([poorndm](https://github.com/poorndm))
+- Fix Solaris Build Issue [#226](https://github.com/chef/omnibus-toolchain/pull/226) ([poorndm](https://github.com/poorndm))
 <!-- latest_release -->
 
 <!-- release_rollup since=3.0.0 -->
 ### Changes since 3.0.0 release
 
 #### Merged Pull Requests
+- Fix Solaris Build Issue [#226](https://github.com/chef/omnibus-toolchain/pull/226) ([poorndm](https://github.com/poorndm)) <!-- 3.0.12 -->
 - Enable auto trigger of omnibus/release pipeline - Revert PR 213 changes [#223](https://github.com/chef/omnibus-toolchain/pull/223) ([poorndm](https://github.com/poorndm)) <!-- 3.0.11 -->
 - Removed support for el-6-i686 due to compatibility issues [#225](https://github.com/chef/omnibus-toolchain/pull/225) ([poorndm](https://github.com/poorndm)) <!-- 3.0.10 -->
 - renaming omnibus queue [#222](https://github.com/chef/omnibus-toolchain/pull/222) ([sean-simmons-progress](https://github.com/sean-simmons-progress)) <!-- 3.0.9 -->
