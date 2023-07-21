@@ -22,7 +22,7 @@ pipelines:
   - omnibus/release:
       env:
         - IGNORE_CACHE: true
-        - OMNIBUS_BUILDKITE_PLUGIN_VERSION: c7512972948a79da243b37f5ea98aefbf4b3d83b
+        - OMNIBUS_BUILDKITE_PLUGIN_VERSION: 76dc28f29e5b5ddc83518eb42febfdde2528776c
         - OMNIBUS_USE_INTERNAL_SOURCES: true
   - omnibus/adhoc:
       definition: .expeditor/release.omnibus.yml
