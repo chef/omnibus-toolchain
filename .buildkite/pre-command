@@ -1,0 +1,7 @@
+#!/bin/bash
+
+set -eux
+
+export ARTIFACTORY_ENDPOINT="$artifactory_endpoint"
+export ARTIFACTORY_USERNAME="$artifactory_username"
+export ARTIFACTORY_PASSWORD="$artifactory_password"
