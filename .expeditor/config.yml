@@ -42,17 +42,17 @@ pipelines:
         - OMNIBUS_USE_INTERNAL_SOURCES: true
   # the canary pipelines are used for testing by our *-buildkite-pipelines repos
   - omnibus/adhoc-canary:
-      canary: true
-      definition: .expeditor/adhoc-canary.omnibus.yml
-      env:
-        - ADHOC: true
-        - IGNORE_CACHE: true
-        - OMNIBUS_BUILDKITE_PLUGIN_VERSION: 76dc28f29e5b5ddc83518eb42febfdde2528776c        
-        - OMNIBUS_USE_INTERNAL_SOURCES: true
+      # canary: true
+      # definition: .expeditor/adhoc-canary.omnibus.yml
+      # env:
+      #   - ADHOC: true
+      #   - IGNORE_CACHE: true
+      #   - OMNIBUS_BUILDKITE_PLUGIN_VERSION: 76dc28f29e5b5ddc83518eb42febfdde2528776c
+      #   - OMNIBUS_USE_INTERNAL_SOURCES: true
       steps:
         - commands:
           - "echo artifactory endpoint is $ARTIFACTORY_ENDPOINT"
-          - "echo artifactory usn  is $ARTIFACTORY_USERNAME" 
+          - "echo artifactory usn  is $ARTIFACTORY_USERNAME"
           - "echo artifactory pw is $ARTIFACTORY_PASSWORD"
   - omnibus/angry-adhoc-canary:
       canary: true
