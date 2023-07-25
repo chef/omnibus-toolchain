@@ -2,6 +2,9 @@
 
 set -eux
 
+artifactory_endpoint="https://artifactory-internal.ps.chef.co/artifactory"
+artifactory_username="buildkite"
+
 export ARTIFACTORY_ENDPOINT="$artifactory_endpoint"
 export ARTIFACTORY_USERNAME="$artifactory_username"
-export ARTIFACTORY_PASSWORD="$artifactory_password"
+export ARTIFACTORY_PASSWORD=$(vault kv get -field password account/static/artifactory/buildkite)
