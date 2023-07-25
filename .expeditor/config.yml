@@ -24,13 +24,13 @@ pipelines:
         - IGNORE_CACHE: true
         - OMNIBUS_BUILDKITE_PLUGIN_VERSION: 76dc28f29e5b5ddc83518eb42febfdde2528776c
         - OMNIBUS_USE_INTERNAL_SOURCES: true
-  - omnibus/adhoc:
-      definition: .expeditor/release.omnibus.yml
-      env:
-        - ADHOC: true
-        - IGNORE_CACHE: true
-        - OMNIBUS_BUILDKITE_PLUGIN_VERSION: 76dc28f29e5b5ddc83518eb42febfdde2528776c
-        - OMNIBUS_USE_INTERNAL_SOURCES: true
+  # - omnibus/adhoc:
+  #     definition: .expeditor/release.omnibus.yml
+  #     env:
+  #       - ADHOC: true
+  #       - IGNORE_CACHE: true
+  #       - OMNIBUS_BUILDKITE_PLUGIN_VERSION: 76dc28f29e5b5ddc83518eb42febfdde2528776c
+  #       - OMNIBUS_USE_INTERNAL_SOURCES: true
   - omnibus/angry-release:
       env:
         - IGNORE_CACHE: true
