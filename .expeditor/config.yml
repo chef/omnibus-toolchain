@@ -47,7 +47,7 @@ pipelines:
       env:
         - ADHOC: true
         - IGNORE_CACHE: true
-        - OMNIBUS_BUILDKITE_PLUGIN_VERSION: 028b78ceb200966a27aad55ce71eca89edb838f0
+        - OMNIBUS_BUILDKITE_PLUGIN_VERSION: c5bb64a1eb4625ae9c2728a56314d201a8631da5
         - OMNIBUS_USE_INTERNAL_SOURCES: true
         - PUBLISH_TO_ARTIFACTORY: true
   - omnibus/angry-adhoc-canary:
