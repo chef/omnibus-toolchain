@@ -22,14 +22,14 @@ pipelines:
   - omnibus/release:
       env:
         - IGNORE_CACHE: true
-        - OMNIBUS_BUILDKITE_PLUGIN_VERSION: c5bb64a1eb4625ae9c2728a56314d201a8631da5
+        - OMNIBUS_BUILDKITE_PLUGIN_VERSION: 10657f6c3d0e05fb41c0086bfaa7834562257726
         - OMNIBUS_USE_INTERNAL_SOURCES: true
   - omnibus/adhoc:
       definition: .expeditor/release.omnibus.yml
       env:
         - ADHOC: true
         - IGNORE_CACHE: true
-        - OMNIBUS_BUILDKITE_PLUGIN_VERSION: c5bb64a1eb4625ae9c2728a56314d201a8631da5
+        - OMNIBUS_BUILDKITE_PLUGIN_VERSION: 10657f6c3d0e05fb41c0086bfaa7834562257726
         - OMNIBUS_USE_INTERNAL_SOURCES: true
   - omnibus/angry-release:
       env:
@@ -47,9 +47,8 @@ pipelines:
       env:
         - ADHOC: true
         - IGNORE_CACHE: true
-        - OMNIBUS_BUILDKITE_PLUGIN_VERSION: c5bb64a1eb4625ae9c2728a56314d201a8631da5
+        - OMNIBUS_BUILDKITE_PLUGIN_VERSION: 10657f6c3d0e05fb41c0086bfaa7834562257726
         - OMNIBUS_USE_INTERNAL_SOURCES: true
-        - PUBLISH_TO_ARTIFACTORY: true
   - omnibus/angry-adhoc-canary:
       canary: true
       definition: .expeditor/angry-adhoc-canary.omnibus.yml
