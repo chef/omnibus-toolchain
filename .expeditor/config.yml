@@ -80,7 +80,7 @@ subscriptions:
             - "Expeditor: Skip Changelog"
             - "Expeditor: Skip All"
       - trigger_pipeline:omnibus/release:
-         ignore_labels:
+          ignore_labels:
             - "Expeditor: Skip Omnibus"
             - "Expeditor: Skip All"
           only_if: built_in:bump_version
