@@ -6,7 +6,7 @@ gem 'artifactory'
 
 gem 'chefstyle'
 
-gem 'ffi-yajl', version = '2.3.0'
+override 'ffi-yajl', version: '2.6.0'
 
 
 group :rake do
