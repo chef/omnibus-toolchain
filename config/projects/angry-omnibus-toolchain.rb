@@ -34,7 +34,6 @@ license_file "LICENSE"
 if windows?
   install_dir "#{default_root}/opscode/#{name}"
   package_name "angry-omnibus-toolchain"
-  override "ffi-yajl", version: "2.6"
 else
   install_dir "#{default_root}/#{name}"
 end
