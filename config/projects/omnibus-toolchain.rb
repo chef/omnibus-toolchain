@@ -38,6 +38,7 @@ if windows?
   # work to fix that issue in IPACK-145.
   override "libxml2", version: "2.9.10"
   override "libxslt", version: "1.1.34"
+  override "ffi-yajl", version: "2.6"
 else
   install_dir "#{default_root}/#{name}"
 end
