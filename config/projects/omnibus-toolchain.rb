@@ -29,7 +29,6 @@ current_file ||= __FILE__
 version_file = File.expand_path("../../../VERSION", current_file)
 build_version IO.read(version_file).strip
 
-puts "testing output"
 
 if windows?
   install_dir  "#{default_root}/opscode/#{name}"
@@ -41,7 +40,6 @@ if windows?
   override "libxml2", version: "2.9.10"
   override "libxslt", version: "1.1.34"
   puts "if windows, hello my versionis ffi-yajl 2.6.0"
-  override "ffi-yajl", version: "2.6.0"
 else
   install_dir "#{default_root}/#{name}"
 end

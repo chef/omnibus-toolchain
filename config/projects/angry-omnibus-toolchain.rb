@@ -31,13 +31,10 @@ homepage   "http://www.chef.io"
 license "Apache-2.0"
 license_file "LICENSE"
 
-puts "testing output"
 
 if windows?
   install_dir "#{default_root}/opscode/#{name}"
   package_name "angry-omnibus-toolchain"
-  puts "if windows, hello my versionis ffi-yajl 2.6.0"
-  override "ffi-yajl", version: "2.6.0"  
 else
   install_dir "#{default_root}/#{name}"
 end
