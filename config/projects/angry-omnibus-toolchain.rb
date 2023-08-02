@@ -31,7 +31,6 @@ homepage   "http://www.chef.io"
 license "Apache-2.0"
 license_file "LICENSE"
 
-
 if windows?
   install_dir "#{default_root}/opscode/#{name}"
   package_name "angry-omnibus-toolchain"

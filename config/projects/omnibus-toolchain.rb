@@ -42,8 +42,6 @@ else
   install_dir "#{default_root}/#{name}"
 end
 
-override "libffi", version: "3.4.2"
-
 if freebsd?
   # More recent versions bash build on freebsd is failing
   override :bash, version: "5.1.16"

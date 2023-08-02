@@ -6,9 +6,6 @@ gem 'artifactory'
 
 gem 'chefstyle'
 
-gem 'ffi-yajl', '2.6.0'
-
-
 group :rake do
   gem 'rake'
   gem 'tomlrb'
