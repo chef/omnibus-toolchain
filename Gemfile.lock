@@ -16,7 +16,7 @@ GIT
       chef-cleanroom (~> 1.0)
       chef-utils (>= 15.4)
       contracts (>= 0.16.0, < 0.17.0)
-      ffi-yajl (~> 2.2)
+      ffi-yajl (~> 2.6)
       license_scout (~> 1.0)
       mixlib-shellout (>= 2.0, < 4.0)
       mixlib-versioning
