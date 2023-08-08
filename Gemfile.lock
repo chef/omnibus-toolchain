@@ -16,7 +16,7 @@ GIT
       chef-cleanroom (~> 1.0)
       chef-utils (>= 15.4)
       contracts (>= 0.16.0, < 0.17.0)
-      ffi-yajl (~> 2.6)
+      ffi-yajl (~> 2.2)
       license_scout (~> 1.0)
       mixlib-shellout (>= 2.0, < 4.0)
       mixlib-versioning
@@ -234,7 +234,15 @@ GEM
     zhexdump (0.0.2)
 
 PLATFORMS
+  aarch64-linux
+  arm64-darwin-20
+  powerpc-aix-7
+  s390x-linux
+  sparc-solaris-2.11
+  x86_64-darwin-19
+  x86_64-freebsd-12
   x86_64-linux
+  x86_64-solaris-2.11
 
 DEPENDENCIES
   artifactory
