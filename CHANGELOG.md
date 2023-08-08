@@ -2,17 +2,18 @@ omnibus-toolchain CHANGELOG
 ==========================
 This file is used to list changes made in each version of the omnibus-toolchain.
 
-<!-- latest_release 3.0.13 -->
-## [3.0.13](https://github.com/chef/omnibus-toolchain/tree/3.0.13) (2023-08-08)
+<!-- latest_release 3.0.14 -->
+## [3.0.14](https://github.com/chef/omnibus-toolchain/tree/3.0.14) (2023-08-08)
 
 #### Merged Pull Requests
-- Sean simmons progress/chef 4580/aix artifactory2 [#229](https://github.com/chef/omnibus-toolchain/pull/229) ([sean-simmons-progress](https://github.com/sean-simmons-progress))
+- Sean simmons progress/chef 4580/aix artifactory2 [#230](https://github.com/chef/omnibus-toolchain/pull/230) ([sean-simmons-progress](https://github.com/sean-simmons-progress))
 <!-- latest_release -->
 
 <!-- release_rollup since=3.0.0 -->
 ### Changes since 3.0.0 release
 
 #### Merged Pull Requests
+- Sean simmons progress/chef 4580/aix artifactory2 [#230](https://github.com/chef/omnibus-toolchain/pull/230) ([sean-simmons-progress](https://github.com/sean-simmons-progress)) <!-- 3.0.14 -->
 - Sean simmons progress/chef 4580/aix artifactory2 [#229](https://github.com/chef/omnibus-toolchain/pull/229) ([sean-simmons-progress](https://github.com/sean-simmons-progress)) <!-- 3.0.13 -->
 - Fix Solaris Build Issue [#226](https://github.com/chef/omnibus-toolchain/pull/226) ([poorndm](https://github.com/poorndm)) <!-- 3.0.12 -->
 - Enable auto trigger of omnibus/release pipeline - Revert PR 213 changes [#223](https://github.com/chef/omnibus-toolchain/pull/223) ([poorndm](https://github.com/poorndm)) <!-- 3.0.11 -->
