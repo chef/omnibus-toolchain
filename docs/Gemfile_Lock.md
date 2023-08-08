@@ -1,10 +1,12 @@
-Ensuring that we dont lose out on the platforms if we ever do a local bundle update:
+Ensuring that we dont lose out on the platforms if we ever do a local bundle update, located in the root project folder and then Gemfile.lock
 
 ```
 PLATFORMS
   aarch64-linux
   arm64-darwin-20
   powerpc-aix-7
+  powerpc64-linux
+  powerpc64le-linux
   s390x-linux
   sparc-solaris-2.11
   x86_64-darwin-19
