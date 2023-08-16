@@ -8,7 +8,7 @@ GIT
 
 GIT
   remote: https://github.com/chef/omnibus.git
-  revision: ac2f23e76b90368f24a601df89b3ccbeecd939d8
+  revision: 98a4cd42456b233f0455417b0ce7b03e3115367c
   branch: poorndm/rocky_package_rename
   specs:
     omnibus (9.0.21)
