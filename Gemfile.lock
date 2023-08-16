@@ -8,8 +8,8 @@ GIT
 
 GIT
   remote: https://github.com/chef/omnibus.git
-  revision: 9c0643a3a44f3e7119789c2093bfc8edd78c74ff
-  branch: main
+  revision: 5543565d8360f8ffd5ffaee7d9de8031ca19b564
+  branch: poorndm/rocky_package_rename
   specs:
     omnibus (9.0.21)
       aws-sdk-s3 (~> 1.116.0)
