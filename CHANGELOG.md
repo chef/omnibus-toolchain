@@ -2,10 +2,18 @@ omnibus-toolchain CHANGELOG
 ==========================
 This file is used to list changes made in each version of the omnibus-toolchain.
 
-<!-- latest_release -->
+<!-- latest_release 3.0.17 -->
+## [3.0.17](https://github.com/chef/omnibus-toolchain/tree/3.0.17) (2023-08-18)
+
+#### Merged Pull Requests
+- Bump omnibus from `9c0643a` to `d6d4b0d` [#236](https://github.com/chef/omnibus-toolchain/pull/236) ([dependabot[bot]](https://github.com/dependabot[bot]))
 <!-- latest_release -->
 
-<!-- release_rollup -->
+<!-- release_rollup since=3.0.16 -->
+### Changes since 3.0.16 release
+
+#### Merged Pull Requests
+- Bump omnibus from `9c0643a` to `d6d4b0d` [#236](https://github.com/chef/omnibus-toolchain/pull/236) ([dependabot[bot]](https://github.com/dependabot[bot])) <!-- 3.0.17 -->
 <!-- release_rollup -->
 
 <!-- latest_stable_release -->
