@@ -34,11 +34,14 @@ pipelines:
   - omnibus/angry-release:
       env:
         - IGNORE_CACHE: true
+        - OMNIBUS_BUILDKITE_PLUGIN_VERSION: 3db0e86c940ba974612912e38333e498e26e4df8
+        - OMNIBUS_USE_INTERNAL_SOURCES: true
   - omnibus/angry-adhoc:
       definition: .expeditor/angry-release.omnibus.yml
       env:
         - ADHOC: true
         - IGNORE_CACHE: true
+        - OMNIBUS_BUILDKITE_PLUGIN_VERSION: 3db0e86c940ba974612912e38333e498e26e4df8
         - OMNIBUS_USE_INTERNAL_SOURCES: true
   # the canary pipelines are used for testing by our *-buildkite-pipelines repos
   - omnibus/adhoc-canary:
@@ -55,6 +58,7 @@ pipelines:
       env:
         - ADHOC: true
         - IGNORE_CACHE: true
+        - OMNIBUS_BUILDKITE_PLUGIN_VERSION: 3db0e86c940ba974612912e38333e498e26e4df8
         - OMNIBUS_USE_INTERNAL_SOURCES: true
 
 github:
