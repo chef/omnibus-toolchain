@@ -2,29 +2,39 @@ omnibus-toolchain CHANGELOG
 ==========================
 This file is used to list changes made in each version of the omnibus-toolchain.
 
-<!-- latest_release 3.0.9 -->
-## [3.0.9](https://github.com/chef/omnibus-toolchain/tree/3.0.9) (2023-05-23)
-
-#### Merged Pull Requests
-- renaming omnibus queue [#222](https://github.com/chef/omnibus-toolchain/pull/222) ([sean-simmons-progress](https://github.com/sean-simmons-progress))
+<!-- latest_release -->
 <!-- latest_release -->
 
-<!-- release_rollup since=3.0.0 -->
-### Changes since 3.0.0 release
-
-#### Merged Pull Requests
-- renaming omnibus queue [#222](https://github.com/chef/omnibus-toolchain/pull/222) ([sean-simmons-progress](https://github.com/sean-simmons-progress)) <!-- 3.0.9 -->
-- Add rocky linux-8 [#221](https://github.com/chef/omnibus-toolchain/pull/221) ([poorndm](https://github.com/poorndm)) <!-- 3.0.8 -->
-- Fix build issue - Reverting the changes made PR - 219 [#220](https://github.com/chef/omnibus-toolchain/pull/220) ([poorndm](https://github.com/poorndm)) <!-- 3.0.7 -->
-- Fix build issues on Free bsd , solaris and AIX #1744 [#218](https://github.com/chef/omnibus-toolchain/pull/218) ([poorndm](https://github.com/poorndm)) <!-- 3.0.6 -->
-- update omnibus to use internal sources [#219](https://github.com/chef/omnibus-toolchain/pull/219) ([evanahlberg](https://github.com/evanahlberg)) <!-- 3.0.5 -->
-- Move verify pipeline [#217](https://github.com/chef/omnibus-toolchain/pull/217) ([gscho](https://github.com/gscho)) <!-- 3.0.4 -->
-- Lint ruby files using chefstyle on pull-requests [#216](https://github.com/chef/omnibus-toolchain/pull/216) ([gscho](https://github.com/gscho)) <!-- 3.0.3 -->
-- Update signing Identity  [#214](https://github.com/chef/omnibus-toolchain/pull/214) ([poorndm](https://github.com/poorndm)) <!-- 3.0.2 -->
-- Pin libtool for aix [#212](https://github.com/chef/omnibus-toolchain/pull/212) ([jeremiahsnapp](https://github.com/jeremiahsnapp)) <!-- 3.0.1 -->
+<!-- release_rollup -->
 <!-- release_rollup -->
 
 <!-- latest_stable_release -->
+## [3.0.17](https://github.com/chef/omnibus-toolchain/tree/3.0.17) (2023-08-24)
+
+#### Merged Pull Requests
+- Bump omnibus from `9c0643a` to `d6d4b0d` [#236](https://github.com/chef/omnibus-toolchain/pull/236) ([dependabot[bot]](https://github.com/dependabot[bot]))
+<!-- latest_stable_release -->
+
+## [3.0.16](https://github.com/chef/omnibus-toolchain/tree/3.0.16) (2023-08-16)
+
+#### Merged Pull Requests
+- Pin libtool for aix [#212](https://github.com/chef/omnibus-toolchain/pull/212) ([jeremiahsnapp](https://github.com/jeremiahsnapp))
+- Update signing Identity  [#214](https://github.com/chef/omnibus-toolchain/pull/214) ([poorndm](https://github.com/poorndm))
+- Lint ruby files using chefstyle on pull-requests [#216](https://github.com/chef/omnibus-toolchain/pull/216) ([gscho](https://github.com/gscho))
+- Move verify pipeline [#217](https://github.com/chef/omnibus-toolchain/pull/217) ([gscho](https://github.com/gscho))
+- update omnibus to use internal sources [#219](https://github.com/chef/omnibus-toolchain/pull/219) ([evanahlberg](https://github.com/evanahlberg))
+- Fix build issues on Free bsd , solaris and AIX #1744 [#218](https://github.com/chef/omnibus-toolchain/pull/218) ([poorndm](https://github.com/poorndm))
+- Fix build issue - Reverting the changes made PR - 219 [#220](https://github.com/chef/omnibus-toolchain/pull/220) ([poorndm](https://github.com/poorndm))
+- Add rocky linux-8 [#221](https://github.com/chef/omnibus-toolchain/pull/221) ([poorndm](https://github.com/poorndm))
+- renaming omnibus queue [#222](https://github.com/chef/omnibus-toolchain/pull/222) ([sean-simmons-progress](https://github.com/sean-simmons-progress))
+- Removed support for el-6-i686 due to compatibility issues [#225](https://github.com/chef/omnibus-toolchain/pull/225) ([poorndm](https://github.com/poorndm))
+- Enable auto trigger of omnibus/release pipeline - Revert PR 213 changes [#223](https://github.com/chef/omnibus-toolchain/pull/223) ([poorndm](https://github.com/poorndm))
+- Fix Solaris Build Issue [#226](https://github.com/chef/omnibus-toolchain/pull/226) ([poorndm](https://github.com/poorndm))
+- Sean simmons progress/chef 4580/aix artifactory2 [#229](https://github.com/chef/omnibus-toolchain/pull/229) ([sean-simmons-progress](https://github.com/sean-simmons-progress))
+- Sean simmons progress/chef 4580/aix artifactory2 [#230](https://github.com/chef/omnibus-toolchain/pull/230) ([sean-simmons-progress](https://github.com/sean-simmons-progress))
+- adding two more platforms [#231](https://github.com/chef/omnibus-toolchain/pull/231) ([sean-simmons-progress](https://github.com/sean-simmons-progress))
+- Sean simmons progress/chef 4580/hotfix [#232](https://github.com/chef/omnibus-toolchain/pull/232) ([sean-simmons-progress](https://github.com/sean-simmons-progress))
+
 ## [3.0.0](https://github.com/chef/omnibus-toolchain/tree/3.0.0) (2022-05-30)
 
 #### Merged Pull Requests
@@ -36,7 +46,6 @@ This file is used to list changes made in each version of the omnibus-toolchain.
 - IPACK-192 remove helper scripts [#208](https://github.com/chef/omnibus-toolchain/pull/208) ([jeremiahsnapp](https://github.com/jeremiahsnapp))
 - IPACK-204 Prepare for new omnibus-toolchain build [#209](https://github.com/chef/omnibus-toolchain/pull/209) ([jeremiahsnapp](https://github.com/jeremiahsnapp))
 - IPACK-204 use ruby 3.1, openssl 3 and UCRT64 [#210](https://github.com/chef/omnibus-toolchain/pull/210) ([jeremiahsnapp](https://github.com/jeremiahsnapp))
-<!-- latest_stable_release -->
 
 ## [2.1.20](https://github.com/chef/omnibus-toolchain/tree/2.1.20) (2021-12-10)
 

@@ -22,13 +22,14 @@ pipelines:
   - omnibus/release:
       env:
         - IGNORE_CACHE: true
-        - OMNIBUS_BUILDKITE_PLUGIN_VERSION: c7512972948a79da243b37f5ea98aefbf4b3d83b
+        - OMNIBUS_BUILDKITE_PLUGIN_VERSION: 3db0e86c940ba974612912e38333e498e26e4df8
         - OMNIBUS_USE_INTERNAL_SOURCES: true
   - omnibus/adhoc:
       definition: .expeditor/release.omnibus.yml
       env:
         - ADHOC: true
         - IGNORE_CACHE: true
+        - OMNIBUS_BUILDKITE_PLUGIN_VERSION: 3db0e86c940ba974612912e38333e498e26e4df8
         - OMNIBUS_USE_INTERNAL_SOURCES: true
   - omnibus/angry-release:
       env:
@@ -46,6 +47,7 @@ pipelines:
       env:
         - ADHOC: true
         - IGNORE_CACHE: true
+        - OMNIBUS_BUILDKITE_PLUGIN_VERSION: 3db0e86c940ba974612912e38333e498e26e4df8
         - OMNIBUS_USE_INTERNAL_SOURCES: true
   - omnibus/angry-adhoc-canary:
       canary: true
@@ -77,13 +79,11 @@ subscriptions:
           ignore_labels:
             - "Expeditor: Skip Changelog"
             - "Expeditor: Skip All"
-      # # Disable auto trigger of omnibus/release pipeline until we get enough ppc64 and ppc64le systems to build both
-      # # omnibus-toolchain and angry-omnibus-toolchain at the same time
-      # - trigger_pipeline:omnibus/release:
-      #     ignore_labels:
-      #       - "Expeditor: Skip Omnibus"
-      #       - "Expeditor: Skip All"
-      #     only_if: built_in:bump_version
+      - trigger_pipeline:omnibus/release:
+          ignore_labels:
+            - "Expeditor: Skip Omnibus"
+            - "Expeditor: Skip All"
+          only_if: built_in:bump_version
       - trigger_pipeline:omnibus/angry-release:
           ignore_labels:
             - "Expeditor: Skip Omnibus"
