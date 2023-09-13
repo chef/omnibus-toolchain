@@ -114,5 +114,5 @@ package :msi do
 end
 
 package :appx do
-  signing_identity "769E6AF679126F184850AAC7C5C823A80DB3ADAA", machine_store: true
+  signing_identity "769E6AF679126F184850AAC7C5C823A80DB3ADAA", machine_store: false, keypair_alias: "key_495941360"
 end
