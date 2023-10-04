@@ -49,6 +49,7 @@ pipelines:
         - IGNORE_CACHE: true
         - OMNIBUS_BUILDKITE_PLUGIN_VERSION: 3db0e86c940ba974612912e38333e498e26e4df8
         - OMNIBUS_USE_INTERNAL_SOURCES: false
+        - IGNORE_ARTIFACTORY_RUBY_PROXY: true
   - omnibus/angry-adhoc-canary:
       canary: true
       definition: .expeditor/angry-adhoc-canary.omnibus.yml
