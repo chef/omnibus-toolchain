@@ -8,8 +8,8 @@ GIT
 
 GIT
   remote: https://github.com/chef/omnibus.git
-  revision: 56015cba349b547388df195158285156e974ae39
-  branch: main
+  revision: b634c4deda6e07bf08504e4456b0b7bb5c20c076
+  branch: ss/signing-cmd-requires-admin-privileges
   specs:
     omnibus (9.0.23)
       aws-sdk-s3 (~> 1.116.0)
@@ -35,14 +35,14 @@ GEM
     ast (2.4.2)
     awesome_print (1.9.2)
     aws-eventstream (1.2.0)
-    aws-partitions (1.827.0)
-    aws-sdk-core (3.183.0)
+    aws-partitions (1.830.0)
+    aws-sdk-core (3.184.0)
       aws-eventstream (~> 1, >= 1.0.2)
       aws-partitions (~> 1, >= 1.651.0)
       aws-sigv4 (~> 1.5)
       jmespath (~> 1, >= 1.6.1)
-    aws-sdk-kms (1.71.0)
-      aws-sdk-core (~> 3, >= 3.177.0)
+    aws-sdk-kms (1.72.0)
+      aws-sdk-core (~> 3, >= 3.184.0)
       aws-sigv4 (~> 1.1)
     aws-sdk-s3 (1.116.0)
       aws-sdk-core (~> 3, >= 3.127.0)
@@ -236,6 +236,7 @@ GEM
 PLATFORMS
   aarch64-linux
   arm64-darwin-20
+  arm64-darwin-21
   powerpc-aix-7
   powerpc64-linux
   powerpc64le-linux
@@ -259,4 +260,4 @@ DEPENDENCIES
   winrm-fs
 
 BUNDLED WITH
-   2.3.26
+   2.4.13
