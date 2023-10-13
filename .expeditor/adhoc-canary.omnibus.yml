@@ -55,7 +55,7 @@ builder-to-testers-map:
   rocky-8-x86_64:
     - rocky-8-x86_64
   rocky-8-aarch64:
-    - rocky-8-aarch64  
+    - rocky-8-aarch64
   rocky-9-x86_64:
     - rocky-9-x86_64
   rocky-9-x86_64_disableSE:
