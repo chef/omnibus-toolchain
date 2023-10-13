@@ -2,17 +2,18 @@ omnibus-toolchain CHANGELOG
 ==========================
 This file is used to list changes made in each version of the omnibus-toolchain.
 
-<!-- latest_release 3.0.20 -->
-## [3.0.20](https://github.com/chef/omnibus-toolchain/tree/3.0.20) (2023-10-11)
+<!-- latest_release 3.0.21 -->
+## [3.0.21](https://github.com/chef/omnibus-toolchain/tree/3.0.21) (2023-10-13)
 
 #### Merged Pull Requests
-- Support rocky-8 arm64 [#242](https://github.com/chef/omnibus-toolchain/pull/242) ([poorndm](https://github.com/poorndm))
+- Adding rockylinux9 to omnibus-toolchain [#254](https://github.com/chef/omnibus-toolchain/pull/254) ([muthuja](https://github.com/muthuja))
 <!-- latest_release -->
 
 <!-- release_rollup since=3.0.17 -->
 ### Changes since 3.0.17 release
 
 #### Merged Pull Requests
+- Adding rockylinux9 to omnibus-toolchain [#254](https://github.com/chef/omnibus-toolchain/pull/254) ([muthuja](https://github.com/muthuja)) <!-- 3.0.21 -->
 - Support rocky-8 arm64 [#242](https://github.com/chef/omnibus-toolchain/pull/242) ([poorndm](https://github.com/poorndm)) <!-- 3.0.20 -->
 - Add Rocky-8 support - Angry omnibus-toolchain [#240](https://github.com/chef/omnibus-toolchain/pull/240) ([poorndm](https://github.com/poorndm)) <!-- 3.0.19 -->
 - Bump omnibus from `d6d4b0d` to `56015cb` [#248](https://github.com/chef/omnibus-toolchain/pull/248) ([dependabot[bot]](https://github.com/dependabot[bot])) <!-- 3.0.18 -->
