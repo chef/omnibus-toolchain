@@ -57,7 +57,7 @@ builder-to-testers-map:
   rocky-9-x86_64:
     - rocky-9-x86_64
   rocky-9-x86_64_disableSE:
-    - rocky-9-x86_64_disableSE  
+    - rocky-9-x86_64_disableSE
   sles-12-s390x:
     - sles-12-s390x
     - sles-15-s390x
