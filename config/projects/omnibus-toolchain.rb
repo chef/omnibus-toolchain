@@ -36,8 +36,8 @@ if windows?
   # libxslt 1.1.35 does not build successfully with libxml2 2.9.13 on Windows so we will pin
   # windows builds to libxslt 1.1.34 and libxml2 2.9.10 for now and followup later with the
   # work to fix that issue in IPACK-145.
-  override "libxml2", version: "2.9.10"
-  override "libxslt", version: "1.1.34"
+  #override "libxml2", version: "2.9.10"
+  #override "libxslt", version: "1.1.34"
 else
   install_dir "#{default_root}/#{name}"
 end
