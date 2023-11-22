@@ -76,6 +76,8 @@ if solaris?
 
   # Solaris fails to compile curl version >7.81.0 with nghttp2 unreferenced symbol
   override :curl, version: "7.81.0"
+  # Chef Infra Cilent failed to install on Solaris V11.4.47 - CHEF-7695
+  override :bash, version: "5.1.8"
 end
 
 # creates required build directories
