@@ -209,7 +209,6 @@ GEM
       tty-screen (~> 0.8)
       wisper (~> 2.0)
     tty-screen (0.8.1)
-    unf_ext (0.0.8)
     unicode-display_width (2.4.2)
     unicode_utils (1.4.0)
     winrm (2.3.6)
