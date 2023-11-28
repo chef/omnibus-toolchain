@@ -52,6 +52,7 @@ if aix?
   override :libtool, version: "2.4.6"
   # On Aix test is failing with core dump that needs to be fixed
   override :bash, version: "5.1.16"
+  # override :curl, version: "7.81.0"
 end
 
 # riding berkshelf master is hard when you're at the edge of versions
@@ -75,7 +76,7 @@ if solaris?
   override :libtool, version: "2.4"
 
   # Solaris fails to compile curl version >7.81.0 with nghttp2 unreferenced symbol
-  override :curl, version: "7.81.0"
+  # override :curl, version: "7.81.0"
 end
 
 # creates required build directories
