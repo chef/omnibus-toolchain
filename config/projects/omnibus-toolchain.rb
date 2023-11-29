@@ -74,8 +74,6 @@ if solaris?
   # Solaris fails compile on libtool version 2.4.2 and 2.4.6
   override :libtool, version: "2.4"
 
-  # Solaris fails to compile curl version >7.81.0 with nghttp2 unreferenced symbol
-  override :curl, version: "7.81.0"
 end
 
 # creates required build directories
