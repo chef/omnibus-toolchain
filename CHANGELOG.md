@@ -2,17 +2,18 @@ omnibus-toolchain CHANGELOG
 ==========================
 This file is used to list changes made in each version of the omnibus-toolchain.
 
-<!-- latest_release 3.0.26 -->
-## [3.0.26](https://github.com/chef/omnibus-toolchain/tree/3.0.26) (2023-11-29)
+<!-- latest_release 3.0.27 -->
+## [3.0.27](https://github.com/chef/omnibus-toolchain/tree/3.0.27) (2023-11-29)
 
 #### Merged Pull Requests
-- Update to latest omnibus-software version [#270](https://github.com/chef/omnibus-toolchain/pull/270) ([poorndm](https://github.com/poorndm))
+- Downgrade bash to fix solaris issue [#271](https://github.com/chef/omnibus-toolchain/pull/271) ([poorndm](https://github.com/poorndm))
 <!-- latest_release -->
 
 <!-- release_rollup since=3.0.17 -->
 ### Changes since 3.0.17 release
 
 #### Merged Pull Requests
+- Downgrade bash to fix solaris issue [#271](https://github.com/chef/omnibus-toolchain/pull/271) ([poorndm](https://github.com/poorndm)) <!-- 3.0.27 -->
 - Update to latest omnibus-software version [#270](https://github.com/chef/omnibus-toolchain/pull/270) ([poorndm](https://github.com/poorndm)) <!-- 3.0.26 -->
 - Bump omnibus-software from `3268356` to `2a99879` [#268](https://github.com/chef/omnibus-toolchain/pull/268) ([dependabot[bot]](https://github.com/dependabot[bot])) <!-- 3.0.25 -->
 - Unpin libxslt and libxml on windows [#263](https://github.com/chef/omnibus-toolchain/pull/263) ([poorndm](https://github.com/poorndm)) <!-- 3.0.24 -->
