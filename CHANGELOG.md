@@ -2,17 +2,18 @@ omnibus-toolchain CHANGELOG
 ==========================
 This file is used to list changes made in each version of the omnibus-toolchain.
 
-<!-- latest_release 3.0.22 -->
-## [3.0.22](https://github.com/chef/omnibus-toolchain/tree/3.0.22) (2023-10-20)
+<!-- latest_release 3.0.23 -->
+## [3.0.23](https://github.com/chef/omnibus-toolchain/tree/3.0.23) (2023-11-29)
 
 #### Merged Pull Requests
-- Adding rocky9 arm64 to omnibus-toolchain [#256](https://github.com/chef/omnibus-toolchain/pull/256) ([muthuja](https://github.com/muthuja))
+- Unpin curl on solaris [#266](https://github.com/chef/omnibus-toolchain/pull/266) ([poorndm](https://github.com/poorndm))
 <!-- latest_release -->
 
 <!-- release_rollup since=3.0.17 -->
 ### Changes since 3.0.17 release
 
 #### Merged Pull Requests
+- Unpin curl on solaris [#266](https://github.com/chef/omnibus-toolchain/pull/266) ([poorndm](https://github.com/poorndm)) <!-- 3.0.23 -->
 - Adding rocky9 arm64 to omnibus-toolchain [#256](https://github.com/chef/omnibus-toolchain/pull/256) ([muthuja](https://github.com/muthuja)) <!-- 3.0.22 -->
 - Adding rockylinux9 to omnibus-toolchain [#254](https://github.com/chef/omnibus-toolchain/pull/254) ([muthuja](https://github.com/muthuja)) <!-- 3.0.21 -->
 - Support rocky-8 arm64 [#242](https://github.com/chef/omnibus-toolchain/pull/242) ([poorndm](https://github.com/poorndm)) <!-- 3.0.20 -->
