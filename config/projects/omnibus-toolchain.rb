@@ -63,6 +63,7 @@ override :xproto, version: "7.0.25"
 
 if solaris?
   # More recent versions of git build on Solaris but "git name-rev" doesn't work properly which fails Chef Infra tests
+  puts "************DEBUGGING STMT to identify solaris platform***************"
   override :git, version: "2.24.1"
 
   # Solaris fails compile on libtool version 2.4.2 and 2.4.6
