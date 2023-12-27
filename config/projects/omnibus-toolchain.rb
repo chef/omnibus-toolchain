@@ -67,7 +67,7 @@ if solaris?
 
   # Solaris fails compile on libtool version 2.4.2 and 2.4.6
   override :libtool, version: "2.4"
-  
+
   # Chef Infra Cilent failed to install on Solaris V11.4.47 - CHEF-7695
   override :bash, version: "5.1.8"
 
