@@ -2,30 +2,32 @@ omnibus-toolchain CHANGELOG
 ==========================
 This file is used to list changes made in each version of the omnibus-toolchain.
 
-<!-- latest_release 3.0.22 -->
-## [3.0.22](https://github.com/chef/omnibus-toolchain/tree/3.0.22) (2023-10-20)
-
-#### Merged Pull Requests
-- Adding rocky9 arm64 to omnibus-toolchain [#256](https://github.com/chef/omnibus-toolchain/pull/256) ([muthuja](https://github.com/muthuja))
+<!-- latest_release -->
 <!-- latest_release -->
 
-<!-- release_rollup since=3.0.17 -->
-### Changes since 3.0.17 release
-
-#### Merged Pull Requests
-- Adding rocky9 arm64 to omnibus-toolchain [#256](https://github.com/chef/omnibus-toolchain/pull/256) ([muthuja](https://github.com/muthuja)) <!-- 3.0.22 -->
-- Adding rockylinux9 to omnibus-toolchain [#254](https://github.com/chef/omnibus-toolchain/pull/254) ([muthuja](https://github.com/muthuja)) <!-- 3.0.21 -->
-- Support rocky-8 arm64 [#242](https://github.com/chef/omnibus-toolchain/pull/242) ([poorndm](https://github.com/poorndm)) <!-- 3.0.20 -->
-- Add Rocky-8 support - Angry omnibus-toolchain [#240](https://github.com/chef/omnibus-toolchain/pull/240) ([poorndm](https://github.com/poorndm)) <!-- 3.0.19 -->
-- Bump omnibus from `d6d4b0d` to `56015cb` [#248](https://github.com/chef/omnibus-toolchain/pull/248) ([dependabot[bot]](https://github.com/dependabot[bot])) <!-- 3.0.18 -->
+<!-- release_rollup -->
 <!-- release_rollup -->
 
 <!-- latest_stable_release -->
+## [3.0.27](https://github.com/chef/omnibus-toolchain/tree/3.0.27) (2023-12-06)
+
+#### Merged Pull Requests
+- Bump omnibus from `d6d4b0d` to `56015cb` [#248](https://github.com/chef/omnibus-toolchain/pull/248) ([dependabot[bot]](https://github.com/dependabot[bot]))
+- Add Rocky-8 support - Angry omnibus-toolchain [#240](https://github.com/chef/omnibus-toolchain/pull/240) ([poorndm](https://github.com/poorndm))
+- Support rocky-8 arm64 [#242](https://github.com/chef/omnibus-toolchain/pull/242) ([poorndm](https://github.com/poorndm))
+- Adding rockylinux9 to omnibus-toolchain [#254](https://github.com/chef/omnibus-toolchain/pull/254) ([muthuja](https://github.com/muthuja))
+- Adding rocky9 arm64 to omnibus-toolchain [#256](https://github.com/chef/omnibus-toolchain/pull/256) ([muthuja](https://github.com/muthuja))
+- Unpin curl on solaris [#266](https://github.com/chef/omnibus-toolchain/pull/266) ([poorndm](https://github.com/poorndm))
+- Unpin libxslt and libxml on windows [#263](https://github.com/chef/omnibus-toolchain/pull/263) ([poorndm](https://github.com/poorndm))
+- Bump omnibus-software from `3268356` to `2a99879` [#268](https://github.com/chef/omnibus-toolchain/pull/268) ([dependabot[bot]](https://github.com/dependabot[bot]))
+- Update to latest omnibus-software version [#270](https://github.com/chef/omnibus-toolchain/pull/270) ([poorndm](https://github.com/poorndm))
+- Downgrade bash to fix solaris issue [#271](https://github.com/chef/omnibus-toolchain/pull/271) ([poorndm](https://github.com/poorndm))
+<!-- latest_stable_release -->
+
 ## [3.0.17](https://github.com/chef/omnibus-toolchain/tree/3.0.17) (2023-08-24)
 
 #### Merged Pull Requests
 - Bump omnibus from `9c0643a` to `d6d4b0d` [#236](https://github.com/chef/omnibus-toolchain/pull/236) ([dependabot[bot]](https://github.com/dependabot[bot]))
-<!-- latest_stable_release -->
 
 ## [3.0.16](https://github.com/chef/omnibus-toolchain/tree/3.0.16) (2023-08-16)
 

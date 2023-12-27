@@ -32,12 +32,6 @@ build_version IO.read(version_file).strip
 if windows?
   install_dir  "#{default_root}/opscode/#{name}"
   package_name "omnibus-toolchain"
-
-  # libxslt 1.1.35 does not build successfully with libxml2 2.9.13 on Windows so we will pin
-  # windows builds to libxslt 1.1.34 and libxml2 2.9.10 for now and followup later with the
-  # work to fix that issue in IPACK-145.
-  override "libxml2", version: "2.9.10"
-  override "libxslt", version: "1.1.34"
 else
   install_dir "#{default_root}/#{name}"
 end
@@ -73,11 +67,12 @@ if solaris?
 
   # Solaris fails compile on libtool version 2.4.2 and 2.4.6
   override :libtool, version: "2.4"
+  
+  # Chef Infra Cilent failed to install on Solaris V11.4.47 - CHEF-7695
+  override :bash, version: "5.1.8"
 
   # Solaris fails to compile curl version >7.81.0 with nghttp2 unreferenced symbol
   override :curl, version: "7.81.0"
-  # Chef Infra Cilent failed to install on Solaris V11.4.47 - CHEF-7695
-  override :bash, version: "5.1.8"
 end
 
 # creates required build directories
