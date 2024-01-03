@@ -2,10 +2,18 @@ omnibus-toolchain CHANGELOG
 ==========================
 This file is used to list changes made in each version of the omnibus-toolchain.
 
-<!-- latest_release -->
+<!-- latest_release 3.0.28 -->
+## [3.0.28](https://github.com/chef/omnibus-toolchain/tree/3.0.28) (2024-01-03)
+
+#### Merged Pull Requests
+- Support amazon2023  [#274](https://github.com/chef/omnibus-toolchain/pull/274) ([muthuja](https://github.com/muthuja))
 <!-- latest_release -->
 
-<!-- release_rollup -->
+<!-- release_rollup since=3.0.27 -->
+### Changes since 3.0.27 release
+
+#### Merged Pull Requests
+- Support amazon2023  [#274](https://github.com/chef/omnibus-toolchain/pull/274) ([muthuja](https://github.com/muthuja)) <!-- 3.0.28 -->
 <!-- release_rollup -->
 
 <!-- latest_stable_release -->
