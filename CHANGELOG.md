@@ -2,21 +2,19 @@ omnibus-toolchain CHANGELOG
 ==========================
 This file is used to list changes made in each version of the omnibus-toolchain.
 
-<!-- latest_release 3.0.28 -->
-## [3.0.28](https://github.com/chef/omnibus-toolchain/tree/3.0.28) (2024-01-03)
-
-#### Merged Pull Requests
-- Support amazon2023  [#274](https://github.com/chef/omnibus-toolchain/pull/274) ([muthuja](https://github.com/muthuja))
+<!-- latest_release -->
 <!-- latest_release -->
 
-<!-- release_rollup since=3.0.27 -->
-### Changes since 3.0.27 release
-
-#### Merged Pull Requests
-- Support amazon2023  [#274](https://github.com/chef/omnibus-toolchain/pull/274) ([muthuja](https://github.com/muthuja)) <!-- 3.0.28 -->
+<!-- release_rollup -->
 <!-- release_rollup -->
 
 <!-- latest_stable_release -->
+## [3.0.28](https://github.com/chef/omnibus-toolchain/tree/3.0.28) (2024-01-05)
+
+#### Merged Pull Requests
+- Support amazon2023  [#274](https://github.com/chef/omnibus-toolchain/pull/274) ([muthuja](https://github.com/muthuja))
+<!-- latest_stable_release -->
+
 ## [3.0.27](https://github.com/chef/omnibus-toolchain/tree/3.0.27) (2023-12-06)
 
 #### Merged Pull Requests
@@ -30,7 +28,6 @@ This file is used to list changes made in each version of the omnibus-toolchain.
 - Bump omnibus-software from `3268356` to `2a99879` [#268](https://github.com/chef/omnibus-toolchain/pull/268) ([dependabot[bot]](https://github.com/dependabot[bot]))
 - Update to latest omnibus-software version [#270](https://github.com/chef/omnibus-toolchain/pull/270) ([poorndm](https://github.com/poorndm))
 - Downgrade bash to fix solaris issue [#271](https://github.com/chef/omnibus-toolchain/pull/271) ([poorndm](https://github.com/poorndm))
-<!-- latest_stable_release -->
 
 ## [3.0.17](https://github.com/chef/omnibus-toolchain/tree/3.0.17) (2023-08-24)
 
