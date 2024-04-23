@@ -15,8 +15,9 @@
 #
 
 name "gtar"
-default_version "1.32"
+default_version "1.34"
 
+version("1.34") { source sha256: "03d908cf5768cfe6b7ad588c921c6ed21acabfb2b79b788d1330453507647aed" }
 version("1.32") { source sha256: "b59549594d91d84ee00c99cf2541a3330fed3a42c440503326dab767f2fbb96c" }
 
 license "GPL-3.0"
