@@ -2,10 +2,18 @@ omnibus-toolchain CHANGELOG
 ==========================
 This file is used to list changes made in each version of the omnibus-toolchain.
 
-<!-- latest_release -->
+<!-- latest_release 3.0.29 -->
+## [3.0.29](https://github.com/chef/omnibus-toolchain/tree/3.0.29) (2024-04-23)
+
+#### Merged Pull Requests
+- remove mac10.15 from pipeline and make mac 11 as builder [#283](https://github.com/chef/omnibus-toolchain/pull/283) ([muthuja](https://github.com/muthuja))
 <!-- latest_release -->
 
-<!-- release_rollup -->
+<!-- release_rollup since=3.0.28 -->
+### Changes since 3.0.28 release
+
+#### Merged Pull Requests
+- remove mac10.15 from pipeline and make mac 11 as builder [#283](https://github.com/chef/omnibus-toolchain/pull/283) ([muthuja](https://github.com/muthuja)) <!-- 3.0.29 -->
 <!-- release_rollup -->
 
 <!-- latest_stable_release -->
