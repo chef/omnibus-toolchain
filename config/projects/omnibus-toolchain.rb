@@ -41,6 +41,10 @@ if freebsd?
   override :bash, version: "5.1.16"
 end
 
+if suse?
+  override :bash, version: "5.2.21"
+end  
+
 if aix?
   # libtool 2.4.7 has a bug that needs to be fixed
   override :libtool, version: "2.4.6"
