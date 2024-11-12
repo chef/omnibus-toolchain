@@ -55,7 +55,7 @@ override :openssl, version: (aix? || windows?) ? "1.1.1m" : "3.0.1"
 
 # it is important to set the default ruby version here. some software definitions such as
 # nokogiri determine whether to compile or not on windows
-override :ruby, version: aix? ? "3.0.3" : "3.1.2"
+override :ruby, version: aix? ? "3.0.3" : "3.1.6"
 
 # xproto 7.0.31 became the default version in omnibus-software but it failed to build on
 # multiple non-x86_64 systems. (e.g. arm64, ppc64)
