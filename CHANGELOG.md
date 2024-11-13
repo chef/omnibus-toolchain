@@ -2,27 +2,24 @@ omnibus-toolchain CHANGELOG
 ==========================
 This file is used to list changes made in each version of the omnibus-toolchain.
 
-<!-- latest_release 3.0.32 -->
-## [3.0.32](https://github.com/chef/omnibus-toolchain/tree/3.0.32) (2024-11-12)
-
-#### Merged Pull Requests
-- Update ruby - 3.1.6 [#290](https://github.com/chef/omnibus-toolchain/pull/290) ([poorndm](https://github.com/poorndm))
+<!-- latest_release -->
 <!-- latest_release -->
 
-<!-- release_rollup since=3.0.31 -->
-### Changes since 3.0.31 release
-
-#### Merged Pull Requests
-- Update ruby - 3.1.6 [#290](https://github.com/chef/omnibus-toolchain/pull/290) ([poorndm](https://github.com/poorndm)) <!-- 3.0.32 -->
+<!-- release_rollup -->
 <!-- release_rollup -->
 
 <!-- latest_stable_release -->
+## [3.0.32](https://github.com/chef/omnibus-toolchain/tree/3.0.32) (2024-11-13)
+
+#### Merged Pull Requests
+- Update ruby - 3.1.6 [#290](https://github.com/chef/omnibus-toolchain/pull/290) ([poorndm](https://github.com/poorndm))
+<!-- latest_stable_release -->
+
 ## [3.0.31](https://github.com/chef/omnibus-toolchain/tree/3.0.31) (2024-09-10)
 
 #### Merged Pull Requests
 - comment the omnibus-buildkite plugin version so that it will pick it automatically from expeditor [#287](https://github.com/chef/omnibus-toolchain/pull/287) ([muthuja](https://github.com/muthuja))
 - remove el6 and update buildkite-plugin version [#288](https://github.com/chef/omnibus-toolchain/pull/288) ([muthuja](https://github.com/muthuja))
-<!-- latest_stable_release -->
 
 ## [3.0.29](https://github.com/chef/omnibus-toolchain/tree/3.0.29) (2024-05-30)
 
