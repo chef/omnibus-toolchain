@@ -22,26 +22,26 @@ pipelines:
   - omnibus/release:
       env:
         - IGNORE_CACHE: true
-        - OMNIBUS_BUILDKITE_PLUGIN_VERSION: e5637ca1ed34a227eba86ae30761010f308b2d1b
+        - OMNIBUS_BUILDKITE_PLUGIN_VERSION: 8291538da3f3ab8f037ff7a56d77e1ab02c4bbf9
         - OMNIBUS_USE_INTERNAL_SOURCES: true
   - omnibus/adhoc:
       definition: .expeditor/release.omnibus.yml
       env:
         - ADHOC: true
         - IGNORE_CACHE: true
-        - OMNIBUS_BUILDKITE_PLUGIN_VERSION: e5637ca1ed34a227eba86ae30761010f308b2d1b
+        - OMNIBUS_BUILDKITE_PLUGIN_VERSION: 8291538da3f3ab8f037ff7a56d77e1ab02c4bbf9
         - OMNIBUS_USE_INTERNAL_SOURCES: true
   - omnibus/angry-release:
       env:
         - IGNORE_CACHE: true
-        - OMNIBUS_BUILDKITE_PLUGIN_VERSION: e5637ca1ed34a227eba86ae30761010f308b2d1b
+        - OMNIBUS_BUILDKITE_PLUGIN_VERSION: 8291538da3f3ab8f037ff7a56d77e1ab02c4bbf9
         - OMNIBUS_USE_INTERNAL_SOURCES: true
   - omnibus/angry-adhoc:
       definition: .expeditor/angry-release.omnibus.yml
       env:
         - ADHOC: true
         - IGNORE_CACHE: true
-        - OMNIBUS_BUILDKITE_PLUGIN_VERSION: e5637ca1ed34a227eba86ae30761010f308b2d1b
+        - OMNIBUS_BUILDKITE_PLUGIN_VERSION: 8291538da3f3ab8f037ff7a56d77e1ab02c4bbf9
         - OMNIBUS_USE_INTERNAL_SOURCES: true
   # the canary pipelines are used for testing by our *-buildkite-pipelines repos
   - omnibus/adhoc-canary:
@@ -50,7 +50,7 @@ pipelines:
       env:
         - ADHOC: true
         - IGNORE_CACHE: true
-        - OMNIBUS_BUILDKITE_PLUGIN_VERSION: e5637ca1ed34a227eba86ae30761010f308b2d1b
+        - OMNIBUS_BUILDKITE_PLUGIN_VERSION: 8291538da3f3ab8f037ff7a56d77e1ab02c4bbf9
         - OMNIBUS_USE_INTERNAL_SOURCES: true
   - omnibus/angry-adhoc-canary:
       canary: true
@@ -58,7 +58,7 @@ pipelines:
       env:
         - ADHOC: true
         - IGNORE_CACHE: true
-        - OMNIBUS_BUILDKITE_PLUGIN_VERSION: e5637ca1ed34a227eba86ae30761010f308b2d1b
+        - OMNIBUS_BUILDKITE_PLUGIN_VERSION: 8291538da3f3ab8f037ff7a56d77e1ab02c4bbf9
         - OMNIBUS_USE_INTERNAL_SOURCES: true
 
 github:
