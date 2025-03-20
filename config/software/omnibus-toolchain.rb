@@ -41,7 +41,9 @@ dependency "ruby"
 
 # Projects such as Chef Server, Supermarket, Chef Manage and Chef Backend use berkshelf for the build time installation of gems.
 # Moving it to toolchain avoids installing a ton of deps into our packages.
-if linux? || macos?
+# chef-server and their components never built on mac , so we can stop building berkshelf on mac
+# if its requires in future for mac can add it back here and test
+if linux?
   dependency "berkshelf" unless i386? || arm?
 end
 
