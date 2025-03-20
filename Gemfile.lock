@@ -242,7 +242,9 @@ PLATFORMS
   s390x-linux
   sparc-solaris-2.11
   x86_64-darwin-19
+  x86_64-darwin-20
   x86_64-freebsd-12
+  x86_64-freebsd-13
   x86_64-linux
   x86_64-solaris-2.11
 
