@@ -2,17 +2,18 @@ omnibus-toolchain CHANGELOG
 ==========================
 This file is used to list changes made in each version of the omnibus-toolchain.
 
-<!-- latest_release 3.0.34 -->
-## [3.0.34](https://github.com/chef/omnibus-toolchain/tree/3.0.34) (2025-03-20)
+<!-- latest_release 3.0.35 -->
+## [3.0.35](https://github.com/chef/omnibus-toolchain/tree/3.0.35) (2025-04-10)
 
 #### Merged Pull Requests
-- adding darwin-20 and freebsd-13 x86_64 to the platform list [#293](https://github.com/chef/omnibus-toolchain/pull/293) ([muthuja](https://github.com/muthuja))
+- Add support for Macos - 13 and 14 [#294](https://github.com/chef/omnibus-toolchain/pull/294) ([poorndm](https://github.com/poorndm))
 <!-- latest_release -->
 
 <!-- release_rollup since=3.0.32 -->
 ### Changes since 3.0.32 release
 
 #### Merged Pull Requests
+- Add support for Macos - 13 and 14 [#294](https://github.com/chef/omnibus-toolchain/pull/294) ([poorndm](https://github.com/poorndm)) <!-- 3.0.35 -->
 - adding darwin-20 and freebsd-13 x86_64 to the platform list [#293](https://github.com/chef/omnibus-toolchain/pull/293) ([muthuja](https://github.com/muthuja)) <!-- 3.0.34 -->
 - remove mac 11 as its EOL and update 12 as builder omniubs toolchain/muthuja [#292](https://github.com/chef/omnibus-toolchain/pull/292) ([muthuja](https://github.com/muthuja)) <!-- 3.0.33 -->
 <!-- release_rollup -->
