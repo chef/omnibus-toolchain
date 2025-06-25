@@ -2,10 +2,18 @@ omnibus-toolchain CHANGELOG
 ==========================
 This file is used to list changes made in each version of the omnibus-toolchain.
 
-<!-- latest_release -->
+<!-- latest_release 3.0.37 -->
+## [3.0.37](https://github.com/chef/omnibus-toolchain/tree/3.0.37) (2025-06-25)
+
+#### Merged Pull Requests
+- Add Support Ubuntu 24.04 [#296](https://github.com/chef/omnibus-toolchain/pull/296) ([poorndm](https://github.com/poorndm))
 <!-- latest_release -->
 
-<!-- release_rollup -->
+<!-- release_rollup since=3.0.36 -->
+### Changes since 3.0.36 release
+
+#### Merged Pull Requests
+- Add Support Ubuntu 24.04 [#296](https://github.com/chef/omnibus-toolchain/pull/296) ([poorndm](https://github.com/poorndm)) <!-- 3.0.37 -->
 <!-- release_rollup -->
 
 <!-- latest_stable_release -->
