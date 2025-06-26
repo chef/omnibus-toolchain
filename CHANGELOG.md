@@ -2,21 +2,19 @@ omnibus-toolchain CHANGELOG
 ==========================
 This file is used to list changes made in each version of the omnibus-toolchain.
 
-<!-- latest_release 3.0.37 -->
-## [3.0.37](https://github.com/chef/omnibus-toolchain/tree/3.0.37) (2025-06-25)
-
-#### Merged Pull Requests
-- Add Support Ubuntu 24.04 [#296](https://github.com/chef/omnibus-toolchain/pull/296) ([poorndm](https://github.com/poorndm))
+<!-- latest_release -->
 <!-- latest_release -->
 
-<!-- release_rollup since=3.0.36 -->
-### Changes since 3.0.36 release
-
-#### Merged Pull Requests
-- Add Support Ubuntu 24.04 [#296](https://github.com/chef/omnibus-toolchain/pull/296) ([poorndm](https://github.com/poorndm)) <!-- 3.0.37 -->
+<!-- release_rollup -->
 <!-- release_rollup -->
 
 <!-- latest_stable_release -->
+## [3.0.37](https://github.com/chef/omnibus-toolchain/tree/3.0.37) (2025-06-26)
+
+#### Merged Pull Requests
+- Add Support Ubuntu 24.04 [#296](https://github.com/chef/omnibus-toolchain/pull/296) ([poorndm](https://github.com/poorndm))
+<!-- latest_stable_release -->
+
 ## [3.0.36](https://github.com/chef/omnibus-toolchain/tree/3.0.36) (2025-05-12)
 
 #### Merged Pull Requests
@@ -24,7 +22,6 @@ This file is used to list changes made in each version of the omnibus-toolchain.
 - adding darwin-20 and freebsd-13 x86_64 to the platform list [#293](https://github.com/chef/omnibus-toolchain/pull/293) ([muthuja](https://github.com/muthuja))
 - Add support for Macos - 13 and 14 [#294](https://github.com/chef/omnibus-toolchain/pull/294) ([poorndm](https://github.com/poorndm))
 - Bump bundler version [#295](https://github.com/chef/omnibus-toolchain/pull/295) ([jaymzh](https://github.com/jaymzh))
-<!-- latest_stable_release -->
 
 ## [3.0.32](https://github.com/chef/omnibus-toolchain/tree/3.0.32) (2024-11-13)
 
