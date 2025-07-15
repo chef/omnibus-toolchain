@@ -85,9 +85,9 @@ builder-to-testers-map:
     - ubuntu-24.04-x86_64
   ubuntu-24.04-aarch64:
     - ubuntu-24.04-aarch64
-  windows-2012r2-x86_64:
-    - windows-2012-x86_64
-    - windows-2012r2-x86_64
+  windows-2019-x86_64:
+    # - windows-2012-x86_64
+    # - windows-2012r2-x86_64
     - windows-2016-x86_64
     - windows-2019-x86_64
     - windows-2022-x86_64
