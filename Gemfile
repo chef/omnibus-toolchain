@@ -6,6 +6,8 @@ gem 'artifactory'
 
 gem 'chefstyle'
 
+gem 'bcrypt_pbkdf'
+
 group :rake do
   gem 'rake'
   gem 'tomlrb'
