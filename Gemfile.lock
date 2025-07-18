@@ -8,7 +8,7 @@ GIT
 
 GIT
   remote: https://github.com/chef/omnibus.git
-  revision: 3145ee7bd4ed3682c7b3a9a9ee6616352ae7b7fc
+  revision: fa446b36c5201ce3bc26cf6135ada1c8e2a8562b
   branch: sean-sype-progress/CHEF-21530-PlatformSupportWindows2025
   specs:
     omnibus (9.0.25)
