@@ -9,7 +9,7 @@ GIT
 GIT
   remote: https://github.com/chef/omnibus.git
   revision: 3145ee7bd4ed3682c7b3a9a9ee6616352ae7b7fc
-  branch: main
+  branch: sean-sype-progress/CHEF-21530-PlatformSupportWindows2025
   specs:
     omnibus (9.0.23)
       aws-sdk-s3 (~> 1.116.0)
