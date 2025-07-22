@@ -2,17 +2,18 @@ omnibus-toolchain CHANGELOG
 ==========================
 This file is used to list changes made in each version of the omnibus-toolchain.
 
-<!-- latest_release 3.0.38 -->
-## [3.0.38](https://github.com/chef/omnibus-toolchain/tree/3.0.38) (2025-07-15)
+<!-- latest_release 3.0.39 -->
+## [3.0.39](https://github.com/chef/omnibus-toolchain/tree/3.0.39) (2025-07-22)
 
 #### Merged Pull Requests
-- enalbing 2025, disabling 2012, 2012r2 [#297](https://github.com/chef/omnibus-toolchain/pull/297) ([sean-sype-simmons](https://github.com/sean-sype-simmons))
+- Sean sype progress/chef 21530 platform support windows2025 omnibus [#299](https://github.com/chef/omnibus-toolchain/pull/299) ([sean-sype-simmons](https://github.com/sean-sype-simmons))
 <!-- latest_release -->
 
 <!-- release_rollup since=3.0.37 -->
 ### Changes since 3.0.37 release
 
 #### Merged Pull Requests
+- Sean sype progress/chef 21530 platform support windows2025 omnibus [#299](https://github.com/chef/omnibus-toolchain/pull/299) ([sean-sype-simmons](https://github.com/sean-sype-simmons)) <!-- 3.0.39 -->
 - enalbing 2025, disabling 2012, 2012r2 [#297](https://github.com/chef/omnibus-toolchain/pull/297) ([sean-sype-simmons](https://github.com/sean-sype-simmons)) <!-- 3.0.38 -->
 <!-- release_rollup -->
 
