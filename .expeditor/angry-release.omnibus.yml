@@ -5,7 +5,7 @@ test-path: omnibus-test.sh
 test-path-windows: omnibus-test.ps1
 windows-64-msystem: UCRT64
 builder-to-testers-map:
-  aix-7.1-powerpc:
+  aix-7.2-powerpc:
     - aix-7.1-powerpc
     - aix-7.2-powerpc
   amazon-2022-aarch64:
