@@ -103,10 +103,10 @@ package :msi do
   upgrade_code msi_upgrade_code
   wix_candle_extension "WixUtilExtension"
   wix_light_extension "WixUtilExtension"
-  signing_identity "7D16AE73AB249D473362E9332D029089DBBB89B2", machine_store: false, keypair_alias: "key_875762014"
+  signing_identity "33A82DC08CA7C6B370FFD0C958D9EE30187DE9E4", machine_store: false, keypair_alias: "key_1340572417"
   parameters ProjectLocationDir: project_location_dir
 end
 
 package :appx do
-  signing_identity "7D16AE73AB249D473362E9332D029089DBBB89B2", machine_store: false, keypair_alias: "key_875762014"
+  signing_identity "33A82DC08CA7C6B370FFD0C958D9EE30187DE9E4", machine_store: false, keypair_alias: "key_1340572417"
 end
