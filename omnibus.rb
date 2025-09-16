@@ -34,9 +34,8 @@ env_omnibus_windows_arch = (ENV["OMNIBUS_WINDOWS_ARCH"] || "").downcase
 env_omnibus_windows_arch = :x86 unless %w{x86 x64}.include?(env_omnibus_windows_arch)
 
 windows_arch   env_omnibus_windows_arch
-#use_internal_sources ENV.fetch("OMNIBUS_USE_INTERNAL_SOURCES", false)
 
-# note, this is statically set in the omnibus-buildkite-plugin, you are always going to be forced to use internal sources. If you dont want internal sources, you must enable this to false.
+## note, this is statically set in the omnibus-buildkite-plugin, you are always going to be forced to use internal sources. If you dont want internal sources, you must enable this to false.
 use_internal_sources ENV.fetch('OMNIBUS_USE_INTERNAL_SOURCES', true)
 
 # Enable S3 asset caching
@@ -46,11 +45,11 @@ s3_access_key  ENV['AWS_ACCESS_KEY_ID']
 s3_secret_key  ENV['AWS_SECRET_ACCESS_KEY']
 s3_bucket      'opscode-omnibus-cache-private'
 s3_acl         'private'
-s3_region      'us-west-2
+s3_region      'us-west-2'
 
 # Customize compiler bits
 # ------------------------------
-build_retries 0
+build_retries 3
 fetcher_read_timeout 120
 workers 8 if aix?
 
