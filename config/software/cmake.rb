@@ -35,7 +35,7 @@ if windows?
   else
     source url: "https://cmake.org/files/v#{minor_version}/cmake-#{version}-windows-x86_64.zip",
            sha256: "9b509cc4eb7191dc128cfa3f2170036f9cbc7d9d5f93ff7fafc5b2d77b3b40dc"
-    internal_source url: "#{ENV["ARTIFACTORY_REPO_URL"]}/cmake/cmake-#{version}-win64-x64.zip",
+    internal_source url: "#{ENV["ARTIFACTORY_REPO_URL"]}/cmake/cmake-#{version}-windows-x86_64.zip",
                     authorization: "X-JFrog-Art-Api:#{ENV["ARTIFACTORY_TOKEN"]}"
     relative_path "cmake-#{version}-windows-x86_64"
     license_file "doc/cmake/Copyright.txt"
