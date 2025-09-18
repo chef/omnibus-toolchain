@@ -26,16 +26,24 @@ minor_version = version.split(".")[0..1].join(".")
 
 if windows?
   if windows_arch_i386?
-    source url: "https://cmake.org/files/v#{minor_version}/cmake-#{version}-windows-i386.zip", sha256: "5bb01d27dc665aac5ddbdb24eebfb2146601e150884b2b1540d39ceb61875f3f"
+    source url: "https://cmake.org/files/v#{minor_version}/cmake-#{version}-windows-i386.zip",
+           sha256: "5bb01d27dc665aac5ddbdb24eebfb2146601e150884b2b1540d39ceb61875f3f"
+    internal_source url: "#{ENV["ARTIFACTORY_REPO_URL"]}/cmake/cmake-#{version}-win32-x86.zip",
+                    authorization: "X-JFrog-Art-Api:#{ENV["ARTIFACTORY_TOKEN"]}"
     relative_path "cmake-#{version}-windows-i386"
     license_file "doc/cmake/Copyright.txt"
   else
-    source url: "https://cmake.org/files/v#{minor_version}/cmake-#{version}-windows-x86_64.zip", sha256: "9b509cc4eb7191dc128cfa3f2170036f9cbc7d9d5f93ff7fafc5b2d77b3b40dc"
+    source url: "https://cmake.org/files/v#{minor_version}/cmake-#{version}-windows-x86_64.zip",
+           sha256: "9b509cc4eb7191dc128cfa3f2170036f9cbc7d9d5f93ff7fafc5b2d77b3b40dc"
+    internal_source url: "#{ENV["ARTIFACTORY_REPO_URL"]}/cmake/cmake-#{version}-win64-x64.zip",
+                    authorization: "X-JFrog-Art-Api:#{ENV["ARTIFACTORY_TOKEN"]}"
     relative_path "cmake-#{version}-windows-x86_64"
     license_file "doc/cmake/Copyright.txt"
   end
 else
   source url: "https://cmake.org/files/v#{minor_version}/cmake-#{version}.tar.gz"
+  internal_source url: "#{ENV["ARTIFACTORY_REPO_URL"]}/cmake/cmake-#{version}.tar.gz",
+                  authorization: "X-JFrog-Art-Api:#{ENV["ARTIFACTORY_TOKEN"]}"
   relative_path "cmake-#{version}"
   license_file "Copyright.txt"
 end
