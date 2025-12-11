@@ -48,7 +48,7 @@ dependency "ruby"
 # if in future its required can add dep-selector-libgecod fix for rhel-10 and ubuntu-24.04 and can build berkshelf gem
 if linux?
   # build berkshelf-no-depselector for rhel-10x86_64 and ubuntu-24.04-x86_64
-  if (rhel? && ohai["platform_version"].to_i == 10 && x86_64?) || (ubuntu? && ohai["platform_version"] == "24.04" && x86_64?)
+  if (rhel? && ohai["platform_version"].to_i == 10 && ohai["kernel"]["machine"] == "x86_64") || (ubuntu? && ohai["platform_version"] == "24.04" && ohai["kernel"]["machine"] == "x86_64")
     dependency "berkshelf-no-depselector"
   else
     dependency "berkshelf" unless i386? || arm?
