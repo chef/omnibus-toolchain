@@ -38,25 +38,16 @@ dependency "archive-tar-minitar"
 build do
   env = with_standard_compiler_flags(with_embedded_path)
 
+  # Configure bundler
   bundle "config set --local without guard changelog development test", env: env
   bundle "install --jobs #{workers}", env: env
 
+  # Build the berkshelf gem
   bundle "exec thor gem:build", env: env
 
+  # Install the built gem
   gem "install pkg/berkshelf-*.gem --no-document", env: env
 
-  # Patch the berks binstub to require archive/tar/minitar at startup
-  block "patch_berks_binstub_for_minitar" do
-    binstub = File.join(install_dir, "embedded/bin/berks")
-    next unless File.exist?(binstub)
-
-    inject = "require 'archive/tar/minitar'\n"
-    contents = File.read(binstub)
-    unless contents.include?(inject)
-      # Add after the shebang (first line)
-      lines = contents.lines
-      lines.insert(1, inject)
-      File.write(binstub, lines.join)
-    end
-  end
+  # Create omnibus wrapper for berks
+  create_bin_wrapper "berks", "#{install_dir}/embedded/bin/ruby", env
 end
