@@ -43,8 +43,20 @@ build do
 
   bundle "exec thor gem:build", env: env
 
-  gem "install pkg/berkshelf-*.gem" \
-      " --no-document", env: env
-  # This line ensures the missing runtime dep is present
-  # gem "install archive-tar-minitar --no-document", env: env    
+  gem "install pkg/berkshelf-*.gem --no-document", env: env
+
+  # Patch the berks binstub to require archive/tar/minitar at startup
+  block "patch_berks_binstub_for_minitar" do
+    binstub = File.join(install_dir, "embedded/bin/berks")
+    next unless File.exist?(binstub)
+
+    inject = "require 'archive/tar/minitar'\n"
+    contents = File.read(binstub)
+    unless contents.include?(inject)
+      # Add after the shebang (first line)
+      lines = contents.lines
+      lines.insert(1, inject)
+      File.write(binstub, lines.join)
+    end
+  end
 end
