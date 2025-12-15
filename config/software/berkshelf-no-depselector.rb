@@ -36,35 +36,45 @@ dependency "nokogiri"
 dependency "archive-tar-minitar"
 
 build do
+  # Ensure standard compiler flags and embedded Ruby paths
   env = with_standard_compiler_flags(with_embedded_path)
 
+  # Install project dependencies
   bundle "config set --local without guard changelog development test", env: env
   bundle "install --jobs #{workers}", env: env
+
+  # Build the gem
   bundle "exec thor gem:build", env: env
+
+  # Install the built Berkshelf gem
   gem "install pkg/berkshelf-*.gem --no-document", env: env
 
-  # Patch the binstub if Berkshelf is missing runtime dependency
+  # Ensure minitar is installed (runtime dependency)
+  gem "install minitar --no-document", env: env
+
+  # Patch the binstub to require minitar at runtime
   block "patch_berks_binstub_for_minitar" do
     binstub = File.join(install_dir, "embedded/bin/berks")
     next unless File.exist?(binstub)
+
     inject = "require 'archive/tar/minitar'\n"
     contents = File.read(binstub)
     unless contents.include?(inject)
       lines = contents.lines
-      lines.insert(1, inject)
+      lines.insert(1, inject) # after shebang
       File.write(binstub, lines.join)
     end
   end
 
-  # Create a bin wrapper for berks that always uses the embedded ruby
-  block "create_bin_wrapper for berks" do
-    wrapper = <<~EOH
+  # Create a robust wrapper that always uses embedded Ruby
+  block "create_bin_wrapper_for_berks" do
+    wrapper_path = File.join(install_dir, "bin/berks")
+    wrapper = <<~WRAPPER
       #!#{install_dir}/embedded/bin/ruby
       require 'archive/tar/minitar'
       load File.expand_path('#{install_dir}/embedded/bin/berks', __dir__)
-    EOH
+    WRAPPER
 
-    wrapper_path = File.join(install_dir, "bin/berks")
     File.write(wrapper_path, wrapper)
     FileUtils.chmod(0o755, wrapper_path)
   end
