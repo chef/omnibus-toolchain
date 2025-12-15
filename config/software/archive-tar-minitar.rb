@@ -2,7 +2,6 @@ name "archive-tar-minitar"
 default_version "0.12"
 
 license "MIT"
-license_file "https://raw.githubusercontent.com/minitar/minitar/main/LICENSE.txt"
 
 dependency "ruby"
 
