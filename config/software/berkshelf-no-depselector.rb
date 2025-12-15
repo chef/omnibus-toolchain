@@ -33,6 +33,7 @@ unless windows? && (project.overrides[:ruby].nil? || project.overrides[:ruby][:v
 end
 
 dependency "nokogiri"
+dependency "archive-tar-minitar"
 
 build do
   env = with_standard_compiler_flags(with_embedded_path)
@@ -45,5 +46,5 @@ build do
   gem "install pkg/berkshelf-*.gem" \
       " --no-document", env: env
   # This line ensures the missing runtime dep is present
-  gem "install archive-tar-minitar --no-document", env: env    
+  # gem "install archive-tar-minitar --no-document", env: env    
 end
