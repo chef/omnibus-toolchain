@@ -1,6 +1,6 @@
 
 #
-# Copyright 2016 Chef Software, Inc.
+# Copyright 2014-2018 Chef Software, Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -17,33 +17,19 @@
 # expeditor/ignore: deprecated 2021-04
 
 name "berkshelf-no-depselector"
-default_version "main"
 
 license "Apache-2.0"
-license_file "LICENSE"
+license_file "https://raw.githubusercontent.com/berkshelf/berkshelf/main/LICENSE"
+# berkshelf does not have any dependencies. We only install it from
+# rubygems here.
+skip_transitive_dependency_licensing true
 
-source git: "https://github.com/berkshelf/berkshelf.git"
-
-relative_path "berkshelf"
-
-dependency "ruby"
-
-unless windows? && (project.overrides[:ruby].nil? || project.overrides[:ruby][:version] == "ruby-windows")
-  dependency "libarchive"
-end
-
+dependency "archive-tar-minitar"
 dependency "nokogiri"
 
 build do
   env = with_standard_compiler_flags(with_embedded_path)
 
-  bundle "config set --local without guard changelog development test", env: env
-  bundle "install --jobs #{workers}", env: env
-
-  bundle "exec thor gem:build", env: env
-
-  gem "install pkg/berkshelf-*.gem" \
-      " --no-document", env: env
-  # This line ensures the missing runtime dep is present
-  gem "install archive-tar-minitar --no-document", env: env    
+  gem "install berkshelf" \
+      "  --no-document", env: env
 end
