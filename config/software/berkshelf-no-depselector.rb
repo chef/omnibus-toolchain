@@ -43,9 +43,6 @@ build do
   bundle "exec thor gem:build", env: env
   gem "install pkg/berkshelf-*.gem --no-document", env: env
 
-  # Always create the bin wrapper
-  create_bin_wrapper "berks", "#{install_dir}/embedded/bin/ruby", env
-
   # Patch the binstub if Berkshelf is missing runtime dependency
   block "patch_berks_binstub_for_minitar" do
     binstub = File.join(install_dir, "embedded/bin/berks")
@@ -57,5 +54,18 @@ build do
       lines.insert(1, inject)
       File.write(binstub, lines.join)
     end
+  end
+
+  # Create a bin wrapper for berks that always uses the embedded ruby
+  block "create_bin_wrapper for berks" do
+    wrapper = <<~EOH
+      #!#{install_dir}/embedded/bin/ruby
+      require 'archive/tar/minitar'
+      load File.expand_path('#{install_dir}/embedded/bin/berks', __dir__)
+    EOH
+
+    wrapper_path = File.join(install_dir, "bin/berks")
+    File.write(wrapper_path, wrapper)
+    FileUtils.chmod(0o755, wrapper_path)
   end
 end
