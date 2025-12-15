@@ -1,9 +1,8 @@
-
 #
 # Copyright 2016 Chef Software, Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
+# You may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
 #
 #     http://www.apache.org/licenses/LICENSE-2.0
@@ -11,10 +10,7 @@
 # Unless required by applicable law or agreed to in writing, software
 # distributed under the License is distributed on an "AS IS" BASIS,
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
 #
-# expeditor/ignore: deprecated 2021-04
 
 name "berkshelf-no-depselector"
 default_version "main"
@@ -23,20 +19,15 @@ license "Apache-2.0"
 license_file "LICENSE"
 
 source git: "https://github.com/berkshelf/berkshelf.git"
-
 relative_path "berkshelf"
 
 dependency "ruby"
-
-unless windows? && (project.overrides[:ruby].nil? || project.overrides[:ruby][:version] == "ruby-windows")
-  dependency "libarchive"
-end
-
 dependency "nokogiri"
 dependency "archive-tar-minitar"
+dependency "libarchive" unless windows?
 
 build do
-  # Ensure standard compiler flags and embedded Ruby paths
+  # Standard compiler flags and embedded Ruby paths
   env = with_standard_compiler_flags(with_embedded_path)
 
   # Install project dependencies
@@ -68,11 +59,13 @@ build do
 
   # Create a robust wrapper that always uses embedded Ruby
   block "create_bin_wrapper_for_berks" do
-    wrapper_path = File.join(install_dir, "bin/berks")
+    original_binstub = File.join(install_dir, "embedded/bin/berks")
+    wrapper_path    = File.join(install_dir, "bin/berks")
+
     wrapper = <<~WRAPPER
       #!#{install_dir}/embedded/bin/ruby
       require 'archive/tar/minitar'
-      load File.expand_path('#{install_dir}/embedded/bin/berks', __dir__)
+      load File.expand_path('#{original_binstub}', __dir__)
     WRAPPER
 
     File.write(wrapper_path, wrapper)
