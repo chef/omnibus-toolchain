@@ -1,34 +1,41 @@
-#
 # Copyright 2014-2018 Chef Software, Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#     http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
-#
-# expeditor/ignore: deprecated 2021-04
+# See accompanying LICENSE file or https://www.apache.org/licenses/LICENSE-2.0
 
-name "berkshelf"
+name "berkshelf-no-depselector"
 
 license "Apache-2.0"
 license_file "https://raw.githubusercontent.com/berkshelf/berkshelf/main/LICENSE"
-# berkshelf does not have any dependencies. We only install it from
-# rubygems here.
 skip_transitive_dependency_licensing true
 
 dependency "nokogiri"
-#dependency "dep-selector-libgecode"
+dependency "archive-tar-minitar"
 
 build do
   env = with_standard_compiler_flags(with_embedded_path)
 
-  gem "install berkshelf" \
-      "  --no-document", env: env
+  gem "install archive-tar-minitar --no-document", env: env
+  gem "install berkshelf --no-document", env: env
+
+  block "overwrite_berks_binstubs_for_minitar" do
+    # Use the Ruby interpreter from the embedded install!
+    wrapper = <<~EOS
+      #!#{install_dir}/embedded/bin/ruby
+      require 'archive/tar/minitar'
+      require 'rubygems'
+
+      spec = Gem.loaded_specs['berkshelf'] || Gem::Specification.find_all_by_name('berkshelf').last
+      abort("Could not find berkshelf gem!") unless spec
+
+      berks_bin = File.join(spec.full_gem_path, 'bin/berks')
+      load berks_bin
+    EOS
+
+    %w[bin/berks embedded/bin/berks].each do |binstub|
+      binstub_path = File.join(install_dir, binstub)
+      File.write(binstub_path, wrapper)
+      FileUtils.chmod(0o755, binstub_path)
+    end
+  end
 end
