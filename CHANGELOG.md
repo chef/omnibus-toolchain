@@ -2,17 +2,18 @@ omnibus-toolchain CHANGELOG
 ==========================
 This file is used to list changes made in each version of the omnibus-toolchain.
 
-<!-- latest_release 3.0.40 -->
-## [3.0.40](https://github.com/chef/omnibus-toolchain/tree/3.0.40) (2025-12-22)
+<!-- latest_release 3.0.41 -->
+## [3.0.41](https://github.com/chef/omnibus-toolchain/tree/3.0.41) (2025-12-22)
 
 #### Merged Pull Requests
-- add rhel-10 support to omnibus-toolchain [#302](https://github.com/chef/omnibus-toolchain/pull/302) ([muthuja](https://github.com/muthuja))
+- pick latest version of omnibus-buildkite-plugin [#303](https://github.com/chef/omnibus-toolchain/pull/303) ([muthuja](https://github.com/muthuja))
 <!-- latest_release -->
 
 <!-- release_rollup since=3.0.39 -->
 ### Changes since 3.0.39 release
 
 #### Merged Pull Requests
+- pick latest version of omnibus-buildkite-plugin [#303](https://github.com/chef/omnibus-toolchain/pull/303) ([muthuja](https://github.com/muthuja)) <!-- 3.0.41 -->
 - add rhel-10 support to omnibus-toolchain [#302](https://github.com/chef/omnibus-toolchain/pull/302) ([muthuja](https://github.com/muthuja)) <!-- 3.0.40 -->
 <!-- release_rollup -->
 
