@@ -43,8 +43,16 @@ dependency "ruby"
 # Moving it to toolchain avoids installing a ton of deps into our packages.
 # chef-server and their components never built on mac , so we can stop building berkshelf on mac
 # if its requires in future for mac can add it back here and test
+# for rhel-10x86_64 and ubuntu-24.04 x86_64 berkshelf build is failing due to dep-selector-libgecod error
+# so we can skip berkshelf and we can use berkshelf-no-depselector software which will skip dep-selector-libgecod gem installation
+# if in future its required can add dep-selector-libgecod fix for rhel-10 and ubuntu-24.04 and can build berkshelf gem
 if linux?
-  dependency "berkshelf" unless i386? || arm?
+  # build berkshelf-no-depselector for rhel-10x86_64 and ubuntu-24.04-x86_64
+  if (rhel? && ohai["platform_version"].to_i == 10 && ohai["kernel"]["machine"] == "x86_64") || (ubuntu? && ohai["platform_version"] == "24.04" && ohai["kernel"]["machine"] == "x86_64")
+    dependency "berkshelf-no-depselector"
+  else
+    dependency "berkshelf" unless i386? || arm?
+  end
 end
 
 dependency "nokogiri"

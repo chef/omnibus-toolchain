@@ -44,12 +44,13 @@ builder-to-testers-map:
     - el-9-aarch64
   el-9-x86_64:
     - el-9-x86_64
+  el-10-x86_64:
+    - el-10-x86_64
+  el-10-aarch64:
+    - el-10-aarch64
   freebsd-13-amd64:
     - freebsd-13-amd64
-  mac_os_x-12-x86_64:
-    - mac_os_x-12-x86_64
-  mac_os_x-12-arm64:
-    - mac_os_x-12-arm64
+  mac_os_x-13-arm64:
     - mac_os_x-13-arm64
     - mac_os_x-14-arm64
   rocky-8-x86_64:
