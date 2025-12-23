@@ -51,7 +51,7 @@ end
 # riding berkshelf master is hard when you're at the edge of versions
 override :berkshelf, version: "v8.0.1"
 
-override :openssl, version: (aix? || windows?) ? "1.1.1m" : "3.0.1"
+override :openssl, version: "3.0.9"
 
 # it is important to set the default ruby version here. some software definitions such as
 # nokogiri determine whether to compile or not on windows
